@@ -8,8 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.13/dist/lenis.css">
 </head>
 <body>
+    <div class="texture-overlay"></div>
     <header class="header">
         <div class="container">
             <nav class="nav">
@@ -23,10 +25,28 @@
 
     <main class="container">
         <section id="book-list" class="book-grid">
-            <div class="loading-state">Loading...</div>
+            <div class="skeleton-card">
+                <div class="skeleton-text" style="width: 20px; height: 12px; margin-top: 6px;"></div>
+                <div class="skeleton-cover"></div>
+                <div class="skeleton-content">
+                    <div class="skeleton-text" style="width: 40%"></div>
+                    <div class="skeleton-text" style="width: 80%; height: 32px"></div>
+                    <div class="skeleton-text" style="width: 60%"></div>
+                </div>
+            </div>
+            <div class="skeleton-card">
+                <div class="skeleton-text" style="width: 20px; height: 12px; margin-top: 6px;"></div>
+                <div class="skeleton-cover"></div>
+                <div class="skeleton-content">
+                    <div class="skeleton-text" style="width: 40%"></div>
+                    <div class="skeleton-text" style="width: 80%; height: 32px"></div>
+                    <div class="skeleton-text" style="width: 60%"></div>
+                </div>
+            </div>
         </section>
     </main>
 
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
     <script src="app.js?v=2"></script>
 </body>
 </html>

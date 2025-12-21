@@ -1,6 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
     fetchBooks();
+    initSmoothScroll();
 });
+
+function initSmoothScroll() {
+    const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        orientation: 'vertical',
+        gestureOrientation: 'vertical',
+        smoothWheel: true,
+        wheelMultiplier: 1,
+        smoothTouch: false,
+        touchMultiplier: 2,
+        infinite: false,
+    });
+
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+}
 
 async function fetchBooks() {
     try {
@@ -22,11 +44,15 @@ function renderBooks(books) {
     const container = document.getElementById('book-list');
     container.innerHTML = '';
 
-    books.forEach(book => {
+    books.forEach((book, index) => {
         const bookElement = document.createElement('article');
         bookElement.className = 'book-card';
+        bookElement.style.animationDelay = `${index * 0.1}s`;
+        
+        const bookNumber = (index + 1).toString().padStart(2, '0');
         
         bookElement.innerHTML = `
+            <div class="book-index">${bookNumber}</div>
             ${book.cover_url ? `<div class="book-cover-container"><img src="${book.cover_url}" alt="${book.title}" class="book-cover"></div>` : ''}
             <div class="book-content">
                 <div class="book-meta">
@@ -34,7 +60,6 @@ function renderBooks(books) {
                 </div>
                 <h2 class="book-title">${book.title}</h2>
                 <div class="book-author">by ${book.author}</div>
-                ${book.thoughts ? `<div class="book-thoughts">${book.thoughts}</div>` : ''}
             </div>
         `;
         
