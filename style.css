@@ -150,6 +150,17 @@ body {
   font-size: 0.95rem;
   color: var(--accents-5);
   font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.book-thoughts {
+  font-size: 0.9rem;
+  color: var(--accents-4);
+  line-height: 1.6;
+  font-style: italic;
+  max-width: 500px;
+  border-left: 2px solid var(--accents-2);
+  padding-left: 16px;
 }
 
 .loading-state {

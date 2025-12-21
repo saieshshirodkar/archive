@@ -34,6 +34,7 @@ function renderBooks(books) {
                 </div>
                 <h2 class="book-title">${book.title}</h2>
                 <div class="book-author">by ${book.author}</div>
+                ${book.thoughts ? `<div class="book-thoughts">${book.thoughts}</div>` : ''}
             </div>
         `;
         
