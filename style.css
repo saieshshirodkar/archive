@@ -49,6 +49,21 @@ html.lenis body {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
+.spotlight {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+  background: radial-gradient(
+    600px circle at var(--x, 50%) var(--y, 50%),
+    rgba(255, 255, 255, 0.03),
+    transparent 40%
+  );
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -150,6 +165,8 @@ body {
   border-image: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.08) 50%, transparent) 1;
   opacity: 0;
   animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
 }
 
 .book-index {
@@ -250,16 +267,22 @@ body {
 
 .rating-text {
   font-family: var(--font-mono);
-  font-size: 0.6rem;
-  color: #000;
-  background: #fff;
-  padding: 2px 10px;
-  border-radius: 100px;
-  font-weight: 800;
-  letter-spacing: 0.05em;
+  font-size: 0.75rem;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-left: 3px solid #fff; /* Bright accent for instant visibility */
+  padding: 4px 12px;
+  border-radius: 1px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
 }
+
+
 
 .book-title {
   font-size: 1.8rem;

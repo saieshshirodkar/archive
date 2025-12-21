@@ -6,14 +6,32 @@ document.addEventListener('DOMContentLoaded', () => {
 function initSmoothScroll() {
     const lenis = new Lenis({
         duration: 1.2,
+        lerp: 0.1, // Smoothness factor
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         orientation: 'vertical',
         gestureOrientation: 'vertical',
         smoothWheel: true,
         wheelMultiplier: 1,
         smoothTouch: false,
-        touchMultiplier: 2,
-        infinite: false,
+    });
+
+    // Handle Snap logic on stop
+    lenis.on('scroll', ({ velocity, isScrolling }) => {
+        // Skew effect
+        const skew = velocity * 0.05;
+        const cards = document.querySelectorAll('.book-card');
+        cards.forEach(card => {
+            const currentSkew = Math.min(Math.max(skew, -2), 2);
+            card.style.transform = `skewY(${currentSkew}deg)`;
+        });
+    });
+
+    // Spotlight Effect
+    window.addEventListener('mousemove', (e) => {
+        const x = e.clientX;
+        const y = e.clientY;
+        document.documentElement.style.setProperty('--x', `${x}px`);
+        document.documentElement.style.setProperty('--y', `${y}px`);
     });
 
     function raf(time) {
