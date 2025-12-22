@@ -167,6 +167,8 @@ body {
   animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform;
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 300px;
 }
 
 .book-index {
@@ -280,6 +282,13 @@ body {
   position: relative;
   overflow: hidden;
   display: inline-block;
+}
+
+.rating-text.tbr {
+  color: var(--accents-5);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 3px solid var(--accents-2);
 }
 
 

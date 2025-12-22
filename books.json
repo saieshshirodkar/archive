@@ -89,5 +89,54 @@
     "author": "Kanae Minato",
     "rating_text": "9.5/10",
     "cover_url": "https://m.media-amazon.com/images/I/81oHYPlYcrL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    "id": 14,
+    "title": "The Silent Patient",
+    "author": "Alex Michaelides",
+    "rating_text": "",
+    "cover_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO9Ac-dksv63ckQO3sWflcrXeEQ1hyA8AV6Q&s"
+  },
+  {
+    "id": 15,
+    "title": "The Housemaid Is Watching",
+    "author": "Freida McFadden",
+    "rating_text": "",
+    "cover_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDdtLje9uQOnhpi6PDuGdllACgd9A834EbaA&s"
+  },
+  {
+    "id": 16,
+    "title": "The Reappearance of Rachel Price",
+    "author": "Holly Jackson",
+    "rating_text": "",
+    "cover_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_GQd8_u6uj_89P8DjE0vpeRm_SYYiUv2pAw&s"
+  },
+  {
+    "id": 17,
+    "title": "Five Survive",
+    "author": "Holly Jackson",
+    "rating_text": "",
+    "cover_url": "https://m.media-amazon.com/images/I/81nfHds5U4L._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    "id": 18,
+    "title": "We Were Liars",
+    "author": "E. Lockhart",
+    "rating_text": "",
+    "cover_url": "https://cdn.thestorygraph.com/kwip5fvv7hiotxe3tsfvr6x3a7da"
+  },
+  {
+    "id": 19,
+    "title": "One Of Us Is Lying",
+    "author": "Karen M. McManus",
+    "rating_text": "",
+    "cover_url": "https://m.media-amazon.com/images/I/71bX-n6cScL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    "id": 20,
+    "title": "Murder On The Orient Express",
+    "author": "Agatha Christie",
+    "rating_text": "",
+    "cover_url": "https://m.media-amazon.com/images/I/71QZPV2T4tL._AC_UF1000,1000_QL80_.jpg"
   }
 ]

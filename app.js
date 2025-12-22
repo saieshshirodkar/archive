@@ -26,16 +26,20 @@ function initSmoothScroll() {
         });
     });
 
-    // Spotlight Effect
+    // Spotlight Effect - Throttled for performance
+    let mouseX = 0, mouseY = 0;
     window.addEventListener('mousemove', (e) => {
-        const x = e.clientX;
-        const y = e.clientY;
-        document.documentElement.style.setProperty('--x', `${x}px`);
-        document.documentElement.style.setProperty('--y', `${y}px`);
+        mouseX = e.clientX;
+        mouseY = e.clientY;
     });
 
     function raf(time) {
         lenis.raf(time);
+        
+        // Update spotlight position in RAF
+        document.documentElement.style.setProperty('--x', `${mouseX}px`);
+        document.documentElement.style.setProperty('--y', `${mouseY}px`);
+        
         requestAnimationFrame(raf);
     }
 
@@ -68,13 +72,23 @@ function renderBooks(books) {
         bookElement.style.animationDelay = `${index * 0.1}s`;
         
         const bookNumber = (index + 1).toString().padStart(2, '0');
+        const isTBR = !book.rating_text || book.rating_text.trim() === "";
+        const ratingDisplay = isTBR ? "TBR" : book.rating_text;
+        const ratingClass = isTBR ? "rating-text tbr" : "rating-text";
         
         bookElement.innerHTML = `
             <div class="book-index">${bookNumber}</div>
-            ${book.cover_url ? `<div class="book-cover-container"><img src="${book.cover_url}" alt="${book.title}" class="book-cover"></div>` : ''}
+            ${book.cover_url ? `
+                <div class="book-cover-container">
+                    <img src="${book.cover_url}" 
+                         alt="${book.title}" 
+                         class="book-cover" 
+                         loading="lazy" 
+                         decoding="async">
+                </div>` : ''}
             <div class="book-content">
                 <div class="book-meta">
-                    <span class="rating-text">${book.rating_text}</span>
+                    <span class="${ratingClass}">${ratingDisplay}</span>
                 </div>
                 <h2 class="book-title">${book.title}</h2>
                 <div class="book-author">by ${book.author}</div>
