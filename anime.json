@@ -145,5 +145,33 @@
     "author": "Kentaro Miura",
     "rating_text": "9/10",
     "cover_url": "assets/covers/anime/berserk.webp"
+  },
+  {
+    "id": 22,
+    "title": "Fullmetal Alchemist: Brotherhood",
+    "author": "Hiromu Arakawa",
+    "rating_text": "",
+    "cover_url": "assets/covers/anime/fullmetal-alchemist-brotherhood.webp"
+  },
+  {
+    "id": 23,
+    "title": "Naruto",
+    "author": "Masashi Kishimoto",
+    "rating_text": "",
+    "cover_url": "assets/covers/anime/naruto.webp"
+  },
+  {
+    "id": 24,
+    "title": "Mob Psycho 100",
+    "author": "ONE",
+    "rating_text": "",
+    "cover_url": "assets/covers/anime/mob-psycho-100.webp"
+  },
+  {
+    "id": 25,
+    "title": "Spy x Family",
+    "author": "Tatsuya Endo",
+    "rating_text": "",
+    "cover_url": "assets/covers/anime/spy-x-family.webp"
   }
 ]

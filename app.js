@@ -139,12 +139,27 @@ function renderItems(items) {
     const fragment = document.createDocumentFragment();
 
     items.forEach((item, index) => {
+        const isOnePiece = item.title === 'One Piece';
+        const cardClass = isOnePiece ? 'book-card is-legendary' : 'book-card';
+        const titleClass = isOnePiece ? 'book-title shimmer-text' : 'book-title';
+        
         const element = document.createElement('article');
-        element.className = 'book-card';
+        element.className = cardClass;
         
         const number = (index + 1).toString().padStart(2, '0');
         const ratingDisplay = item.rating_text || "TBR";
         const ratingClass = !item.rating_text ? "rating-text tbr" : "rating-text";
+        
+        const titleHtml = isOnePiece ? `
+            <div class="legendary-title-container">
+                <h2 class="${titleClass}">${item.title}</h2>
+                <div class="text-sparkles">
+                    <div class="t-sparkle"></div>
+                    <div class="t-sparkle"></div>
+                    <div class="t-sparkle"></div>
+                </div>
+            </div>
+        ` : `<h2 class="${titleClass}">${item.title}</h2>`;
         
         element.innerHTML = `
             <div class="book-index">${number}</div>
@@ -155,9 +170,14 @@ function renderItems(items) {
                 <div class="book-meta">
                     <span class="${ratingClass}">${ratingDisplay}</span>
                 </div>
-                <h2 class="book-title">${item.title}</h2>
+                ${titleHtml}
                 <div class="book-author">by ${item.author || 'Unknown'}</div>
             </div>
+            ${isOnePiece ? `
+                <div class="legendary-visual">
+                    <img src="assets/covers/anime/luffy-peak.gif" alt="Luffy Legendary">
+                </div>
+            ` : ''}
         `;
         
         fragment.appendChild(element);
