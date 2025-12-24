@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "title": "Death Note",
+    "author": "Tsugumi Ohba & Takeshi Obata",
+    "rating_text": "8.5/10",
+    "cover_url": "assets/covers/anime/death-note.webp"
+  },
+  {
+    "id": 2,
+    "title": "Monster",
+    "author": "Naoki Urasawa",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/anime/monster.webp"
+  },
+  {
+    "id": 3,
+    "title": "Vinland Saga",
+    "author": "Makoto Yukimura",
+    "rating_text": "9/10",
+    "cover_url": "assets/covers/anime/vinland-saga.webp"
+  },
+  {
+    "id": 4,
+    "title": "Attack On Titan",
+    "author": "Hajime Isayama",
+    "rating_text": "8.5/10",
+    "cover_url": "assets/covers/anime/attack-on-titan.webp"
+  },
+  {
+    "id": 5,
+    "title": "Hunter x Hunter",
+    "author": "Yoshihiro Togashi",
+    "rating_text": "9/10",
+    "cover_url": "assets/covers/anime/hunter-x-hunter.webp"
+  },
+  {
+    "id": 6,
+    "title": "Erased",
+    "author": "Kei Sanbe",
+    "rating_text": "7.5/10",
+    "cover_url": "assets/covers/anime/erased.webp"
+  },
+  {
+    "id": 7,
+    "title": "Solo Leveling",
+    "author": "Chugong & DUBU",
+    "rating_text": "7.5/10",
+    "cover_url": "assets/covers/anime/solo-leveling.webp"
+  },
+  {
+    "id": 8,
+    "title": "Sakamoto Days",
+    "author": "Yuto Suzuki",
+    "rating_text": "7/10",
+    "cover_url": "assets/covers/anime/sakamoto-days.webp"
+  },
+  {
+    "id": 9,
+    "title": "One Piece",
+    "author": "Eiichiro Oda",
+    "rating_text": "10/10",
+    "cover_url": "assets/covers/anime/one-piece.webp"
+  },
+  {
+    "id": 10,
+    "title": "Kaiju No. 8",
+    "author": "Naoya Matsumoto",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/anime/kaiju-no-8.webp"
+  },
+  {
+    "id": 11,
+    "title": "Bleach",
+    "author": "Tite Kubo",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/anime/bleach.webp"
+  },
+  {
+    "id": 12,
+    "title": "Jujutsu Kaisen",
+    "author": "Gege Akutami",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/anime/jujutsu-kaisen.webp"
+  },
+  {
+    "id": 13,
+    "title": "Chainsaw Man",
+    "author": "Tatsuki Fujimoto",
+    "rating_text": "8.5/10",
+    "cover_url": "assets/covers/anime/chainsaw-man.webp"
+  },
+  {
+    "id": 14,
+    "title": "One Punch Man",
+    "author": "ONE & Yusuke Murata",
+    "rating_text": "8.7/10",
+    "cover_url": "assets/covers/anime/one-punch-man.webp"
+  },
+  {
+    "id": 15,
+    "title": "Demon Slayer",
+    "author": "Koyoharu Gotouge",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/anime/demon-slayer.webp"
+  },
+  {
+    "id": 16,
+    "title": "Code Geass",
+    "author": "Ichir\u014d \u014ckouchi & Gor\u014d Taniguchi",
+    "rating_text": "8.5/10",
+    "cover_url": "assets/covers/anime/code-geass.webp"
+  },
+  {
+    "id": 17,
+    "title": "Dragon Ball",
+    "author": "Akira Toriyama",
+    "rating_text": "9.5/10",
+    "cover_url": "assets/covers/anime/dragon-ball.webp"
+  },
+  {
+    "id": 18,
+    "title": "Dragon Ball Z",
+    "author": "Akira Toriyama",
+    "rating_text": "9/10",
+    "cover_url": "assets/covers/anime/dragon-ball-z.webp"
+  },
+  {
+    "id": 19,
+    "title": "Steins;Gate",
+    "author": "5pb. & Nitroplus",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/anime/steins-gate.webp"
+  },
+  {
+    "id": 20,
+    "title": "Berserk",
+    "author": "Kentaro Miura",
+    "rating_text": "9/10",
+    "cover_url": "assets/covers/anime/berserk.webp"
+  }
+]
