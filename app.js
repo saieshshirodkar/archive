@@ -1,10 +1,30 @@
 let currentCategory = localStorage.getItem('selectedCategory') || 'books';
+let isLoading = false;
 const dataCache = {
     books: null,
     anime: null
 };
 
+const DOMCache = {
+    container: null,
+    tabs: null,
+    indicator: null,
+    stats: null,
+    bookList: null
+};
+
+let intersectionObserver = null;
+
+function initDOMCache() {
+    DOMCache.container = document.querySelector('.container');
+    DOMCache.tabs = document.querySelectorAll('.tab-btn');
+    DOMCache.indicator = document.getElementById('tab-indicator');
+    DOMCache.stats = document.getElementById('total-books');
+    DOMCache.bookList = document.getElementById('book-list');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+    initDOMCache();
     syncTabUI(currentCategory);
     fetchData(currentCategory);
     initSmoothScroll();
@@ -12,14 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function syncTabUI(category) {
-    const tabs = document.querySelectorAll('.tab-btn');
-    const indicator = document.getElementById('tab-indicator');
-    
-    tabs.forEach(tab => {
+    DOMCache.tabs.forEach(tab => {
         if (tab.getAttribute('data-category') === category) {
             tab.classList.add('active');
-            // Small delay to ensure DOM is ready for rect calculation
-            setTimeout(() => updateIndicator(tab, indicator), 10);
+            requestAnimationFrame(() => updateIndicator(tab, DOMCache.indicator));
         } else {
             tab.classList.remove('active');
         }
@@ -36,29 +52,33 @@ function updateIndicator(activeTab, indicator) {
 }
 
 function initTabs() {
-    const tabs = document.querySelectorAll('.tab-btn');
-    const indicator = document.getElementById('tab-indicator');
-
-    tabs.forEach(tab => {
+    DOMCache.tabs.forEach(tab => {
         tab.addEventListener('click', () => {
             const category = tab.getAttribute('data-category');
-            if (category === currentCategory) return;
+            if (category === currentCategory || isLoading) return;
 
-            // Update UI
-            tabs.forEach(t => t.classList.remove('active'));
+            isLoading = true;
+
+            DOMCache.tabs.forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
-            updateIndicator(tab, indicator);
+            updateIndicator(tab, DOMCache.indicator);
 
             currentCategory = category;
             localStorage.setItem('selectedCategory', category);
-            fetchData(category);
+            fetchData(category).finally(() => {
+                isLoading = false;
+            });
         });
     });
 
+    let resizeTimeout;
     window.addEventListener('resize', () => {
-        const activeTab = document.querySelector('.tab-btn.active');
-        updateIndicator(activeTab, indicator);
-    });
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            const activeTab = document.querySelector('.tab-btn.active');
+            updateIndicator(activeTab, DOMCache.indicator);
+        }, 100);
+    }, { passive: true });
 }
 
 function initSmoothScroll() {
@@ -73,23 +93,8 @@ function initSmoothScroll() {
         touchMultiplier: 2,
     });
 
-    lenis.on('scroll', ({ velocity }) => {
-        const skew = Math.min(Math.max(velocity * 0.05, -2.5), 2.5);
-        document.querySelectorAll('.book-card.visible').forEach(card => {
-            card.style.transform = `skewY(${skew}deg)`;
-        });
-    });
-
-    let mouseX = 0, mouseY = 0;
-    window.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-    });
-
     function raf(time) {
         lenis.raf(time);
-        document.documentElement.style.setProperty('--x', `${mouseX}px`);
-        document.documentElement.style.setProperty('--y', `${mouseY}px`);
         requestAnimationFrame(raf);
     }
 
@@ -97,49 +102,63 @@ function initSmoothScroll() {
 }
 
 async function fetchData(category) {
-    const container = document.getElementById('book-list');
+    const container = DOMCache.bookList;
     
     if (dataCache[category]) {
-        renderItems(dataCache[category]);
+        await crossFade(container, () => renderItems(dataCache[category]));
         updateStats(dataCache[category].length, category);
         return;
     }
 
-  // Show skeleton while loading
-  container.innerHTML = `
-        <div class="skeleton-card">
-            <div class="skeleton-text" style="width: 20px; height: 12px; margin-top: 6px;"></div>
-            <div class="skeleton-cover"></div>
-            <div class="skeleton-content">
-                <div class="skeleton-text" style="width: 40%"></div>
-                <div class="skeleton-text" style="width: 80%; height: 32px"></div>
-                <div class="skeleton-text" style="width: 60%"></div>
+    await crossFade(container, async () => {
+        container.innerHTML = `
+            <div class="skeleton-card">
+                <div class="skeleton-text" style="width: 20px; height: 12px; margin-top: 6px;"></div>
+                <div class="skeleton-cover"></div>
+                <div class="skeleton-content">
+                    <div class="skeleton-text" style="width: 40%"></div>
+                    <div class="skeleton-text" style="width: 80%; height: 32px"></div>
+                    <div class="skeleton-text" style="width: 60%"></div>
+                </div>
             </div>
-        </div>
-    `;
+        `;
+        
+        try {
+            const response = await fetch(`${category}.json`);
+            const data = await response.json();
+            dataCache[category] = data;
+            renderItems(data);
+            updateStats(data.length, category);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+            container.innerHTML = `<div class="loading-state">Failed to load ${category}.</div>`;
+        }
+    });
+}
 
-    try {
-        const response = await fetch(`${category}.json`);
-        const data = await response.json();
-        dataCache[category] = data;
-        renderItems(data);
-        updateStats(data.length, category);
-    } catch (error) {
-        console.error('Error fetching data:', error);
-        container.innerHTML = `<div class="loading-state">Failed to load ${category}.</div>`;
-    }
+function crossFade(container, callback) {
+    return new Promise(resolve => {
+        container.style.transition = 'opacity 0.25s ease-out';
+        container.style.opacity = '0';
+        
+        setTimeout(async () => {
+            await callback();
+            container.style.opacity = '1';
+            setTimeout(resolve, 250);
+        }, 250);
+    });
 }
 
 function renderItems(items) {
-    const container = document.getElementById('book-list');
+    const container = DOMCache.bookList;
     
-    // Smooth container fade-out before replacement
     container.style.opacity = '1';
     
     const fragment = document.createDocumentFragment();
+    const isOnePieceIndex = items.findIndex(item => item.title === 'One Piece');
 
     items.forEach((item, index) => {
-        const isOnePiece = item.title === 'One Piece';
+        const isOnePiece = index === isOnePieceIndex && isOnePieceIndex !== -1;
         const cardClass = isOnePiece ? 'book-card is-legendary' : 'book-card';
         const titleClass = isOnePiece ? 'book-title shimmer-text' : 'book-title';
         
@@ -149,6 +168,7 @@ function renderItems(items) {
         const number = (index + 1).toString().padStart(2, '0');
         const ratingDisplay = item.rating_text || "TBR";
         const ratingClass = !item.rating_text ? "rating-text tbr" : "rating-text";
+        const loadingAttr = index < 3 ? 'loading="eager"' : 'loading="lazy"';
         
         const titleHtml = isOnePiece ? `
             <div class="legendary-title-container">
@@ -164,7 +184,7 @@ function renderItems(items) {
         element.innerHTML = `
             <div class="book-index">${number}</div>
             <div class="book-cover-container">
-                <img data-src="${item.cover_url}" alt="${item.title}" class="book-cover">
+                <img data-src="${item.cover_url}" alt="${item.title}" class="book-cover" ${loadingAttr}>
             </div>
             <div class="book-content">
                 <div class="book-meta">
@@ -175,7 +195,7 @@ function renderItems(items) {
             </div>
             ${isOnePiece ? `
                 <div class="legendary-visual">
-                    <img src="assets/covers/anime/luffy-peak.gif" alt="Luffy Legendary">
+                    <img src="assets/covers/anime/luffy-peak.gif" alt="Luffy Legendary" loading="lazy">
                 </div>
             ` : ''}
         `;
@@ -186,15 +206,17 @@ function renderItems(items) {
     container.innerHTML = '';
     container.appendChild(fragment);
 
-    // Initialize Intersection Observer for reveals
-    const observer = new IntersectionObserver((entries) => {
+    if (intersectionObserver) {
+        intersectionObserver.disconnect();
+    }
+
+    intersectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
                 
-                // Lazy load image inside
-                const img = entry.target.querySelector('img');
-                if (img && img.dataset.src) {
+                const img = entry.target.querySelector('img[data-src]');
+                if (img) {
                     img.src = img.dataset.src;
                     img.onload = () => img.classList.add('loaded');
                     img.onerror = () => {
@@ -209,13 +231,12 @@ function renderItems(items) {
         rootMargin: '50px'
     });
 
-    document.querySelectorAll('.book-card').forEach(card => observer.observe(card));
+    container.querySelectorAll('.book-card').forEach(card => intersectionObserver.observe(card));
 }
 
 function updateStats(count, category) {
-    const statsEl = document.getElementById('total-books');
-    if (statsEl) {
+    if (DOMCache.stats) {
         const label = category === 'books' ? 'Book' : 'Anime';
-        statsEl.textContent = `${count} ${label}${count !== 1 ? "s" : ""}`;
+        DOMCache.stats.textContent = `${count} ${label}${count !== 1 ? "s" : ""}`;
     }
 }

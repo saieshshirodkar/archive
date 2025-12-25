@@ -38,30 +38,11 @@ html.lenis body {
 
 /* Texture Overlay */
 .texture-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0.025;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  display: none;
 }
 
 .spotlight {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 1;
-  background: radial-gradient(
-    600px circle at var(--x, 50%) var(--y, 50%),
-    rgba(255, 255, 255, 0.03),
-    transparent 40%
-  );
+  display: none;
 }
 
 * {
@@ -72,15 +53,6 @@ html.lenis body {
 
 body {
   background: #000;
-  background-image: radial-gradient(
-      at 0% 0%,
-      rgba(20, 20, 20, 1) 0px,
-      transparent 50%
-    ),
-    radial-gradient(at 100% 0%, rgba(15, 15, 15, 1) 0px, transparent 50%),
-    radial-gradient(at 50% 100%, rgba(10, 10, 10, 1) 0px, transparent 50%);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   color: #fff;
   font-family: var(--font-sans);
   line-height: 1.5;
@@ -98,9 +70,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.9);
   padding: 16px 0;
   border-bottom: 1px solid var(--border);
 }
@@ -182,7 +152,6 @@ body {
   background: rgba(255, 255, 255, 0.03);
   min-width: 90px;
   text-align: center;
-  backdrop-filter: blur(10px);
 }
 
 .book-grid {
@@ -223,11 +192,8 @@ body {
     1;
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform, opacity;
-  content-visibility: auto;
-  contain-intrinsic-size: 1px 300px;
+  transition: opacity 0.5s ease,
+    transform 0.5s ease;
 }
 
 .book-card.visible {
@@ -272,28 +238,7 @@ body {
 
 .skeleton-cover::after,
 .skeleton-text::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.03),
-    transparent
-  );
-  animation: shimmer 1.5s infinite;
-}
-
-@keyframes shimmer {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
+  display: none;
 }
 
 .book-card:last-child {
@@ -309,7 +254,7 @@ body {
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   position: relative;
-  transform: translateZ(0); /* Hardware acceleration */
+  contain: strict;
 }
 
 .book-cover-container::after {
@@ -330,8 +275,7 @@ body {
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: opacity 0.6s ease-in-out;
-  filter: brightness(0.9);
+  transition: opacity 0.3s ease;
 }
 
 .book-cover.loaded {
@@ -430,6 +374,7 @@ body {
   width: 100%;
   height: 100%;
   pointer-events: none;
+  contain: strict;
 }
 
 .t-sparkle {
@@ -441,6 +386,7 @@ body {
   box-shadow: 0 0 5px #fff, 0 0 10px #fff;
   opacity: 0;
   animation: t-sparkle-anim 2s infinite ease-in-out;
+  will-change: transform, opacity;
 }
 
 .t-sparkle:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
@@ -512,6 +458,27 @@ body {
   color: var(--accents-4);
   font-family: var(--font-mono);
   font-size: 0.8rem;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .book-card {
+    opacity: 1;
+    transform: none;
+  }
+  
+  .texture-overlay,
+  .spotlight {
+    display: none;
+  }
 }
 
 /* Mobile */
