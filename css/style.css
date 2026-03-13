@@ -346,10 +346,10 @@ body {
   line-height: 1.05;
   background: linear-gradient(
     to right,
-    #fff 20%,
-    #a0a0a0 40%,
-    #fff 60%,
-    #fff 80%
+    #ffd700 20%,
+    #b8860b 40%,
+    #ffd700 60%,
+    #ffd700 80%
   );
   background-size: 200% auto;
   color: #fff;
@@ -381,9 +381,9 @@ body {
   position: absolute;
   width: 2px;
   height: 2px;
-  background: #fff;
+  background: #ffd700;
   border-radius: 1px;
-  box-shadow: 0 0 5px #fff, 0 0 10px #fff;
+  box-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700;
   opacity: 0;
   animation: t-sparkle-anim 2s infinite ease-in-out;
   will-change: transform, opacity;
@@ -400,16 +400,16 @@ body {
 }
 
 .is-legendary .rating-text {
-  background: #fff !important;
+  background: linear-gradient(135deg, #ffd700, #b8860b) !important;
   color: #000 !important;
   border: none !important;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
   font-weight: 800;
 }
 
 .is-legendary .book-cover-container {
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  box-shadow: 0 0 40px rgba(255, 215, 0, 0.15);
 }
 
 .legendary-visual {
@@ -433,7 +433,7 @@ body {
   opacity: 1;
   right: 20px;
   transform: translateY(-50%) scale(1);
-  box-shadow: 0 0 60px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 60px rgba(255, 215, 0, 0.15);
 }
 
 .legendary-visual img {

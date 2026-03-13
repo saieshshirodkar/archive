@@ -148,30 +148,58 @@
   },
   {
     "id": 22,
-    "title": "Fullmetal Alchemist: Brotherhood",
-    "author": "Hiromu Arakawa",
-    "rating_text": "",
-    "cover_url": "assets/covers/anime/fullmetal-alchemist-brotherhood.webp"
+    "title": "Classroom of the Elite",
+    "author": "Shōgo Kinugasa",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/anime/classroom-of-the-elite.webp"
   },
   {
     "id": 23,
+    "title": "Fullmetal Alchemist: Brotherhood",
+    "author": "Hiromu Arakawa",
+    "rating_text": "9/10",
+    "cover_url": "assets/covers/anime/fullmetal-alchemist-brotherhood.webp"
+  },
+  {
+    "id": 24,
     "title": "Naruto",
     "author": "Masashi Kishimoto",
     "rating_text": "",
     "cover_url": "assets/covers/anime/naruto.webp"
   },
   {
-    "id": 24,
+    "id": 25,
+    "title": "Naruto Shippuden",
+    "author": "Masashi Kishimoto",
+    "rating_text": "",
+    "cover_url": "assets/covers/anime/naruto-shippuden.webp"
+  },
+  {
+    "id": 26,
     "title": "Mob Psycho 100",
     "author": "ONE",
     "rating_text": "",
     "cover_url": "assets/covers/anime/mob-psycho-100.webp"
   },
   {
-    "id": 25,
+    "id": 27,
     "title": "Spy x Family",
     "author": "Tatsuya Endo",
     "rating_text": "",
     "cover_url": "assets/covers/anime/spy-x-family.webp"
+  },
+  {
+    "id": 28,
+    "title": "Made in Abyss",
+    "author": "Akihito Tsukushi",
+    "rating_text": "",
+    "cover_url": "assets/covers/anime/made-in-abyss.webp"
+  },
+  {
+    "id": 29,
+    "title": "Frieren: Beyond Journey's End",
+    "author": "Kanehito Yamada & Tsukasa Abe",
+    "rating_text": "",
+    "cover_url": "assets/covers/anime/frieren.webp"
   }
 ]

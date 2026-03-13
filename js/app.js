@@ -124,7 +124,7 @@ async function fetchData(category) {
         `;
         
         try {
-            const response = await fetch(`${category}.json`);
+            const response = await fetch(`data/${category}.json`);
             const data = await response.json();
             dataCache[category] = data;
             renderItems(data);
