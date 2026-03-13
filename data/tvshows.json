@@ -1,0 +1,191 @@
+[
+  {
+    "id": 1,
+    "title": "Breaking Bad",
+    "author": "Vince Gilligan",
+    "rating_text": "10/10",
+    "cover_url": "assets/covers/tvshows/breaking-bad.webp"
+  },
+  {
+    "id": 2,
+    "title": "Dark",
+    "author": "Baran bo Odar & Jantje Friese",
+    "rating_text": "10/10",
+    "cover_url": "assets/covers/tvshows/dark.webp"
+  },
+  {
+    "id": 3,
+    "title": "Stranger Things",
+    "author": "The Duffer Brothers",
+    "rating_text": "8.5/10",
+    "cover_url": "assets/covers/tvshows/stranger-things.webp"
+  },
+  {
+    "id": 4,
+    "title": "Better Call Saul",
+    "author": "Vince Gilligan & Peter Gould",
+    "rating_text": "9/10",
+    "cover_url": "assets/covers/tvshows/better-call-saul.webp"
+  },
+  {
+    "id": 5,
+    "title": "Mr. Robot",
+    "author": "Sam Esmail",
+    "rating_text": "9/10",
+    "cover_url": "assets/covers/tvshows/mr-robot.webp"
+  },
+  {
+    "id": 6,
+    "title": "Young Sheldon",
+    "author": "Chuck Lorre & Steven Molaro",
+    "rating_text": "8.7/10",
+    "cover_url": "assets/covers/tvshows/young-sheldon.webp"
+  },
+  {
+    "id": 7,
+    "title": "Superstore",
+    "author": "Justin Spitzer",
+    "rating_text": "9.3/10",
+    "cover_url": "assets/covers/tvshows/superstore.webp"
+  },
+  {
+    "id": 8,
+    "title": "Malcolm in the Middle",
+    "author": "Linwood Boomer",
+    "rating_text": "9.5/10",
+    "cover_url": "assets/covers/tvshows/malcolm-in-the-middle.webp"
+  },
+  {
+    "id": 9,
+    "title": "Chernobyl",
+    "author": "Craig Mazin",
+    "rating_text": "8.8/10",
+    "cover_url": "assets/covers/tvshows/chernobyl.webp"
+  },
+  {
+    "id": 10,
+    "title": "Game of Thrones",
+    "author": "David Benioff & D.B. Weiss",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/tvshows/game-of-thrones.webp"
+  },
+  {
+    "id": 11,
+    "title": "Dexter",
+    "author": "James Manos Jr.",
+    "rating_text": "8.9/10",
+    "cover_url": "assets/covers/tvshows/dexter.webp"
+  },
+  {
+    "id": 12,
+    "title": "The Walking Dead",
+    "author": "Frank Darabont",
+    "rating_text": "9.3/10",
+    "cover_url": "assets/covers/tvshows/the-walking-dead.webp"
+  },
+  {
+    "id": 13,
+    "title": "Black Mirror",
+    "author": "Charlie Brooker",
+    "rating_text": "9/10",
+    "cover_url": "assets/covers/tvshows/black-mirror.webp"
+  },
+  {
+    "id": 14,
+    "title": "Severance",
+    "author": "Dan Erickson",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/tvshows/severance.webp"
+  },
+  {
+    "id": 15,
+    "title": "Money Heist",
+    "author": "Álex Pina",
+    "rating_text": "9/10",
+    "cover_url": "assets/covers/tvshows/money-heist.webp"
+  },
+  {
+    "id": 16,
+    "title": "Lost",
+    "author": "J.J. Abrams",
+    "rating_text": "8.8/10",
+    "cover_url": "assets/covers/tvshows/lost.webp"
+  },
+  {
+    "id": 17,
+    "title": "The Umbrella Academy",
+    "author": "Steve Blackman",
+    "rating_text": "8.5/10",
+    "cover_url": "assets/covers/tvshows/the-umbrella-academy.webp"
+  },
+  {
+    "id": 18,
+    "title": "Loki",
+    "author": "Michael Waldron",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/tvshows/loki.webp"
+  },
+  {
+    "id": 19,
+    "title": "Moon Knight",
+    "author": "Jeremy Slater",
+    "rating_text": "8.9/10",
+    "cover_url": "assets/covers/tvshows/moon-knight.webp"
+  },
+  {
+    "id": 20,
+    "title": "What If",
+    "author": "A.C. Bradley",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/tvshows/what-if.webp"
+  },
+  {
+    "id": 21,
+    "title": "Never Have I Ever",
+    "author": "Mindy Kaling",
+    "rating_text": "9/10",
+    "cover_url": "assets/covers/tvshows/never-have-i-ever.webp"
+  },
+  {
+    "id": 22,
+    "title": "13 Reasons Why",
+    "author": "Brian Yorkey",
+    "rating_text": "7/10",
+    "cover_url": "assets/covers/tvshows/13-reasons-why.webp"
+  },
+  {
+    "id": 23,
+    "title": "Baby Reindeer",
+    "author": "Richard Gadd",
+    "rating_text": "7/10",
+    "cover_url": "assets/covers/tvshows/baby-reindeer.webp"
+  },
+  {
+    "id": 24,
+    "title": "Cobra Kai",
+    "author": "Josh Heald",
+    "rating_text": "7/10",
+    "cover_url": "assets/covers/tvshows/cobra-kai.webp"
+  },
+  {
+    "id": 25,
+    "title": "Squid Game",
+    "author": "Hwang Dong-hyuk",
+    "rating_text": "8.6/10",
+    "cover_url": "assets/covers/tvshows/squid-game.webp"
+  },
+  {
+    "id": 26,
+    "title": "Alice in Borderland",
+    "author": "Haro Aso",
+    "rating_text": "9/10",
+    "cover_url": "assets/covers/tvshows/alice-in-borderland.webp"
+  },
+  {
+    "id": 27,
+    "title": "The 8 Show",
+    "author": "Han Jun-hee",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/tvshows/the-8-show.webp"
+  }
+]
