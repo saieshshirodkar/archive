@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "title": "Superstore",
+    "rating_text": "9/10",
+    "cover_url": "assets/covers/shows/superstore.webp",
+    "year": 2015
+  },
+  {
+    "id": 2,
+    "title": "Malcolm in the Middle",
+    "rating_text": "9.3/10",
+    "cover_url": "assets/covers/shows/malcolm-in-the-middle.webp",
+    "year": 2000
+  },
+  {
+    "id": 3,
+    "title": "The Walking Dead",
+    "rating_text": "8.1/10",
+    "cover_url": "assets/covers/shows/the-walking-dead.webp",
+    "year": 2010
+  },
+  {
+    "id": 4,
+    "title": "Sapne vs Everyone",
+    "rating_text": "8.4/10",
+    "cover_url": "assets/covers/shows/sapne-vs-everyone.webp",
+    "year": 2023
+  },
+  {
+    "id": 5,
+    "title": "Silicon Valley",
+    "rating_text": "8.7/10",
+    "cover_url": "assets/covers/shows/silicon-valley.webp",
+    "year": 2014
+  },
+  {
+    "id": 6,
+    "title": "Pritam and Pedro",
+    "rating_text": "8.7/10",
+    "cover_url": "assets/covers/shows/pritam-and-pedro.webp",
+    "year": 2026
+  },
+  {
+    "id": 7,
+    "title": "Raakh",
+    "rating_text": "8.3/10",
+    "cover_url": "assets/covers/shows/raakh.webp",
+    "year": 2026
+  }
+]

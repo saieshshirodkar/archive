@@ -1,0 +1,10 @@
+.is-legendary .rating-text {
+  background: var(--gold-glow);
+  color: var(--gold);
+  border: 1px solid var(--gold-border);
+  box-shadow: 0 0 12px var(--gold-shadow);
+}
+
+.is-legendary .book-cover-container {
+  box-shadow: var(--gold-aura);
+}

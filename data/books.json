@@ -1,0 +1,562 @@
+[
+  {
+    "id": 1,
+    "title": "High School Musical: Stories from East High #3",
+    "author": "Disney",
+    "rating_text": "7/10",
+    "cover_url": "assets/covers/books/high-school-musical-stories-from-east-high.webp",
+    "year": 2007
+  },
+  {
+    "id": 2,
+    "title": "Beneath The Pyramids",
+    "author": "Christian Jacq",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/books/beneath-the-pyramids.webp",
+    "year": 1993
+  },
+  {
+    "id": 3,
+    "title": "And Then There Were None",
+    "author": "Agatha Christie",
+    "rating_text": "9/10",
+    "cover_url": "assets/covers/books/and-then-there-were-none.webp",
+    "year": 1939
+  },
+  {
+    "id": 4,
+    "title": "A Good Girl's Guide To Murder",
+    "author": "Holly Jackson",
+    "rating_text": "9.5/10",
+    "cover_url": "assets/covers/books/a-good-girl-s-guide-to-murder.webp",
+    "year": 2019
+  },
+  {
+    "id": 5,
+    "title": "Good Girl, Bad Blood",
+    "author": "Holly Jackson",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/books/good-girl-bad-blood.webp",
+    "year": 2020
+  },
+  {
+    "id": 6,
+    "title": "As Good As Dead",
+    "author": "Holly Jackson",
+    "rating_text": "9/10",
+    "cover_url": "assets/covers/books/as-good-as-dead.webp",
+    "year": 2021
+  },
+  {
+    "id": 7,
+    "title": "Kill Joy",
+    "author": "Holly Jackson",
+    "rating_text": "7/10",
+    "cover_url": "assets/covers/books/kill-joy.webp",
+    "year": 2021
+  },
+  {
+    "id": 8,
+    "title": "The Housemaid",
+    "author": "Freida McFadden",
+    "rating_text": "9/10",
+    "cover_url": "assets/covers/books/the-housemaid.webp",
+    "year": 2022
+  },
+  {
+    "id": 9,
+    "title": "The Girl in Room 105",
+    "author": "Chetan Bhagat",
+    "rating_text": "8.5/10",
+    "cover_url": "assets/covers/books/the-girl-in-room-105.webp",
+    "year": 2018
+  },
+  {
+    "id": 10,
+    "title": "Sharp Objects",
+    "author": "Gillian Flynn",
+    "rating_text": "7/10",
+    "cover_url": "assets/covers/books/sharp-objects.webp",
+    "year": 2006
+  },
+  {
+    "id": 11,
+    "title": "One Arranged Murder",
+    "author": "Chetan Bhagat",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/books/one-arranged-murder.webp",
+    "year": 2020
+  },
+  {
+    "id": 12,
+    "title": "400 Days",
+    "author": "Chetan Bhagat",
+    "rating_text": "7.5/10",
+    "cover_url": "assets/covers/books/400-days.webp",
+    "year": 2021
+  },
+  {
+    "id": 13,
+    "title": "The Housemaid's Secret",
+    "author": "Freida McFadden",
+    "rating_text": "6/10",
+    "cover_url": "assets/covers/books/the-housemaid-s-secret.webp",
+    "year": 2023
+  },
+  {
+    "id": 14,
+    "title": "Confessions",
+    "author": "Kanae Minato",
+    "rating_text": "9.5/10",
+    "cover_url": "assets/covers/books/confessions.webp",
+    "year": 2008
+  },
+  {
+    "id": 15,
+    "title": "Murder On The Orient Express",
+    "author": "Agatha Christie",
+    "rating_text": "7.5/10",
+    "cover_url": "assets/covers/books/murder-on-the-orient-express.webp",
+    "year": 1934
+  },
+  {
+    "id": 16,
+    "title": "The Murder of Roger Ackroyd",
+    "author": "Agatha Christie",
+    "rating_text": "6/10",
+    "cover_url": "assets/covers/books/the-murder-of-roger-ackroyd.webp",
+    "year": 1926
+  },
+  {
+    "id": 17,
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "rating_text": "6/10",
+    "cover_url": "assets/covers/books/the-alchemist.webp",
+    "year": 1988
+  },
+  {
+    "id": 18,
+    "title": "Animal Farm",
+    "author": "George Orwell",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/books/animal-farm.webp",
+    "year": 1945
+  },
+  {
+    "id": 19,
+    "title": "Gone Girl",
+    "author": "Gillian Flynn",
+    "rating_text": "4/10",
+    "cover_url": "assets/covers/books/gone-girl.webp",
+    "year": 2012
+  },
+  {
+    "id": 20,
+    "title": "The Silent Patient",
+    "author": "Alex Michaelides",
+    "rating_text": "8.5/10",
+    "cover_url": "assets/covers/books/the-silent-patient.webp",
+    "year": 2019
+  },
+  {
+    "id": 21,
+    "title": "1984",
+    "author": "George Orwell",
+    "rating_text": "5/10",
+    "cover_url": "assets/covers/books/1984.webp",
+    "year": 1949
+  },
+  {
+    "id": 22,
+    "title": "Verity",
+    "author": "Colleen Hoover",
+    "rating_text": "6/10",
+    "cover_url": "assets/covers/books/verity.webp",
+    "year": 2021
+  },
+  {
+    "id": 23,
+    "title": "We Were Liars",
+    "author": "E. Lockhart",
+    "rating_text": "6/10",
+    "cover_url": "assets/covers/books/we-were-liars.webp",
+    "year": 2014
+  },
+  {
+    "id": 24,
+    "title": "Family of Liars",
+    "author": "E. Lockhart",
+    "rating_text": "3/10",
+    "cover_url": "assets/covers/books/family-of-liars.webp",
+    "year": 2022
+  },
+  {
+    "id": 25,
+    "title": "One Of Us Is Lying",
+    "author": "Karen M. McManus",
+    "rating_text": "6.5/10",
+    "cover_url": "assets/covers/books/one-of-us-is-lying.webp",
+    "year": 2017
+  },
+  {
+    "id": 26,
+    "title": "One of Us Is Next",
+    "author": "Karen M. McManus",
+    "rating_text": "7.5/10",
+    "cover_url": "assets/covers/books/one-of-us-is-next.webp",
+    "year": 2020
+  },
+  {
+    "id": 27,
+    "title": "One of Us Is Back",
+    "author": "Karen M. McManus",
+    "rating_text": "4/10",
+    "cover_url": "assets/covers/books/one-of-us-is-back.webp",
+    "year": 2023
+  },
+  {
+    "id": 28,
+    "title": "The Girl on the Train",
+    "author": "Paula Hawkins",
+    "rating_text": "7.2/10",
+    "cover_url": "assets/covers/books/the-girl-on-the-train.webp",
+    "year": 2015
+  },
+  {
+    "id": 29,
+    "title": "The Housemaid Is Watching",
+    "author": "Freida McFadden",
+    "rating_text": "7.5/10",
+    "cover_url": "assets/covers/books/the-housemaid-is-watching.webp",
+    "year": 2024
+  },
+  {
+    "id": 30,
+    "title": "Never Lie",
+    "author": "Freida McFadden",
+    "rating_text": "8.5/10",
+    "cover_url": "assets/covers/books/never-lie.webp",
+    "year": 2022
+  },
+  {
+    "id": 31,
+    "title": "Then She Was Gone",
+    "author": "Lisa Jewell",
+    "rating_text": "5/10",
+    "cover_url": "assets/covers/books/then-she-was-gone.webp",
+    "year": 2018
+  },
+  {
+    "id": 32,
+    "title": "Five Survive",
+    "author": "Holly Jackson",
+    "rating_text": "6.5/10",
+    "cover_url": "assets/covers/books/five-survive.webp",
+    "year": 2023
+  },
+  {
+    "id": 33,
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "rating_text": "3.5/10",
+    "cover_url": "assets/covers/books/the-great-gatsby.webp",
+    "year": 1925
+  },
+  {
+    "id": 34,
+    "title": "The Kite Runner",
+    "author": "Khaled Hosseini",
+    "rating_text": "7/10",
+    "cover_url": "assets/covers/books/the-kite-runner.webp",
+    "year": 2003
+  },
+  {
+    "id": 35,
+    "title": "The Reappearance of Rachel Price",
+    "author": "Holly Jackson",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/the-reappearance-of-rachel-price.webp",
+    "year": 2024
+  },
+  {
+    "id": 36,
+    "title": "A Little Life",
+    "author": "Hanya Yanagihara",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/a-little-life.webp",
+    "year": 2015
+  },
+  {
+    "id": 37,
+    "title": "A Thousand Splendid Suns",
+    "author": "Khaled Hosseini",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/a-thousand-splendid-suns.webp",
+    "year": 2007
+  },
+  {
+    "id": 38,
+    "title": "Days at the Morisaki Bookshop",
+    "author": "Satoshi Yagisawa",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/days-at-the-morisaki-bookshop-premium-edition.webp",
+    "year": 2010
+  },
+  {
+    "id": 39,
+    "title": "The Family Upstairs",
+    "author": "Lisa Jewell",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/the-family-upstairs.webp",
+    "year": 2019
+  },
+  {
+    "id": 40,
+    "title": "Yellowface",
+    "author": "R. F. Kuang",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/yellowface.webp",
+    "year": 2023
+  },
+  {
+    "id": 41,
+    "title": "Kafka on the Shore",
+    "author": "Haruki Murakami",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/kafka-on-the-shore.webp",
+    "year": 2002
+  },
+  {
+    "id": 42,
+    "title": "Norwegian Wood",
+    "author": "Haruki Murakami",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/norwegian-wood.webp",
+    "year": 1987
+  },
+  {
+    "id": 43,
+    "title": "Not Quite Dead Yet",
+    "author": "Holly Jackson",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/not-quite-dead-yet.webp",
+    "year": 2025
+  },
+  {
+    "id": 44,
+    "title": "The Tenant",
+    "author": "Freida McFadden",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/the-tenant.webp",
+    "year": 2025
+  },
+  {
+    "id": 45,
+    "title": "Better Than the Movies",
+    "author": "Lynn Painter",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/better-than-the-movies.webp",
+    "year": 2021
+  },
+  {
+    "id": 46,
+    "title": "Nothing Like the Movies",
+    "author": "Lynn Painter",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/nothing-like-the-movies.webp",
+    "year": 2024
+  },
+  {
+    "id": 47,
+    "title": "The Vegetarian",
+    "author": "Han Kang",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/the-vegetarian.webp",
+    "year": 2007
+  },
+  {
+    "id": 48,
+    "title": "Recursion",
+    "author": "Blake Crouch",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/recursion.webp",
+    "year": 2019
+  },
+  {
+    "id": 49,
+    "title": "My Husband's Wife",
+    "author": "Alice Feeney",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/my-husbands-wife.webp",
+    "year": 2026
+  },
+  {
+    "id": 50,
+    "title": "Listen for the Lie",
+    "author": "Amy Tintera",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/listen-for-the-lie.webp",
+    "year": 2024
+  },
+  {
+    "id": 51,
+    "title": "Count My Lies",
+    "author": "Sophie Stava",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/count-my-lies.webp",
+    "year": 2025
+  },
+  {
+    "id": 52,
+    "title": "Ward D",
+    "author": "Freida McFadden",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/ward-d.webp",
+    "year": 2023
+  },
+  {
+    "id": 53,
+    "title": "Beautiful Ugly",
+    "author": "Alice Feeney",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/beautiful-ugly.webp",
+    "year": 2025
+  },
+  {
+    "id": 54,
+    "title": "The Metamorphosis",
+    "author": "Franz Kafka",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/the-metamorphosis.webp",
+    "year": 1915
+  },
+  {
+    "id": 55,
+    "title": "Powerless",
+    "author": "Lauren Roberts",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/powerless.webp",
+    "year": 2023
+  },
+  {
+    "id": 56,
+    "title": "Powerful",
+    "author": "Lauren Roberts",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/powerful.webp",
+    "year": 2024
+  },
+  {
+    "id": 57,
+    "title": "Reckless",
+    "author": "Lauren Roberts",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/reckless.webp",
+    "year": 2024
+  },
+  {
+    "id": 58,
+    "title": "Fearless",
+    "author": "Lauren Roberts",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/fearless.webp",
+    "year": 2025
+  },
+  {
+    "id": 59,
+    "title": "Fearful",
+    "author": "Lauren Roberts",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/fearful.webp",
+    "year": 2025
+  },
+  {
+    "id": 60,
+    "title": "Dark Matter",
+    "author": "Blake Crouch",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/dark-matter.webp",
+    "year": 2016
+  },
+  {
+    "id": 61,
+    "title": "Harry Potter and the Philosopher's Stone",
+    "author": "J. K. Rowling",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/harry-potter-and-the-philosophers-stone.webp",
+    "year": 1997
+  },
+  {
+    "id": 62,
+    "title": "Harry Potter and the Chamber of Secrets",
+    "author": "J. K. Rowling",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/harry-potter-and-the-chamber-of-secrets.webp",
+    "year": 1998
+  },
+  {
+    "id": 63,
+    "title": "Harry Potter and the Prisoner of Azkaban",
+    "author": "J. K. Rowling",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/harry-potter-and-the-prisoner-of-azkaban.webp",
+    "year": 1999
+  },
+  {
+    "id": 64,
+    "title": "Harry Potter and the Goblet of Fire",
+    "author": "J. K. Rowling",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/harry-potter-and-the-goblet-of-fire.webp",
+    "year": 2000
+  },
+  {
+    "id": 65,
+    "title": "Harry Potter and the Order of the Phoenix",
+    "author": "J. K. Rowling",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/harry-potter-and-the-order-of-the-phoenix.webp",
+    "year": 2003
+  },
+  {
+    "id": 66,
+    "title": "Harry Potter and the Half-Blood Prince",
+    "author": "J. K. Rowling",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/harry-potter-and-the-half-blood-prince.webp",
+    "year": 2005
+  },
+  {
+    "id": 67,
+    "title": "Harry Potter and the Deathly Hallows",
+    "author": "J. K. Rowling",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/harry-potter-and-the-deathly-hallows.webp",
+    "year": 2007
+  },
+  {
+    "id": 68,
+    "title": "Harry Potter and the Cursed Child",
+    "author": "J. K. Rowling, John Tiffany & Jack Thorne",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/harry-potter-and-the-cursed-child.webp",
+    "year": 2016
+  },
+  {
+    "id": 69,
+    "title": "Nightwatching",
+    "author": "Tracy Sierra",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/nightwatching.webp",
+    "year": 2024
+  },
+  {
+    "id": 70,
+    "title": "The Wrong Daughter",
+    "author": "Dandy Smith",
+    "rating_text": "",
+    "cover_url": "assets/covers/books/the-wrong-daughter.webp",
+    "year": 2025
+  }
+]

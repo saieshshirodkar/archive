@@ -1,0 +1,107 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding-top: max(var(--header-pad), env(safe-area-inset-top, 0px));
+  padding-bottom: var(--header-pad);
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.tabs {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: var(--pill-pad);
+  background: var(--surface-pill);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  isolation: isolate;
+}
+
+.tab-indicator {
+  position: absolute;
+  top: var(--pill-pad);
+  bottom: var(--pill-pad);
+  left: 0;
+  z-index: 0;
+  background: var(--pill-active);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  pointer-events: none;
+  will-change: transform;
+  transition:
+    transform 0.3s var(--ease-pill),
+    width 0.3s var(--ease-pill);
+}
+
+.tab-btn {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--tab-h);
+  padding: var(--tab-py) var(--tab-px);
+  border: none;
+  background: transparent;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: var(--fs-tab);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--text-muted);
+  cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
+  transition:
+    color 0.15s ease,
+    transform 0.08s ease;
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+  color: var(--text);
+}
+
+.tab-btn:active {
+  transform: scale(0.95);
+}
+
+.tab-btn:focus-visible {
+  outline-offset: -2px;
+}
+
+.stats {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+  background: var(--surface-pill);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 4px 10px;
+  user-select: none;
+}

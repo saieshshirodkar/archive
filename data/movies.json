@@ -1,0 +1,538 @@
+[
+  {
+    "id": 1,
+    "title": "Project Hail Mary",
+    "year": 2026,
+    "date_watched": "30-07-2026",
+    "rating_text": "9.3/10",
+    "cover_url": "assets/covers/movies/project-hail-mary.webp"
+  },
+  {
+    "id": 2,
+    "title": "Spider-Man: Brand New Day",
+    "year": 2026,
+    "date_watched": "31-07-2026",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/movies/spider-man-brand-new-day.webp"
+  },
+  {
+    "id": 3,
+    "title": "Balan: The Boy",
+    "year": 2026,
+    "date_watched": "03-08-2026",
+    "rating_text": "9/10",
+    "cover_url": "assets/covers/movies/balan-the-boy.webp"
+  },
+  {
+    "id": 4,
+    "title": "The India Story",
+    "year": 2026,
+    "date_watched": "05-08-2026",
+    "rating_text": "8.1/10",
+    "cover_url": "assets/covers/movies/the-india-story.webp"
+  },
+  {
+    "id": 5,
+    "title": "Hero Number Zero (Sudigaadu)",
+    "year": 2012,
+    "date_watched": "09-08-2026",
+    "rating_text": "5/10",
+    "cover_url": "assets/covers/movies/hero-number-zero.webp"
+  },
+  {
+    "id": 6,
+    "title": "Premalu",
+    "year": 2024,
+    "date_watched": "21-08-2026",
+    "rating_text": "9.1/10",
+    "cover_url": "assets/covers/movies/premalu.webp"
+  },
+  {
+    "id": 7,
+    "title": "Insidious: Out of the Further",
+    "year": 2026,
+    "date_watched": "22-08-2026",
+    "rating_text": "5.5/10",
+    "cover_url": "assets/covers/movies/insidious-out-of-the-further.webp"
+  },
+  {
+    "id": 8,
+    "title": "The Map of Tiny Perfect Things",
+    "year": 2021,
+    "date_watched": "22-08-2026",
+    "rating_text": "8.1/10",
+    "cover_url": "assets/covers/movies/the-map-of-tiny-perfect-things.webp"
+  },
+  {
+    "id": 9,
+    "title": "Teenage Sex and Death at Camp Miasma",
+    "year": 2026,
+    "date_watched": "22-08-2026",
+    "rating_text": "3/10",
+    "cover_url": "assets/covers/movies/teenage-sex-and-death-at-camp-miasma.webp"
+  },
+  {
+    "id": 10,
+    "title": "Iron Lung",
+    "year": 2026,
+    "date_watched": "22-08-2026",
+    "rating_text": "2/10",
+    "cover_url": "assets/covers/movies/iron-lung.webp"
+  },
+  {
+    "id": 11,
+    "title": "Your Name",
+    "year": 2016,
+    "date_watched": "26-08-2026",
+    "rating_text": "7.5/10",
+    "cover_url": "assets/covers/movies/your-name.webp"
+  },
+  {
+    "id": 12,
+    "title": "Over Your Dead Body",
+    "year": 2026,
+    "date_watched": "26-08-2026",
+    "rating_text": "4.5/10",
+    "cover_url": "assets/covers/movies/over-your-dead-body.webp"
+  },
+  {
+    "id": 13,
+    "title": "Level 16",
+    "year": 2018,
+    "date_watched": "26-08-2026",
+    "rating_text": "5/10",
+    "cover_url": "assets/covers/movies/level-16.webp"
+  },
+  {
+    "id": 14,
+    "title": "Wardriver",
+    "year": 2026,
+    "date_watched": "26-08-2026",
+    "rating_text": "6.1/10",
+    "cover_url": "assets/covers/movies/wardriver.webp"
+  },
+  {
+    "id": 15,
+    "title": "Everybody Loves Me When I'm Dead",
+    "year": 2025,
+    "date_watched": "26-08-2026",
+    "rating_text": "4.5/10",
+    "cover_url": "assets/covers/movies/everybody-loves-me-when-im-dead.webp"
+  },
+  {
+    "id": 16,
+    "title": "It Ends",
+    "year": 2025,
+    "date_watched": "29-08-2026",
+    "rating_text": "5/10",
+    "cover_url": "assets/covers/movies/it-ends.webp"
+  },
+  {
+    "id": 17,
+    "title": "The Electric State",
+    "year": 2025,
+    "date_watched": "29-08-2026",
+    "rating_text": "3.5/10",
+    "cover_url": "assets/covers/movies/the-electric-state.webp"
+  },
+  {
+    "id": 18,
+    "title": "Hope",
+    "year": 2013,
+    "date_watched": "29-08-2026",
+    "rating_text": "6/10",
+    "cover_url": "assets/covers/movies/hope.webp"
+  },
+  {
+    "id": 19,
+    "title": "Maid in Manhattan",
+    "year": 2002,
+    "date_watched": "29-08-2026",
+    "rating_text": "4/10",
+    "cover_url": "assets/covers/movies/maid-in-manhattan.webp"
+  },
+  {
+    "id": 20,
+    "title": "Blood Shine",
+    "year": 2026,
+    "date_watched": "30-08-2026",
+    "rating_text": "3/10",
+    "cover_url": "assets/covers/movies/blood-shine.webp"
+  },
+  {
+    "id": 21,
+    "title": "1408",
+    "year": 2007,
+    "date_watched": "30-08-2026",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/movies/1408.webp"
+  },
+  {
+    "id": 22,
+    "title": "The Sixth Sense",
+    "year": 1999,
+    "date_watched": "30-08-2026",
+    "rating_text": "9.4/10",
+    "cover_url": "assets/covers/movies/the-sixth-sense.webp"
+  },
+  {
+    "id": 23,
+    "title": "The Theory of Everything",
+    "year": 2014,
+    "date_watched": "01-09-2026",
+    "rating_text": "7.7/10",
+    "cover_url": "assets/covers/movies/the-theory-of-everything.webp"
+  },
+  {
+    "id": 24,
+    "title": "A Walk Among the Tombstones",
+    "year": 2014,
+    "date_watched": "01-09-2026",
+    "rating_text": "7.4/10",
+    "cover_url": "assets/covers/movies/a-walk-among-the-tombstones.webp"
+  },
+  {
+    "id": 25,
+    "title": "The Last House",
+    "year": 2026,
+    "date_watched": "01-09-2026",
+    "rating_text": "7/10",
+    "cover_url": "assets/covers/movies/the-last-house.webp"
+  },
+  {
+    "id": 26,
+    "title": "Revolver",
+    "year": 2005,
+    "date_watched": "01-09-2026",
+    "rating_text": "3/10",
+    "cover_url": "assets/covers/movies/revolver.webp"
+  },
+  {
+    "id": 27,
+    "title": "The Butterfly Effect 3: Revelations",
+    "year": 2009,
+    "date_watched": "02-09-2026",
+    "rating_text": "6/10",
+    "cover_url": "assets/covers/movies/the-butterfly-effect-3-revelations.webp"
+  },
+  {
+    "id": 28,
+    "title": "Marty Supreme",
+    "year": 2025,
+    "date_watched": "03-09-2026",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/movies/marty-supreme.webp"
+  },
+  {
+    "id": 29,
+    "title": "Dog",
+    "year": 2022,
+    "date_watched": "03-09-2026",
+    "rating_text": "8.4/10",
+    "cover_url": "assets/covers/movies/dog.webp"
+  },
+  {
+    "id": 30,
+    "title": "Skellig",
+    "year": 2009,
+    "date_watched": "03-09-2026",
+    "rating_text": "4/10",
+    "cover_url": "assets/covers/movies/skellig.webp"
+  },
+  {
+    "id": 31,
+    "title": "Vishwanath & Sons",
+    "year": 2026,
+    "date_watched": "11-09-2026",
+    "rating_text": "8.5/10",
+    "cover_url": "assets/covers/movies/vishwanath-and-sons.webp"
+  },
+  {
+    "id": 32,
+    "title": "The Room Below",
+    "year": 2026,
+    "date_watched": "12-09-2026",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/movies/the-room-below.webp"
+  },
+  {
+    "id": 33,
+    "title": "Point Break",
+    "year": 1991,
+    "date_watched": "12-09-2026",
+    "rating_text": "6/10",
+    "cover_url": "assets/covers/movies/point-break.webp"
+  },
+  {
+    "id": 34,
+    "title": "Adkitta",
+    "year": 2026,
+    "date_watched": "13-09-2026",
+    "rating_text": "5/10",
+    "cover_url": "assets/covers/movies/adkitta.webp"
+  },
+  {
+    "id": 35,
+    "title": "Spider Island",
+    "year": 2026,
+    "date_watched": "21-09-2026",
+    "rating_text": "5/10",
+    "cover_url": "assets/covers/movies/spider-island.webp"
+  },
+  {
+    "id": 36,
+    "title": "You Should Have Left",
+    "year": 2020,
+    "date_watched": "21-09-2026",
+    "rating_text": "4/10",
+    "cover_url": "assets/covers/movies/you-should-have-left.webp"
+  },
+  {
+    "id": 37,
+    "title": "Vibe",
+    "year": 2026,
+    "date_watched": "22-09-2026",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/movies/vibe.webp"
+  },
+  {
+    "id": 38,
+    "title": "Resident Evil",
+    "year": 2026,
+    "date_watched": "22-09-2026",
+    "rating_text": "6/10",
+    "cover_url": "assets/covers/movies/resident-evil.webp"
+  },
+  {
+    "id": 39,
+    "title": "The Last Kiss",
+    "year": 2026,
+    "date_watched": "23-09-2026",
+    "rating_text": "7.6/10",
+    "cover_url": "assets/covers/movies/the-last-kiss.webp"
+  },
+  {
+    "id": 40,
+    "title": "The End of Oak Street",
+    "year": 2026,
+    "date_watched": "23-09-2026",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/movies/the-end-of-oak-street.webp"
+  },
+  {
+    "id": 41,
+    "title": "Tumbbad",
+    "year": 2018,
+    "date_watched": "23-09-2026",
+    "rating_text": "9/10",
+    "cover_url": "assets/covers/movies/tumbbad.webp"
+  },
+  {
+    "id": 42,
+    "title": "Lust Stories 3",
+    "year": 2026,
+    "date_watched": "24-09-2026",
+    "rating_text": "6/10",
+    "cover_url": "assets/covers/movies/lust-stories-3.webp"
+  },
+  {
+    "id": 43,
+    "title": "Sweet & Sour",
+    "year": 2021,
+    "date_watched": "25-09-2026",
+    "rating_text": "4/10",
+    "cover_url": "assets/covers/movies/sweet-and-sour.webp"
+  },
+  {
+    "id": 44,
+    "title": "A Big Bold Beautiful Journey",
+    "year": 2025,
+    "date_watched": "25-09-2026",
+    "rating_text": "5/10",
+    "cover_url": "assets/covers/movies/a-big-bold-beautiful-journey.webp"
+  },
+  {
+    "id": 45,
+    "title": "M3GAN",
+    "year": 2022,
+    "date_watched": "25-09-2026",
+    "rating_text": "7.5/10",
+    "cover_url": "assets/covers/movies/m3gan.webp"
+  },
+  {
+    "id": 46,
+    "title": "M3GAN 2.0",
+    "year": 2025,
+    "date_watched": "25-09-2026",
+    "rating_text": "5/10",
+    "cover_url": "assets/covers/movies/m3gan-2-0.webp"
+  },
+  {
+    "id": 47,
+    "title": "Sammarth",
+    "year": 2026,
+    "date_watched": "28-09-2026",
+    "rating_text": "8.5/10",
+    "cover_url": "assets/covers/movies/sammarth.webp"
+  },
+  {
+    "id": 48,
+    "title": "Irumudi",
+    "year": 2026,
+    "date_watched": "29-09-2026",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/movies/irumudi.webp"
+  },
+  {
+    "id": 49,
+    "title": "Buddy",
+    "year": 2026,
+    "date_watched": "30-09-2026",
+    "rating_text": "6/10",
+    "cover_url": "assets/covers/movies/buddy.webp"
+  },
+  {
+    "id": 50,
+    "title": "25th Hour",
+    "year": 2002,
+    "date_watched": "30-09-2026",
+    "rating_text": "5/10",
+    "cover_url": "assets/covers/movies/25th-hour.webp"
+  },
+  {
+    "id": 51,
+    "title": "Vivarium",
+    "year": 2019,
+    "date_watched": "30-09-2026",
+    "rating_text": "8.3/10",
+    "cover_url": "assets/covers/movies/vivarium.webp"
+  },
+  {
+    "id": 52,
+    "title": "Wolf Man",
+    "year": 2025,
+    "date_watched": "30-09-2026",
+    "rating_text": "7.8/10",
+    "cover_url": "assets/covers/movies/wolf-man.webp"
+  },
+  {
+    "id": 53,
+    "title": "Morya",
+    "year": 2011,
+    "date_watched": "30-09-2026",
+    "rating_text": "6.5/10",
+    "cover_url": "assets/covers/movies/morya.webp"
+  },
+  {
+    "id": 54,
+    "title": "Bethlehem Kudumba Unit",
+    "year": 2026,
+    "date_watched": "02-10-2026",
+    "rating_text": "6.5/10",
+    "cover_url": "assets/covers/movies/bethlehem-kudumba-unit.webp"
+  },
+  {
+    "id": 55,
+    "title": "Drishyam: The Conclusion",
+    "year": 2026,
+    "date_watched": "02-10-2026",
+    "rating_text": "9.2/10",
+    "cover_url": "assets/covers/movies/drishyam-the-conclusion.webp"
+  },
+  {
+    "id": 56,
+    "title": "Hanuman Ansh",
+    "year": 2026,
+    "date_watched": "06-10-2026",
+    "rating_text": "1/10",
+    "cover_url": "assets/covers/movies/hanuman-ansh.webp"
+  },
+  {
+    "id": 57,
+    "title": "Atonement",
+    "year": 2007,
+    "date_watched": "06-10-2026",
+    "rating_text": "6.5/10",
+    "cover_url": "assets/covers/movies/atonement.webp"
+  },
+  {
+    "id": 58,
+    "title": "Welcome to Sudden Death",
+    "year": 2020,
+    "date_watched": "06-10-2026",
+    "rating_text": "2/10",
+    "cover_url": "assets/covers/movies/welcome-to-sudden-death.webp"
+  },
+  {
+    "id": 59,
+    "title": "The Rundown",
+    "year": 2003,
+    "date_watched": "06-10-2026",
+    "rating_text": "4/10",
+    "cover_url": "assets/covers/movies/the-rundown.webp"
+  },
+  {
+    "id": 60,
+    "title": "Killing Me Softly",
+    "year": 2002,
+    "date_watched": "07-10-2026",
+    "rating_text": "7.5/10",
+    "cover_url": "assets/covers/movies/killing-me-softly.webp"
+  },
+  {
+    "id": 61,
+    "title": "Pradhama Drishtiya Kuttakkar",
+    "year": 2026,
+    "date_watched": "10-10-2026",
+    "rating_text": "8.5/10",
+    "cover_url": "assets/covers/movies/pradhama-drishtiya-kuttakkar.webp"
+  },
+  {
+    "id": 62,
+    "title": "Verity",
+    "year": 2026,
+    "date_watched": "12-10-2026",
+    "rating_text": "6/10",
+    "cover_url": "assets/covers/movies/verity.webp"
+  },
+  {
+    "id": 63,
+    "title": "Other Mommy",
+    "year": 2026,
+    "date_watched": "12-10-2026",
+    "rating_text": "5/10",
+    "cover_url": "assets/covers/movies/other-mommy.webp"
+  },
+  {
+    "id": 64,
+    "title": "Aatmapamphlet",
+    "year": 2023,
+    "date_watched": "13-10-2026",
+    "rating_text": "9.2/10",
+    "cover_url": "assets/covers/movies/aatmapamphlet.webp"
+  },
+  {
+    "id": 65,
+    "title": "Three of Us",
+    "year": 2023,
+    "date_watched": "13-10-2026",
+    "rating_text": "6/10",
+    "cover_url": "assets/covers/movies/three-of-us.webp"
+  },
+  {
+    "id": 66,
+    "title": "My Client's Wife",
+    "year": 2020,
+    "date_watched": "15-10-2026",
+    "rating_text": "8.5/10",
+    "cover_url": "assets/covers/movies/my-clients-wife.webp"
+  },
+  {
+    "id": 67,
+    "title": "Bandkhor",
+    "year": 2026,
+    "date_watched": "16-10-2026",
+    "rating_text": "5/10",
+    "cover_url": "assets/covers/movies/bandkhor.webp"
+  }
+]

@@ -1,0 +1,51 @@
+@media (max-width: 640px) {
+  :root {
+    --page-x: 16px;
+    --gutter-top: 20px;
+    --gutter-bottom: 40px;
+    --card-index: 26px;
+    --card-cover: 76px;
+    --card-gap: 14px;
+    --card-pad: 14px;
+    --card-intrinsic: 142px;
+    --fs-index: 0.75rem;
+    --fs-title: 1rem;
+    --fs-author: 0.7rem;
+    --fs-rating: 0.7rem;
+    --header-pad: 10px;
+    --tab-h: 44px;
+    --tab-px: 14px;
+    --tab-py: 0px;
+    --fs-tab: 0.8rem;
+  }
+
+  html {
+    font-size: 100%;
+  }
+
+  .logo,
+  .stats {
+    display: none;
+  }
+
+  .nav {
+    justify-content: center;
+  }
+
+  .tabs {
+    position: relative;
+    left: auto;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+}

@@ -1,0 +1,1002 @@
+[
+  {
+    "id": 1,
+    "title": "Death Note",
+    "author": "Tsugumi Ohba & Takeshi Obata",
+    "rating_text": "10/10",
+    "cover_url": "assets/covers/anime/death-note.webp",
+    "year": 2006
+  },
+  {
+    "id": 2,
+    "title": "Monster",
+    "author": "Naoki Urasawa",
+    "rating_text": "8.7/10",
+    "cover_url": "assets/covers/anime/monster.webp",
+    "year": 2004
+  },
+  {
+    "id": 3,
+    "title": "Vinland Saga",
+    "author": "Makoto Yukimura",
+    "rating_text": "9/10",
+    "cover_url": "assets/covers/anime/vinland-saga.webp",
+    "year": 2019
+  },
+  {
+    "id": 4,
+    "title": "Attack On Titan",
+    "author": "Hajime Isayama",
+    "rating_text": "8.9/10",
+    "cover_url": "assets/covers/anime/attack-on-titan.webp",
+    "year": 2013
+  },
+  {
+    "id": 5,
+    "title": "Hunter x Hunter",
+    "author": "Yoshihiro Togashi",
+    "rating_text": "9.4/10",
+    "cover_url": "assets/covers/anime/hunter-x-hunter.webp",
+    "year": 2011
+  },
+  {
+    "id": 6,
+    "title": "Erased",
+    "author": "Kei Sanbe",
+    "rating_text": "7/10",
+    "cover_url": "assets/covers/anime/erased.webp",
+    "year": 2016
+  },
+  {
+    "id": 7,
+    "title": "Solo Leveling",
+    "author": "Chugong & DUBU",
+    "rating_text": "7.5/10",
+    "cover_url": "assets/covers/anime/solo-leveling.webp",
+    "year": 2024
+  },
+  {
+    "id": 8,
+    "title": "Sakamoto Days",
+    "author": "Yuto Suzuki",
+    "rating_text": "7/10",
+    "cover_url": "assets/covers/anime/sakamoto-days.webp",
+    "year": 2025
+  },
+  {
+    "id": 9,
+    "title": "One Piece",
+    "author": "Eiichiro Oda",
+    "rating_text": "10/10",
+    "cover_url": "assets/covers/anime/one-piece.webp",
+    "year": 1999
+  },
+  {
+    "id": 10,
+    "title": "Kaiju No. 8",
+    "author": "Naoya Matsumoto",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/anime/kaiju-no-8.webp",
+    "year": 2024
+  },
+  {
+    "id": 11,
+    "title": "Assassination Classroom",
+    "author": "Yusei Matsui",
+    "rating_text": "8.5/10",
+    "cover_url": "assets/covers/anime/assassination-classroom.webp",
+    "year": 2015
+  },
+  {
+    "id": 12,
+    "title": "Bleach",
+    "author": "Tite Kubo",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/anime/bleach.webp",
+    "year": 2004
+  },
+  {
+    "id": 13,
+    "title": "Jujutsu Kaisen",
+    "author": "Gege Akutami",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/anime/jujutsu-kaisen.webp",
+    "year": 2020
+  },
+  {
+    "id": 14,
+    "title": "Chainsaw Man",
+    "author": "Tatsuki Fujimoto",
+    "rating_text": "8.5/10",
+    "cover_url": "assets/covers/anime/chainsaw-man.webp",
+    "year": 2022
+  },
+  {
+    "id": 15,
+    "title": "One Punch Man",
+    "author": "ONE & Yusuke Murata",
+    "rating_text": "8.7/10",
+    "cover_url": "assets/covers/anime/one-punch-man.webp",
+    "year": 2015
+  },
+  {
+    "id": 16,
+    "title": "Demon Slayer",
+    "author": "Koyoharu Gotouge",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/anime/demon-slayer.webp",
+    "year": 2019
+  },
+  {
+    "id": 17,
+    "title": "Dragon Ball",
+    "author": "Akira Toriyama",
+    "rating_text": "9.5/10",
+    "cover_url": "assets/covers/anime/dragon-ball.webp",
+    "year": 1986
+  },
+  {
+    "id": 18,
+    "title": "Dragon Ball Z Kai",
+    "author": "Akira Toriyama",
+    "rating_text": "9/10",
+    "cover_url": "assets/covers/anime/dragon-ball-z-kai.webp",
+    "year": 2009
+  },
+  {
+    "id": 19,
+    "title": "Steins;Gate",
+    "author": "5pb. & Nitroplus",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/anime/steins-gate.webp",
+    "year": 2011
+  },
+  {
+    "id": 20,
+    "title": "Berserk",
+    "author": "Kentaro Miura",
+    "rating_text": "9.3/10",
+    "cover_url": "assets/covers/anime/berserk.webp",
+    "year": 1997
+  },
+  {
+    "id": 21,
+    "title": "Classroom of the Elite",
+    "author": "Shōgo Kinugasa",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/anime/classroom-of-the-elite.webp",
+    "year": 2017
+  },
+  {
+    "id": 22,
+    "title": "Fullmetal Alchemist: Brotherhood",
+    "author": "Hiromu Arakawa",
+    "rating_text": "9.5/10",
+    "cover_url": "assets/covers/anime/fullmetal-alchemist-brotherhood.webp",
+    "year": 2009
+  },
+  {
+    "id": 23,
+    "title": "Migi & Dali",
+    "author": "Nami Sano",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/anime/migi-and-dali.webp",
+    "year": 2023
+  },
+  {
+    "id": 24,
+    "title": "Daemons of the Shadow Realm",
+    "author": "Hiromu Arakawa",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/anime/daemons-of-the-shadow-realm.webp",
+    "year": 2026
+  },
+  {
+    "id": 25,
+    "title": "Liar Game",
+    "author": "Shinobu Kaitani",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/anime/liar-game.webp",
+    "year": 2026
+  },
+  {
+    "id": 26,
+    "title": "Dorohedoro",
+    "author": "Q Hayashida",
+    "rating_text": "7/10",
+    "cover_url": "assets/covers/anime/dorohedoro.webp",
+    "year": 2020
+  },
+  {
+    "id": 27,
+    "title": "Dandadan",
+    "author": "Yukinobu Tatsu",
+    "rating_text": "7.5/10",
+    "cover_url": "assets/covers/anime/dandadan.webp",
+    "year": 2024
+  },
+  {
+    "id": 28,
+    "title": "20th Century Boys",
+    "author": "Naoki Urasawa",
+    "rating_text": "8.3/10",
+    "cover_url": "assets/covers/anime/20th-century-boys.webp",
+    "year": 1999
+  },
+  {
+    "id": 29,
+    "title": "Snowball Earth",
+    "author": "Yuhiro Tsujitsugu",
+    "rating_text": "8.3/10",
+    "cover_url": "assets/covers/anime/snowball-earth.webp",
+    "year": 2026
+  },
+  {
+    "id": 30,
+    "title": "Naruto",
+    "author": "Masashi Kishimoto",
+    "rating_text": "9.6/10",
+    "cover_url": "assets/covers/anime/naruto.webp",
+    "year": 2002
+  },
+  {
+    "id": 31,
+    "title": "Naruto Shippuden",
+    "author": "Masashi Kishimoto",
+    "rating_text": "10/10",
+    "cover_url": "assets/covers/anime/naruto-shippuden.webp",
+    "year": 2007
+  },
+  {
+    "id": 32,
+    "title": "Black Torch",
+    "author": "Tsuyoshi Takaki",
+    "rating_text": "7/10",
+    "cover_url": "assets/covers/anime/black-torch.webp",
+    "year": 2026
+  },
+  {
+    "id": 33,
+    "title": "Chainsmoker Cat",
+    "author": "NyanNyanFactory",
+    "rating_text": "5/10",
+    "cover_url": "assets/covers/anime/chainsmoker-cat.webp",
+    "year": 2026
+  },
+  {
+    "id": 34,
+    "title": "Mob Psycho 100",
+    "author": "ONE",
+    "rating_text": "9.4/10",
+    "cover_url": "assets/covers/anime/mob-psycho-100.webp",
+    "year": 2016
+  },
+  {
+    "id": 35,
+    "title": "Museum",
+    "author": "Ryōsuke Tomoe",
+    "rating_text": "8.8/10",
+    "cover_url": "assets/covers/anime/museum.webp",
+    "year": 2013
+  },
+  {
+    "id": 36,
+    "title": "Baki Hanma",
+    "author": "Keisuke Itagaki",
+    "rating_text": "8.3/10",
+    "cover_url": "assets/covers/anime/baki-hanma.webp",
+    "year": 2021
+  },
+  {
+    "id": 37,
+    "title": "Billy Bat",
+    "author": "Naoki Urasawa",
+    "rating_text": "7.9/10",
+    "cover_url": "assets/covers/anime/billy-bat.webp",
+    "year": 2008
+  },
+  {
+    "id": 38,
+    "title": "I Had The Same Dream Again",
+    "author": "Yoru Sumino",
+    "rating_text": "5/10",
+    "cover_url": "assets/covers/anime/i-had-the-same-dream-again.webp",
+    "year": 2016
+  },
+  {
+    "id": 39,
+    "title": "Fire Punch",
+    "author": "Tatsuki Fujimoto",
+    "rating_text": "8.1/10",
+    "cover_url": "assets/covers/anime/fire-punch.webp",
+    "year": 2016
+  },
+  {
+    "id": 40,
+    "title": "All You Need Is Kill",
+    "author": "Ryōsuke Takeuchi & Takeshi Obata",
+    "rating_text": "8.3/10",
+    "cover_url": "assets/covers/anime/all-you-need-is-kill.webp",
+    "year": 2014
+  },
+  {
+    "id": 41,
+    "title": "Tokidoki",
+    "author": "Naoshi Komi",
+    "rating_text": "7.8/10",
+    "cover_url": "assets/covers/anime/tokidoki.webp",
+    "year": 2016
+  },
+  {
+    "id": 42,
+    "title": "Terror in Resonance",
+    "author": "Gen Urobuchi",
+    "rating_text": "8.9/10",
+    "cover_url": "assets/covers/anime/terror-in-resonance.webp",
+    "year": 2014
+  },
+  {
+    "id": 43,
+    "title": "Fetus Collection",
+    "author": "Shintaro Kago",
+    "rating_text": "0.1/10",
+    "cover_url": "assets/covers/anime/fetus-collection.webp",
+    "year": 2000
+  },
+  {
+    "id": 44,
+    "title": "Blue Heaven",
+    "author": "Tsutomu Takahashi",
+    "rating_text": "7.1/10",
+    "cover_url": "assets/covers/anime/blue-heaven.webp",
+    "year": 2002
+  },
+  {
+    "id": 45,
+    "title": "The Zombie Maria",
+    "author": "Atsushi Nakayama",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/anime/the-zombie-maria.webp",
+    "year": 2016
+  },
+  {
+    "id": 46,
+    "title": "Impossible Love Suicide",
+    "author": "Wada Takashi",
+    "rating_text": "3.5/10",
+    "cover_url": "assets/covers/anime/impossible-love-suicide.webp",
+    "year": 2000
+  },
+  {
+    "id": 47,
+    "title": "Molester Man",
+    "author": "Yokota Takuma",
+    "rating_text": "7.7/10",
+    "cover_url": "assets/covers/anime/molester-man.webp",
+    "year": 2004
+  },
+  {
+    "id": 48,
+    "title": "A Girl on the Shore",
+    "author": "Inio Asano",
+    "rating_text": "4.5/10",
+    "cover_url": "assets/covers/anime/a-girl-on-the-shore.webp",
+    "year": 2009
+  },
+  {
+    "id": 49,
+    "title": "The Climber",
+    "author": "Shinichi Sakamoto & Yoshio Nabeda",
+    "rating_text": "9.1/10",
+    "cover_url": "assets/covers/anime/the-climber.webp",
+    "year": 2007
+  },
+  {
+    "id": 50,
+    "title": "Goodnight Punpun",
+    "author": "Inio Asano",
+    "rating_text": "9/10",
+    "cover_url": "assets/covers/anime/goodnight-punpun.webp",
+    "year": 2007
+  },
+  {
+    "id": 51,
+    "title": "False Memory",
+    "author": "Flint Sugar",
+    "rating_text": "6/10",
+    "cover_url": "assets/covers/anime/false-memory.webp",
+    "year": 2026
+  },
+  {
+    "id": 52,
+    "title": "I Became a Legend After My 10 Year-Long Last Stand",
+    "author": "Ezogingitune",
+    "rating_text": "7.5/10",
+    "cover_url": "assets/covers/anime/i-became-a-legend-after-my-10-year-long-last-stand.webp",
+    "year": 2026
+  },
+  {
+    "id": 53,
+    "title": "From the Red Fog",
+    "author": "Mosae Nohara",
+    "rating_text": "3/10",
+    "cover_url": "assets/covers/anime/from-the-red-fog.webp",
+    "year": 2020
+  },
+  {
+    "id": 54,
+    "title": "I Sold My Life for Ten Thousand Yen per Year",
+    "author": "Sugaru Miaki & Shouichi Taguchi",
+    "rating_text": "8.6/10",
+    "cover_url": "assets/covers/anime/i-sold-my-life-for-ten-thousand-yen-per-year.webp",
+    "year": 2016
+  },
+  {
+    "id": 55,
+    "title": "Takopi's Original Sin",
+    "author": "Taizan 5",
+    "rating_text": "8.6/10",
+    "cover_url": "assets/covers/anime/takopis-original-sin.webp",
+    "year": 2021
+  },
+  {
+    "id": 56,
+    "title": "Smiley",
+    "author": "Mitei Hattori",
+    "rating_text": "8.3/10",
+    "cover_url": "assets/covers/anime/smiley.webp",
+    "year": 2021
+  },
+  {
+    "id": 57,
+    "title": "Bastard",
+    "author": "Carnby Kim & Youngchan Hwang",
+    "rating_text": "6.5/10",
+    "cover_url": "assets/covers/anime/bastard.webp",
+    "year": 2014
+  },
+  {
+    "id": 58,
+    "title": "Hauntress",
+    "author": "Minetarō Mochizuki",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/anime/hauntress.webp",
+    "year": 1993
+  },
+  {
+    "id": 59,
+    "title": "Haven't You Heard? I'm Sakamoto",
+    "author": "Nami Sano",
+    "rating_text": "8.5/10",
+    "cover_url": "assets/covers/anime/havent-you-heard-im-sakamoto.webp",
+    "year": 2016
+  },
+  {
+    "id": 60,
+    "title": "Odd Taxi",
+    "author": "Kazuya Konomoto & Takeichi Abaraya",
+    "rating_text": "9.0/10",
+    "cover_url": "assets/covers/anime/odd-taxi.webp",
+    "year": 2021
+  },
+  {
+    "id": 61,
+    "title": "Homunculus",
+    "author": "Hideo Yamamoto",
+    "rating_text": "8.1/10",
+    "cover_url": "assets/covers/anime/homunculus.webp",
+    "year": 2003
+  },
+  {
+    "id": 62,
+    "title": "The Friends-Eater Classroom",
+    "author": "Yusura Kankitsu & Yuu Sawase",
+    "rating_text": "6/10",
+    "cover_url": "assets/covers/anime/the-friends-eater-classroom.webp",
+    "year": 2017
+  },
+  {
+    "id": 63,
+    "title": "Kagurabachi",
+    "author": "Takeru Hokazono",
+    "rating_text": "8.8/10",
+    "cover_url": "assets/covers/anime/kagurabachi.webp",
+    "year": 2023
+  },
+  {
+    "id": 64,
+    "title": "Brutal",
+    "author": "Kei Koga & Ryou Izawa",
+    "rating_text": "4/10",
+    "cover_url": "assets/covers/anime/brutal.webp",
+    "year": 2019
+  },
+  {
+    "id": 65,
+    "title": "Half and Half",
+    "author": "Kouji Seo",
+    "rating_text": "7.3/10",
+    "cover_url": "assets/covers/anime/half-and-half.webp",
+    "year": 2012
+  },
+  {
+    "id": 66,
+    "title": "Quit Laughing, Shijima",
+    "author": "Kouhei Horikoshi",
+    "rating_text": "5/10",
+    "cover_url": "assets/covers/anime/quit-laughing-shijima.webp",
+    "year": 2026
+  },
+  {
+    "id": 67,
+    "title": "Ajin",
+    "author": "Gamon Sakurai",
+    "rating_text": "6.3/10",
+    "cover_url": "assets/covers/anime/ajin.webp",
+    "year": 2012
+  },
+  {
+    "id": 68,
+    "title": "Look Back",
+    "author": "Tatsuki Fujimoto",
+    "rating_text": "5/10",
+    "cover_url": "assets/covers/anime/look-back.webp",
+    "year": 2021
+  },
+  {
+    "id": 69,
+    "title": "The Gods Lie",
+    "author": "Kaori Ozaki",
+    "rating_text": "4/10",
+    "cover_url": "assets/covers/anime/the-gods-lie.webp",
+    "year": 2013
+  },
+  {
+    "id": 70,
+    "title": "My Hero Academia",
+    "author": "Kohei Horikoshi",
+    "rating_text": "5.5/10",
+    "cover_url": "assets/covers/anime/my-hero-academia.webp",
+    "year": 2016
+  },
+  {
+    "id": 71,
+    "title": "On the Way to Meet Mom",
+    "author": "Gomyang",
+    "rating_text": "8.6/10",
+    "cover_url": "assets/covers/anime/on-the-way-to-meet-mom.webp",
+    "year": 2024
+  },
+  {
+    "id": 72,
+    "title": "Orb: On the Movements of the Earth",
+    "author": "Uoto",
+    "rating_text": "9.1/10",
+    "cover_url": "assets/covers/anime/orb-on-the-movements-of-the-earth.webp",
+    "year": 2024
+  },
+  {
+    "id": 73,
+    "title": "Smoking Behind the Supermarket with You",
+    "author": "Jinushi",
+    "rating_text": "6/10",
+    "cover_url": "assets/covers/anime/smoking-behind-the-supermarket-with-you.webp",
+    "year": 2026
+  },
+  {
+    "id": 74,
+    "title": "Our Happy Hours",
+    "author": "Gong Ji-Young & Sumomo Yumeka",
+    "rating_text": "7.5/10",
+    "cover_url": "assets/covers/anime/our-happy-hours.webp",
+    "year": 2008
+  },
+  {
+    "id": 75,
+    "title": "Re:Zero",
+    "author": "Tappei Nagatsuki",
+    "rating_text": "4/10",
+    "cover_url": "assets/covers/anime/re-zero.webp",
+    "year": 2016
+  },
+  {
+    "id": 76,
+    "title": "Lego One Piece",
+    "author": "Eiichiro Oda",
+    "rating_text": "7.5/10",
+    "cover_url": "assets/covers/anime/lego-one-piece.webp",
+    "year": 2026
+  },
+  {
+    "id": 77,
+    "title": "Mushoku Tensei",
+    "author": "Rifujin na Magonote",
+    "rating_text": "5/10",
+    "cover_url": "assets/covers/anime/mushoku-tensei.webp",
+    "year": 2021
+  },
+  {
+    "id": 78,
+    "title": "Nippon Sangoku",
+    "author": "Ikka Matsuki",
+    "rating_text": "7/10",
+    "cover_url": "assets/covers/anime/nippon-sangoku.webp",
+    "year": 2026
+  },
+  {
+    "id": 79,
+    "title": "Doku Mushi",
+    "author": "Michio Yazu & Keito Aida",
+    "rating_text": "6.9/10",
+    "cover_url": "assets/covers/anime/doku-mushi.webp",
+    "year": 2013
+  },
+  {
+    "id": 80,
+    "title": "JoJo's Bizarre Adventure",
+    "author": "Hirohiko Araki",
+    "rating_text": "9.7/10",
+    "cover_url": "assets/covers/anime/jojos-bizarre-adventure.webp",
+    "year": 2012
+  },
+  {
+    "id": 81,
+    "title": "Black Clover",
+    "author": "Yūki Tabata",
+    "rating_text": "6.1/10",
+    "cover_url": "assets/covers/anime/black-clover.webp",
+    "year": 2017
+  },
+  {
+    "id": 82,
+    "title": "Cowboy Bebop",
+    "author": "Shinichirō Watanabe",
+    "rating_text": "9.2/10",
+    "cover_url": "assets/covers/anime/cowboy-bebop.webp",
+    "year": 1998
+  },
+  {
+    "id": 83,
+    "title": "Parasyte: The Maxim",
+    "author": "Hitoshi Iwaaki",
+    "rating_text": "8.2/10",
+    "cover_url": "assets/covers/anime/parasyte-the-maxim.webp",
+    "year": 2014
+  },
+  {
+    "id": 84,
+    "title": "Pluto",
+    "author": "Naoki Urasawa",
+    "rating_text": "8.9/10",
+    "cover_url": "assets/covers/anime/pluto.webp",
+    "year": 2003
+  },
+  {
+    "id": 85,
+    "title": "Neon Genesis Evangelion",
+    "author": "Yoshiyuki Sadamoto & Hideaki Anno",
+    "rating_text": "8.1/10",
+    "cover_url": "assets/covers/anime/neon-genesis-evangelion.webp",
+    "year": 1995
+  },
+  {
+    "id": 86,
+    "title": "91 Days",
+    "author": "Vanitas & Shingo Tanaka",
+    "rating_text": "6/10",
+    "cover_url": "assets/covers/anime/91-days.webp",
+    "year": 2016
+  },
+  {
+    "id": 87,
+    "title": "Death Parade",
+    "author": "Yuzuru Tachikawa",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/anime/death-parade.webp",
+    "year": 2015
+  },
+  {
+    "id": 88,
+    "title": "Summer Rendering",
+    "author": "Yasuki Tanaka",
+    "rating_text": "5/10",
+    "cover_url": "assets/covers/anime/summers-rendering.webp",
+    "year": 2022
+  },
+  {
+    "id": 89,
+    "title": "Dr. Stone",
+    "author": "Riichiro Inagaki & Boichi",
+    "rating_text": "8.7/10",
+    "cover_url": "assets/covers/anime/dr-stone.webp",
+    "year": 2019
+  },
+  {
+    "id": 90,
+    "title": "Paranoia Agent",
+    "author": "Satoshi Kon",
+    "rating_text": "6.5/10",
+    "cover_url": "assets/covers/anime/paranoia-agent.webp",
+    "year": 2004
+  },
+  {
+    "id": 91,
+    "title": "This Is Not My Child!",
+    "author": "Uguisu Sachiko",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/anime/this-is-not-my-child.webp",
+    "year": 2021
+  },
+  {
+    "id": 92,
+    "title": "Erika",
+    "author": "Kusumoto Tetsu",
+    "rating_text": "8.3/10",
+    "cover_url": "assets/covers/anime/erika.webp",
+    "year": 2013
+  },
+  {
+    "id": 93,
+    "title": "Zanuff the Butcher",
+    "author": "Jouyama Yui",
+    "rating_text": "6/10",
+    "cover_url": "assets/covers/anime/zanuff-the-butcher.webp",
+    "year": 2012
+  },
+  {
+    "id": 94,
+    "title": "My Broken Mariko",
+    "author": "Hirako Waka",
+    "rating_text": "5/10",
+    "cover_url": "assets/covers/anime/my-broken-mariko.webp",
+    "year": 2019
+  },
+  {
+    "id": 95,
+    "title": "I Was Wrong",
+    "author": "Hakuri",
+    "rating_text": "7/10",
+    "cover_url": "assets/covers/anime/i-was-wrong.webp",
+    "year": 2018
+  },
+  {
+    "id": 96,
+    "title": "Just Listen to the Song",
+    "author": "Tatsuki Fujimoto & Oto Toda",
+    "rating_text": "8.1/10",
+    "cover_url": "assets/covers/anime/just-listen-to-the-song.webp",
+    "year": 2022
+  },
+  {
+    "id": 97,
+    "title": "I Am You",
+    "author": "Recool Studio",
+    "rating_text": "7.8/10",
+    "cover_url": "assets/covers/anime/i-am-you.webp",
+    "year": 2026
+  },
+  {
+    "id": 98,
+    "title": "Goodbye, Eri",
+    "author": "Tatsuki Fujimoto",
+    "rating_text": "7.9/10",
+    "cover_url": "assets/covers/anime/goodbye-eri.webp",
+    "year": 2022
+  },
+  {
+    "id": 99,
+    "title": "The Promised Neverland",
+    "author": "Kaiu Shirai & Posuka Demizu",
+    "rating_text": "8.5/10",
+    "cover_url": "assets/covers/anime/the-promised-neverland.webp",
+    "year": 2019
+  },
+  {
+    "id": 100,
+    "title": "Code Geass",
+    "author": "Ichirō Ōkouchi & Gorō Taniguchi",
+    "rating_text": "9/10",
+    "cover_url": "assets/covers/anime/code-geass.webp",
+    "year": 2006
+  },
+  {
+    "id": 101,
+    "title": "Baki the Grappler",
+    "author": "Keisuke Itagaki",
+    "rating_text": "",
+    "cover_url": "assets/covers/anime/baki-the-grappler-2001.webp",
+    "year": 2001
+  },
+  {
+    "id": 102,
+    "title": "Baki",
+    "author": "Keisuke Itagaki",
+    "rating_text": "",
+    "cover_url": "assets/covers/anime/baki-2018.webp",
+    "year": 2018
+  },
+  {
+    "id": 103,
+    "title": "Spy x Family",
+    "author": "Tatsuya Endo",
+    "rating_text": "",
+    "cover_url": "assets/covers/anime/spy-x-family.webp",
+    "year": 2022
+  },
+  {
+    "id": 104,
+    "title": "Boruto",
+    "author": "Ukyō Kodachi & Mikio Ikemoto",
+    "rating_text": "",
+    "cover_url": "assets/covers/anime/boruto.webp",
+    "year": 2017
+  },
+  {
+    "id": 105,
+    "title": "Hellsing Ultimate",
+    "author": "Kouta Hirano",
+    "rating_text": "",
+    "cover_url": "assets/covers/anime/hellsing.webp",
+    "year": 2006
+  },
+  {
+    "id": 106,
+    "title": "86",
+    "author": "Asato Asato",
+    "rating_text": "",
+    "cover_url": "assets/covers/anime/86.webp",
+    "year": 2021
+  },
+  {
+    "id": 107,
+    "title": "Frieren: Beyond Journey's End",
+    "author": "Kanehito Yamada & Tsukasa Abe",
+    "rating_text": "",
+    "cover_url": "assets/covers/anime/frieren.webp",
+    "year": 2023
+  },
+  {
+    "id": 108,
+    "title": "Haikyuu!!",
+    "author": "Haruichi Furudate",
+    "rating_text": "",
+    "cover_url": "assets/covers/anime/haikyuu.webp",
+    "year": 2014
+  },
+  {
+    "id": 109,
+    "title": "Hajime no Ippo",
+    "author": "George Morikawa",
+    "rating_text": "",
+    "cover_url": "assets/covers/anime/hajime-no-ippo.webp",
+    "year": 2000
+  },
+  {
+    "id": 110,
+    "title": "Dororo",
+    "author": "Osamu Tezuka",
+    "rating_text": "",
+    "cover_url": "assets/covers/anime/dororo.webp",
+    "year": 2019
+  },
+  {
+    "id": 111,
+    "title": "Tokyo Ghoul",
+    "author": "Sui Ishida",
+    "rating_text": "",
+    "cover_url": "assets/covers/anime/tokyo-ghoul.webp",
+    "year": 2014
+  },
+  {
+    "id": 112,
+    "title": "Tokyo Ghoul:re",
+    "author": "Sui Ishida",
+    "rating_text": "",
+    "cover_url": "assets/covers/anime/tokyo-ghoul-re.webp",
+    "year": 2018
+  },
+  {
+    "id": 113,
+    "title": "Dragon Ball Super",
+    "author": "Akira Toriyama & Toyotarou",
+    "rating_text": "",
+    "cover_url": "assets/covers/anime/dragon-ball-super.webp",
+    "year": 2015
+  },
+  {
+    "id": 114,
+    "title": "Vagabond",
+    "author": "Takehiko Inoue",
+    "rating_text": "",
+    "cover_url": "assets/covers/anime/vagabond.webp",
+    "year": 1998
+  },
+  {
+    "id": 115,
+    "title": "Yu Yu Hakusho",
+    "author": "Yoshihiro Togashi",
+    "rating_text": "",
+    "cover_url": "assets/covers/anime/yu-yu-hakusho.webp",
+    "year": 1992
+  },
+  {
+    "id": 116,
+    "title": "Slam Dunk",
+    "author": "Takehiko Inoue",
+    "rating_text": "",
+    "cover_url": "assets/covers/anime/slam-dunk.webp",
+    "year": 1990
+  },
+  {
+    "id": 117,
+    "title": "Made in Abyss",
+    "author": "Akihito Tsukushi",
+    "rating_text": "",
+    "cover_url": "assets/covers/anime/made-in-abyss.webp",
+    "year": 2017
+  },
+  {
+    "id": 118,
+    "title": "Psycho-Pass",
+    "author": "Gen Urobuchi",
+    "rating_text": "",
+    "cover_url": "assets/covers/anime/psycho-pass.webp",
+    "year": 2012
+  },
+  {
+    "id": 119,
+    "title": "Starving Anonymous",
+    "author": "Yuu Kuraishi & Kazu Inabe",
+    "rating_text": "",
+    "cover_url": "assets/covers/anime/starving-anonymous.webp",
+    "year": 2016
+  },
+  {
+    "id": 120,
+    "title": "Juujika no Rokunin",
+    "author": "Shiryuu Nakatake",
+    "rating_text": "",
+    "cover_url": "assets/covers/anime/juujika-no-rokunin.webp",
+    "year": 2020
+  },
+  {
+    "id": 121,
+    "title": "Redo of Healer",
+    "author": "Rui Tsukiyo",
+    "rating_text": "",
+    "cover_url": "assets/covers/anime/redo-of-healer.webp",
+    "year": 2017
+  },
+  {
+    "id": 122,
+    "title": "Gantz",
+    "author": "Hiroya Oku",
+    "rating_text": "",
+    "cover_url": "assets/covers/anime/gantz.webp",
+    "year": 2004
+  },
+  {
+    "id": 123,
+    "title": "Tokyo Revengers",
+    "author": "Ken Wakui",
+    "rating_text": "",
+    "cover_url": "assets/covers/anime/tokyo-revengers.webp",
+    "year": 2021
+  },
+  {
+    "id": 124,
+    "title": "Cyberpunk: Edgerunners",
+    "author": "Studio Trigger",
+    "rating_text": "",
+    "cover_url": "assets/covers/anime/cyberpunk-edgerunners.webp",
+    "year": 2022
+  },
+  {
+    "id": 125,
+    "title": "The Apothecary Diaries",
+    "author": "Natsu Hyuga",
+    "rating_text": "",
+    "cover_url": "assets/covers/anime/the-apothecary-diaries.webp",
+    "year": 2023
+  }
+]

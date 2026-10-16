@@ -1,0 +1,46 @@
+:root {
+  --bg: #000000;
+  --surface: #0a0a0a;
+  --surface-pill: #111111;
+  --pill-active: #1f1f1f;
+  --border: #1e1e1e;
+  --border-strong: #2a2a2a;
+  --text: #ededed;
+  --text-muted: #888888;
+  --text-faint: #444444;
+  --gold: #fbbf24;
+  --gold-glow: rgba(251, 191, 36, 0.15);
+  --gold-border: rgba(251, 191, 36, 0.35);
+  --gold-shadow: rgba(251, 191, 36, 0.15);
+  --gold-aura: 0 0 24px rgba(251, 191, 36, 0.12), 0 0 2px rgba(251, 191, 36, 0.3);
+
+  --font-sans: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Geist Mono', monospace;
+
+  --radius-pill: 9999px;
+  --radius-cover: 6px;
+  --ease-pill: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --page-x: 24px;
+  --gutter-top: 40px;
+  --gutter-bottom: 80px;
+
+  --card-index: 32px;
+  --card-cover: 120px;
+  --card-gap: 24px;
+  --card-pad: 24px;
+  --card-intrinsic: 228px;
+  --content-gap: 6px;
+
+  --fs-index: 0.8rem;
+  --fs-title: 1.15rem;
+  --fs-author: 0.72rem;
+  --fs-rating: 0.65rem;
+
+  --pill-pad: 3px;
+  --header-pad: 16px;
+  --tab-h: 32px;
+  --tab-px: 16px;
+  --tab-py: 5px;
+  --fs-tab: 0.78rem;
+}

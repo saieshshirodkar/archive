@@ -1,0 +1,114 @@
+.book-grid {
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--gutter-top);
+  padding-bottom: var(--gutter-bottom);
+}
+
+.book-card,
+.skeleton-card {
+  display: grid;
+  grid-template-columns: var(--card-index) var(--card-cover) minmax(0, 1fr);
+  gap: var(--card-gap);
+  padding: var(--card-pad) 0;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+}
+
+.book-content,
+.skeleton-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--content-gap);
+}
+
+.book-card {
+  content-visibility: auto;
+  contain-intrinsic-size: auto var(--card-intrinsic);
+}
+
+.book-card:first-child,
+.skeleton-card:first-child {
+  padding-top: 0;
+}
+
+.book-card:last-child {
+  border-bottom: none;
+}
+
+.book-index {
+  font-family: var(--font-mono);
+  font-size: var(--fs-index);
+  line-height: 1.3;
+  color: var(--text-faint);
+  padding-top: 2px;
+}
+
+.book-cover-container {
+  aspect-ratio: 2/3;
+  width: var(--card-cover);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-cover);
+  overflow: hidden;
+  contain: layout paint style;
+  transition: border-color 0.2s ease;
+}
+
+.book-card:hover .book-cover-container {
+  border-color: var(--border-strong);
+}
+
+.book-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.is-tbr .book-cover {
+  filter: grayscale(0.8);
+  opacity: 0.5;
+}
+
+.rating-text {
+  font-family: var(--font-mono);
+  font-size: var(--fs-rating);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  padding: 2px 8px;
+  align-self: flex-start;
+}
+
+.rating-text.tbr {
+  color: var(--text-muted);
+  background: transparent;
+  border-color: var(--border);
+}
+
+.book-title {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: var(--fs-title);
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  overflow-wrap: break-word;
+}
+
+.book-author {
+  font-family: var(--font-mono);
+  font-size: var(--fs-author);
+  color: var(--text-muted);
+}
+
+.movie-year {
+  font-family: var(--font-mono);
+  font-size: 0.8em;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-left: 6px;
+}
