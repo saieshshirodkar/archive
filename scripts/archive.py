@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import json
 import os
+import sys
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -193,6 +194,65 @@ def exact(entries: list[dict], title: str) -> int | None:
         if e["title"].lower() == title.lower():
             return i
     return None
+
+
+def resolve_index(entries: list[dict], needle: str, strict: bool = False) -> int | None:
+    """Resolve a user-supplied title to exactly one index, else None.
+
+    This is the single decision every write command makes before touching an
+    entry, and it is deliberately the only place that answer is computed.
+
+    Returns None for both "nothing matched" and "more than one matched",
+    because a caller cannot act on an ambiguous title without being told which
+    candidates exist. Callers print the ambiguity by re-running :func:`find`.
+
+    ``strict`` demands a whole-title match instead of a substring one. It
+    exists because short titles cannot be disambiguated by shrinking the
+    needle: "Baki" is a substring of "Baki Hanma" and "Baki the Grappler",
+    and no shorter needle separates them. "Bastard" has the same shape against
+    "Bastard!!".
+    """
+    if strict:
+        return exact(entries, needle)
+    hits = find(entries, needle)
+    return hits[0] if len(hits) == 1 else None
+
+
+def report_no_match(
+    entries: list[dict], needle: str, category: str, label: str, strict: bool
+) -> None:
+    """Print why :func:`resolve_index` returned None, to stderr.
+
+    Under ``strict`` the substring hits are near-misses worth surfacing: the
+    user asked for one exact title and the closest neighbours are almost
+    always what they actually meant.
+    """
+    hits = find(entries, needle)
+    if strict:
+        if not hits:
+            print(
+                f"error: nothing in {category} is titled exactly {needle!r}.",
+                file=sys.stderr,
+            )
+            return
+        print(
+            f"error: no entry in {category} is titled exactly {needle!r}; "
+            f"did you mean one of these?",
+            file=sys.stderr,
+        )
+    elif not hits:
+        print(
+            f"error: nothing in {category} matches {needle!r}.", file=sys.stderr
+        )
+        return
+    else:
+        print(
+            f"error: {len(hits)} matches for {label} {needle!r}, be more "
+            f"specific, or pass --exact to match the whole title:",
+            file=sys.stderr,
+        )
+    for i in hits:
+        print("  " + describe(entries[i]), file=sys.stderr)
 
 
 def rated_indices(entries: list[dict]) -> list[int]:

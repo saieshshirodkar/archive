@@ -803,7 +803,7 @@
     "id": 101,
     "title": "Baki the Grappler",
     "author": "Keisuke Itagaki",
-    "rating_text": "",
+    "rating_text": "4/10",
     "cover_url": "assets/covers/anime/baki-the-grappler-2001.webp",
     "year": 2001
   },
@@ -811,7 +811,7 @@
     "id": 102,
     "title": "Baki",
     "author": "Keisuke Itagaki",
-    "rating_text": "",
+    "rating_text": "4/10",
     "cover_url": "assets/covers/anime/baki-2018.webp",
     "year": 2018
   },

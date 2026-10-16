@@ -30,12 +30,33 @@ python3 query.py tbr --cat books       # what's unrated
 python3 add.py --cat books --title "Dune" --author "Frank Herbert" \
     --year 1965 --rating 9.5
 python3 rate.py --cat books --title "little life" --rating 8.8
+python3 rate.py --cat animanga --title "Baki" --rating 4 --exact
 python3 reorder.py --cat shows --title "Raakh" --before "Superstore"
 python3 reorder.py --cat books --sort rating --descending
 ```
 
 Every write validates before reporting success, so `check.py` after a batch is
 belt-and-braces rather than the only safety net.
+
+## Picking an entry
+
+Title matching is a substring search by default, so `housemaid is watching`
+finds the book. That is also where the ambiguity comes from: `Baki` matches
+three entries, and no shorter needle separates them, since it is a prefix of
+all three.
+
+`--exact` demands a whole-title match and is the fix for those cases. It
+exists on `rate.py` and `reorder.py`, and it covers `--before`/`--after`
+anchors as well as `--title`:
+
+```bash
+python3 rate.py --cat animanga --title "Baki" --rating 4 --exact
+```
+
+An ambiguous title is always an error; the candidates get listed so the right
+one can be named. Under `--exact` they print as near-misses instead, which is
+usually what was meant. The decision itself lives in one place,
+`archive.resolve_index()`, so the tools do not each reimplement it.
 
 ## Rules encoded here
 
@@ -79,6 +100,10 @@ correspond to a bug that actually happened here:
 
 ## Notes
 
+- Sorting is one ascending key plus `reverse=True`. Nothing negates a sort
+  value, which is what silently broke `--sort title --descending` — there is
+  no `-"abc"`. The TBR block is split off before sorting, so it holds the end
+  of the list in either direction.
 - Comments are deliberate here, unlike `js/`, where AGENTS.md forbids them.
 - `add.py` refuses to add an entry whose cover file is absent, so a bad slug
   fails loudly instead of rendering a grey box.

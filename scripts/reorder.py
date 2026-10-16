@@ -37,25 +37,36 @@ def rating_value(entry: dict) -> float:
     return float(text.split("/")[0])
 
 
-def sort_key(name: str, descending: bool):
-    """Build a sort key function for one of: title, rating, year, id."""
+def sort_key(name: str):
+    """Build a sort key function for one of: title, rating, year, id.
+
+    The key itself is always ascending and never negated. Descending is
+    expressed by passing ``reverse=True`` to ``list.sort``, because the old
+    negation trick cannot work for the string key at all: there is no -"abc",
+    so ``--sort title --descending`` silently returned ascending order. Doing
+    it the same way for every key means one code path, not two.
+    """
 
     def key(entry: dict):
         if name == "title":
-            value = entry["title"].lower()
-        elif name == "rating":
-            value = rating_value(entry)
-        elif name == "year":
-            value = entry.get("year") or 0
-        elif name == "id":
-            value = entry["id"]
-        else:
-            raise ValueError(f"unknown sort {name}")
-        # Negating a number flips the order without reversing strings, which
-        # would break the alphabetical case. Sentinels use tuple (is_real, value).
-        return (-value if descending else value) if isinstance(value, (int, float)) else value
+            return entry["title"].lower()
+        if name == "rating":
+            return rating_value(entry)
+        if name == "year":
+            return entry.get("year") or 0
+        if name == "id":
+            return entry["id"]
+        raise ValueError(f"unknown sort {name}")
 
     return key
+
+
+def anchor(entries: list[dict], needle: str, flag: str, strict: bool) -> int | None:
+    """Resolve a --before/--after anchor to one index, reporting why not."""
+    index = A.resolve_index(entries, needle, strict=strict)
+    if index is None:
+        A.report_no_match(entries, needle, "", flag, strict)
+    return index
 
 
 def main(argv: list[str]) -> int:
@@ -66,6 +77,11 @@ def main(argv: list[str]) -> int:
     p.add_argument("--after", default=None, help="move this entry after that one")
     p.add_argument("--position", type=int, default=None, help="move to this id position")
     p.add_argument("--rename", default=None, help="new title for --title")
+    p.add_argument(
+        "--exact",
+        action="store_true",
+        help="require whole-title matches for --title/--before/--after",
+    )
     p.add_argument("--sort", default=None, choices=["title", "rating", "year", "id"])
     p.add_argument("--descending", action="store_true", help="with --sort")
     args = p.parse_args(argv)
@@ -77,16 +93,19 @@ def main(argv: list[str]) -> int:
     if args.sort:
         if args.cat == "movies":
             print(
-                "error: movies are sorted by date_watched; sort those with "
-                "reorder.py --cat movies --sort date.",
+                "error: movies have exactly one valid order, ascending by "
+                "date_watched, and they are already in it. There is no sort "
+                "to apply.",
                 file=sys.stderr,
             )
             return 1
         # Always keep the TBR block at the end regardless of sort direction,
         # because the block is a structural rule, not an ordering preference.
+        # Splitting first also means sort_key never sees an unrated entry, so
+        # the -1.0 sentinel in rating_value stays unreachable.
         rated = [e for e in entries if e["rating_text"]]
         tbr = [e for e in entries if not e["rating_text"]]
-        rated.sort(key=sort_key(args.sort, args.descending))
+        rated.sort(key=sort_key(args.sort), reverse=args.descending)
         entries = rated + tbr
         A.save(args.cat, entries)
         print(f"sorted {args.cat} by {args.sort}{' desc' if args.descending else ''}:")
@@ -98,13 +117,10 @@ def main(argv: list[str]) -> int:
         print("error: pass --title, or --sort for a bulk sort.", file=sys.stderr)
         return 1
 
-    hits = A.find(entries, args.title)
-    if len(hits) != 1:
-        print(f"error: {len(hits)} matches for {args.title!r}.", file=sys.stderr)
-        for i in hits:
-            print("  " + A.describe(entries[i]), file=sys.stderr)
+    index = A.resolve_index(entries, args.title, strict=args.exact)
+    if index is None:
+        A.report_no_match(entries, args.title, args.cat, "--title", args.exact)
         return 1
-    index = hits[0]
     original = entries[index]["title"]
 
     # --- rename ---
@@ -123,19 +139,17 @@ def main(argv: list[str]) -> int:
         target = args.position - 1
         reason = f"position {args.position}"
     elif args.before:
-        anchor = A.find(entries, args.before)
-        if len(anchor) != 1:
-            print(f"error: {len(anchor)} matches for --before {args.before!r}.", file=sys.stderr)
+        found = anchor(entries, args.before, "--before", args.exact)
+        if found is None:
             return 1
-        target = anchor[0]
-        reason = f"before {entries[anchor[0]]['title']!r}"
+        target = found
+        reason = f"before {entries[found]['title']!r}"
     elif args.after:
-        anchor = A.find(entries, args.after)
-        if len(anchor) != 1:
-            print(f"error: {len(anchor)} matches for --after {args.after!r}.", file=sys.stderr)
+        found = anchor(entries, args.after, "--after", args.exact)
+        if found is None:
             return 1
-        target = anchor[0] + 1
-        reason = f"after {entries[anchor[0]]['title']!r}"
+        target = found + 1
+        reason = f"after {entries[found]['title']!r}"
     else:
         print("error: pass --position, --before, or --after.", file=sys.stderr)
         return 1

@@ -93,15 +93,19 @@ def main(argv: list[str]) -> int:
     args = build_parser().parse_args(argv)
 
     # Validate the rating before touching anything, so a typo cannot half-apply.
+    # Normalised once here and reused below, rather than parsing twice.
     try:
-        A.normalise_rating(args.rating) if args.rating is not None else None
+        rating = "" if args.rating is None else A.normalise_rating(args.rating)
     except ValueError as exc:
         return die(str(exc))
 
     entries = A.load(args.cat)
 
     # Refuse a duplicate title rather than silently adding a second copy.
-    # print_matches shows the candidates so the user can confirm the spelling.
+    # An entry being rated is a stronger signal than one being added to the
+    # TBR block, so near-matches there are a hard error; for a new TBR entry
+    # they are only worth a note, since titles that are near-misses of each
+    # other are the normal case (Baki vs Baki Hanma, Verity novel vs film).
     hits = A.find(entries, args.title)
     if args.cat == "movies" or args.rating is not None:
         if A.exact(entries, args.title) is not None:
@@ -111,11 +115,6 @@ def main(argv: list[str]) -> int:
         print(f"note: possible existing match for {args.title!r}:", file=sys.stderr)
         for i in hits:
             print("  " + A.describe(entries[i]), file=sys.stderr)
-
-    try:
-        rating = "" if args.rating is None else A.normalise_rating(args.rating)
-    except ValueError as exc:
-        return die(str(exc))
 
     year = args.year
     stem = args.slug or slugify(args.title)

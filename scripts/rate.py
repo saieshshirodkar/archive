@@ -28,6 +28,12 @@ def main(argv: list[str]) -> int:
     p = argparse.ArgumentParser(description="Rate an entry in the archive.")
     p.add_argument("--cat", required=True, choices=A.category_ids())
     p.add_argument("--title", required=True, help="substring match is fine")
+    p.add_argument(
+        "--exact",
+        action="store_true",
+        help="require a whole-title match; needed for short titles that are a "
+        "substring of another entry (Baki, Bastard)",
+    )
     p.add_argument("--rating", required=True, help='like "8" or "8.5"')
     p.add_argument(
         "--move",
@@ -43,17 +49,11 @@ def main(argv: list[str]) -> int:
     args = p.parse_args(argv)
 
     entries = A.load(args.cat)
-    hits = A.find(entries, args.title)
-    if not hits:
-        print(f"error: nothing in {args.cat} matches {args.title!r}.", file=sys.stderr)
-        return 1
-    if len(hits) > 1:
-        print(f"error: {len(hits)} matches in {args.cat}, be more specific:", file=sys.stderr)
-        for i in hits:
-            print("  " + A.describe(entries[i]), file=sys.stderr)
+    index = A.resolve_index(entries, args.title, strict=args.exact)
+    if index is None:
+        A.report_no_match(entries, args.title, args.cat, "--title", args.exact)
         return 1
 
-    index = hits[0]
     entry = entries[index]
     was_tbr = not entry["rating_text"]
     rating = A.normalise_rating(args.rating)
