@@ -4,7 +4,7 @@ Personal media catalog for books, animanga, movies, and TV shows. Vanilla HTML/C
 
 **This file is mostly about the data workflow.** 90% of requests here are "add this movie/book/anime/show" or "rate this". Read the Workflow section before touching `data/`.
 
-Current counts: books 70 (32 rated + 38 TBR) · animanga 125 (99 rated + 26 TBR) · movies 66 (all rated) · shows 7 (all rated). 268 covers, ~10.3MB total.
+Current counts: books 70 (34 rated + 36 TBR) · animanga 127 (107 rated + 20 TBR) · movies 68 (all rated) · shows 7 (all rated). 272 covers, ~11MB total.
 
 ## Stack
 
@@ -307,6 +307,8 @@ Rendering rules that depend on these fields:
 - **Deploy** — `vp` (alias for `vercel --prod`, defined in `~/.zshrc` line 53). Plain `vercel --prod` only; **never** add `--scope` (user rejected it). Confirm the `▲ Aliased https://saiesh-archive.vercel.app` line and stop — do NOT curl the live URL afterward, the user tests it themselves.
   - The CLI intermittently prints the deployment as raw JSON with no `Aliased` line. That still means it deployed. Just run `vp` again and read the output rather than grepping for a line that may not be there.
 - **Deploy is opt-in** — many data edits are batched and the user says `deploy` when ready. Data edits alone must not trigger a deploy.
+- **Deploy means Vercel, not git.** `deploy` / `ploy` / `dep` = `vercel --prod` and nothing else. Never commit, never `git push`, never `git add` on the strength of a deploy request — pushing is a separate opt-in that needs its own words ("push to gh", "ploy to github"). Committing a deploy is not implied by it. Getting this wrong on 16-10-2026: a bare `dep` was answered with a commit and a push, which the user had to correct.
+- **Do not grep `vercel` output.** It prints either the `▲ Aliased` line or a raw JSON blob with no such line, and piping it through `grep "Aliased"` discards the second form while making a successful deploy look like a failure. Run it and read the output. A first attempt can also fail with a transient `Not authorized` and succeed on an immediate retry, so check `"status"` before concluding anything went wrong.
 - **The user verifies UI in a browser.** Do not spin up headless browsers or jsdom harnesses to check layout — it has no layout engine and gives false confidence. Static checks (brace balance, `node --check`, import graph, output counts against real JSON) are fine; anything requiring computed geometry is not.
 - **Never `pkill -f` a pattern that appears in your own command string** — it kills your own shell. Capture `$!` at launch and `kill $PID`.
 - **No comments in code** — keep it that way.
@@ -332,6 +334,9 @@ TZ=Asia/Kolkata date +"%d-%m-%Y %H:%M %Z"                                       
 ```
 
 ## Deploy
+
+`deploy` means Vercel only. It does not mean git — commits and pushes need
+their own request. See the Gotchas entry for the correction this cost.
 
 Production URL: https://saiesh-archive.vercel.app
 Legacy: https://saiesh-archive.surge.sh

@@ -825,6 +825,38 @@
   },
   {
     "id": 104,
+    "title": "Ranma 1/2",
+    "author": "Rumiko Takahashi",
+    "rating_text": "7.1/10",
+    "cover_url": "assets/covers/anime/ranma-half.webp",
+    "year": 2024
+  },
+  {
+    "id": 105,
+    "title": "The Apothecary Diaries",
+    "author": "Natsu Hyuga",
+    "rating_text": "4.5/10",
+    "cover_url": "assets/covers/anime/the-apothecary-diaries.webp",
+    "year": 2023
+  },
+  {
+    "id": 106,
+    "title": "Cyberpunk: Edgerunners",
+    "author": "Studio Trigger",
+    "rating_text": "7.5/10",
+    "cover_url": "assets/covers/anime/cyberpunk-edgerunners.webp",
+    "year": 2022
+  },
+  {
+    "id": 107,
+    "title": "Made in Abyss",
+    "author": "Akihito Tsukushi",
+    "rating_text": "6.5/10",
+    "cover_url": "assets/covers/anime/made-in-abyss.webp",
+    "year": 2017
+  },
+  {
+    "id": 108,
     "title": "Spy x Family",
     "author": "Tatsuya Endo",
     "rating_text": "",
@@ -832,7 +864,7 @@
     "year": 2022
   },
   {
-    "id": 105,
+    "id": 109,
     "title": "Boruto",
     "author": "Ukyō Kodachi & Mikio Ikemoto",
     "rating_text": "",
@@ -840,7 +872,7 @@
     "year": 2017
   },
   {
-    "id": 106,
+    "id": 110,
     "title": "Hellsing Ultimate",
     "author": "Kouta Hirano",
     "rating_text": "",
@@ -848,7 +880,7 @@
     "year": 2006
   },
   {
-    "id": 107,
+    "id": 111,
     "title": "86",
     "author": "Asato Asato",
     "rating_text": "",
@@ -856,7 +888,7 @@
     "year": 2021
   },
   {
-    "id": 108,
+    "id": 112,
     "title": "Frieren: Beyond Journey's End",
     "author": "Kanehito Yamada & Tsukasa Abe",
     "rating_text": "",
@@ -864,7 +896,7 @@
     "year": 2023
   },
   {
-    "id": 109,
+    "id": 113,
     "title": "Haikyuu!!",
     "author": "Haruichi Furudate",
     "rating_text": "",
@@ -872,7 +904,7 @@
     "year": 2014
   },
   {
-    "id": 110,
+    "id": 114,
     "title": "Hajime no Ippo",
     "author": "George Morikawa",
     "rating_text": "",
@@ -880,7 +912,7 @@
     "year": 2000
   },
   {
-    "id": 111,
+    "id": 115,
     "title": "Dororo",
     "author": "Osamu Tezuka",
     "rating_text": "",
@@ -888,7 +920,7 @@
     "year": 2019
   },
   {
-    "id": 112,
+    "id": 116,
     "title": "Tokyo Ghoul",
     "author": "Sui Ishida",
     "rating_text": "",
@@ -896,7 +928,7 @@
     "year": 2014
   },
   {
-    "id": 113,
+    "id": 117,
     "title": "Tokyo Ghoul:re",
     "author": "Sui Ishida",
     "rating_text": "",
@@ -904,7 +936,7 @@
     "year": 2018
   },
   {
-    "id": 114,
+    "id": 118,
     "title": "Dragon Ball Super",
     "author": "Akira Toriyama & Toyotarou",
     "rating_text": "",
@@ -912,7 +944,7 @@
     "year": 2015
   },
   {
-    "id": 115,
+    "id": 119,
     "title": "Vagabond",
     "author": "Takehiko Inoue",
     "rating_text": "",
@@ -920,7 +952,7 @@
     "year": 1998
   },
   {
-    "id": 116,
+    "id": 120,
     "title": "Yu Yu Hakusho",
     "author": "Yoshihiro Togashi",
     "rating_text": "",
@@ -928,7 +960,7 @@
     "year": 1992
   },
   {
-    "id": 117,
+    "id": 121,
     "title": "Slam Dunk",
     "author": "Takehiko Inoue",
     "rating_text": "",
@@ -936,15 +968,7 @@
     "year": 1990
   },
   {
-    "id": 118,
-    "title": "Made in Abyss",
-    "author": "Akihito Tsukushi",
-    "rating_text": "",
-    "cover_url": "assets/covers/anime/made-in-abyss.webp",
-    "year": 2017
-  },
-  {
-    "id": 119,
+    "id": 122,
     "title": "Psycho-Pass",
     "author": "Gen Urobuchi",
     "rating_text": "",
@@ -952,7 +976,7 @@
     "year": 2012
   },
   {
-    "id": 120,
+    "id": 123,
     "title": "Starving Anonymous",
     "author": "Yuu Kuraishi & Kazu Inabe",
     "rating_text": "",
@@ -960,7 +984,7 @@
     "year": 2016
   },
   {
-    "id": 121,
+    "id": 124,
     "title": "Juujika no Rokunin",
     "author": "Shiryuu Nakatake",
     "rating_text": "",
@@ -968,7 +992,7 @@
     "year": 2020
   },
   {
-    "id": 122,
+    "id": 125,
     "title": "Redo of Healer",
     "author": "Rui Tsukiyo",
     "rating_text": "",
@@ -976,7 +1000,7 @@
     "year": 2017
   },
   {
-    "id": 123,
+    "id": 126,
     "title": "Gantz",
     "author": "Hiroya Oku",
     "rating_text": "",
@@ -984,27 +1008,11 @@
     "year": 2004
   },
   {
-    "id": 124,
+    "id": 127,
     "title": "Tokyo Revengers",
     "author": "Ken Wakui",
     "rating_text": "",
     "cover_url": "assets/covers/anime/tokyo-revengers.webp",
     "year": 2021
-  },
-  {
-    "id": 125,
-    "title": "Cyberpunk: Edgerunners",
-    "author": "Studio Trigger",
-    "rating_text": "",
-    "cover_url": "assets/covers/anime/cyberpunk-edgerunners.webp",
-    "year": 2022
-  },
-  {
-    "id": 126,
-    "title": "The Apothecary Diaries",
-    "author": "Natsu Hyuga",
-    "rating_text": "",
-    "cover_url": "assets/covers/anime/the-apothecary-diaries.webp",
-    "year": 2023
   }
 ]

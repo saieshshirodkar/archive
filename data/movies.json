@@ -534,5 +534,13 @@
     "date_watched": "16-10-2026",
     "rating_text": "5/10",
     "cover_url": "assets/covers/movies/bandkhor.webp"
+  },
+  {
+    "id": 68,
+    "title": "Prahaar: The Untold Story of Ujjwal Nikam",
+    "year": 2026,
+    "date_watched": "16-10-2026",
+    "rating_text": "8.5/10",
+    "cover_url": "assets/covers/movies/prahaar.webp"
   }
 ]
