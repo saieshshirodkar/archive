@@ -542,5 +542,37 @@
     "date_watched": "16-10-2026",
     "rating_text": "8.5/10",
     "cover_url": "assets/covers/movies/prahaar.webp"
+  },
+  {
+    "id": 69,
+    "title": "The Whalefall",
+    "year": 2026,
+    "date_watched": "17-10-2026",
+    "rating_text": "6/10",
+    "cover_url": "assets/covers/movies/the-whalefall.webp"
+  },
+  {
+    "id": 70,
+    "title": "Stranger Than Fiction",
+    "year": 2006,
+    "date_watched": "17-10-2026",
+    "rating_text": "5/10",
+    "cover_url": "assets/covers/movies/stranger-than-fiction.webp"
+  },
+  {
+    "id": 71,
+    "title": "Subham",
+    "year": 2025,
+    "date_watched": "17-10-2026",
+    "rating_text": "7/10",
+    "cover_url": "assets/covers/movies/subham.webp"
+  },
+  {
+    "id": 72,
+    "title": "Super Duperr",
+    "year": 2026,
+    "date_watched": "19-10-2026",
+    "rating_text": "8.3/10",
+    "cover_url": "assets/covers/movies/super-duperr.webp"
   }
 ]

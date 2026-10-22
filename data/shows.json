@@ -1,51 +1,86 @@
 [
   {
     "id": 1,
+    "title": "Young Sheldon",
+    "rating_text": "8.9/10",
+    "cover_url": "assets/covers/shows/young-sheldon.webp",
+    "year": 2017
+  },
+  {
+    "id": 2,
+    "title": "Dexter",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/shows/dexter.webp",
+    "year": 2006
+  },
+  {
+    "id": 3,
     "title": "Superstore",
     "rating_text": "9/10",
     "cover_url": "assets/covers/shows/superstore.webp",
     "year": 2015
   },
   {
-    "id": 2,
+    "id": 4,
     "title": "Malcolm in the Middle",
     "rating_text": "9.3/10",
     "cover_url": "assets/covers/shows/malcolm-in-the-middle.webp",
     "year": 2000
   },
   {
-    "id": 3,
+    "id": 5,
     "title": "The Walking Dead",
     "rating_text": "8.1/10",
     "cover_url": "assets/covers/shows/the-walking-dead.webp",
     "year": 2010
   },
   {
-    "id": 4,
+    "id": 6,
+    "title": "Mr. Robot",
+    "rating_text": "8.3/10",
+    "cover_url": "assets/covers/shows/mr-robot.webp",
+    "year": 2015
+  },
+  {
+    "id": 7,
     "title": "Sapne vs Everyone",
     "rating_text": "8.4/10",
     "cover_url": "assets/covers/shows/sapne-vs-everyone.webp",
     "year": 2023
   },
   {
-    "id": 5,
+    "id": 8,
     "title": "Silicon Valley",
     "rating_text": "8.7/10",
     "cover_url": "assets/covers/shows/silicon-valley.webp",
     "year": 2014
   },
   {
-    "id": 6,
+    "id": 9,
     "title": "Pritam and Pedro",
     "rating_text": "8.7/10",
     "cover_url": "assets/covers/shows/pritam-and-pedro.webp",
     "year": 2026
   },
   {
-    "id": 7,
+    "id": 10,
     "title": "Raakh",
     "rating_text": "8.3/10",
     "cover_url": "assets/covers/shows/raakh.webp",
     "year": 2026
+  },
+  {
+    "id": 11,
+    "title": "Widow's Bay",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/shows/widows-bay.webp",
+    "year": 2026
+  },
+  {
+    "id": 12,
+    "title": "The Mentalist",
+    "rating_text": "8.6/10",
+    "cover_url": "assets/covers/shows/the-mentalist.webp",
+    "year": 2008
   }
 ]

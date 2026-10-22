@@ -857,6 +857,14 @@
   },
   {
     "id": 108,
+    "title": "Inuyashiki: Last Hero",
+    "author": "Hiroya Oku",
+    "rating_text": "7/10",
+    "cover_url": "assets/covers/anime/inuyashiki-last-hero.webp",
+    "year": 2017
+  },
+  {
+    "id": 109,
     "title": "Spy x Family",
     "author": "Tatsuya Endo",
     "rating_text": "",
@@ -864,7 +872,7 @@
     "year": 2022
   },
   {
-    "id": 109,
+    "id": 110,
     "title": "Boruto",
     "author": "Ukyō Kodachi & Mikio Ikemoto",
     "rating_text": "",
@@ -872,7 +880,7 @@
     "year": 2017
   },
   {
-    "id": 110,
+    "id": 111,
     "title": "Hellsing Ultimate",
     "author": "Kouta Hirano",
     "rating_text": "",
@@ -880,7 +888,7 @@
     "year": 2006
   },
   {
-    "id": 111,
+    "id": 112,
     "title": "86",
     "author": "Asato Asato",
     "rating_text": "",
@@ -888,7 +896,7 @@
     "year": 2021
   },
   {
-    "id": 112,
+    "id": 113,
     "title": "Frieren: Beyond Journey's End",
     "author": "Kanehito Yamada & Tsukasa Abe",
     "rating_text": "",
@@ -896,7 +904,7 @@
     "year": 2023
   },
   {
-    "id": 113,
+    "id": 114,
     "title": "Haikyuu!!",
     "author": "Haruichi Furudate",
     "rating_text": "",
@@ -904,7 +912,7 @@
     "year": 2014
   },
   {
-    "id": 114,
+    "id": 115,
     "title": "Hajime no Ippo",
     "author": "George Morikawa",
     "rating_text": "",
@@ -912,7 +920,7 @@
     "year": 2000
   },
   {
-    "id": 115,
+    "id": 116,
     "title": "Dororo",
     "author": "Osamu Tezuka",
     "rating_text": "",
@@ -920,7 +928,7 @@
     "year": 2019
   },
   {
-    "id": 116,
+    "id": 117,
     "title": "Tokyo Ghoul",
     "author": "Sui Ishida",
     "rating_text": "",
@@ -928,7 +936,7 @@
     "year": 2014
   },
   {
-    "id": 117,
+    "id": 118,
     "title": "Tokyo Ghoul:re",
     "author": "Sui Ishida",
     "rating_text": "",
@@ -936,7 +944,7 @@
     "year": 2018
   },
   {
-    "id": 118,
+    "id": 119,
     "title": "Dragon Ball Super",
     "author": "Akira Toriyama & Toyotarou",
     "rating_text": "",
@@ -944,7 +952,7 @@
     "year": 2015
   },
   {
-    "id": 119,
+    "id": 120,
     "title": "Vagabond",
     "author": "Takehiko Inoue",
     "rating_text": "",
@@ -952,7 +960,7 @@
     "year": 1998
   },
   {
-    "id": 120,
+    "id": 121,
     "title": "Yu Yu Hakusho",
     "author": "Yoshihiro Togashi",
     "rating_text": "",
@@ -960,7 +968,7 @@
     "year": 1992
   },
   {
-    "id": 121,
+    "id": 122,
     "title": "Slam Dunk",
     "author": "Takehiko Inoue",
     "rating_text": "",
@@ -968,7 +976,7 @@
     "year": 1990
   },
   {
-    "id": 122,
+    "id": 123,
     "title": "Psycho-Pass",
     "author": "Gen Urobuchi",
     "rating_text": "",
@@ -976,7 +984,7 @@
     "year": 2012
   },
   {
-    "id": 123,
+    "id": 124,
     "title": "Starving Anonymous",
     "author": "Yuu Kuraishi & Kazu Inabe",
     "rating_text": "",
@@ -984,7 +992,7 @@
     "year": 2016
   },
   {
-    "id": 124,
+    "id": 125,
     "title": "Juujika no Rokunin",
     "author": "Shiryuu Nakatake",
     "rating_text": "",
@@ -992,7 +1000,7 @@
     "year": 2020
   },
   {
-    "id": 125,
+    "id": 126,
     "title": "Redo of Healer",
     "author": "Rui Tsukiyo",
     "rating_text": "",
@@ -1000,7 +1008,7 @@
     "year": 2017
   },
   {
-    "id": 126,
+    "id": 127,
     "title": "Gantz",
     "author": "Hiroya Oku",
     "rating_text": "",
@@ -1008,7 +1016,7 @@
     "year": 2004
   },
   {
-    "id": 127,
+    "id": 128,
     "title": "Tokyo Revengers",
     "author": "Ken Wakui",
     "rating_text": "",
