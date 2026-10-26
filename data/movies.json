@@ -574,5 +574,37 @@
     "date_watched": "19-10-2026",
     "rating_text": "8.3/10",
     "cover_url": "assets/covers/movies/super-duperr.webp"
+  },
+  {
+    "id": 73,
+    "title": "Gondhal",
+    "year": 2025,
+    "date_watched": "23-10-2026",
+    "rating_text": "3/10",
+    "cover_url": "assets/covers/movies/gondhal.webp"
+  },
+  {
+    "id": 74,
+    "title": "Clayface",
+    "year": 2026,
+    "date_watched": "23-10-2026",
+    "rating_text": "5/10",
+    "cover_url": "assets/covers/movies/clayface.webp"
+  },
+  {
+    "id": 75,
+    "title": "Hope (Na Hong-jin)",
+    "year": 2026,
+    "date_watched": "23-10-2026",
+    "rating_text": "7.5/10",
+    "cover_url": "assets/covers/movies/hope-na-hong-jin.webp"
+  },
+  {
+    "id": 76,
+    "title": "Udta Teer",
+    "year": 2026,
+    "date_watched": "24-10-2026",
+    "rating_text": "8.2/10",
+    "cover_url": "assets/covers/movies/udta-teer.webp"
   }
 ]
