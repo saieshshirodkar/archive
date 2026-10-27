@@ -905,14 +905,6 @@
   },
   {
     "id": 114,
-    "title": "Boruto",
-    "author": "Ukyō Kodachi & Mikio Ikemoto",
-    "rating_text": "",
-    "cover_url": "assets/covers/anime/boruto.webp",
-    "year": 2017
-  },
-  {
-    "id": 115,
     "title": "Hellsing Ultimate",
     "author": "Kouta Hirano",
     "rating_text": "",
@@ -920,7 +912,7 @@
     "year": 2006
   },
   {
-    "id": 116,
+    "id": 115,
     "title": "Haikyuu!!",
     "author": "Haruichi Furudate",
     "rating_text": "",
@@ -928,7 +920,7 @@
     "year": 2014
   },
   {
-    "id": 117,
+    "id": 116,
     "title": "Hajime no Ippo",
     "author": "George Morikawa",
     "rating_text": "",
@@ -936,7 +928,7 @@
     "year": 2000
   },
   {
-    "id": 118,
+    "id": 117,
     "title": "Tokyo Ghoul",
     "author": "Sui Ishida",
     "rating_text": "",
@@ -944,7 +936,7 @@
     "year": 2014
   },
   {
-    "id": 119,
+    "id": 118,
     "title": "Tokyo Ghoul:re",
     "author": "Sui Ishida",
     "rating_text": "",
@@ -952,7 +944,7 @@
     "year": 2018
   },
   {
-    "id": 120,
+    "id": 119,
     "title": "Dragon Ball Super",
     "author": "Akira Toriyama & Toyotarou",
     "rating_text": "",
@@ -960,15 +952,7 @@
     "year": 2015
   },
   {
-    "id": 121,
-    "title": "Vagabond",
-    "author": "Takehiko Inoue",
-    "rating_text": "",
-    "cover_url": "assets/covers/anime/vagabond.webp",
-    "year": 1998
-  },
-  {
-    "id": 122,
+    "id": 120,
     "title": "Yu Yu Hakusho",
     "author": "Yoshihiro Togashi",
     "rating_text": "",
@@ -976,15 +960,7 @@
     "year": 1992
   },
   {
-    "id": 123,
-    "title": "Slam Dunk",
-    "author": "Takehiko Inoue",
-    "rating_text": "",
-    "cover_url": "assets/covers/anime/slam-dunk.webp",
-    "year": 1990
-  },
-  {
-    "id": 124,
+    "id": 121,
     "title": "Psycho-Pass",
     "author": "Gen Urobuchi",
     "rating_text": "",
@@ -992,7 +968,7 @@
     "year": 2012
   },
   {
-    "id": 125,
+    "id": 122,
     "title": "Starving Anonymous",
     "author": "Yuu Kuraishi & Kazu Inabe",
     "rating_text": "",
@@ -1000,35 +976,11 @@
     "year": 2016
   },
   {
-    "id": 126,
+    "id": 123,
     "title": "Juujika no Rokunin",
     "author": "Shiryuu Nakatake",
     "rating_text": "",
     "cover_url": "assets/covers/anime/juujika-no-rokunin.webp",
     "year": 2020
-  },
-  {
-    "id": 127,
-    "title": "Redo of Healer",
-    "author": "Rui Tsukiyo",
-    "rating_text": "",
-    "cover_url": "assets/covers/anime/redo-of-healer.webp",
-    "year": 2017
-  },
-  {
-    "id": 128,
-    "title": "Gantz",
-    "author": "Hiroya Oku",
-    "rating_text": "",
-    "cover_url": "assets/covers/anime/gantz.webp",
-    "year": 2004
-  },
-  {
-    "id": 129,
-    "title": "Tokyo Revengers",
-    "author": "Ken Wakui",
-    "rating_text": "",
-    "cover_url": "assets/covers/anime/tokyo-revengers.webp",
-    "year": 2021
   }
 ]
