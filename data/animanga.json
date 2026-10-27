@@ -873,6 +873,30 @@
   },
   {
     "id": 110,
+    "title": "86",
+    "author": "Asato Asato",
+    "rating_text": "5.5/10",
+    "cover_url": "assets/covers/anime/86.webp",
+    "year": 2021
+  },
+  {
+    "id": 111,
+    "title": "Dororo",
+    "author": "Osamu Tezuka",
+    "rating_text": "7.7/10",
+    "cover_url": "assets/covers/anime/dororo.webp",
+    "year": 2019
+  },
+  {
+    "id": 112,
+    "title": "Frieren: Beyond Journey's End",
+    "author": "Kanehito Yamada & Tsukasa Abe",
+    "rating_text": "6.6/10",
+    "cover_url": "assets/covers/anime/frieren.webp",
+    "year": 2023
+  },
+  {
+    "id": 113,
     "title": "Spy x Family",
     "author": "Tatsuya Endo",
     "rating_text": "",
@@ -880,7 +904,7 @@
     "year": 2022
   },
   {
-    "id": 111,
+    "id": 114,
     "title": "Boruto",
     "author": "Ukyō Kodachi & Mikio Ikemoto",
     "rating_text": "",
@@ -888,7 +912,7 @@
     "year": 2017
   },
   {
-    "id": 112,
+    "id": 115,
     "title": "Hellsing Ultimate",
     "author": "Kouta Hirano",
     "rating_text": "",
@@ -896,23 +920,7 @@
     "year": 2006
   },
   {
-    "id": 113,
-    "title": "86",
-    "author": "Asato Asato",
-    "rating_text": "",
-    "cover_url": "assets/covers/anime/86.webp",
-    "year": 2021
-  },
-  {
-    "id": 114,
-    "title": "Frieren: Beyond Journey's End",
-    "author": "Kanehito Yamada & Tsukasa Abe",
-    "rating_text": "",
-    "cover_url": "assets/covers/anime/frieren.webp",
-    "year": 2023
-  },
-  {
-    "id": 115,
+    "id": 116,
     "title": "Haikyuu!!",
     "author": "Haruichi Furudate",
     "rating_text": "",
@@ -920,20 +928,12 @@
     "year": 2014
   },
   {
-    "id": 116,
+    "id": 117,
     "title": "Hajime no Ippo",
     "author": "George Morikawa",
     "rating_text": "",
     "cover_url": "assets/covers/anime/hajime-no-ippo.webp",
     "year": 2000
-  },
-  {
-    "id": 117,
-    "title": "Dororo",
-    "author": "Osamu Tezuka",
-    "rating_text": "",
-    "cover_url": "assets/covers/anime/dororo.webp",
-    "year": 2019
   },
   {
     "id": 118,

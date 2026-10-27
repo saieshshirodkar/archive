@@ -82,5 +82,12 @@
     "rating_text": "8.6/10",
     "cover_url": "assets/covers/shows/the-mentalist.webp",
     "year": 2008
+  },
+  {
+    "id": 13,
+    "title": "The Sopranos",
+    "rating_text": "8.3/10",
+    "cover_url": "assets/covers/shows/the-sopranos.webp",
+    "year": 1999
   }
 ]

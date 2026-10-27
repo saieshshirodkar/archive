@@ -273,6 +273,14 @@
   },
   {
     "id": 35,
+    "title": "The Tenant",
+    "author": "Freida McFadden",
+    "rating_text": "7.8/10",
+    "cover_url": "assets/covers/books/the-tenant.webp",
+    "year": 2025
+  },
+  {
+    "id": 36,
     "title": "The Reappearance of Rachel Price",
     "author": "Holly Jackson",
     "rating_text": "",
@@ -280,7 +288,7 @@
     "year": 2024
   },
   {
-    "id": 36,
+    "id": 37,
     "title": "A Little Life",
     "author": "Hanya Yanagihara",
     "rating_text": "",
@@ -288,7 +296,7 @@
     "year": 2015
   },
   {
-    "id": 37,
+    "id": 38,
     "title": "A Thousand Splendid Suns",
     "author": "Khaled Hosseini",
     "rating_text": "",
@@ -296,7 +304,7 @@
     "year": 2007
   },
   {
-    "id": 38,
+    "id": 39,
     "title": "Days at the Morisaki Bookshop",
     "author": "Satoshi Yagisawa",
     "rating_text": "",
@@ -304,7 +312,7 @@
     "year": 2010
   },
   {
-    "id": 39,
+    "id": 40,
     "title": "The Family Upstairs",
     "author": "Lisa Jewell",
     "rating_text": "",
@@ -312,7 +320,7 @@
     "year": 2019
   },
   {
-    "id": 40,
+    "id": 41,
     "title": "Yellowface",
     "author": "R. F. Kuang",
     "rating_text": "",
@@ -320,7 +328,7 @@
     "year": 2023
   },
   {
-    "id": 41,
+    "id": 42,
     "title": "Kafka on the Shore",
     "author": "Haruki Murakami",
     "rating_text": "",
@@ -328,7 +336,7 @@
     "year": 2002
   },
   {
-    "id": 42,
+    "id": 43,
     "title": "Norwegian Wood",
     "author": "Haruki Murakami",
     "rating_text": "",
@@ -336,19 +344,11 @@
     "year": 1987
   },
   {
-    "id": 43,
+    "id": 44,
     "title": "Not Quite Dead Yet",
     "author": "Holly Jackson",
     "rating_text": "",
     "cover_url": "assets/covers/books/not-quite-dead-yet.webp",
-    "year": 2025
-  },
-  {
-    "id": 44,
-    "title": "The Tenant",
-    "author": "Freida McFadden",
-    "rating_text": "",
-    "cover_url": "assets/covers/books/the-tenant.webp",
     "year": 2025
   },
   {
