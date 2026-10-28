@@ -897,90 +897,42 @@
   },
   {
     "id": 113,
-    "title": "Spy x Family",
-    "author": "Tatsuya Endo",
-    "rating_text": "",
-    "cover_url": "assets/covers/anime/spy-x-family.webp",
-    "year": 2022
-  },
-  {
-    "id": 114,
-    "title": "Hellsing Ultimate",
-    "author": "Kouta Hirano",
-    "rating_text": "",
-    "cover_url": "assets/covers/anime/hellsing.webp",
-    "year": 2006
-  },
-  {
-    "id": 115,
-    "title": "Haikyuu!!",
-    "author": "Haruichi Furudate",
-    "rating_text": "",
-    "cover_url": "assets/covers/anime/haikyuu.webp",
-    "year": 2014
-  },
-  {
-    "id": 116,
-    "title": "Hajime no Ippo",
-    "author": "George Morikawa",
-    "rating_text": "",
-    "cover_url": "assets/covers/anime/hajime-no-ippo.webp",
-    "year": 2000
-  },
-  {
-    "id": 117,
-    "title": "Tokyo Ghoul",
-    "author": "Sui Ishida",
-    "rating_text": "",
-    "cover_url": "assets/covers/anime/tokyo-ghoul.webp",
-    "year": 2014
-  },
-  {
-    "id": 118,
-    "title": "Tokyo Ghoul:re",
-    "author": "Sui Ishida",
-    "rating_text": "",
-    "cover_url": "assets/covers/anime/tokyo-ghoul-re.webp",
-    "year": 2018
-  },
-  {
-    "id": 119,
-    "title": "Dragon Ball Super",
-    "author": "Akira Toriyama & Toyotarou",
-    "rating_text": "",
-    "cover_url": "assets/covers/anime/dragon-ball-super.webp",
-    "year": 2015
-  },
-  {
-    "id": 120,
-    "title": "Yu Yu Hakusho",
-    "author": "Yoshihiro Togashi",
-    "rating_text": "",
-    "cover_url": "assets/covers/anime/yu-yu-hakusho.webp",
-    "year": 1992
-  },
-  {
-    "id": 121,
     "title": "Psycho-Pass",
     "author": "Gen Urobuchi",
-    "rating_text": "",
+    "rating_text": "6/10",
     "cover_url": "assets/covers/anime/psycho-pass.webp",
     "year": 2012
   },
   {
-    "id": 122,
-    "title": "Starving Anonymous",
-    "author": "Yuu Kuraishi & Kazu Inabe",
-    "rating_text": "",
-    "cover_url": "assets/covers/anime/starving-anonymous.webp",
-    "year": 2016
+    "id": 114,
+    "title": "Jaadugar: A Witch in Mongolia",
+    "author": "Science Saru",
+    "rating_text": "6.5/10",
+    "cover_url": "assets/covers/anime/jaadugar-a-witch-in-mongolia.webp",
+    "year": 2026
   },
   {
-    "id": 123,
-    "title": "Juujika no Rokunin",
-    "author": "Shiryuu Nakatake",
-    "rating_text": "",
-    "cover_url": "assets/covers/anime/juujika-no-rokunin.webp",
-    "year": 2020
+    "id": 115,
+    "title": "Dandelion",
+    "author": "Hideaki Sorachi",
+    "rating_text": "5/10",
+    "cover_url": "assets/covers/anime/dandelion.webp",
+    "year": 2026
+  },
+  {
+    "id": 116,
+    "title": "The Manga Guide to Calculus",
+    "author": "Hiroyuki Kojima & Shin Togami",
+    "rating_text": "7/10",
+    "cover_url": "assets/covers/anime/the-manga-guide-to-calculus.webp",
+    "year": 2009
+  },
+  {
+    "id": 117,
+    "title": "The Manga Guide to Linear Algebra",
+    "author": "Shin Takahashi & Iroha Inoue",
+    "rating_text": "6/10",
+    "cover_url": "assets/covers/anime/the-manga-guide-to-linear-algebra.webp",
+    "year": 2012
   }
 ]
