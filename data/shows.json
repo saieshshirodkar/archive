@@ -169,104 +169,251 @@
   },
   {
     "id": 25,
+    "title": "Breaking Bad",
+    "rating_text": "10/10",
+    "cover_url": "assets/covers/shows/breaking-bad.webp",
+    "year": 2008
+  },
+  {
+    "id": 26,
+    "title": "Better Call Saul",
+    "rating_text": "9.1/10",
+    "cover_url": "assets/covers/shows/better-call-saul.webp",
+    "year": 2015
+  },
+  {
+    "id": 27,
+    "title": "Money Heist",
+    "rating_text": "9.4/10",
+    "cover_url": "assets/covers/shows/money-heist.webp",
+    "year": 2017
+  },
+  {
+    "id": 28,
+    "title": "Dark",
+    "rating_text": "10/10",
+    "cover_url": "assets/covers/shows/dark.webp",
+    "year": 2017
+  },
+  {
+    "id": 29,
+    "title": "Black Mirror",
+    "rating_text": "9.5/10",
+    "cover_url": "assets/covers/shows/black-mirror.webp",
+    "year": 2011
+  },
+  {
+    "id": 30,
+    "title": "Stranger Things",
+    "rating_text": "9.2/10",
+    "cover_url": "assets/covers/shows/stranger-things.webp",
+    "year": 2016
+  },
+  {
+    "id": 31,
+    "title": "Severance",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/shows/severance.webp",
+    "year": 2022
+  },
+  {
+    "id": 32,
+    "title": "The Umbrella Academy",
+    "rating_text": "8.3/10",
+    "cover_url": "assets/covers/shows/the-umbrella-academy.webp",
+    "year": 2019
+  },
+  {
+    "id": 33,
+    "title": "From",
+    "rating_text": "9.1/10",
+    "cover_url": "assets/covers/shows/from.webp",
+    "year": 2022
+  },
+  {
+    "id": 34,
+    "title": "Kaleidoscope",
+    "rating_text": "8.5/10",
+    "cover_url": "assets/covers/shows/kaleidoscope.webp",
+    "year": 2023
+  },
+  {
+    "id": 35,
+    "title": "Lupin",
+    "rating_text": "8.5/10",
+    "cover_url": "assets/covers/shows/lupin.webp",
+    "year": 2021
+  },
+  {
+    "id": 36,
+    "title": "Berlin",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/shows/berlin.webp",
+    "year": 2023
+  },
+  {
+    "id": 37,
+    "title": "Murder Mindfully",
+    "rating_text": "7.5/10",
+    "cover_url": "assets/covers/shows/murder-mindfully.webp",
+    "year": 2024
+  },
+  {
+    "id": 38,
+    "title": "Chernobyl",
+    "rating_text": "8.6/10",
+    "cover_url": "assets/covers/shows/chernobyl.webp",
+    "year": 2019
+  },
+  {
+    "id": 39,
+    "title": "Gutar Gu",
+    "rating_text": "8.7/10",
+    "cover_url": "assets/covers/shows/gutar-gu.webp",
+    "year": 2023
+  },
+  {
+    "id": 40,
+    "title": "Sisterhood",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/shows/sisterhood.webp",
+    "year": 2024
+  },
+  {
+    "id": 41,
+    "title": "Squid Game",
+    "rating_text": "9/10",
+    "cover_url": "assets/covers/shows/squid-game.webp",
+    "year": 2021
+  },
+  {
+    "id": 42,
+    "title": "The 8 Show",
+    "rating_text": "8.3/10",
+    "cover_url": "assets/covers/shows/the-8-show.webp",
+    "year": 2024
+  },
+  {
+    "id": 43,
+    "title": "Alice in Borderland",
+    "rating_text": "8.5/10",
+    "cover_url": "assets/covers/shows/alice-in-borderland.webp",
+    "year": 2020
+  },
+  {
+    "id": 44,
+    "title": "Aspirants",
+    "rating_text": "8.4/10",
+    "cover_url": "assets/covers/shows/aspirants.webp",
+    "year": 2021
+  },
+  {
+    "id": 45,
+    "title": "Dhootha",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/shows/dhootha.webp",
+    "year": 2023
+  },
+  {
+    "id": 46,
     "title": "The Railway Men: The Untold Story of Bhopal 1984",
     "rating_text": "9/10",
     "cover_url": "assets/covers/shows/the-railway-men.webp",
     "year": 2023
   },
   {
-    "id": 26,
+    "id": 47,
     "title": "13 Reasons Why",
     "rating_text": "6/10",
     "cover_url": "assets/covers/shows/13-reasons-why.webp",
     "year": 2017
   },
   {
-    "id": 27,
+    "id": 48,
     "title": "Young Sheldon",
     "rating_text": "8.9/10",
     "cover_url": "assets/covers/shows/young-sheldon.webp",
     "year": 2017
   },
   {
-    "id": 28,
+    "id": 49,
     "title": "Dexter",
     "rating_text": "8/10",
     "cover_url": "assets/covers/shows/dexter.webp",
     "year": 2006
   },
   {
-    "id": 29,
+    "id": 50,
     "title": "Superstore",
     "rating_text": "9/10",
     "cover_url": "assets/covers/shows/superstore.webp",
     "year": 2015
   },
   {
-    "id": 30,
+    "id": 51,
     "title": "Malcolm in the Middle",
     "rating_text": "9.3/10",
     "cover_url": "assets/covers/shows/malcolm-in-the-middle.webp",
     "year": 2000
   },
   {
-    "id": 31,
+    "id": 52,
     "title": "The Walking Dead",
     "rating_text": "8.1/10",
     "cover_url": "assets/covers/shows/the-walking-dead.webp",
     "year": 2010
   },
   {
-    "id": 32,
+    "id": 53,
     "title": "Mr. Robot",
     "rating_text": "8.3/10",
     "cover_url": "assets/covers/shows/mr-robot.webp",
     "year": 2015
   },
   {
-    "id": 33,
+    "id": 54,
     "title": "Sapne vs Everyone",
     "rating_text": "8.4/10",
     "cover_url": "assets/covers/shows/sapne-vs-everyone.webp",
     "year": 2023
   },
   {
-    "id": 34,
+    "id": 55,
     "title": "Silicon Valley",
     "rating_text": "8.7/10",
     "cover_url": "assets/covers/shows/silicon-valley.webp",
     "year": 2014
   },
   {
-    "id": 35,
+    "id": 56,
     "title": "Pritam and Pedro",
     "rating_text": "8.7/10",
     "cover_url": "assets/covers/shows/pritam-and-pedro.webp",
     "year": 2026
   },
   {
-    "id": 36,
+    "id": 57,
     "title": "Raakh",
     "rating_text": "8.3/10",
     "cover_url": "assets/covers/shows/raakh.webp",
     "year": 2026
   },
   {
-    "id": 37,
+    "id": 58,
     "title": "Widow's Bay",
     "rating_text": "8/10",
     "cover_url": "assets/covers/shows/widows-bay.webp",
     "year": 2026
   },
   {
-    "id": 38,
+    "id": 59,
     "title": "The Mentalist",
     "rating_text": "8.6/10",
     "cover_url": "assets/covers/shows/the-mentalist.webp",
     "year": 2008
   },
   {
-    "id": 39,
+    "id": 60,
     "title": "The Sopranos",
     "rating_text": "8.3/10",
     "cover_url": "assets/covers/shows/the-sopranos.webp",
