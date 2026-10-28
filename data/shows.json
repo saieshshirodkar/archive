@@ -1,90 +1,272 @@
 [
   {
     "id": 1,
+    "title": "Inside Edge",
+    "rating_text": "7/10",
+    "cover_url": "assets/covers/shows/inside-edge.webp",
+    "year": 2017
+  },
+  {
+    "id": 2,
+    "title": "Selection Day",
+    "rating_text": "6.5/10",
+    "cover_url": "assets/covers/shows/selection-day.webp",
+    "year": 2018
+  },
+  {
+    "id": 3,
+    "title": "The Family Man",
+    "rating_text": "8.5/10",
+    "cover_url": "assets/covers/shows/the-family-man.webp",
+    "year": 2019
+  },
+  {
+    "id": 4,
+    "title": "Delhi Crime",
+    "rating_text": "8.4/10",
+    "cover_url": "assets/covers/shows/delhi-crime.webp",
+    "year": 2019
+  },
+  {
+    "id": 5,
+    "title": "Breathe",
+    "rating_text": "8.7/10",
+    "cover_url": "assets/covers/shows/breathe.webp",
+    "year": 2018
+  },
+  {
+    "id": 6,
+    "title": "Breathe: Into the Shadows",
+    "rating_text": "8.9/10",
+    "cover_url": "assets/covers/shows/breathe-into-the-shadows.webp",
+    "year": 2020
+  },
+  {
+    "id": 7,
+    "title": "Asur",
+    "rating_text": "9.3/10",
+    "cover_url": "assets/covers/shows/asur.webp",
+    "year": 2020
+  },
+  {
+    "id": 8,
+    "title": "Paatal Lok",
+    "rating_text": "9.1/10",
+    "cover_url": "assets/covers/shows/paatal-lok.webp",
+    "year": 2020
+  },
+  {
+    "id": 9,
+    "title": "Sacred Games",
+    "rating_text": "8.2/10",
+    "cover_url": "assets/covers/shows/sacred-games.webp",
+    "year": 2018
+  },
+  {
+    "id": 10,
+    "title": "Mirzapur",
+    "rating_text": "8.9/10",
+    "cover_url": "assets/covers/shows/mirzapur.webp",
+    "year": 2018
+  },
+  {
+    "id": 11,
+    "title": "Criminal Justice",
+    "rating_text": "9.1/10",
+    "cover_url": "assets/covers/shows/criminal-justice.webp",
+    "year": 2019
+  },
+  {
+    "id": 12,
+    "title": "Special Ops",
+    "rating_text": "9/10",
+    "cover_url": "assets/covers/shows/special-ops.webp",
+    "year": 2020
+  },
+  {
+    "id": 13,
+    "title": "Scam 1992: The Harshad Mehta Story",
+    "rating_text": "9/10",
+    "cover_url": "assets/covers/shows/scam-1992-the-harshad-mehta-story.webp",
+    "year": 2020
+  },
+  {
+    "id": 14,
+    "title": "Farzi",
+    "rating_text": "9.2/10",
+    "cover_url": "assets/covers/shows/farzi.webp",
+    "year": 2023
+  },
+  {
+    "id": 15,
+    "title": "Jamtara",
+    "rating_text": "8.3/10",
+    "cover_url": "assets/covers/shows/jamtara.webp",
+    "year": 2020
+  },
+  {
+    "id": 16,
+    "title": "Kota Factory",
+    "rating_text": "9.5/10",
+    "cover_url": "assets/covers/shows/kota-factory.webp",
+    "year": 2019
+  },
+  {
+    "id": 17,
+    "title": "Panchayat",
+    "rating_text": "8.1/10",
+    "cover_url": "assets/covers/shows/panchayat.webp",
+    "year": 2020
+  },
+  {
+    "id": 18,
+    "title": "Gullak",
+    "rating_text": "9.3/10",
+    "cover_url": "assets/covers/shows/gullak.webp",
+    "year": 2019
+  },
+  {
+    "id": 19,
+    "title": "Hostel Daze",
+    "rating_text": "9.1/10",
+    "cover_url": "assets/covers/shows/hostel-daze.webp",
+    "year": 2019
+  },
+  {
+    "id": 20,
+    "title": "ImMATURE",
+    "rating_text": "7.9/10",
+    "cover_url": "assets/covers/shows/immature.webp",
+    "year": 2019
+  },
+  {
+    "id": 21,
+    "title": "Taaza Khabar",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/shows/taaza-khabar.webp",
+    "year": 2023
+  },
+  {
+    "id": 22,
+    "title": "Dhindora",
+    "rating_text": "7/10",
+    "cover_url": "assets/covers/shows/dhindora.webp",
+    "year": 2021
+  },
+  {
+    "id": 23,
+    "title": "Sunflower",
+    "rating_text": "9/10",
+    "cover_url": "assets/covers/shows/sunflower.webp",
+    "year": 2021
+  },
+  {
+    "id": 24,
+    "title": "Taali",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/shows/taali.webp",
+    "year": 2023
+  },
+  {
+    "id": 25,
+    "title": "The Railway Men: The Untold Story of Bhopal 1984",
+    "rating_text": "9/10",
+    "cover_url": "assets/covers/shows/the-railway-men.webp",
+    "year": 2023
+  },
+  {
+    "id": 26,
+    "title": "13 Reasons Why",
+    "rating_text": "6/10",
+    "cover_url": "assets/covers/shows/13-reasons-why.webp",
+    "year": 2017
+  },
+  {
+    "id": 27,
     "title": "Young Sheldon",
     "rating_text": "8.9/10",
     "cover_url": "assets/covers/shows/young-sheldon.webp",
     "year": 2017
   },
   {
-    "id": 2,
+    "id": 28,
     "title": "Dexter",
     "rating_text": "8/10",
     "cover_url": "assets/covers/shows/dexter.webp",
     "year": 2006
   },
   {
-    "id": 3,
+    "id": 29,
     "title": "Superstore",
     "rating_text": "9/10",
     "cover_url": "assets/covers/shows/superstore.webp",
     "year": 2015
   },
   {
-    "id": 4,
+    "id": 30,
     "title": "Malcolm in the Middle",
     "rating_text": "9.3/10",
     "cover_url": "assets/covers/shows/malcolm-in-the-middle.webp",
     "year": 2000
   },
   {
-    "id": 5,
+    "id": 31,
     "title": "The Walking Dead",
     "rating_text": "8.1/10",
     "cover_url": "assets/covers/shows/the-walking-dead.webp",
     "year": 2010
   },
   {
-    "id": 6,
+    "id": 32,
     "title": "Mr. Robot",
     "rating_text": "8.3/10",
     "cover_url": "assets/covers/shows/mr-robot.webp",
     "year": 2015
   },
   {
-    "id": 7,
+    "id": 33,
     "title": "Sapne vs Everyone",
     "rating_text": "8.4/10",
     "cover_url": "assets/covers/shows/sapne-vs-everyone.webp",
     "year": 2023
   },
   {
-    "id": 8,
+    "id": 34,
     "title": "Silicon Valley",
     "rating_text": "8.7/10",
     "cover_url": "assets/covers/shows/silicon-valley.webp",
     "year": 2014
   },
   {
-    "id": 9,
+    "id": 35,
     "title": "Pritam and Pedro",
     "rating_text": "8.7/10",
     "cover_url": "assets/covers/shows/pritam-and-pedro.webp",
     "year": 2026
   },
   {
-    "id": 10,
+    "id": 36,
     "title": "Raakh",
     "rating_text": "8.3/10",
     "cover_url": "assets/covers/shows/raakh.webp",
     "year": 2026
   },
   {
-    "id": 11,
+    "id": 37,
     "title": "Widow's Bay",
     "rating_text": "8/10",
     "cover_url": "assets/covers/shows/widows-bay.webp",
     "year": 2026
   },
   {
-    "id": 12,
+    "id": 38,
     "title": "The Mentalist",
     "rating_text": "8.6/10",
     "cover_url": "assets/covers/shows/the-mentalist.webp",
     "year": 2008
   },
   {
-    "id": 13,
+    "id": 39,
     "title": "The Sopranos",
     "rating_text": "8.3/10",
     "cover_url": "assets/covers/shows/the-sopranos.webp",
