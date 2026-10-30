@@ -418,5 +418,19 @@
     "rating_text": "8.3/10",
     "cover_url": "assets/covers/shows/the-sopranos.webp",
     "year": 1999
+  },
+  {
+    "id": 61,
+    "title": "If Wishes Could Kill",
+    "rating_text": "7/10",
+    "cover_url": "assets/covers/shows/if-wishes-could-kill.webp",
+    "year": 2026
+  },
+  {
+    "id": 62,
+    "title": "Dead-End Job",
+    "rating_text": "7.2/10",
+    "cover_url": "assets/covers/shows/dead-end-job.webp",
+    "year": 2026
   }
 ]

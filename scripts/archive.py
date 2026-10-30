@@ -275,14 +275,14 @@ def move(entries: list[dict], index: int, to: int) -> list[dict]:
     high. Getting this wrong makes ``--before X`` a silent no-op when the entry
     being moved already sits above X.
 
-    Does not mutate the input. Clamped into range so an out-of-range index
-    from a caller cannot raise IndexError.
+    Mutates ``entries`` in place and returns the same list. Clamped into range
+    so an out-of-range index from a caller cannot raise IndexError.
     """
     if not 0 <= index < len(entries):
         raise IndexError(f"index {index} out of range for {len(entries)} entries")
     to = max(0, min(to, len(entries) - 1))
     if to == index:
-        return list(entries)
+        return entries
     # Adjust for the shift caused by removing the entry.
     if index < to:
         to -= 1

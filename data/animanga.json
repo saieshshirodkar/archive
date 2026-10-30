@@ -934,5 +934,13 @@
     "rating_text": "6/10",
     "cover_url": "assets/covers/anime/the-manga-guide-to-linear-algebra.webp",
     "year": 2012
+  },
+  {
+    "id": 118,
+    "title": "Tokyo Ghoul",
+    "author": "Sui Ishida",
+    "rating_text": "7.7/10",
+    "cover_url": "assets/covers/anime/tokyo-ghoul.webp",
+    "year": 2014
   }
 ]

@@ -606,5 +606,53 @@
     "date_watched": "24-10-2026",
     "rating_text": "8.2/10",
     "cover_url": "assets/covers/movies/udta-teer.webp"
+  },
+  {
+    "id": 77,
+    "title": "Baththa",
+    "year": 2026,
+    "date_watched": "29-10-2026",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/movies/baththa.webp"
+  },
+  {
+    "id": 78,
+    "title": "Dhoomakethu",
+    "year": 2026,
+    "date_watched": "29-10-2026",
+    "rating_text": "7.5/10",
+    "cover_url": "assets/covers/movies/dhoomakethu.webp"
+  },
+  {
+    "id": 79,
+    "title": "Don't Trouble the Trouble",
+    "year": 2026,
+    "date_watched": "30-10-2026",
+    "rating_text": "7.5/10",
+    "cover_url": "assets/covers/movies/dont-trouble-the-trouble.webp"
+  },
+  {
+    "id": 80,
+    "title": "Mirzapur: The Movie",
+    "year": 2026,
+    "date_watched": "30-10-2026",
+    "rating_text": "8.4/10",
+    "cover_url": "assets/covers/movies/mirzapur-the-movie.webp"
+  },
+  {
+    "id": 81,
+    "title": "The Usual Suspects",
+    "year": 1995,
+    "date_watched": "30-10-2026",
+    "rating_text": "9.7/10",
+    "cover_url": "assets/covers/movies/the-usual-suspects.webp"
+  },
+  {
+    "id": 82,
+    "title": "The Birthday Gift",
+    "year": 2026,
+    "date_watched": "31-10-2026",
+    "rating_text": "",
+    "cover_url": "assets/covers/movies/the-birthday-gift.webp"
   }
 ]

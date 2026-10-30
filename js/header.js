@@ -10,9 +10,9 @@ export function onTabChange(handler) {
 }
 
 function statsText() {
-  const data = entries.get(state.category)
-  if (!data) return state.status === 'ready' ? '0' : '\u2026'
   const cat = CATEGORY_BY_ID[state.category]
+  const data = entries.get(state.category)
+  if (!data) return state.status === 'ready' ? `0 ${cat.label}` : '\u2026'
   return `${data.length} ${data.length === 1 ? cat.singular : cat.label}`
 }
 
@@ -46,7 +46,7 @@ export function createHeader() {
   header.innerHTML = `
     <div class="container">
       <nav class="nav">
-        <span class="logo">Archive</span>
+        <h1 class="logo">Archive</h1>
         <div class="tabs" role="tablist" aria-label="Category">
           <span class="tab-indicator" aria-hidden="true"></span>
           ${tabs}

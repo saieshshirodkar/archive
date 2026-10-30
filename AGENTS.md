@@ -4,7 +4,7 @@ Personal media catalog for books, animanga, movies, and TV shows. Vanilla HTML/C
 
 **This file is mostly about the data workflow.** 90% of requests here are "add this movie/book/anime/show" or "rate this". Read the Workflow section before touching `data/`.
 
-Current counts: books 70 (34 rated + 36 TBR) · animanga 127 (107 rated + 20 TBR) · movies 68 (all rated) · shows 7 (all rated). 272 covers, ~11MB total.
+Current counts: books 72 (44 rated + 28 TBR) · animanga 118 (all rated) · movies 82 (81 rated + 1 unrated) · shows 62 (all rated). 334 covers, ~14MB total.
 
 ## Stack
 
@@ -215,7 +215,7 @@ Shows — **no `author`, no `date_watched`**. Key order is fixed:
 
 Rendering rules that depend on these fields:
 
-- `rating_text === "10/10"` → gold badge + cover aura (`is-legendary`). Dynamic, no hardcoded list. Currently: Death Note, One Piece, Naruto Shippuden. Titles are **not** styled differently — the shimmer was removed by request.
+- `rating_text === "10/10"` → gold badge + cover aura (`is-legendary`). Dynamic, no hardcoded list. Currently: Death Note, One Piece, Naruto Shippuden, Breaking Bad, Dark. Titles are **not** styled differently — the shimmer was removed by request.
 - Empty `rating_text` + not a movie → grayscale dimmed cover + `TBR` badge (`is-tbr`). This is how shows behave, same as books/animanga.
 - Movies show `(year)` + `DD-MM-YYYY`, and no badge when unrated.
 - Shows show `(year)` and an **empty** `.book-author` meta line. The div is still emitted (the three-children contract holds); it just has no text.

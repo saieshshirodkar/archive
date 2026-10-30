@@ -56,7 +56,11 @@ def main(argv: list[str]) -> int:
 
     entry = entries[index]
     was_tbr = not entry["rating_text"]
-    rating = A.normalise_rating(args.rating)
+    try:
+        rating = A.normalise_rating(args.rating)
+    except ValueError as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
 
     # Decide movement BEFORE writing the rating. Setting rating_text first
     # would make the entry count itself as the last rated one, computing a

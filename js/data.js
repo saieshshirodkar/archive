@@ -50,7 +50,6 @@ export async function loadCategory() {
   state.status = 'loading'
   render()
   updateIndicator()
-  if (mine !== token) return
 
   try {
     const data = await load(state.category)

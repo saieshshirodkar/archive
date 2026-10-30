@@ -291,7 +291,7 @@
     "id": 37,
     "title": "A Little Life",
     "author": "Hanya Yanagihara",
-    "rating_text": "",
+    "rating_text": "8.5/10",
     "cover_url": "assets/covers/books/a-little-life.webp",
     "year": 2015
   },
@@ -299,7 +299,7 @@
     "id": 38,
     "title": "A Thousand Splendid Suns",
     "author": "Khaled Hosseini",
-    "rating_text": "",
+    "rating_text": "8.3/10",
     "cover_url": "assets/covers/books/a-thousand-splendid-suns.webp",
     "year": 2007
   },
@@ -307,36 +307,52 @@
     "id": 39,
     "title": "Days at the Morisaki Bookshop",
     "author": "Satoshi Yagisawa",
-    "rating_text": "",
+    "rating_text": "8.1/10",
     "cover_url": "assets/covers/books/days-at-the-morisaki-bookshop-premium-edition.webp",
     "year": 2010
   },
   {
     "id": 40,
+    "title": "More Days at the Morisaki Bookshop",
+    "author": "Satoshi Yagisawa",
+    "rating_text": "7.9/10",
+    "cover_url": "assets/covers/books/more-days-at-the-morisaki-bookshop.webp",
+    "year": 2011
+  },
+  {
+    "id": 41,
     "title": "The Family Upstairs",
     "author": "Lisa Jewell",
-    "rating_text": "",
+    "rating_text": "8/10",
     "cover_url": "assets/covers/books/the-family-upstairs.webp",
     "year": 2019
   },
   {
-    "id": 41,
+    "id": 42,
+    "title": "The Family Remains",
+    "author": "Lisa Jewell",
+    "rating_text": "6/10",
+    "cover_url": "assets/covers/books/the-family-remains.webp",
+    "year": 2022
+  },
+  {
+    "id": 43,
     "title": "Yellowface",
     "author": "R. F. Kuang",
-    "rating_text": "",
+    "rating_text": "5.5/10",
     "cover_url": "assets/covers/books/yellowface.webp",
     "year": 2023
   },
   {
-    "id": 42,
+    "id": 44,
     "title": "Kafka on the Shore",
     "author": "Haruki Murakami",
-    "rating_text": "",
+    "rating_text": "3/10",
     "cover_url": "assets/covers/books/kafka-on-the-shore.webp",
     "year": 2002
   },
   {
-    "id": 43,
+    "id": 45,
     "title": "Norwegian Wood",
     "author": "Haruki Murakami",
     "rating_text": "",
@@ -344,7 +360,7 @@
     "year": 1987
   },
   {
-    "id": 44,
+    "id": 46,
     "title": "Not Quite Dead Yet",
     "author": "Holly Jackson",
     "rating_text": "",
@@ -352,7 +368,7 @@
     "year": 2025
   },
   {
-    "id": 45,
+    "id": 47,
     "title": "Better Than the Movies",
     "author": "Lynn Painter",
     "rating_text": "",
@@ -360,7 +376,7 @@
     "year": 2021
   },
   {
-    "id": 46,
+    "id": 48,
     "title": "Nothing Like the Movies",
     "author": "Lynn Painter",
     "rating_text": "",
@@ -368,7 +384,7 @@
     "year": 2024
   },
   {
-    "id": 47,
+    "id": 49,
     "title": "The Vegetarian",
     "author": "Han Kang",
     "rating_text": "",
@@ -376,7 +392,7 @@
     "year": 2007
   },
   {
-    "id": 48,
+    "id": 50,
     "title": "Recursion",
     "author": "Blake Crouch",
     "rating_text": "",
@@ -384,7 +400,7 @@
     "year": 2019
   },
   {
-    "id": 49,
+    "id": 51,
     "title": "My Husband's Wife",
     "author": "Alice Feeney",
     "rating_text": "",
@@ -392,7 +408,7 @@
     "year": 2026
   },
   {
-    "id": 50,
+    "id": 52,
     "title": "Listen for the Lie",
     "author": "Amy Tintera",
     "rating_text": "",
@@ -400,7 +416,7 @@
     "year": 2024
   },
   {
-    "id": 51,
+    "id": 53,
     "title": "Count My Lies",
     "author": "Sophie Stava",
     "rating_text": "",
@@ -408,7 +424,7 @@
     "year": 2025
   },
   {
-    "id": 52,
+    "id": 54,
     "title": "Ward D",
     "author": "Freida McFadden",
     "rating_text": "",
@@ -416,7 +432,7 @@
     "year": 2023
   },
   {
-    "id": 53,
+    "id": 55,
     "title": "Beautiful Ugly",
     "author": "Alice Feeney",
     "rating_text": "",
@@ -424,7 +440,7 @@
     "year": 2025
   },
   {
-    "id": 54,
+    "id": 56,
     "title": "The Metamorphosis",
     "author": "Franz Kafka",
     "rating_text": "",
@@ -432,7 +448,7 @@
     "year": 1915
   },
   {
-    "id": 55,
+    "id": 57,
     "title": "Powerless",
     "author": "Lauren Roberts",
     "rating_text": "",
@@ -440,7 +456,7 @@
     "year": 2023
   },
   {
-    "id": 56,
+    "id": 58,
     "title": "Powerful",
     "author": "Lauren Roberts",
     "rating_text": "",
@@ -448,7 +464,7 @@
     "year": 2024
   },
   {
-    "id": 57,
+    "id": 59,
     "title": "Reckless",
     "author": "Lauren Roberts",
     "rating_text": "",
@@ -456,7 +472,7 @@
     "year": 2024
   },
   {
-    "id": 58,
+    "id": 60,
     "title": "Fearless",
     "author": "Lauren Roberts",
     "rating_text": "",
@@ -464,7 +480,7 @@
     "year": 2025
   },
   {
-    "id": 59,
+    "id": 61,
     "title": "Fearful",
     "author": "Lauren Roberts",
     "rating_text": "",
@@ -472,7 +488,7 @@
     "year": 2025
   },
   {
-    "id": 60,
+    "id": 62,
     "title": "Dark Matter",
     "author": "Blake Crouch",
     "rating_text": "",
@@ -480,7 +496,7 @@
     "year": 2016
   },
   {
-    "id": 61,
+    "id": 63,
     "title": "Harry Potter and the Philosopher's Stone",
     "author": "J. K. Rowling",
     "rating_text": "",
@@ -488,7 +504,7 @@
     "year": 1997
   },
   {
-    "id": 62,
+    "id": 64,
     "title": "Harry Potter and the Chamber of Secrets",
     "author": "J. K. Rowling",
     "rating_text": "",
@@ -496,7 +512,7 @@
     "year": 1998
   },
   {
-    "id": 63,
+    "id": 65,
     "title": "Harry Potter and the Prisoner of Azkaban",
     "author": "J. K. Rowling",
     "rating_text": "",
@@ -504,7 +520,7 @@
     "year": 1999
   },
   {
-    "id": 64,
+    "id": 66,
     "title": "Harry Potter and the Goblet of Fire",
     "author": "J. K. Rowling",
     "rating_text": "",
@@ -512,7 +528,7 @@
     "year": 2000
   },
   {
-    "id": 65,
+    "id": 67,
     "title": "Harry Potter and the Order of the Phoenix",
     "author": "J. K. Rowling",
     "rating_text": "",
@@ -520,7 +536,7 @@
     "year": 2003
   },
   {
-    "id": 66,
+    "id": 68,
     "title": "Harry Potter and the Half-Blood Prince",
     "author": "J. K. Rowling",
     "rating_text": "",
@@ -528,7 +544,7 @@
     "year": 2005
   },
   {
-    "id": 67,
+    "id": 69,
     "title": "Harry Potter and the Deathly Hallows",
     "author": "J. K. Rowling",
     "rating_text": "",
@@ -536,7 +552,7 @@
     "year": 2007
   },
   {
-    "id": 68,
+    "id": 70,
     "title": "Harry Potter and the Cursed Child",
     "author": "J. K. Rowling, John Tiffany & Jack Thorne",
     "rating_text": "",
@@ -544,7 +560,7 @@
     "year": 2016
   },
   {
-    "id": 69,
+    "id": 71,
     "title": "Nightwatching",
     "author": "Tracy Sierra",
     "rating_text": "",
@@ -552,7 +568,7 @@
     "year": 2024
   },
   {
-    "id": 70,
+    "id": 72,
     "title": "The Wrong Daughter",
     "author": "Dandy Smith",
     "rating_text": "",
