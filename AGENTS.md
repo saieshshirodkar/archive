@@ -4,7 +4,7 @@ Personal media catalog for books, animanga, movies, and TV shows. Vanilla HTML/C
 
 **This file is mostly about the data workflow.** 90% of requests here are "add this movie/book/anime/show" or "rate this". Read the Workflow section before touching `data/`.
 
-Current counts: books 72 (44 rated + 28 TBR) · animanga 118 (all rated) · movies 82 (81 rated + 1 unrated) · shows 62 (all rated). 334 covers, ~14MB total.
+Current counts: books 75 (49 rated + 26 TBR) · animanga 118 (all rated) · movies 82 (81 rated + 1 unrated) · shows 62 (all rated). 337 covers, ~14MB total.
 
 ## Stack
 
