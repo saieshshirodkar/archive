@@ -432,5 +432,12 @@
     "rating_text": "7.2/10",
     "cover_url": "assets/covers/shows/dead-end-job.webp",
     "year": 2026
+  },
+  {
+    "id": 63,
+    "title": "Carrie",
+    "rating_text": "6.1/10",
+    "cover_url": "assets/covers/shows/carrie.webp",
+    "year": 2026
   }
 ]

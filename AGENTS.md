@@ -4,8 +4,6 @@ Personal media catalog for books, animanga, movies, and TV shows. Vanilla HTML/C
 
 **This file is mostly about the data workflow.** 90% of requests here are "add this movie/book/anime/show" or "rate this". Read the Workflow section before touching `data/`.
 
-Current counts: books 75 (49 rated + 26 TBR) · animanga 118 (all rated) · movies 82 (81 rated + 1 unrated) · shows 62 (all rated). 337 covers, ~14MB total.
-
 ## Stack
 
 - Vanilla HTML + CSS + JS (native ES modules — `type="module"`, no bundler)
@@ -44,7 +42,7 @@ Current counts: books 75 (49 rated + 26 TBR) · animanga 118 (all rated) · movi
 │   ├── movies.json         # Movie entries
 │   └── shows.json          # TV show entries (no author, no date_watched)
 ├── assets/
-│   └── covers/             # 268 covers, ~10.3MB total
+│   └── covers/             # Cover images (400px wide webp, q80)
 │       ├── books/          # Book covers (.webp, 400px wide, q80)
 │       ├── anime/          # Anime/manga covers — NOTE: folder is `anime`, not `animanga`
 │       ├── movies/         # Movie posters (.webp, 400px wide, q80)
@@ -60,22 +58,19 @@ Current counts: books 75 (49 rated + 26 TBR) · animanga 118 (all rated) · movi
 # 1. search metadata (never guess)
 websearch "<title> release year author"
 
-# 2. download + resize cover (400px webp q80)
-curl -sL -A "Mozilla/5.0" -o /tmp/opencode/cover.jpg "<url>" && \
-  magick /tmp/opencode/cover.jpg -resize 400x -quality 80 assets/covers/<cat>/<slug>.webp && \
-  identify assets/covers/<cat>/<slug>.webp && file /tmp/opencode/cover.jpg
+# 2. add the entry; --cover-url fetches, resizes and stores the cover
+cd scripts
+python3 add.py --cat <cat> --title "<title>" --year <year> \
+    [--author "<author>"] [--rating <n>] [--cover-url "<url>"]
+python3 check.py
 
-# 3. insert into data/<cat>.json at the right position + renumber (one python -c)
-# 4. validate ids
-python3 -c "import json; d=json.load(open('data/<cat>.json')); assert [e['id'] for e in d]==list(range(1,len(d)+1)), 'ids not sequential'; print('OK', len(d))"
-
-# 5. deploy only when the user says deploy
+# 3. deploy only when the user says deploy
 vp
 ```
 
-Steps 3 + 4 are always one combined `python3 -c` that inserts, renumbers, dumps, and asserts in a single run. Do not split it across multiple invocations — a half-applied insert leaves ids inconsistent.
+`add.py` does the insert, position, renumber, and validation in one run. `cover.py` does the same for images: browser user agent, auto-orient, 400px wide, webp q80, width verified before it reports success. Never split an add across two commands.
 
-### The validation assert (use this verbatim, it has caught real bugs)
+### The validation assert (reference; `check.py` runs the same checks)
 
 ```bash
 python3 -c "
@@ -118,10 +113,9 @@ Notes on that block, all learned the hard way:
    - Books: publication year.
    - Shows: **initial release year** (first season's premiere). No `author` field — shows have multiple creators, so the entry is title + rating only.
    - Covers are **always** provided by the user as a URL. Never go hunting for a cover yourself.
-2. **Download + resize the cover** (see short version above). Category folder is `books/`, `anime/`, `movies/`, or `shows/`.
-3. **Insert at the correct position** per the ordering rules below, then renumber all ids 1..N.
-4. **Validate** ids are sequential.
-5. **Deploy only when asked.** Do not auto-deploy after a data edit.
+2. **Add the entry in one command.** `scripts/add.py` resolves the category folder, derives the slug, downloads and resizes `--cover-url`, inserts at the correct position, renumbers, and validates. Pass `--slug` for disambiguating filenames (`baki-2018`, `tokyo-ghoul-re`).
+3. **Check it.** `python3 scripts/check.py` validates all four categories.
+4. **Deploy only when asked.** Do not auto-deploy after a data edit.
 
 ### Ordering rules (the #1 source of bugs)
 

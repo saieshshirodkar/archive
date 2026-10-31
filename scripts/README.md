@@ -8,10 +8,12 @@ retype into every command.
 
 | script | does |
 |---|---|
-| `archive.py` | shared library — categories, key order, dates, load/save, validation. Not run directly. |
-| `add.py` | add an entry to any category |
+| `archive.py` | shared library — categories, key order, dates, slugs, load/save, validation. Not run directly. |
+| `add.py` | add an entry to any category, optionally fetching its cover |
+| `cover.py` | download and resize covers, or audit the ones on disk |
 | `rate.py` | rate an entry; moves TBR→rated, or in-place if already rated |
 | `reorder.py` | move, rename, or bulk-sort entries |
+| `remove.py` | delete an entry and its cover, then renumber |
 | `query.py` | read-only: dates, find, top, latest, tbr, show |
 | `check.py` | validate all four categories |
 
@@ -29,10 +31,16 @@ python3 query.py tbr --cat books       # what's unrated
 
 python3 add.py --cat books --title "Dune" --author "Frank Herbert" \
     --year 1965 --rating 9.5
+python3 add.py --cat movies --title "The Birthday Gift" --year 2026 \
+    --cover-url "https://m.media-amazon.com/images/M/....jpg"
+python3 cover.py --cat books --title "Dune" --file /tmp/dune.jpg
+python3 cover.py --cat shows --title "Carrie" --url "https://..." --force
+python3 cover.py --audit                # wrong widths, formats, oversized files
 python3 rate.py --cat books --title "little life" --rating 8.8
 python3 rate.py --cat animanga --title "Baki" --rating 4 --exact
 python3 reorder.py --cat shows --title "Raakh" --before "Superstore"
 python3 reorder.py --cat books --sort rating --descending
+python3 remove.py --cat animanga --title "Vagabond"
 ```
 
 Every write validates before reporting success, so `check.py` after a batch is
@@ -78,10 +86,29 @@ list on every save by `normalise()`. Never trusted from the previous state.
 **Dates** — everything is IST via `zoneinfo.ZoneInfo("Asia/Kolkata")`. Nothing
 here calls `datetime.now()` without an explicit zone, because the system clock
 is usually UTC and that mismatch has silently produced wrong entries.
+`parse_watched()` uses `strptime`, so impossible dates like `99-99-2026` are
+rejected instead of sorting as if they were real.
 
 **Ratings** — stored as `X/10` or `X.Y/10`. `normalise_rating()` accepts bare
 numbers (`8`, `8.5`) and rejects things like `7/5`, which is a different
 habit and would otherwise be silently misread.
+
+**Covers** — `cover.py` is the one place that writes images. It downloads with
+a browser user agent (several CDNs reject anything else), auto-orients, resizes
+to 400px wide, encodes webp at quality 80, and verifies the width before
+reporting success. `add.py --cover-url` calls the same `cover.install()`, so
+both commands produce identical files.
+
+- Filenames come from `archive.slugify()`: kebab-case, apostrophes and other
+  punctuation dropped (`Takopi's` → `takopis`, `Bastard!!` → `bastard`).
+  Disambiguating suffixes (`baki-2018`, `tokyo-ghoul-re`) are passed with
+  `--slug`.
+- Existing covers are never replaced without `--force`, because re-encoding a
+  downscaled copy is lossy and the repo does not regenerate covers by accident.
+- The target folder is `covers_dir()`, so animanga lands in `anime/` every
+  time rather than only when someone remembers the mapping.
+- `--audit` reports anything that is not 400px wide, not webp, or over 200 KB.
+  It does not duplicate `validate()`'s reference checks; `check.py` owns those.
 
 ## Validation
 
@@ -107,7 +134,8 @@ correspond to a bug that actually happened here:
 - Comments are deliberate here, unlike `js/`, where AGENTS.md forbids them.
 - `add.py` refuses to add an entry whose cover file is absent, so a bad slug
   fails loudly instead of rendering a grey box.
-- These scripts do not touch the covers themselves. Download and resize with
-  the `curl` + `magick` one-liner from AGENTS.md first, then run `add.py`.
+- `remove.py` moves the cover aside before saving, then deletes it. `save()`
+  rejects unreferenced files on disk, so deleting afterwards would fail its
+  own validation; the stash is restored if the write raises.
 - Deploy is still manual: `vp` (or `vercel --prod` when the alias isn't
   available in a non-interactive shell).

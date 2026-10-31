@@ -28,6 +28,7 @@ import argparse
 import sys
 
 import archive as A
+import cover
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -57,6 +58,13 @@ def build_parser() -> argparse.ArgumentParser:
         help="existing cover filename inside the category's cover folder. "
         "Omit to derive it from the slug.",
     )
+    p.add_argument(
+        "--cover-url",
+        default=None,
+        help="download and resize a cover from this URL when the slug has no "
+        "cover on disk yet. Existing covers are left alone; use cover.py "
+        "--force to replace one.",
+    )
     return p
 
 
@@ -68,25 +76,6 @@ def die(message: str) -> int:
     """
     print(f"error: {message}", file=sys.stderr)
     return 1
-
-
-def slugify(title: str) -> str:
-    """Kebab-case a title for the cover filename.
-
-    Drops apostrophes rather than encoding them (Takopi's -> takopis), and
-    drops all other punctuation including colons and exclamation marks.
-    """
-    out = []
-    for ch in title.lower():
-        if ch.isalnum():
-            out.append(ch)
-        elif ch in " -_":
-            out.append("-")
-        # everything else, including ' : ! , is dropped
-    slug = "".join(out)
-    while "--" in slug:
-        slug = slug.replace("--", "-")
-    return slug.strip("-")
 
 
 def main(argv: list[str]) -> int:
@@ -117,22 +106,12 @@ def main(argv: list[str]) -> int:
             print("  " + A.describe(entries[i]), file=sys.stderr)
 
     year = args.year
-    stem = args.slug or slugify(args.title)
+    stem = args.slug or A.slugify(args.title)
     cover_file = args.cover or f"{stem}.webp"
     cover_url = f"assets/covers/{A.covers_dir(args.cat).name}/{cover_file}"
 
-    # Refuse to add an entry whose cover is not actually on disk. This catches
-    # a wrong slug or a typo'd --cover before the card renders as a grey box.
-    cover_path = A.COVERS_DIR / A.CATEGORIES[args.cat]["folder"] / cover_file
-    if not cover_path.exists():
-        print(
-            f"error: cover not found: {cover_path}\n"
-            f"       download and resize it first, or pass --cover with the "
-            f"correct filename.",
-            file=sys.stderr,
-        )
-        return 1
-
+    # Build and validate the entry before fetching a cover. A rejected flag must
+    # not leave a freshly downloaded image behind as an orphan file.
     entry: dict = {"title": args.title, "rating_text": rating, "cover_url": cover_url}
 
     # author and date_watched are category-specific; shows deliberately have
@@ -145,13 +124,40 @@ def main(argv: list[str]) -> int:
     elif args.cat == "movies":
         entry["date_watched"] = args.date or A.today()
         if args.date:
-            A.parse_watched(args.date)  # validate format early
+            try:
+                A.parse_watched(args.date)  # validate format before writing
+            except ValueError as exc:
+                return die(str(exc))
     elif args.author:
         print("note: shows take no --author, ignoring.", file=sys.stderr)
 
     # year sits last in the book/animanga/show key order; normalise() fixes
     # the ordering so it can be assigned in any order here.
     entry["year"] = year
+
+    # Refuse to add an entry whose cover is not actually on disk. This catches
+    # a wrong slug or a typo'd --cover before the card renders as a grey box.
+    # With --cover-url the fetch and resize happen here, in the same command,
+    # so a half-added entry cannot reference a cover that never arrived.
+    cover_path = A.COVERS_DIR / A.CATEGORIES[args.cat]["folder"] / cover_file
+    if cover_path.exists():
+        if args.cover_url:
+            print(
+                f"note: cover already exists, not downloading: {cover_path}",
+                file=sys.stderr,
+            )
+    elif args.cover_url:
+        cover_path = cover.install(
+            args.cat, cover_file.rsplit(".", 1)[0], url=args.cover_url
+        )
+    else:
+        print(
+            f"error: cover not found: {cover_path}\n"
+            f"       pass --cover-url to fetch it, or download and resize "
+            f"it first, or pass --cover with the correct filename.",
+            file=sys.stderr,
+        )
+        return 1
 
     # Insert at the right place for this category's ordering rule.
     if args.cat == "movies":

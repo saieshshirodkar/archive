@@ -72,6 +72,26 @@ def covers_dir(category: str) -> Path:
     return COVERS_DIR / CATEGORIES[category]["folder"]
 
 
+def slugify(title: str) -> str:
+    """Kebab-case a title for a cover filename.
+
+    Drops apostrophes rather than encoding them (Takopi's -> takopis), and
+    drops all other punctuation including colons and exclamation marks.
+    Lives here so add.py and cover.py derive the same filename.
+    """
+    out = []
+    for ch in title.lower():
+        if ch.isalnum():
+            out.append(ch)
+        elif ch in " -_":
+            out.append("-")
+        # everything else, including ' : ! , is dropped
+    slug = "".join(out)
+    while "--" in slug:
+        slug = slug.replace("--", "-")
+    return slug.strip("-")
+
+
 # --- Date handling ----------------------------------------------------------
 
 
@@ -114,11 +134,15 @@ def parse_watched(value: str) -> list[int]:
     movies.json is sorted by watch date with these keys. Reversing the split
     components and mapping to int is what turns "03-08-2026" into
     ``[2026, 8, 3]``, which sorts correctly as a list.
+
+    ``strptime`` also rejects impossible calendar dates. The old digit-only
+    check accepted "99-99-2026", which then sorted as if it were real.
     """
-    parts = value.split("-")
-    if len(parts) != 3 or not all(p.isdigit() for p in parts):
+    try:
+        parsed = datetime.strptime(str(value), "%d-%m-%Y")
+    except (ValueError, TypeError):
         raise ValueError(f"bad date {value!r}, expected DD-MM-YYYY")
-    return [int(x) for x in reversed(parts)]
+    return [parsed.year, parsed.month, parsed.day]
 
 
 # --- Load / save ------------------------------------------------------------
