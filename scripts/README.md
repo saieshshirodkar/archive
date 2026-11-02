@@ -133,7 +133,9 @@ correspond to a bug that actually happened here:
   of the list in either direction.
 - Comments are deliberate here, unlike `js/`, where AGENTS.md forbids them.
 - `add.py` refuses to add an entry whose cover file is absent, so a bad slug
-  fails loudly instead of rendering a grey box.
+  fails loudly instead of rendering a grey box. It also rejects a filename
+  another entry already uses, and does so before the write: `validate()` would
+  only catch the duplicate afterwards, leaving the bad entry on disk.
 - `remove.py` moves the cover aside before saving, then deletes it. `save()`
   rejects unreferenced files on disk, so deleting afterwards would fail its
   own validation; the stash is restored if the write raises.

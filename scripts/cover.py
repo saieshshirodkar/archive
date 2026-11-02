@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Download, resize, and store cover images.
 
-This is the whole cover pipeline that used to be a ``curl`` + ``magick``
-one-liner: fetch with a browser user agent, auto-orient, resize to 400px wide,
-encode webp at quality 80, verify the result, and write it into the category's
-cover folder. ``add.py --cover-url`` calls into this module, so both entry
-points produce byte-identical covers.
+This is the cover pipeline that used to be a ``curl`` + ``magick`` one-liner:
+fetch with a browser user agent, auto-orient, resize to 400px wide, encode webp
+at quality 80, verify the resulting width, and write the file into the
+category's cover folder. ``add.py --cover-url`` calls :func:`install`, so both
+entry points produce byte-identical covers.
 
 Examples
 --------
@@ -34,10 +34,23 @@ import archive as A
 WIDTH = 400
 QUALITY = 80
 MAX_BYTES = 30 * 1024 * 1024
+MAX_STORED_BYTES = 200 * 1024
 USER_AGENT = (
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"
 )
+
+
+class CoverError(Exception):
+    """A cover could not be produced.
+
+    Raised instead of exiting so the CLI can print the message in the shared
+    ``error:`` form and add.py can fail an add without taking the interpreter
+    down mid-command.
+    """
+
+
+# --- ImageMagick ------------------------------------------------------------
 
 
 def image_magick() -> list[str]:
@@ -46,33 +59,39 @@ def image_magick() -> list[str]:
         return ["magick"]
     if shutil.which("convert"):
         return ["convert"]
-    raise SystemExit("error: ImageMagick not found (install magick or convert)")
+    raise CoverError("ImageMagick not found (install magick or convert)")
 
 
-def identify() -> list[str]:
+def identify_tool() -> list[str]:
     """Return the identify command prefix, accepting the IM6 fallback."""
     if shutil.which("magick"):
         return ["magick", "identify"]
     if shutil.which("identify"):
         return ["identify"]
-    raise SystemExit("error: ImageMagick identify not found")
+    raise CoverError("ImageMagick identify not found")
 
 
 def dimension(path: Path) -> tuple[int, int]:
     """Width and height of an image, via identify."""
     result = subprocess.run(
-        identify() + ["-format", "%w %h", str(path)],
+        identify_tool() + ["-format", "%w %h", str(path)],
         capture_output=True,
         text=True,
+        check=False,
     )
     if result.returncode != 0:
-        raise SystemExit(f"error: cannot read {path}: {result.stderr.strip()}")
-    width, height = result.stdout.split()
-    return int(width), int(height)
+        raise CoverError(f"cannot read {path}: {result.stderr.strip()}")
+    fields = result.stdout.split()
+    if len(fields) != 2:
+        raise CoverError(f"cannot parse size of {path}: {result.stdout.strip()!r}")
+    return int(fields[0]), int(fields[1])
 
 
-def download(url: str, dest: Path) -> None:
-    """Fetch a URL to dest with the user agent the CDNs expect."""
+# --- Fetch and encode -------------------------------------------------------
+
+
+def download(url: str, dest: Path) -> Path:
+    """Fetch a URL into ``dest`` with the user agent the CDNs expect."""
     request = urllib.request.Request(
         url, headers={"User-Agent": USER_AGENT, "Accept": "image/*,*/*"}
     )
@@ -80,16 +99,22 @@ def download(url: str, dest: Path) -> None:
         with urllib.request.urlopen(request, timeout=60) as response:
             data = response.read(MAX_BYTES + 1)
     except Exception as exc:
-        raise SystemExit(f"error: download failed: {exc}")
+        raise CoverError(f"download failed: {exc}") from exc
     if not data:
-        raise SystemExit(f"error: empty response from {url}")
+        raise CoverError(f"empty response from {url}")
     if len(data) > MAX_BYTES:
-        raise SystemExit(f"error: image larger than {MAX_BYTES // 1024 // 1024} MB: {url}")
+        raise CoverError(f"image larger than {MAX_BYTES // 1024 // 1024} MB: {url}")
     dest.write_bytes(data)
+    return dest
 
 
-def convert(source: Path, target: Path) -> None:
-    """Resize to 400px wide and encode webp at quality 80."""
+def resize(source: Path, target: Path) -> Path:
+    """Resize to 400px wide, encode webp q80, and verify the width.
+
+    The width check is the part that matters: ImageMagick exits 0 even when it
+    wrote something unexpected, and a wrong-width cover is invisible until it
+    renders blurry. A failed check deletes the file rather than leaving it.
+    """
     target.parent.mkdir(parents=True, exist_ok=True)
     result = subprocess.run(
         image_magick()
@@ -104,10 +129,28 @@ def convert(source: Path, target: Path) -> None:
         ],
         capture_output=True,
         text=True,
+        check=False,
     )
     if result.returncode != 0:
         target.unlink(missing_ok=True)
-        raise SystemExit(f"error: conversion failed: {result.stderr.strip()}")
+        raise CoverError(f"conversion failed: {result.stderr.strip()}")
+    width, _ = dimension(target)
+    if width != WIDTH:
+        target.unlink(missing_ok=True)
+        raise CoverError(f"expected width {WIDTH}, got {width}")
+    return target
+
+
+def resolve_source(url: str | None, source: str | None, workdir: Path) -> Path:
+    """Return the local image to convert, downloading it when given a URL."""
+    if bool(url) == bool(source):
+        raise CoverError("pass exactly one of --url or --file")
+    if url:
+        return download(url, workdir / "source")
+    origin = Path(source).expanduser()
+    if not origin.is_file():
+        raise CoverError(f"source image not found: {origin}")
+    return origin
 
 
 def install(
@@ -119,59 +162,52 @@ def install(
 ) -> Path:
     """Produce ``covers/<folder>/<stem>.webp`` and return its path.
 
-    Exactly one of url or source must be given. Existing covers are never
-    overwritten without ``force``: re-encoding a cover from a downscaled copy
-    is lossy, and the repo does not regenerate covers by accident.
+    Existing covers are never overwritten without ``force``: re-encoding from
+    an already-downscaled copy is lossy, so the repo does not regenerate covers
+    by accident.
     """
-    target = A.covers_dir(category) / f"{stem}.webp"
+    target = A.cover_path(category, f"{stem}.webp")
     if target.exists() and not force:
-        raise SystemExit(
-            f"error: {target} already exists; pass --force to replace it"
-        )
-    if bool(url) == bool(source):
-        raise SystemExit("error: pass exactly one of --url or --file")
+        raise CoverError(f"{target} already exists; pass --force to replace it")
 
     with tempfile.TemporaryDirectory() as tmp:
-        if url:
-            downloaded = Path(tmp) / "source"
-            download(url, downloaded)
-            origin = downloaded
-        else:
-            origin = Path(source)
-            if not origin.is_file():
-                raise SystemExit(f"error: source image not found: {origin}")
-
-        convert(origin, target)
-
-    width, height = dimension(target)
-    if width != WIDTH:
-        target.unlink(missing_ok=True)
-        raise SystemExit(f"error: expected width {WIDTH}, got {width}")
+        origin = resolve_source(url, source, Path(tmp))
+        resize(origin, target)
     return target
+
+
+# --- Audit ------------------------------------------------------------------
 
 
 def audit(category: str | None = None) -> int:
     """Report covers that are the wrong width, format, or unexpectedly large."""
-    categories = [category] if category else A.category_ids()
     problems = 0
-    for cat in categories:
+    for cat in [category] if category else A.category_ids():
         folder = A.covers_dir(cat)
-        files = sorted(p for p in folder.iterdir() if p.is_file())
-        total = sum(p.stat().st_size for p in files)
+        files = sorted(path for path in folder.iterdir() if path.is_file())
+        total = sum(path.stat().st_size for path in files)
         print(f"{cat}: {len(files)} covers, {total / 1024 / 1024:.1f} MB")
         for path in files:
             width, height = dimension(path)
             size = path.stat().st_size
-            odd = path.suffix != ".webp" or width != WIDTH
-            big = size > 200 * 1024
-            if odd or big:
+            if path.suffix != ".webp" or width != WIDTH:
                 problems += 1
-                reason = "wrong size/format" if odd else "over 200 KB"
-                print(f"  {reason}: {path.name}  {width}x{height}  {size // 1024} KB")
+                print(
+                    f"  wrong size/format: {path.name}  "
+                    f"{width}x{height}  {size // 1024} KB"
+                )
+            elif size > MAX_STORED_BYTES:
+                problems += 1
+                print(
+                    f"  over 200 KB: {path.name}  {width}x{height}  {size // 1024} KB"
+                )
     return 1 if problems else 0
 
 
-def main(argv: list[str]) -> int:
+# --- CLI --------------------------------------------------------------------
+
+
+def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Fetch and resize cover images.")
     parser.add_argument("--cat", choices=A.category_ids(), help="category")
     parser.add_argument("--title", help="entry title, for the default slug")
@@ -184,25 +220,34 @@ def main(argv: list[str]) -> int:
     parser.add_argument(
         "--audit", action="store_true", help="check covers without writing"
     )
-    args = parser.parse_args(argv)
+    return parser
 
-    if args.audit:
-        return audit(args.cat)
-    if not args.cat:
-        print("error: pass --cat, or --audit.", file=sys.stderr)
-        return 1
-    stem = args.slug or (A.slugify(args.title) if args.title else None)
-    if not stem:
-        print("error: pass --title or --slug.", file=sys.stderr)
-        return 1
 
-    target = install(
-        args.cat, stem, url=args.url, source=args.file, force=args.force
-    )
-    width, height = dimension(target)
-    size = target.stat().st_size
-    print(f"cover: {target.relative_to(A.ROOT)}  {width}x{height}  {size // 1024} KB")
-    return 0
+def run(args: argparse.Namespace) -> int:
+    try:
+        if args.audit:
+            return audit(args.cat)
+        if not args.cat:
+            return A.fail("pass --cat, or --audit.")
+        stem = args.slug or (A.slugify(args.title) if args.title else "")
+        if not stem:
+            return A.fail("pass --title or --slug.")
+
+        target = install(
+            args.cat, stem, url=args.url, source=args.file, force=args.force
+        )
+        width, height = dimension(target)
+        size = target.stat().st_size
+        print(
+            f"cover: {target.relative_to(A.ROOT)}  {width}x{height}  {size // 1024} KB"
+        )
+        return 0
+    except CoverError as exc:
+        return A.fail(str(exc))
+
+
+def main(argv: list[str]) -> int:
+    return run(build_parser().parse_args(argv))
 
 
 if __name__ == "__main__":

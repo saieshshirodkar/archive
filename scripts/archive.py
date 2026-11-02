@@ -1,23 +1,27 @@
 """Shared helpers for the archive CLI tools.
 
-Every tool in scripts/ imports from here so that the rules about key order,
-cover paths and validation live in exactly one place instead of being
-copy-pasted into each script.
+Every script in this folder imports from here, so the rules about key order,
+cover paths, ordering and validation live in one place instead of being
+copy-pasted eight times.
 
-The canonical rules this module enforces:
+The rules this module enforces:
 
 * ``id`` is always the 1-indexed array position, renumbered after every write.
-* The key order of each category is fixed; every write re-projects entries
-  through :func:`normalise` so a stray field cannot creep in.
+* Each category has a fixed key order; every write re-projects entries through
+  :func:`normalise`, so a stray field cannot creep in.
 * ``assets/covers/anime/`` holds animanga covers (not ``animanga/``).
-* Covers are 400px-wide webp; the cover folder must match the category.
+* Covers are 400px-wide webp, and the folder always matches the category.
+
+Nothing here prints to stdout except :func:`describe` and :func:`listing`; the
+CLI scripts own their own success output.
 """
 
 from __future__ import annotations
 
 import json
-import os
+import re
 import sys
+from collections.abc import Iterable
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -29,16 +33,16 @@ DATA_DIR = ROOT / "data"
 COVERS_DIR = ROOT / "assets" / "covers"
 
 # Every date in the archive is IST. The system clock is frequently UTC, and a
-# silent UTC-vs-IST mix-up has produced wrong entries before, so nothing in
-# this repo is allowed to call datetime.now() without an explicit zone.
+# silent UTC-vs-IST mix-up has produced wrong entries before, so nothing here
+# is allowed to call datetime.now() without an explicit zone.
 TZ = ZoneInfo("Asia/Kolkata")
 
-# --- Category definitions ---------------------------------------------------
+# --- Categories -------------------------------------------------------------
 
-# folder: the directory under assets/covers that holds this category's covers.
-# It matches the id for every category except animanga, which predates the
-# rename from "animanga" to "anime" on disk. This mapping is the single most
-# common source of broken cover paths, so it is never hardcoded at a call site.
+# ``folder`` is the directory under assets/covers that holds this category's
+# covers. It matches the id everywhere except animanga, which predates the
+# rename from "animanga" to "anime" on disk. This mapping is the most common
+# source of broken cover paths, so it is never hardcoded at a call site.
 CATEGORIES: dict[str, dict] = {
     "books": {
         "folder": "books",
@@ -55,101 +59,140 @@ CATEGORIES: dict[str, dict] = {
     },
     "shows": {
         "folder": "shows",
-        # shows have neither author nor date_watched (multiple creators, and
-        # there is no per-episode watch date to record)
+        # shows have neither author nor date_watched: many creators, and no
+        # single watch date to record
         "keys": ["id", "title", "rating_text", "cover_url", "year"],
     },
 }
 
+# Tab order, matching js/config.js CATEGORIES.
+CATEGORY_IDS = tuple(CATEGORIES)
+
 
 def category_ids() -> list[str]:
-    """Category ids in tab order, matching js/config.js CATEGORIES."""
-    return ["books", "animanga", "movies", "shows"]
+    """Category ids in tab order."""
+    return list(CATEGORY_IDS)
+
+
+def data_path(category: str) -> Path:
+    """Path to ``data/<category>.json``."""
+    return DATA_DIR / f"{category}.json"
 
 
 def covers_dir(category: str) -> Path:
-    """Return the covers directory for a category id."""
+    """Covers directory for a category, following the animanga mapping."""
     return COVERS_DIR / CATEGORIES[category]["folder"]
 
 
-def slugify(title: str) -> str:
-    """Kebab-case a title for a cover filename.
+def cover_path(category: str, filename: str) -> Path:
+    """Path to one cover file inside a category's cover folder."""
+    return covers_dir(category) / filename
 
-    Drops apostrophes rather than encoding them (Takopi's -> takopis), and
-    drops all other punctuation including colons and exclamation marks.
-    Lives here so add.py and cover.py derive the same filename.
+
+# --- Terminal output --------------------------------------------------------
+
+RATING_WIDTH = 8
+
+
+def fail(message: str) -> int:
+    """Print ``error: <message>`` to stderr and return an exit code of 1.
+
+    Returning the code lets call sites read as ``return A.fail(...)`` instead
+    of a print followed by a bare ``return 1``.
     """
-    out = []
-    for ch in title.lower():
-        if ch.isalnum():
-            out.append(ch)
-        elif ch in " -_":
-            out.append("-")
-        # everything else, including ' : ! , is dropped
-    slug = "".join(out)
-    while "--" in slug:
-        slug = slug.replace("--", "-")
-    return slug.strip("-")
+    print(f"error: {message}", file=sys.stderr)
+    return 1
 
 
-# --- Date handling ----------------------------------------------------------
+def notice(message: str) -> None:
+    """Print ``note: <message>`` to stderr. Used for non-fatal caveats."""
+    print(f"note: {message}", file=sys.stderr)
+
+
+def describe(entry: dict) -> str:
+    """One-line human summary: id, rating, title, author, year, watch date."""
+    rating = entry["rating_text"] or "TBR"
+    bits = [f"{entry['id']:>4}", f"{rating:<{RATING_WIDTH}}", entry["title"]]
+    # author is absent for movies and shows by design
+    if entry.get("author"):
+        bits.append(f"by {entry['author']}")
+    if entry.get("year") is not None:
+        bits.append(f"({entry['year']})")
+    # movies are the only category with a watch date
+    if entry.get("date_watched"):
+        bits.append(entry["date_watched"])
+    return "  ".join(bits)
+
+
+def listing(entries: Iterable[dict]) -> str:
+    """Describe entries one per line, indented to match the CLI style."""
+    return "\n".join("  " + describe(entry) for entry in entries)
+
+
+# --- Dates and ratings ------------------------------------------------------
 
 
 def today() -> str:
-    """Today's date in IST as ``DD-MM-YYYY``.
-
-    This is the format ``date_watched`` uses in movies.json.
-    """
+    """Today in IST as ``DD-MM-YYYY``, the format ``date_watched`` uses."""
     return datetime.now(TZ).strftime("%d-%m-%Y")
-
-
-def normalise_rating(value: str) -> str:
-    """Turn user input like ``8`` or ``8.5`` into the stored ``"8/10"`` form.
-
-    Accepts an already-suffixed value ("8.5/10") and normalises it back, so
-    this is safe to run on anything the user types. The user writes "7/5"
-    meaning 7.5 out of 10, which is a different habit from ours, so a value
-    like "7/5" is rejected rather than silently misread.
-    """
-    text = str(value).strip()
-    if "/" in text:
-        left, _, right = text.partition("/")
-        if right != "10":
-            raise ValueError(f"ratings are out of 10, got {value!r}")
-        text = left
-    try:
-        number = float(text)
-    except ValueError:
-        raise ValueError(f"bad rating {value!r}")
-    if not 0 <= number <= 10:
-        raise ValueError(f"rating out of range: {value!r}")
-    # keep one decimal only when the user typed one
-    rendered = text if "." in text else str(int(number))
-    return f"{rendered}/10"
 
 
 def parse_watched(value: str) -> list[int]:
     """Convert ``DD-MM-YYYY`` into a sortable ``[Y, M, D]`` list.
 
-    movies.json is sorted by watch date with these keys. Reversing the split
-    components and mapping to int is what turns "03-08-2026" into
-    ``[2026, 8, 3]``, which sorts correctly as a list.
-
-    ``strptime`` also rejects impossible calendar dates. The old digit-only
-    check accepted "99-99-2026", which then sorted as if it were real.
+    ``strptime`` is what rejects impossible dates: a digit-only check accepted
+    "99-99-2026", which then sorted as if it were real.
     """
     try:
         parsed = datetime.strptime(str(value), "%d-%m-%Y")
-    except (ValueError, TypeError):
-        raise ValueError(f"bad date {value!r}, expected DD-MM-YYYY")
+    except (TypeError, ValueError):
+        raise ValueError(f"bad date {value!r}, expected DD-MM-YYYY") from None
     return [parsed.year, parsed.month, parsed.day]
 
 
-# --- Load / save ------------------------------------------------------------
+def normalise_rating(value: str) -> str:
+    """Turn ``8`` or ``8.5`` into the stored ``"8/10"`` form.
+
+    Also accepts an already-suffixed ``"8.5/10"``. The user writes "7/5"
+    meaning 7.5 out of 10, which is a different habit, so anything with a
+    denominator other than 10 is rejected rather than silently misread.
+    """
+    text = str(value).strip()
+    if "/" in text:
+        numerator, _, denominator = text.partition("/")
+        if denominator != "10":
+            raise ValueError(f"ratings are out of 10, got {value!r}")
+        text = numerator
+    try:
+        number = float(text)
+    except ValueError:
+        raise ValueError(f"bad rating {value!r}") from None
+    if not 0 <= number <= 10:
+        raise ValueError(f"rating out of range: {value!r}")
+    # keep a decimal only when the user typed one
+    rendered = str(int(number)) if number.is_integer() else f"{number:g}"
+    return f"{rendered}/10"
 
 
-def data_path(category: str) -> Path:
-    return DATA_DIR / f"{category}.json"
+# --- Slugs ------------------------------------------------------------------
+
+
+def slugify(title: str) -> str:
+    """Kebab-case a title for a cover filename.
+
+    Apostrophes and other punctuation are dropped rather than encoded, because
+    that is how the existing filenames were built: ``Takopi's`` -> ``takopis``,
+    ``Bastard!!`` -> ``bastard``. Spaces, hyphens and underscores collapse into
+    a single kebab separator. Lives here so add.py and cover.py derive the same
+    filename from the same title.
+    """
+    spaced = "".join(
+        ch if ch.isalnum() else "-" if ch in " -_" else "" for ch in title.lower()
+    )
+    return re.sub(r"-{2,}", "-", spaced).strip("-")
+
+
+# --- Load and save ----------------------------------------------------------
 
 
 def load(category: str) -> list[dict]:
@@ -161,31 +204,27 @@ def load(category: str) -> list[dict]:
 def normalise(category: str, entries: list[dict]) -> list[dict]:
     """Renumber ids from 1 and force the category's key order.
 
-    Call this after every mutation. It is the reason ids can never drift: the
-    id is recomputed from the list position rather than trusted from the
-    previous state.
+    Called after every mutation. This is why ids can never drift: the id is
+    recomputed from the list position rather than trusted from the previous
+    state.
     """
     keys = CATEGORIES[category]["keys"]
-    out = []
+    payload = [key for key in keys if key != "id"]
+    normalised = []
     for index, entry in enumerate(entries, start=1):
-        missing = [k for k in keys if k != "id" and k not in entry]
+        missing = [key for key in payload if key not in entry]
         if missing:
             raise KeyError(f"{category} entry missing {missing}: {entry}")
-        ordered = {"id": index}
-        for key in keys:
-            if key != "id":
-                ordered[key] = entry[key]
-        out.append(ordered)
-    return out
+        normalised.append({"id": index, **{key: entry[key] for key in payload}})
+    return normalised
 
 
 def save(category: str, entries: list[dict]) -> None:
-    """Normalise, write with the repo's exact JSON formatting, and validate.
+    """Normalise, write with the repo's JSON formatting, then validate.
 
-    Writing happens *before* validation on purpose: a half-applied insert is
+    The write happens *before* validation on purpose: a half-applied edit is
     worse than a failed assert, so the data is persisted and any problem is
-    reported loudly rather than silently rolled back. Validation always runs
-    immediately after so the failure surfaces in the same command.
+    reported loudly in the same command rather than silently rolled back.
     """
     entries = normalise(category, entries)
     with open(data_path(category), "w", encoding="utf-8") as fh:
@@ -198,43 +237,39 @@ def save(category: str, entries: list[dict]) -> None:
         )
 
 
-# --- Lookups and movement ---------------------------------------------------
+# --- Lookups ----------------------------------------------------------------
 
 
 def find(entries: list[dict], needle: str) -> list[int]:
-    """Indices of entries whose title contains ``needle`` (case-insensitive).
+    """Indices of entries whose title contains ``needle``, case-insensitive.
 
     Substring matching is deliberate: the user types "housemaid is watching"
-    or "djba" and we should find something, then confirm the match rather than
-    demand an exact title.
+    or "djba" and something should turn up, then the match gets confirmed.
     """
     lowered = needle.lower()
-    return [i for i, e in enumerate(entries) if lowered in e["title"].lower()]
+    return [i for i, entry in enumerate(entries) if lowered in entry["title"].lower()]
 
 
 def exact(entries: list[dict], title: str) -> int | None:
-    """Index of an entry with an exactly matching title, else None."""
-    for i, e in enumerate(entries):
-        if e["title"].lower() == title.lower():
-            return i
+    """Index of the entry whose title matches exactly, else None."""
+    lowered = title.lower()
+    for index, entry in enumerate(entries):
+        if entry["title"].lower() == lowered:
+            return index
     return None
 
 
 def resolve_index(entries: list[dict], needle: str, strict: bool = False) -> int | None:
-    """Resolve a user-supplied title to exactly one index, else None.
+    """Resolve a title to exactly one index, else None.
 
-    This is the single decision every write command makes before touching an
-    entry, and it is deliberately the only place that answer is computed.
+    The single decision every write command makes before touching an entry.
+    None means either "nothing matched" or "more than one matched", because a
+    caller cannot act on an ambiguous title without being told the candidates;
+    :func:`report_no_match` prints those.
 
-    Returns None for both "nothing matched" and "more than one matched",
-    because a caller cannot act on an ambiguous title without being told which
-    candidates exist. Callers print the ambiguity by re-running :func:`find`.
-
-    ``strict`` demands a whole-title match instead of a substring one. It
-    exists because short titles cannot be disambiguated by shrinking the
-    needle: "Baki" is a substring of "Baki Hanma" and "Baki the Grappler",
-    and no shorter needle separates them. "Bastard" has the same shape against
-    "Bastard!!".
+    ``strict`` demands a whole-title match. Short titles cannot be separated
+    by shrinking the needle: "Baki" is a substring of both "Baki Hanma" and
+    "Baki the Grappler", and "Bastard" is one of "Bastard!!".
     """
     if strict:
         return exact(entries, needle)
@@ -245,12 +280,7 @@ def resolve_index(entries: list[dict], needle: str, strict: bool = False) -> int
 def report_no_match(
     entries: list[dict], needle: str, category: str, label: str, strict: bool
 ) -> None:
-    """Print why :func:`resolve_index` returned None, to stderr.
-
-    Under ``strict`` the substring hits are near-misses worth surfacing: the
-    user asked for one exact title and the closest neighbours are almost
-    always what they actually meant.
-    """
+    """Explain to stderr why :func:`resolve_index` returned None."""
     hits = find(entries, needle)
     if strict:
         if not hits:
@@ -265,9 +295,7 @@ def report_no_match(
             file=sys.stderr,
         )
     elif not hits:
-        print(
-            f"error: nothing in {category} matches {needle!r}.", file=sys.stderr
-        )
+        print(f"error: nothing in {category} matches {needle!r}.", file=sys.stderr)
         return
     else:
         print(
@@ -275,23 +303,25 @@ def report_no_match(
             f"specific, or pass --exact to match the whole title:",
             file=sys.stderr,
         )
-    for i in hits:
-        print("  " + describe(entries[i]), file=sys.stderr)
+    for index in hits:
+        print("  " + describe(entries[index]), file=sys.stderr)
+
+
+# --- Ordering ---------------------------------------------------------------
 
 
 def rated_indices(entries: list[dict]) -> list[int]:
-    """Indices of entries with a non-empty rating_text."""
-    return [i for i, e in enumerate(entries) if e["rating_text"]]
+    """Indices of entries that carry a rating."""
+    return [i for i, entry in enumerate(entries) if entry["rating_text"]]
 
 
 def last_rated_index(entries: list[dict], exclude: int | None = None) -> int:
-    """Index of the final rated entry, or -1 when nothing is rated yet.
+    """Index of the final rated entry, or -1 when nothing is rated.
 
     ``exclude`` drops one index from consideration. rate.py needs it when the
     entry being moved is already rated: without it the entry counts itself as
-    the last rated one, the computed target equals its current index, and the
-    move silently does nothing while the entry stays stranded inside the TBR
-    block.
+    the last rated one, the target equals its current index, and the move
+    silently does nothing while the entry stays stranded in the TBR block.
     """
     rated = [i for i in rated_indices(entries) if i != exclude]
     return rated[-1] if rated else -1
@@ -301,24 +331,22 @@ def move(entries: list[dict], index: int, to: int) -> list[dict]:
     """Move the entry at ``index`` so it ends up at final position ``to``.
 
     ``to`` is the destination in the *resulting* list, not the index to insert
-    at. Popping the entry first shifts everything below it down by one, so an
-    entry moving upward needs its target incremented or it lands one slot too
-    high. Getting this wrong makes ``--before X`` a silent no-op when the entry
-    being moved already sits above X.
+    at. Removing the entry first shifts everything below it up by one, so an
+    entry moving downward needs its target decremented or it lands a slot too
+    low; getting this wrong makes ``--before X`` a no-op when the entry being
+    moved already sits above X.
 
-    Mutates ``entries`` in place and returns the same list. Clamped into range
-    so an out-of-range index from a caller cannot raise IndexError.
+    Mutates and returns ``entries``. Clamped into range so a bad index from a
+    caller cannot raise IndexError.
     """
     if not 0 <= index < len(entries):
         raise IndexError(f"index {index} out of range for {len(entries)} entries")
     to = max(0, min(to, len(entries) - 1))
     if to == index:
         return entries
-    # Adjust for the shift caused by removing the entry.
-    if index < to:
-        to -= 1
     entry = entries.pop(index)
-    entries.insert(to, entry)
+    # Compensate for the pop shifting every later position up by one.
+    entries.insert(to - 1 if index < to else to, entry)
     return entries
 
 
@@ -326,110 +354,83 @@ def move(entries: list[dict], index: int, to: int) -> list[dict]:
 
 
 def validate(category: str) -> list[str]:
-    """Check one category. Returns a list of human-readable problems.
+    """Check one category, returning human-readable problems (empty is ok).
 
-    Empty list means valid. Every check here corresponds to a bug that has
-    actually happened in this archive:
+    Every check here corresponds to a bug that has actually happened:
 
     * ids must be 1..N with no gaps (a split insert leaves them inconsistent)
     * key set and key order must match the schema (shows must never grow an
       author or date_watched field)
-    * the set of referenced cover filenames must equal the files on disk,
-      which catches both a wrong reference and an orphaned file
-    * two entries must never share a cover_url (this caught Fearless pointing
-      at fearful.webp, which rendered two different books as one image)
-    * movies must stay sorted by date_watched oldest-first
+    * referenced cover filenames must equal the files on disk, which catches
+      both a wrong reference and an orphaned file
+    * two entries must never share a cover_url (Fearless once pointed at
+      fearful.webp, rendering two books as one image)
+    * movies must stay sorted by date_watched, oldest first
     * books/animanga/shows must keep the TBR block contiguous at the end
     """
     problems: list[str] = []
     keys = CATEGORIES[category]["keys"]
     entries = load(category)
 
-    # ids sequential from 1
-    ids = [e["id"] for e in entries]
+    ids = [entry["id"] for entry in entries]
     if ids != list(range(1, len(entries) + 1)):
         problems.append(f"ids not sequential: {ids}")
 
-    # schema: key set AND key order
-    for e in entries:
-        if list(e) != keys:
-            problems.append(f"id {e.get('id')}: schema drift, got {list(e)}")
+    for entry in entries:
+        if list(entry) != keys:
+            problems.append(f"id {entry.get('id')}: schema drift, got {list(entry)}")
 
-    # covers referenced vs covers on disk
     folder = covers_dir(category)
     if not folder.is_dir():
         problems.append(f"cover folder missing: {folder}")
     else:
-        on_disk = {p.name for p in folder.iterdir() if p.is_file()}
-        referenced = {e["cover_url"].rsplit("/", 1)[-1] for e in entries}
+        on_disk = {path.name for path in folder.iterdir() if path.is_file()}
+        referenced = {entry["cover_url"].rsplit("/", 1)[-1] for entry in entries}
         for orphan in sorted(referenced - on_disk):
             problems.append(f"referenced cover not on disk: {orphan}")
         for unused in sorted(on_disk - referenced):
             problems.append(f"cover on disk but unused: {unused}")
-        for e in entries:
-            if not os.path.exists(ROOT / e["cover_url"]):
-                problems.append(f"id {e['id']}: missing file {e['cover_url']}")
+        for entry in entries:
+            if not (ROOT / entry["cover_url"]).exists():
+                problems.append(f"id {entry['id']}: missing file {entry['cover_url']}")
 
-    # duplicate cover references
-    seen: dict[str, list[int]] = {}
-    for e in entries:
-        seen.setdefault(e["cover_url"], []).append(e["id"])
-    for url, owners in seen.items():
-        if len(owners) > 1:
-            problems.append(f"duplicate cover_url {url} used by ids {owners}")
+    owners: dict[str, list[int]] = {}
+    for entry in entries:
+        owners.setdefault(entry["cover_url"], []).append(entry["id"])
+    for url, ids_using in owners.items():
+        if len(ids_using) > 1:
+            problems.append(f"duplicate cover_url {url} used by ids {ids_using}")
 
-    # rating format
-    for e in entries:
-        rating = e["rating_text"]
+    for entry in entries:
+        rating = entry["rating_text"]
         if not rating:
             continue
-        body = rating.rsplit("/", 1)
-        if len(body) != 2 or body[1] != "10":
-            problems.append(f"id {e['id']}: bad rating {rating!r}")
-        else:
-            try:
-                value = float(body[0])
-            except ValueError:
-                problems.append(f"id {e['id']}: bad rating {rating!r}")
-                continue
-            if not 0 <= value <= 10:
-                problems.append(f"id {e['id']}: rating out of range {rating!r}")
+        numerator, _, denominator = rating.rpartition("/")
+        if denominator != "10":
+            problems.append(f"id {entry['id']}: bad rating {rating!r}")
+            continue
+        try:
+            value = float(numerator)
+        except ValueError:
+            problems.append(f"id {entry['id']}: bad rating {rating!r}")
+            continue
+        if not 0 <= value <= 10:
+            problems.append(f"id {entry['id']}: rating out of range {rating!r}")
 
-    # per-category ordering
     if category == "movies":
-        keys_ = [parse_watched(e["date_watched"]) for e in entries]
-        if keys_ != sorted(keys_):
+        dates = [parse_watched(entry["date_watched"]) for entry in entries]
+        if dates != sorted(dates):
             problems.append("movies not sorted by date_watched oldest-first")
     else:
-        flags = [bool(e["rating_text"]) for e in entries]
+        flags = [bool(entry["rating_text"]) for entry in entries]
         # The `False in flags` guard matters: list.index raises ValueError when
-        # every entry is rated, which reads like data corruption but is not.
-        if False in flags and any(flags[flags.index(False):]):
+        # every entry is rated, which reads like corruption but is not.
+        if False in flags and any(flags[flags.index(False) :]):
             problems.append("TBR block is not contiguous at the end")
 
     return problems
 
 
 def validate_all() -> dict[str, list[str]]:
-    """Validate every category. Returns {category: [problems]}."""
-    return {c: validate(c) for c in category_ids()}
-
-
-# --- Terminal formatting ----------------------------------------------------
-
-RATING_WIDTH = 8
-
-
-def describe(entry: dict) -> str:
-    """One-line human summary used by find/top/reorder output."""
-    rating = entry["rating_text"] or "TBR"
-    bits = [f"{entry['id']:>4}", f"{rating:<{RATING_WIDTH}}", entry["title"]]
-    # author is absent for movies and shows by design
-    author = entry.get("author")
-    if author:
-        bits.append(f"by {author}")
-    bits.append(f"({entry.get('year')})" if entry.get("year") is not None else "")
-    # shows and books/animanga have no watch date; movies always do
-    if entry.get("date_watched"):
-        bits.append(entry["date_watched"])
-    return "  ".join(b for b in bits if b)
+    """Validate every category, keyed by category id."""
+    return {category: validate(category) for category in CATEGORY_IDS}
