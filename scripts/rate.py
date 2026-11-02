@@ -65,6 +65,8 @@ def main(argv: list[str]) -> int:
     # Decide movement BEFORE writing the rating. Setting rating_text first
     # would make the entry count itself as the last rated one, computing a
     # target one position too far and stranding it inside the TBR block.
+    # exclude=index covers the same trap for an entry that already carries a
+    # rating but sits below the block, which is what --move is for.
     if args.position is not None:
         reason = f"moved to position {args.position}"
         entries = A.move(entries, index, args.position - 1)
@@ -72,10 +74,11 @@ def main(argv: list[str]) -> int:
         # movies are sorted by date_watched, so a rating never moves anything
         reason = "in place (movies are date-sorted)"
     elif was_tbr or args.move:
-        # target is the last rated index + 1, measured before this entry gains
-        # a rating, so the entry lands immediately after the existing block
+        # target is the last rated index + 1, measured without this entry, so
+        # it lands immediately after the existing block
         reason = "moved after last rated"
-        entries = A.move(entries, index, A.last_rated_index(entries) + 1)
+        target = A.last_rated_index(entries, exclude=index) + 1
+        entries = A.move(entries, index, target)
     else:
         reason = "in place (already rated)"
 

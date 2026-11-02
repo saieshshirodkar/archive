@@ -284,9 +284,16 @@ def rated_indices(entries: list[dict]) -> list[int]:
     return [i for i, e in enumerate(entries) if e["rating_text"]]
 
 
-def last_rated_index(entries: list[dict]) -> int:
-    """Index of the final rated entry, or -1 when nothing is rated yet."""
-    rated = rated_indices(entries)
+def last_rated_index(entries: list[dict], exclude: int | None = None) -> int:
+    """Index of the final rated entry, or -1 when nothing is rated yet.
+
+    ``exclude`` drops one index from consideration. rate.py needs it when the
+    entry being moved is already rated: without it the entry counts itself as
+    the last rated one, the computed target equals its current index, and the
+    move silently does nothing while the entry stays stranded inside the TBR
+    block.
+    """
+    rated = [i for i in rated_indices(entries) if i != exclude]
     return rated[-1] if rated else -1
 
 

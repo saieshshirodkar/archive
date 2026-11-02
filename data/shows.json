@@ -330,114 +330,135 @@
   },
   {
     "id": 48,
+    "title": "Never Have I Ever",
+    "rating_text": "8.4/10",
+    "cover_url": "assets/covers/shows/never-have-i-ever.webp",
+    "year": 2020
+  },
+  {
+    "id": 49,
     "title": "Young Sheldon",
     "rating_text": "8.9/10",
     "cover_url": "assets/covers/shows/young-sheldon.webp",
     "year": 2017
   },
   {
-    "id": 49,
+    "id": 50,
     "title": "Dexter",
     "rating_text": "8/10",
     "cover_url": "assets/covers/shows/dexter.webp",
     "year": 2006
   },
   {
-    "id": 50,
+    "id": 51,
     "title": "Superstore",
     "rating_text": "9/10",
     "cover_url": "assets/covers/shows/superstore.webp",
     "year": 2015
   },
   {
-    "id": 51,
+    "id": 52,
     "title": "Malcolm in the Middle",
     "rating_text": "9.3/10",
     "cover_url": "assets/covers/shows/malcolm-in-the-middle.webp",
     "year": 2000
   },
   {
-    "id": 52,
+    "id": 53,
     "title": "The Walking Dead",
     "rating_text": "8.1/10",
     "cover_url": "assets/covers/shows/the-walking-dead.webp",
     "year": 2010
   },
   {
-    "id": 53,
+    "id": 54,
     "title": "Mr. Robot",
     "rating_text": "8.3/10",
     "cover_url": "assets/covers/shows/mr-robot.webp",
     "year": 2015
   },
   {
-    "id": 54,
+    "id": 55,
     "title": "Sapne vs Everyone",
     "rating_text": "8.4/10",
     "cover_url": "assets/covers/shows/sapne-vs-everyone.webp",
     "year": 2023
   },
   {
-    "id": 55,
+    "id": 56,
+    "title": "Pluribus",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/shows/pluribus.webp",
+    "year": 2025
+  },
+  {
+    "id": 57,
     "title": "Silicon Valley",
     "rating_text": "8.7/10",
     "cover_url": "assets/covers/shows/silicon-valley.webp",
     "year": 2014
   },
   {
-    "id": 56,
+    "id": 58,
     "title": "Pritam and Pedro",
     "rating_text": "8.7/10",
     "cover_url": "assets/covers/shows/pritam-and-pedro.webp",
     "year": 2026
   },
   {
-    "id": 57,
+    "id": 59,
     "title": "Raakh",
     "rating_text": "8.3/10",
     "cover_url": "assets/covers/shows/raakh.webp",
     "year": 2026
   },
   {
-    "id": 58,
+    "id": 60,
     "title": "Widow's Bay",
     "rating_text": "8/10",
     "cover_url": "assets/covers/shows/widows-bay.webp",
     "year": 2026
   },
   {
-    "id": 59,
+    "id": 61,
     "title": "The Mentalist",
     "rating_text": "8.6/10",
     "cover_url": "assets/covers/shows/the-mentalist.webp",
     "year": 2008
   },
   {
-    "id": 60,
+    "id": 62,
     "title": "The Sopranos",
     "rating_text": "8.3/10",
     "cover_url": "assets/covers/shows/the-sopranos.webp",
     "year": 1999
   },
   {
-    "id": 61,
+    "id": 63,
     "title": "If Wishes Could Kill",
     "rating_text": "7/10",
     "cover_url": "assets/covers/shows/if-wishes-could-kill.webp",
     "year": 2026
   },
   {
-    "id": 62,
+    "id": 64,
     "title": "Dead-End Job",
     "rating_text": "7.2/10",
     "cover_url": "assets/covers/shows/dead-end-job.webp",
     "year": 2026
   },
   {
-    "id": 63,
+    "id": 65,
     "title": "Carrie",
     "rating_text": "6.1/10",
     "cover_url": "assets/covers/shows/carrie.webp",
     "year": 2026
+  },
+  {
+    "id": 66,
+    "title": "Tulsa King",
+    "rating_text": "5/10",
+    "cover_url": "assets/covers/shows/tulsa-king.webp",
+    "year": 2022
   }
 ]
