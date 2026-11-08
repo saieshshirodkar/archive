@@ -652,7 +652,39 @@
     "title": "The Birthday Gift",
     "year": 2026,
     "date_watched": "31-10-2026",
-    "rating_text": "",
+    "rating_text": "4/10",
     "cover_url": "assets/covers/movies/the-birthday-gift.webp"
+  },
+  {
+    "id": 83,
+    "title": "Your Mother Your Mother Your Mother",
+    "year": 2026,
+    "date_watched": "03-11-2026",
+    "rating_text": "0.1/10",
+    "cover_url": "assets/covers/movies/your-mother-your-mother-your-mother.webp"
+  },
+  {
+    "id": 84,
+    "title": "Meiyazhagan",
+    "year": 2024,
+    "date_watched": "03-11-2026",
+    "rating_text": "9.3/10",
+    "cover_url": "assets/covers/movies/meiyazhagan.webp"
+  },
+  {
+    "id": 85,
+    "title": "Dorothy",
+    "year": 2026,
+    "date_watched": "04-11-2026",
+    "rating_text": "2/10",
+    "cover_url": "assets/covers/movies/dorothy.webp"
+  },
+  {
+    "id": 86,
+    "title": "Ramayana: Part 1",
+    "year": 2026,
+    "date_watched": "05-11-2026",
+    "rating_text": "7/10",
+    "cover_url": "assets/covers/movies/ramayana-part-1.webp"
   }
 ]

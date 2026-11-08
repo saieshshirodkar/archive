@@ -427,7 +427,7 @@
     "id": 54,
     "title": "Not Quite Dead Yet",
     "author": "Holly Jackson",
-    "rating_text": "",
+    "rating_text": "6.5/10",
     "cover_url": "assets/covers/books/not-quite-dead-yet.webp",
     "year": 2025
   },
@@ -435,7 +435,7 @@
     "id": 55,
     "title": "Recursion",
     "author": "Blake Crouch",
-    "rating_text": "",
+    "rating_text": "6/10",
     "cover_url": "assets/covers/books/recursion.webp",
     "year": 2019
   },
