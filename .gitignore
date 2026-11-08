@@ -1,7 +1,11 @@
-.vercel
+.vercel/
 .env*
 __pycache__/
 *.pyc
 .venv/
 .ruff_cache/
 tui/target/
+tui/archive-tui
+.DS_Store
+*.log
+node_modules/

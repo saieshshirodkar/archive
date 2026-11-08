@@ -11,7 +11,6 @@ const CATEGORY_BY_ID = Object.fromEntries(CATEGORIES.map((c) => [c.id, c]))
 
 const EAGER_LOAD_COUNT = 4
 const SKELETON_COUNT = 8
-// per-card random tilt (left/right only, no drift)
 const SWITCH_MS = 160
 const SWITCH_FROM = 0.4
 
@@ -447,7 +446,6 @@ render()
 updateIndicator()
 loadCategory()
 
-// preload the other tabs only after first paint so data wins over covers
 const idle = window.requestIdleCallback ? (fn) => window.requestIdleCallback(fn, { timeout: 2000 }) : (fn) => setTimeout(fn, 1500)
 idle(() => {
   for (const id of CATEGORY_IDS) {

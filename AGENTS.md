@@ -19,9 +19,12 @@ Personal media catalog for books, animanga, movies, and TV shows. Vanilla HTML/C
 ├── AGENTS.md               # This file
 ├── app.css                 # All styles in one file, tokens first
 ├── app.js                  # All JS in one file, no modules
+├── favicon.svg             # plain SVG glyph for the tab
+├── vercel.json             # cache headers for assets/data/app files
 ├── data/                   # books.json, animanga.json, movies.json, shows.json
 ├── assets/covers/          # books/, anime/, movies/, shows/ — 400px webp q80
 ├── scripts/                # archive.py + add/check/cover/query/rate/remove/reorder
+├── tui/                    # Rust TUI (cargo, separate from web app)
 ├── pyproject.toml          # uv project, dev = ruff
 └── uv.lock
 ```
@@ -33,24 +36,25 @@ Single files, no imports. Bundle order in `app.js` is dependency order: config �
 Keep these behaviors:
 
 - **Race guard:** `token` in `loadCategory()`; every `await` followed by `if (mine !== token) return`.
-- **Boot:** render header/grid once, `loadCategory()`, then `preloadCategory()` for all ids in parallel. Cached tab switch must check `entries.get()` before touching DOM (no skeleton flash).
+- **Boot:** render header/grid once, `loadCategory()`, then `preloadCategory()` for all other ids on idle. Cached tab switch must check `entries.get()` before touching DOM (no skeleton flash).
 - **Switch:** 160ms opacity ramp only (`.4→1`). No translate, stagger, or fade-out.
 - **Render:** `buildCardsHTML()` single string into `grid.innerHTML` once. No per-card `appendChild`, no entrance animation, no scroll anchoring. `scroll-behavior:auto; overflow-anchor:none;`, `history.scrollRestoration='manual'`, scroll to top on switch.
-- **Images:** first 8 eager (`decoding=sync`, `fetchpriority=high`), rest lazy/async. One delegated capture-phase `error` listener on grid. Covers: `display:block; width:100%; height:auto` hug natural height in `var(--card-cover)` column, no crop, no gap. Every `<img>` carries `width`/`height` from its entry so layout reserves space.
-- **Tabs:** ARIA tablist, roving tabindex, indicator via `getBoundingClientRect()`, first placement transition-free, re-measure on resize/orientationchange/fonts-ready. Stats from `entries`, hidden ≤640px. Rounded corners (`--radius-pill:8px`), only the back-to-top button is circular.
-- **CSS:** `:root` owns all responsive values; `@media (max-width:640px)` overrides tokens only, never re-declares `.book-card`/`.container`. `.book-card, .skeleton-card` share one grid rule. New responsive value = token + override, not new selector.
-- **Mobile:** html 112.5%→100%, tab height 44px minimum, cover 76px, index 26px. Keep `viewport-fit=cover`, `env()` with `0px` fallback, horizontal padding in `.container` only, `overflow-wrap:break-word` + `minmax(0,1fr)`.
+- **Images:** first 4 eager (`decoding=sync`, `fetchpriority=high`), rest lazy/async. One delegated capture-phase `error` listener on grid. Covers fill the grid column: `display:block; width:100%` with `aspect-ratio:2/3` + `object-fit:cover` (crop to 2:3). Every `<img>` carries `width`/`height` from its entry so layout reserves space.
+- **Tabs:** ARIA tablist, roving tabindex, indicator via `getBoundingClientRect()`, first placement transition-free, re-measure on resize/orientationchange/fonts-ready. Stats from `entries`, hidden ≤640px. Rounded corners (`--radius-pill:9999px`), back-to-top button is circular (`9999px`).
+- **CSS:** `:root` owns all responsive values; `@media (max-width:640px)` overrides tokens only (except hiding `.logo`/`.stats`/`.nav` chrome ≤640px). Grid breakpoints 1100px→3 cols, 820px→2 cols; tilt halves ≤540px; `--tab-px:10px` ≤360px. `.book-card, .skeleton-card` share one flex rule. New responsive value = token + override, not new selector.
+- **Mobile:** html 112.5%→100%, tab height 44px minimum. Keep `viewport-fit=cover`, `env()` with `0px` fallback, horizontal padding in `.container` only, `overflow-wrap:break-word` + `minmax(0,1fr)`.
 
 ### Design reasons
 
-Dials: `ENERGY 1 / RHYTHM 1 / MOTION 1` (calm uniform list, hover + fade only).
+Dials: `ENERGY 2 / RHYTHM 2 / MOTION 1` (lavender cover grid, per-card tilt, hover + fade only).
 
-- Black + Geist = Vercel-style minimal, lets covers carry the color.
+- Lavender + Geist = Catppuccin-style minimal, lets covers carry the color.
 - Geist Mono for index/rating/dates = metadata reads as data, not decoration.
 - Gold only on 10/10 = one accent for the one thing worth flagging.
-- Rounded 8px corners, circular back-to-top only = simple chrome, no pill identity.
-- Hairline `#1e` borders = separators stay quiet behind covers; text contrast is AA.
+- Pill tabs = simple chrome, circular back-to-top only.
+- Hairline separators stay quiet behind covers; text contrast is AA.
 - Lucide chevron-up = single 20px stroke icon, relevance is "scroll to top".
+- Per-card tilt = calm random rotate with no drift, halved on small screens.
 
 ## Data rules
 
@@ -112,9 +116,9 @@ Ruff: `uv run ruff check scripts/` + `uv run ruff format --check scripts/` must 
 - Never `pkill -f` a pattern in your own command. Capture `$!`, `kill $PID`.
 - No comments in JS/CSS code. Scripts: minimal comments only when needed, code should read clearly.
 - `.env.local` holds Vercel token, gitignored, never commit/share.
-- No favicon, no service worker, no grain. Brand is plain `Archive`.
-- Covers render at 120px/76px but stored 400px. User declined 240px resize (12-10-2026). Don't shrink again.
-- `user-select:none` is only on tabs/stats, page text stays selectable.
+- Brand is plain `Archive` (`favicon.svg` glyph only, no service worker, no grain).
+- Covers are stored 400px wide webp q80, rendered at grid-column width (cropped to 2:3 via object-fit). User declined 240px resize (12-10-2026). Don't shrink again.
+- `user-select:none` is global (`*`), intentional.
 
 ## Commands
 

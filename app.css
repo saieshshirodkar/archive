@@ -26,13 +26,6 @@
   --gutter-top: 40px;
   --gutter-bottom: 80px;
 
-  --card-index: 32px;
-  --card-cover: 120px;
-  --card-gap: 24px;
-  --card-pad: 24px;
-  --card-intrinsic: 228px;
-  --content-gap: 6px;
-
   --fs-index: 0.8rem;
   --fs-title: 1.05rem;
   --fs-author: 0.72rem;
@@ -201,7 +194,7 @@ body {
 }
 
 .stats {
-  display: none;
+  display: inline-flex;
   justify-self: end;
   font-family: var(--font-mono);
   font-size: 0.7rem;
@@ -234,6 +227,8 @@ body {
 .book-card {
   transform: rotate(var(--r, 0deg));
   will-change: transform;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 360px;
 }
 
 .book-content,
@@ -243,11 +238,6 @@ body {
   gap: 4px;
   margin-top: 12px;
   padding: 0 2px;
-}
-
-.book-card {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 360px;
 }
 
 .entry-bar {
@@ -265,7 +255,7 @@ body {
 
 .serial b {
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: var(--fs-index);
   font-weight: 500;
   color: var(--text-muted);
 }
@@ -302,6 +292,9 @@ body {
   min-width: 0;
   overflow-wrap: break-word;
   line-height: 1.4;
+  font-family: var(--font-mono);
+  font-size: var(--fs-author);
+  color: var(--text-muted);
 }
 
 .rating-text {
@@ -325,12 +318,6 @@ body {
   letter-spacing: -0.02em;
   color: var(--text);
   overflow-wrap: break-word;
-}
-
-.book-author {
-  font-family: var(--font-mono);
-  font-size: var(--fs-author);
-  color: var(--text-muted);
 }
 
 .movie-year {
