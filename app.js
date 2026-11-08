@@ -10,7 +10,8 @@ const CATEGORY_IDS = CATEGORIES.map((c) => c.id)
 const CATEGORY_BY_ID = Object.fromEntries(CATEGORIES.map((c) => [c.id, c]))
 
 const EAGER_LOAD_COUNT = 8
-const SKELETON_COUNT = 5
+const SKELETON_COUNT = 8
+// per-card random tilt (left/right only, no drift)
 const SWITCH_MS = 160
 const SWITCH_FROM = 0.4
 
@@ -151,16 +152,15 @@ function indicatorEl() {
 
 
 function buildSkeletonHTML(count) {
-  let html = ''
+  let html = '<p class="sr-only" role="status">Loading</p>'
   for (let i = 0; i < count; i++) {
     html +=
       '<div class="skeleton-card">' +
-      '<div class="skeleton-text" style="width:16px;height:12px"></div>' +
+      '<div class="entry-bar"><div class="skeleton-text" style="width:56px;height:20px"></div><div class="skeleton-text" style="width:40px;height:14px"></div></div>' +
       '<div class="skeleton-cover"></div>' +
       '<div class="skeleton-body">' +
-      '<div class="skeleton-text" style="width:48px;height:18px"></div>' +
-      '<div class="skeleton-text" style="width:75%;height:22px"></div>' +
-      '<div class="skeleton-text" style="width:40%;height:14px"></div>' +
+      '<div class="skeleton-text" style="width:75%;height:18px"></div>' +
+      '<div class="skeleton-text" style="width:45%;height:12px"></div>' +
       '</div>' +
       '</div>'
   }
@@ -179,25 +179,30 @@ function buildCardsHTML(items) {
     let cls = 'book-card'
     if (rating === '10/10') cls += ' is-legendary'
 
-    let badge = ''
-    if (rating) badge = `<span class="rating-text">${escapeHtml(rating)}</span>`
-
-    const year = item.year != null ? `<span class="movie-year">(${item.year})</span>` : ''
-    const meta = isMovie ? escapeHtml(item.date_watched) : item.author ? `by ${escapeHtml(item.author)}` : ''
+    const badge = rating ? `<span class="rating-text">${escapeHtml(rating)}</span>` : '<span></span>'
+    const num = String(i + 1).padStart(2, '0')
+    const year = item.year != null ? `<span class="movie-year">${item.year}</span>` : ''
+    const meta = isMovie ? escapeHtml(item.date_watched) : item.author ? escapeHtml(item.author) : ''
     const cover = escapeHtml(item.cover_url)
     const title = escapeHtml(item.title)
 
+    const s = Number((Math.random() * 5 - 2.5).toFixed(1))
     html +=
-      `<article class="${cls}">` +
-      `<div class="book-index">${String(i + 1).padStart(2, '0')}</div>` +
+      `<article class="${cls}" style="--r:${s}deg">` +
+      '<div class="entry-bar">' +
+      `<span class="serial"><b>${num}</b></span>` +
+      badge +
+      '</div>' +
       '<div class="book-cover-container">' +
-      `<img class="book-cover" src="${cover}" alt="${title}"` +
+      `<img class="book-cover" src="${cover}" alt="" width="${item.width}" height="${item.height}"` +
       (eager ? ' decoding="sync" fetchpriority="high"' : ' loading="lazy" decoding="async"') +
       '></div>' +
       '<div class="book-content">' +
-      badge +
-      `<h2 class="book-title">${title}${year}</h2>` +
-      `<div class="book-author">${meta}</div>` +
+      `<h2 class="book-title">${title}</h2>` +
+      '<div class="book-author-line">' +
+      `<span class="book-author">${meta}</span>` +
+      year +
+      '</div>' +
       '</div>' +
       '</article>'
   }
@@ -217,6 +222,8 @@ let main = null
 let grid = null
 let switchAnim = null
 let painted = false
+let toTop = null
+let ticking = false
 
 function build() {
   header = createHeader()
@@ -235,11 +242,44 @@ function build() {
     (e) => {
       const img = e.target
       if (!img.classList?.contains('book-cover')) return
-      img.parentElement.innerHTML = '<div class="error-placeholder">\u2014</div>'
+      img.parentElement.innerHTML = '<div class="error-placeholder">-</div>'
     },
     true
   )
   main.appendChild(grid)
+
+  toTop = document.createElement('button')
+  toTop.type = 'button'
+  toTop.className = 'to-top'
+  toTop.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg>'
+  toTop.setAttribute('aria-label', 'Back to top')
+  toTop.setAttribute('aria-hidden', 'true')
+  toTop.tabIndex = -1
+  toTop.addEventListener('click', () => {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' })
+    activeTab()?.focus({ preventScroll: true })
+  })
+  app.appendChild(toTop)
+
+  const onScroll = () => {
+    const show = window.scrollY > 300
+    toTop.classList.toggle('is-visible', show)
+    toTop.setAttribute('aria-hidden', String(!show))
+    toTop.tabIndex = show ? 0 : -1
+    ticking = false
+  }
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (!ticking) {
+        ticking = true
+        requestAnimationFrame(onScroll)
+      }
+    },
+    { passive: true }
+  )
+  onScroll()
 }
 
 function render() {
@@ -253,7 +293,14 @@ function render() {
   }
 
   if (state.items == null) {
+    grid.setAttribute('aria-busy', 'true')
     grid.innerHTML = buildSkeletonHTML(SKELETON_COUNT)
+    return
+  }
+
+  grid.setAttribute('aria-busy', 'false')
+  if (state.items.length === 0) {
+    grid.innerHTML = '<div class="empty-state">No entries yet.</div>'
     return
   }
 

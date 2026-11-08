@@ -16,19 +16,46 @@ TZ = ZoneInfo("Asia/Kolkata")
 CATEGORIES: dict[str, dict] = {
     "books": {
         "folder": "books",
-        "keys": ["id", "title", "author", "rating_text", "cover_url", "year"],
+        "keys": [
+            "id",
+            "title",
+            "author",
+            "rating_text",
+            "cover_url",
+            "year",
+            "width",
+            "height",
+        ],
     },
     "animanga": {
         "folder": "anime",
-        "keys": ["id", "title", "author", "rating_text", "cover_url", "year"],
+        "keys": [
+            "id",
+            "title",
+            "author",
+            "rating_text",
+            "cover_url",
+            "year",
+            "width",
+            "height",
+        ],
     },
     "movies": {
         "folder": "movies",
-        "keys": ["id", "title", "year", "date_watched", "rating_text", "cover_url"],
+        "keys": [
+            "id",
+            "title",
+            "year",
+            "date_watched",
+            "rating_text",
+            "cover_url",
+            "width",
+            "height",
+        ],
     },
     "shows": {
         "folder": "shows",
-        "keys": ["id", "title", "rating_text", "cover_url", "year"],
+        "keys": ["id", "title", "rating_text", "cover_url", "year", "width", "height"],
     },
 }
 CATEGORY_IDS = tuple(CATEGORIES)
@@ -226,6 +253,8 @@ def validate(category: str) -> list[str]:
         if len(ids_using) > 1:
             problems.append(f"duplicate cover_url {url} used by ids {ids_using}")
     for e in entries:
+        if e.get("width") is not None and e["width"] != 400:
+            problems.append(f"id {e['id']}: cover width {e['width']}, expected 400")
         num, _, den = e["rating_text"].rpartition("/")
         if den != "10":
             problems.append(f"id {e['id']}: bad rating {e['rating_text']!r}")

@@ -36,18 +36,29 @@ Keep these behaviors:
 - **Boot:** render header/grid once, `loadCategory()`, then `preloadCategory()` for all ids in parallel. Cached tab switch must check `entries.get()` before touching DOM (no skeleton flash).
 - **Switch:** 160ms opacity ramp only (`.4→1`). No translate, stagger, or fade-out.
 - **Render:** `buildCardsHTML()` single string into `grid.innerHTML` once. No per-card `appendChild`, no entrance animation, no scroll anchoring. `scroll-behavior:auto; overflow-anchor:none;`, `history.scrollRestoration='manual'`, scroll to top on switch.
-- **Images:** first 8 eager (`decoding=sync`, `fetchpriority=high`), rest lazy/async. One delegated capture-phase `error` listener on grid. Covers: 2/3 box, `display:block; width/height:100%; object-fit:cover; object-position:center`, no hover scale (border brighten only).
-- **Tabs:** ARIA tablist, roving tabindex, pill via `getBoundingClientRect()`, first placement transition-free, re-measure on resize/orientationchange/fonts-ready. Stats from `entries`, hidden ≤640px.
+- **Images:** first 8 eager (`decoding=sync`, `fetchpriority=high`), rest lazy/async. One delegated capture-phase `error` listener on grid. Covers: `display:block; width:100%; height:auto` hug natural height in `var(--card-cover)` column, no crop, no gap. Every `<img>` carries `width`/`height` from its entry so layout reserves space.
+- **Tabs:** ARIA tablist, roving tabindex, indicator via `getBoundingClientRect()`, first placement transition-free, re-measure on resize/orientationchange/fonts-ready. Stats from `entries`, hidden ≤640px. Rounded corners (`--radius-pill:8px`), only the back-to-top button is circular.
 - **CSS:** `:root` owns all responsive values; `@media (max-width:640px)` overrides tokens only, never re-declares `.book-card`/`.container`. `.book-card, .skeleton-card` share one grid rule. New responsive value = token + override, not new selector.
 - **Mobile:** html 112.5%→100%, tab height 44px minimum, cover 76px, index 26px. Keep `viewport-fit=cover`, `env()` with `0px` fallback, horizontal padding in `.container` only, `overflow-wrap:break-word` + `minmax(0,1fr)`.
+
+### Design reasons
+
+Dials: `ENERGY 1 / RHYTHM 1 / MOTION 1` (calm uniform list, hover + fade only).
+
+- Black + Geist = Vercel-style minimal, lets covers carry the color.
+- Geist Mono for index/rating/dates = metadata reads as data, not decoration.
+- Gold only on 10/10 = one accent for the one thing worth flagging.
+- Rounded 8px corners, circular back-to-top only = simple chrome, no pill identity.
+- Hairline `#1e` borders = separators stay quiet behind covers; text contrast is AA.
+- Lucide chevron-up = single 20px stroke icon, relevance is "scroll to top".
 
 ## Data rules
 
 - `id` = 1-indexed array position. Every write renumbers via `normalise()`. Never trust old ids.
 - Key order fixed per category:
-  - books/animanga: `id, title, author, rating_text, cover_url, year`
-  - movies: `id, title, year, date_watched, rating_text, cover_url`
-  - shows: `id, title, rating_text, cover_url, year` (never `author`, never `date_watched`)
+  - books/animanga: `id, title, author, rating_text, cover_url, year, width, height`
+  - movies: `id, title, year, date_watched, rating_text, cover_url, width, height`
+  - shows: `id, title, rating_text, cover_url, year, width, height` (never `author`, never `date_watched`)
 - `rating_text` always `X/10` or `X.Y/10`. **No TBR.** Empty rating is invalid now.
 - `date_watched` movies only, `DD-MM-YYYY`, decides `isMovie` in renderer.
 - `cover_url` relative path. Animanga lives in `assets/covers/anime/`, not `animanga/`. Always `400px` wide webp q80, `cover.py` verifies width.
@@ -103,7 +114,7 @@ Ruff: `uv run ruff check scripts/` + `uv run ruff format --check scripts/` must 
 - `.env.local` holds Vercel token, gitignored, never commit/share.
 - No favicon, no service worker, no grain. Brand is plain `Archive`.
 - Covers render at 120px/76px but stored 400px. User declined 240px resize (12-10-2026). Don't shrink again.
-- `user-select:none` is intentional.
+- `user-select:none` is only on tabs/stats, page text stays selectable.
 
 ## Commands
 
@@ -112,7 +123,7 @@ vercel --prod                                                              # dep
 uv run python scripts/check.py                                             # validate data
 uv run python scripts/query.py date                                        # IST today
 uv run ruff check scripts/ && uv run ruff format --check scripts/          # lint
-node --check js/app.js                                                     # syntax
+node --check app.js                                                     # syntax
 python3 -m http.server 8000                                                # dev server
 ```
 

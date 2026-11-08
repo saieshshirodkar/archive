@@ -5,7 +5,9 @@
     "author": "Disney",
     "rating_text": "7/10",
     "cover_url": "assets/covers/books/high-school-musical-stories-from-east-high.webp",
-    "year": 2007
+    "year": 2007,
+    "width": 400,
+    "height": 597
   },
   {
     "id": 2,
@@ -13,7 +15,9 @@
     "author": "Christian Jacq",
     "rating_text": "8/10",
     "cover_url": "assets/covers/books/beneath-the-pyramids.webp",
-    "year": 1993
+    "year": 1993,
+    "width": 400,
+    "height": 645
   },
   {
     "id": 3,
@@ -21,7 +25,9 @@
     "author": "Agatha Christie",
     "rating_text": "9/10",
     "cover_url": "assets/covers/books/and-then-there-were-none.webp",
-    "year": 1939
+    "year": 1939,
+    "width": 400,
+    "height": 644
   },
   {
     "id": 4,
@@ -29,7 +35,9 @@
     "author": "Holly Jackson",
     "rating_text": "9.5/10",
     "cover_url": "assets/covers/books/a-good-girl-s-guide-to-murder.webp",
-    "year": 2019
+    "year": 2019,
+    "width": 400,
+    "height": 617
   },
   {
     "id": 5,
@@ -37,7 +45,9 @@
     "author": "Holly Jackson",
     "rating_text": "8/10",
     "cover_url": "assets/covers/books/good-girl-bad-blood.webp",
-    "year": 2020
+    "year": 2020,
+    "width": 400,
+    "height": 613
   },
   {
     "id": 6,
@@ -45,7 +55,9 @@
     "author": "Holly Jackson",
     "rating_text": "9/10",
     "cover_url": "assets/covers/books/as-good-as-dead.webp",
-    "year": 2021
+    "year": 2021,
+    "width": 400,
+    "height": 297
   },
   {
     "id": 7,
@@ -53,7 +65,9 @@
     "author": "Holly Jackson",
     "rating_text": "7/10",
     "cover_url": "assets/covers/books/kill-joy.webp",
-    "year": 2021
+    "year": 2021,
+    "width": 400,
+    "height": 634
   },
   {
     "id": 8,
@@ -61,7 +75,9 @@
     "author": "Freida McFadden",
     "rating_text": "9/10",
     "cover_url": "assets/covers/books/the-housemaid.webp",
-    "year": 2022
+    "year": 2022,
+    "width": 400,
+    "height": 566
   },
   {
     "id": 9,
@@ -69,7 +85,9 @@
     "author": "Chetan Bhagat",
     "rating_text": "8.5/10",
     "cover_url": "assets/covers/books/the-girl-in-room-105.webp",
-    "year": 2018
+    "year": 2018,
+    "width": 400,
+    "height": 518
   },
   {
     "id": 10,
@@ -77,7 +95,9 @@
     "author": "Gillian Flynn",
     "rating_text": "7/10",
     "cover_url": "assets/covers/books/sharp-objects.webp",
-    "year": 2006
+    "year": 2006,
+    "width": 400,
+    "height": 613
   },
   {
     "id": 11,
@@ -85,7 +105,9 @@
     "author": "Chetan Bhagat",
     "rating_text": "8/10",
     "cover_url": "assets/covers/books/one-arranged-murder.webp",
-    "year": 2020
+    "year": 2020,
+    "width": 400,
+    "height": 613
   },
   {
     "id": 12,
@@ -93,7 +115,9 @@
     "author": "Chetan Bhagat",
     "rating_text": "7.5/10",
     "cover_url": "assets/covers/books/400-days.webp",
-    "year": 2021
+    "year": 2021,
+    "width": 400,
+    "height": 615
   },
   {
     "id": 13,
@@ -101,7 +125,9 @@
     "author": "Freida McFadden",
     "rating_text": "6/10",
     "cover_url": "assets/covers/books/the-housemaid-s-secret.webp",
-    "year": 2023
+    "year": 2023,
+    "width": 400,
+    "height": 632
   },
   {
     "id": 14,
@@ -109,7 +135,9 @@
     "author": "Kanae Minato",
     "rating_text": "9.5/10",
     "cover_url": "assets/covers/books/confessions.webp",
-    "year": 2008
+    "year": 2008,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 15,
@@ -117,7 +145,9 @@
     "author": "Agatha Christie",
     "rating_text": "7.5/10",
     "cover_url": "assets/covers/books/murder-on-the-orient-express.webp",
-    "year": 1934
+    "year": 1934,
+    "width": 400,
+    "height": 641
   },
   {
     "id": 16,
@@ -125,7 +155,9 @@
     "author": "Agatha Christie",
     "rating_text": "6/10",
     "cover_url": "assets/covers/books/the-murder-of-roger-ackroyd.webp",
-    "year": 1926
+    "year": 1926,
+    "width": 400,
+    "height": 641
   },
   {
     "id": 17,
@@ -133,7 +165,9 @@
     "author": "Paulo Coelho",
     "rating_text": "6/10",
     "cover_url": "assets/covers/books/the-alchemist.webp",
-    "year": 1988
+    "year": 1988,
+    "width": 400,
+    "height": 606
   },
   {
     "id": 18,
@@ -141,7 +175,9 @@
     "author": "George Orwell",
     "rating_text": "8/10",
     "cover_url": "assets/covers/books/animal-farm.webp",
-    "year": 1945
+    "year": 1945,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 19,
@@ -149,7 +185,9 @@
     "author": "Gillian Flynn",
     "rating_text": "4/10",
     "cover_url": "assets/covers/books/gone-girl.webp",
-    "year": 2012
+    "year": 2012,
+    "width": 400,
+    "height": 614
   },
   {
     "id": 20,
@@ -157,7 +195,9 @@
     "author": "Alex Michaelides",
     "rating_text": "8.5/10",
     "cover_url": "assets/covers/books/the-silent-patient.webp",
-    "year": 2019
+    "year": 2019,
+    "width": 400,
+    "height": 603
   },
   {
     "id": 21,
@@ -165,7 +205,9 @@
     "author": "George Orwell",
     "rating_text": "5/10",
     "cover_url": "assets/covers/books/1984.webp",
-    "year": 1949
+    "year": 1949,
+    "width": 400,
+    "height": 716
   },
   {
     "id": 22,
@@ -173,7 +215,9 @@
     "author": "Colleen Hoover",
     "rating_text": "6/10",
     "cover_url": "assets/covers/books/verity.webp",
-    "year": 2021
+    "year": 2021,
+    "width": 400,
+    "height": 533
   },
   {
     "id": 23,
@@ -181,7 +225,9 @@
     "author": "E. Lockhart",
     "rating_text": "6/10",
     "cover_url": "assets/covers/books/we-were-liars.webp",
-    "year": 2014
+    "year": 2014,
+    "width": 400,
+    "height": 616
   },
   {
     "id": 24,
@@ -189,7 +235,9 @@
     "author": "E. Lockhart",
     "rating_text": "3/10",
     "cover_url": "assets/covers/books/family-of-liars.webp",
-    "year": 2022
+    "year": 2022,
+    "width": 400,
+    "height": 606
   },
   {
     "id": 25,
@@ -197,7 +245,9 @@
     "author": "Karen M. McManus",
     "rating_text": "6.5/10",
     "cover_url": "assets/covers/books/one-of-us-is-lying.webp",
-    "year": 2017
+    "year": 2017,
+    "width": 400,
+    "height": 606
   },
   {
     "id": 26,
@@ -205,7 +255,9 @@
     "author": "Karen M. McManus",
     "rating_text": "7.5/10",
     "cover_url": "assets/covers/books/one-of-us-is-next.webp",
-    "year": 2020
+    "year": 2020,
+    "width": 400,
+    "height": 615
   },
   {
     "id": 27,
@@ -213,7 +265,9 @@
     "author": "Karen M. McManus",
     "rating_text": "4/10",
     "cover_url": "assets/covers/books/one-of-us-is-back.webp",
-    "year": 2023
+    "year": 2023,
+    "width": 400,
+    "height": 606
   },
   {
     "id": 28,
@@ -221,7 +275,9 @@
     "author": "Paula Hawkins",
     "rating_text": "7.2/10",
     "cover_url": "assets/covers/books/the-girl-on-the-train.webp",
-    "year": 2015
+    "year": 2015,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 29,
@@ -229,7 +285,9 @@
     "author": "Freida McFadden",
     "rating_text": "7.5/10",
     "cover_url": "assets/covers/books/the-housemaid-is-watching.webp",
-    "year": 2024
+    "year": 2024,
+    "width": 400,
+    "height": 614
   },
   {
     "id": 30,
@@ -237,7 +295,9 @@
     "author": "Freida McFadden",
     "rating_text": "8.5/10",
     "cover_url": "assets/covers/books/never-lie.webp",
-    "year": 2022
+    "year": 2022,
+    "width": 400,
+    "height": 640
   },
   {
     "id": 31,
@@ -245,7 +305,9 @@
     "author": "Lisa Jewell",
     "rating_text": "5/10",
     "cover_url": "assets/covers/books/then-she-was-gone.webp",
-    "year": 2018
+    "year": 2018,
+    "width": 400,
+    "height": 621
   },
   {
     "id": 32,
@@ -253,7 +315,9 @@
     "author": "Holly Jackson",
     "rating_text": "6.5/10",
     "cover_url": "assets/covers/books/five-survive.webp",
-    "year": 2023
+    "year": 2023,
+    "width": 400,
+    "height": 620
   },
   {
     "id": 33,
@@ -261,7 +325,9 @@
     "author": "F. Scott Fitzgerald",
     "rating_text": "3.5/10",
     "cover_url": "assets/covers/books/the-great-gatsby.webp",
-    "year": 1925
+    "year": 1925,
+    "width": 400,
+    "height": 610
   },
   {
     "id": 34,
@@ -269,7 +335,9 @@
     "author": "Khaled Hosseini",
     "rating_text": "7/10",
     "cover_url": "assets/covers/books/the-kite-runner.webp",
-    "year": 2003
+    "year": 2003,
+    "width": 400,
+    "height": 615
   },
   {
     "id": 35,
@@ -277,7 +345,9 @@
     "author": "Freida McFadden",
     "rating_text": "7.8/10",
     "cover_url": "assets/covers/books/the-tenant.webp",
-    "year": 2025
+    "year": 2025,
+    "width": 400,
+    "height": 640
   },
   {
     "id": 36,
@@ -285,7 +355,9 @@
     "author": "Holly Jackson",
     "rating_text": "7.4/10",
     "cover_url": "assets/covers/books/the-reappearance-of-rachel-price.webp",
-    "year": 2024
+    "year": 2024,
+    "width": 400,
+    "height": 673
   },
   {
     "id": 37,
@@ -293,7 +365,9 @@
     "author": "Hanya Yanagihara",
     "rating_text": "8.5/10",
     "cover_url": "assets/covers/books/a-little-life.webp",
-    "year": 2015
+    "year": 2015,
+    "width": 400,
+    "height": 606
   },
   {
     "id": 38,
@@ -301,7 +375,9 @@
     "author": "Khaled Hosseini",
     "rating_text": "8.3/10",
     "cover_url": "assets/covers/books/a-thousand-splendid-suns.webp",
-    "year": 2007
+    "year": 2007,
+    "width": 400,
+    "height": 613
   },
   {
     "id": 39,
@@ -309,7 +385,9 @@
     "author": "Satoshi Yagisawa",
     "rating_text": "8.1/10",
     "cover_url": "assets/covers/books/days-at-the-morisaki-bookshop-premium-edition.webp",
-    "year": 2010
+    "year": 2010,
+    "width": 400,
+    "height": 613
   },
   {
     "id": 40,
@@ -317,7 +395,9 @@
     "author": "Satoshi Yagisawa",
     "rating_text": "7.9/10",
     "cover_url": "assets/covers/books/more-days-at-the-morisaki-bookshop.webp",
-    "year": 2011
+    "year": 2011,
+    "width": 400,
+    "height": 602
   },
   {
     "id": 41,
@@ -325,7 +405,9 @@
     "author": "Lisa Jewell",
     "rating_text": "8/10",
     "cover_url": "assets/covers/books/the-family-upstairs.webp",
-    "year": 2019
+    "year": 2019,
+    "width": 400,
+    "height": 604
   },
   {
     "id": 42,
@@ -333,7 +415,9 @@
     "author": "Lisa Jewell",
     "rating_text": "6/10",
     "cover_url": "assets/covers/books/the-family-remains.webp",
-    "year": 2022
+    "year": 2022,
+    "width": 400,
+    "height": 615
   },
   {
     "id": 43,
@@ -341,7 +425,9 @@
     "author": "R. F. Kuang",
     "rating_text": "5.5/10",
     "cover_url": "assets/covers/books/yellowface.webp",
-    "year": 2023
+    "year": 2023,
+    "width": 400,
+    "height": 610
   },
   {
     "id": 44,
@@ -349,7 +435,9 @@
     "author": "Haruki Murakami",
     "rating_text": "3/10",
     "cover_url": "assets/covers/books/kafka-on-the-shore.webp",
-    "year": 2002
+    "year": 2002,
+    "width": 400,
+    "height": 619
   },
   {
     "id": 45,
@@ -357,7 +445,9 @@
     "author": "Haruki Murakami",
     "rating_text": "4.5/10",
     "cover_url": "assets/covers/books/norwegian-wood.webp",
-    "year": 1987
+    "year": 1987,
+    "width": 400,
+    "height": 618
   },
   {
     "id": 46,
@@ -365,7 +455,9 @@
     "author": "Lynn Painter",
     "rating_text": "7/10",
     "cover_url": "assets/covers/books/better-than-the-movies.webp",
-    "year": 2021
+    "year": 2021,
+    "width": 400,
+    "height": 610
   },
   {
     "id": 47,
@@ -373,7 +465,9 @@
     "author": "Lynn Painter",
     "rating_text": "3/10",
     "cover_url": "assets/covers/books/better-than-the-prom.webp",
-    "year": 2022
+    "year": 2022,
+    "width": 400,
+    "height": 611
   },
   {
     "id": 48,
@@ -381,7 +475,9 @@
     "author": "Lynn Painter",
     "rating_text": "2/10",
     "cover_url": "assets/covers/books/better-than-before.webp",
-    "year": 2023
+    "year": 2023,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 49,
@@ -389,7 +485,9 @@
     "author": "Lynn Painter",
     "rating_text": "3/10",
     "cover_url": "assets/covers/books/nothing-better-than-you.webp",
-    "year": 2024
+    "year": 2024,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 50,
@@ -397,7 +495,9 @@
     "author": "Lynn Painter",
     "rating_text": "5/10",
     "cover_url": "assets/covers/books/nothing-like-the-movies.webp",
-    "year": 2024
+    "year": 2024,
+    "width": 400,
+    "height": 604
   },
   {
     "id": 51,
@@ -405,7 +505,9 @@
     "author": "Han Kang",
     "rating_text": "5/10",
     "cover_url": "assets/covers/books/the-vegetarian.webp",
-    "year": 2007
+    "year": 2007,
+    "width": 400,
+    "height": 612
   },
   {
     "id": 52,
@@ -413,7 +515,9 @@
     "author": "Prajakta Koli",
     "rating_text": "2/10",
     "cover_url": "assets/covers/books/too-good-to-be-true.webp",
-    "year": 2025
+    "year": 2025,
+    "width": 400,
+    "height": 636
   },
   {
     "id": 53,
@@ -421,7 +525,9 @@
     "author": "Franz Kafka",
     "rating_text": "3.5/10",
     "cover_url": "assets/covers/books/the-metamorphosis.webp",
-    "year": 1915
+    "year": 1915,
+    "width": 400,
+    "height": 618
   },
   {
     "id": 54,
@@ -429,7 +535,9 @@
     "author": "Holly Jackson",
     "rating_text": "6.5/10",
     "cover_url": "assets/covers/books/not-quite-dead-yet.webp",
-    "year": 2025
+    "year": 2025,
+    "width": 400,
+    "height": 616
   },
   {
     "id": 55,
@@ -437,6 +545,8 @@
     "author": "Blake Crouch",
     "rating_text": "6/10",
     "cover_url": "assets/covers/books/recursion.webp",
-    "year": 2019
+    "year": 2019,
+    "width": 400,
+    "height": 608
   }
 ]

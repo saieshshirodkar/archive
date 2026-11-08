@@ -89,6 +89,8 @@ def run(args: argparse.Namespace) -> int:
         return A.fail(str(exc))
     if not ensure_cover(args, filename):
         return 1
+    w, h = cover.dimension(A.cover_path(args.cat, filename))
+    entry["width"], entry["height"] = w, h
     insert(args.cat, entries, entry)
     A.save(args.cat, entries)
     fresh = A.load(args.cat)

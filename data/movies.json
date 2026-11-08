@@ -5,7 +5,9 @@
     "year": 2026,
     "date_watched": "30-07-2026",
     "rating_text": "9.3/10",
-    "cover_url": "assets/covers/movies/project-hail-mary.webp"
+    "cover_url": "assets/covers/movies/project-hail-mary.webp",
+    "width": 400,
+    "height": 593
   },
   {
     "id": 2,
@@ -13,7 +15,9 @@
     "year": 2026,
     "date_watched": "31-07-2026",
     "rating_text": "8/10",
-    "cover_url": "assets/covers/movies/spider-man-brand-new-day.webp"
+    "cover_url": "assets/covers/movies/spider-man-brand-new-day.webp",
+    "width": 400,
+    "height": 593
   },
   {
     "id": 3,
@@ -21,7 +25,9 @@
     "year": 2026,
     "date_watched": "03-08-2026",
     "rating_text": "9/10",
-    "cover_url": "assets/covers/movies/balan-the-boy.webp"
+    "cover_url": "assets/covers/movies/balan-the-boy.webp",
+    "width": 400,
+    "height": 500
   },
   {
     "id": 4,
@@ -29,7 +35,9 @@
     "year": 2026,
     "date_watched": "05-08-2026",
     "rating_text": "8.1/10",
-    "cover_url": "assets/covers/movies/the-india-story.webp"
+    "cover_url": "assets/covers/movies/the-india-story.webp",
+    "width": 400,
+    "height": 500
   },
   {
     "id": 5,
@@ -37,7 +45,9 @@
     "year": 2012,
     "date_watched": "09-08-2026",
     "rating_text": "5/10",
-    "cover_url": "assets/covers/movies/hero-number-zero.webp"
+    "cover_url": "assets/covers/movies/hero-number-zero.webp",
+    "width": 400,
+    "height": 509
   },
   {
     "id": 6,
@@ -45,7 +55,9 @@
     "year": 2024,
     "date_watched": "21-08-2026",
     "rating_text": "9.1/10",
-    "cover_url": "assets/covers/movies/premalu.webp"
+    "cover_url": "assets/covers/movies/premalu.webp",
+    "width": 400,
+    "height": 584
   },
   {
     "id": 7,
@@ -53,7 +65,9 @@
     "year": 2026,
     "date_watched": "22-08-2026",
     "rating_text": "5.5/10",
-    "cover_url": "assets/covers/movies/insidious-out-of-the-further.webp"
+    "cover_url": "assets/covers/movies/insidious-out-of-the-further.webp",
+    "width": 400,
+    "height": 600
   },
   {
     "id": 8,
@@ -61,7 +75,9 @@
     "year": 2021,
     "date_watched": "22-08-2026",
     "rating_text": "8.1/10",
-    "cover_url": "assets/covers/movies/the-map-of-tiny-perfect-things.webp"
+    "cover_url": "assets/covers/movies/the-map-of-tiny-perfect-things.webp",
+    "width": 400,
+    "height": 592
   },
   {
     "id": 9,
@@ -69,7 +85,9 @@
     "year": 2026,
     "date_watched": "22-08-2026",
     "rating_text": "3/10",
-    "cover_url": "assets/covers/movies/teenage-sex-and-death-at-camp-miasma.webp"
+    "cover_url": "assets/covers/movies/teenage-sex-and-death-at-camp-miasma.webp",
+    "width": 400,
+    "height": 600
   },
   {
     "id": 10,
@@ -77,7 +95,9 @@
     "year": 2026,
     "date_watched": "22-08-2026",
     "rating_text": "2/10",
-    "cover_url": "assets/covers/movies/iron-lung.webp"
+    "cover_url": "assets/covers/movies/iron-lung.webp",
+    "width": 400,
+    "height": 592
   },
   {
     "id": 11,
@@ -85,7 +105,9 @@
     "year": 2016,
     "date_watched": "26-08-2026",
     "rating_text": "7.5/10",
-    "cover_url": "assets/covers/movies/your-name.webp"
+    "cover_url": "assets/covers/movies/your-name.webp",
+    "width": 400,
+    "height": 593
   },
   {
     "id": 12,
@@ -93,7 +115,9 @@
     "year": 2026,
     "date_watched": "26-08-2026",
     "rating_text": "4.5/10",
-    "cover_url": "assets/covers/movies/over-your-dead-body.webp"
+    "cover_url": "assets/covers/movies/over-your-dead-body.webp",
+    "width": 400,
+    "height": 593
   },
   {
     "id": 13,
@@ -101,7 +125,9 @@
     "year": 2018,
     "date_watched": "26-08-2026",
     "rating_text": "5/10",
-    "cover_url": "assets/covers/movies/level-16.webp"
+    "cover_url": "assets/covers/movies/level-16.webp",
+    "width": 400,
+    "height": 593
   },
   {
     "id": 14,
@@ -109,7 +135,9 @@
     "year": 2026,
     "date_watched": "26-08-2026",
     "rating_text": "6.1/10",
-    "cover_url": "assets/covers/movies/wardriver.webp"
+    "cover_url": "assets/covers/movies/wardriver.webp",
+    "width": 400,
+    "height": 592
   },
   {
     "id": 15,
@@ -117,7 +145,9 @@
     "year": 2025,
     "date_watched": "26-08-2026",
     "rating_text": "4.5/10",
-    "cover_url": "assets/covers/movies/everybody-loves-me-when-im-dead.webp"
+    "cover_url": "assets/covers/movies/everybody-loves-me-when-im-dead.webp",
+    "width": 400,
+    "height": 560
   },
   {
     "id": 16,
@@ -125,7 +155,9 @@
     "year": 2025,
     "date_watched": "29-08-2026",
     "rating_text": "5/10",
-    "cover_url": "assets/covers/movies/it-ends.webp"
+    "cover_url": "assets/covers/movies/it-ends.webp",
+    "width": 400,
+    "height": 592
   },
   {
     "id": 17,
@@ -133,7 +165,9 @@
     "year": 2025,
     "date_watched": "29-08-2026",
     "rating_text": "3.5/10",
-    "cover_url": "assets/covers/movies/the-electric-state.webp"
+    "cover_url": "assets/covers/movies/the-electric-state.webp",
+    "width": 400,
+    "height": 600
   },
   {
     "id": 18,
@@ -141,7 +175,9 @@
     "year": 2013,
     "date_watched": "29-08-2026",
     "rating_text": "6/10",
-    "cover_url": "assets/covers/movies/hope.webp"
+    "cover_url": "assets/covers/movies/hope.webp",
+    "width": 400,
+    "height": 533
   },
   {
     "id": 19,
@@ -149,7 +185,9 @@
     "year": 2002,
     "date_watched": "29-08-2026",
     "rating_text": "4/10",
-    "cover_url": "assets/covers/movies/maid-in-manhattan.webp"
+    "cover_url": "assets/covers/movies/maid-in-manhattan.webp",
+    "width": 400,
+    "height": 600
   },
   {
     "id": 20,
@@ -157,7 +195,9 @@
     "year": 2026,
     "date_watched": "30-08-2026",
     "rating_text": "3/10",
-    "cover_url": "assets/covers/movies/blood-shine.webp"
+    "cover_url": "assets/covers/movies/blood-shine.webp",
+    "width": 400,
+    "height": 592
   },
   {
     "id": 21,
@@ -165,7 +205,9 @@
     "year": 2007,
     "date_watched": "30-08-2026",
     "rating_text": "8/10",
-    "cover_url": "assets/covers/movies/1408.webp"
+    "cover_url": "assets/covers/movies/1408.webp",
+    "width": 400,
+    "height": 592
   },
   {
     "id": 22,
@@ -173,7 +215,9 @@
     "year": 1999,
     "date_watched": "30-08-2026",
     "rating_text": "9.4/10",
-    "cover_url": "assets/covers/movies/the-sixth-sense.webp"
+    "cover_url": "assets/covers/movies/the-sixth-sense.webp",
+    "width": 400,
+    "height": 533
   },
   {
     "id": 23,
@@ -181,7 +225,9 @@
     "year": 2014,
     "date_watched": "01-09-2026",
     "rating_text": "7.7/10",
-    "cover_url": "assets/covers/movies/the-theory-of-everything.webp"
+    "cover_url": "assets/covers/movies/the-theory-of-everything.webp",
+    "width": 400,
+    "height": 593
   },
   {
     "id": 24,
@@ -189,7 +235,9 @@
     "year": 2014,
     "date_watched": "01-09-2026",
     "rating_text": "7.4/10",
-    "cover_url": "assets/covers/movies/a-walk-among-the-tombstones.webp"
+    "cover_url": "assets/covers/movies/a-walk-among-the-tombstones.webp",
+    "width": 400,
+    "height": 633
   },
   {
     "id": 25,
@@ -197,7 +245,9 @@
     "year": 2026,
     "date_watched": "01-09-2026",
     "rating_text": "7/10",
-    "cover_url": "assets/covers/movies/the-last-house.webp"
+    "cover_url": "assets/covers/movies/the-last-house.webp",
+    "width": 400,
+    "height": 500
   },
   {
     "id": 26,
@@ -205,7 +255,9 @@
     "year": 2005,
     "date_watched": "01-09-2026",
     "rating_text": "3/10",
-    "cover_url": "assets/covers/movies/revolver.webp"
+    "cover_url": "assets/covers/movies/revolver.webp",
+    "width": 400,
+    "height": 592
   },
   {
     "id": 27,
@@ -213,7 +265,9 @@
     "year": 2009,
     "date_watched": "02-09-2026",
     "rating_text": "6/10",
-    "cover_url": "assets/covers/movies/the-butterfly-effect-3-revelations.webp"
+    "cover_url": "assets/covers/movies/the-butterfly-effect-3-revelations.webp",
+    "width": 400,
+    "height": 600
   },
   {
     "id": 28,
@@ -221,7 +275,9 @@
     "year": 2025,
     "date_watched": "03-09-2026",
     "rating_text": "8/10",
-    "cover_url": "assets/covers/movies/marty-supreme.webp"
+    "cover_url": "assets/covers/movies/marty-supreme.webp",
+    "width": 400,
+    "height": 500
   },
   {
     "id": 29,
@@ -229,7 +285,9 @@
     "year": 2022,
     "date_watched": "03-09-2026",
     "rating_text": "8.4/10",
-    "cover_url": "assets/covers/movies/dog.webp"
+    "cover_url": "assets/covers/movies/dog.webp",
+    "width": 400,
+    "height": 593
   },
   {
     "id": 30,
@@ -237,7 +295,9 @@
     "year": 2009,
     "date_watched": "03-09-2026",
     "rating_text": "4/10",
-    "cover_url": "assets/covers/movies/skellig.webp"
+    "cover_url": "assets/covers/movies/skellig.webp",
+    "width": 400,
+    "height": 533
   },
   {
     "id": 31,
@@ -245,7 +305,9 @@
     "year": 2026,
     "date_watched": "11-09-2026",
     "rating_text": "8.5/10",
-    "cover_url": "assets/covers/movies/vishwanath-and-sons.webp"
+    "cover_url": "assets/covers/movies/vishwanath-and-sons.webp",
+    "width": 400,
+    "height": 600
   },
   {
     "id": 32,
@@ -253,7 +315,9 @@
     "year": 2026,
     "date_watched": "12-09-2026",
     "rating_text": "8/10",
-    "cover_url": "assets/covers/movies/the-room-below.webp"
+    "cover_url": "assets/covers/movies/the-room-below.webp",
+    "width": 400,
+    "height": 594
   },
   {
     "id": 33,
@@ -261,7 +325,9 @@
     "year": 1991,
     "date_watched": "12-09-2026",
     "rating_text": "6/10",
-    "cover_url": "assets/covers/movies/point-break.webp"
+    "cover_url": "assets/covers/movies/point-break.webp",
+    "width": 400,
+    "height": 600
   },
   {
     "id": 34,
@@ -269,7 +335,9 @@
     "year": 2026,
     "date_watched": "13-09-2026",
     "rating_text": "5/10",
-    "cover_url": "assets/covers/movies/adkitta.webp"
+    "cover_url": "assets/covers/movies/adkitta.webp",
+    "width": 400,
+    "height": 600
   },
   {
     "id": 35,
@@ -277,7 +345,9 @@
     "year": 2026,
     "date_watched": "21-09-2026",
     "rating_text": "5/10",
-    "cover_url": "assets/covers/movies/spider-island.webp"
+    "cover_url": "assets/covers/movies/spider-island.webp",
+    "width": 400,
+    "height": 593
   },
   {
     "id": 36,
@@ -285,7 +355,9 @@
     "year": 2020,
     "date_watched": "21-09-2026",
     "rating_text": "4/10",
-    "cover_url": "assets/covers/movies/you-should-have-left.webp"
+    "cover_url": "assets/covers/movies/you-should-have-left.webp",
+    "width": 400,
+    "height": 633
   },
   {
     "id": 37,
@@ -293,7 +365,9 @@
     "year": 2026,
     "date_watched": "22-09-2026",
     "rating_text": "8/10",
-    "cover_url": "assets/covers/movies/vibe.webp"
+    "cover_url": "assets/covers/movies/vibe.webp",
+    "width": 400,
+    "height": 533
   },
   {
     "id": 38,
@@ -301,7 +375,9 @@
     "year": 2026,
     "date_watched": "22-09-2026",
     "rating_text": "6/10",
-    "cover_url": "assets/covers/movies/resident-evil.webp"
+    "cover_url": "assets/covers/movies/resident-evil.webp",
+    "width": 400,
+    "height": 502
   },
   {
     "id": 39,
@@ -309,7 +385,9 @@
     "year": 2026,
     "date_watched": "23-09-2026",
     "rating_text": "7.6/10",
-    "cover_url": "assets/covers/movies/the-last-kiss.webp"
+    "cover_url": "assets/covers/movies/the-last-kiss.webp",
+    "width": 400,
+    "height": 457
   },
   {
     "id": 40,
@@ -317,7 +395,9 @@
     "year": 2026,
     "date_watched": "23-09-2026",
     "rating_text": "8/10",
-    "cover_url": "assets/covers/movies/the-end-of-oak-street.webp"
+    "cover_url": "assets/covers/movies/the-end-of-oak-street.webp",
+    "width": 400,
+    "height": 593
   },
   {
     "id": 41,
@@ -325,7 +405,9 @@
     "year": 2018,
     "date_watched": "23-09-2026",
     "rating_text": "9/10",
-    "cover_url": "assets/covers/movies/tumbbad.webp"
+    "cover_url": "assets/covers/movies/tumbbad.webp",
+    "width": 400,
+    "height": 533
   },
   {
     "id": 42,
@@ -333,7 +415,9 @@
     "year": 2026,
     "date_watched": "24-09-2026",
     "rating_text": "6/10",
-    "cover_url": "assets/covers/movies/lust-stories-3.webp"
+    "cover_url": "assets/covers/movies/lust-stories-3.webp",
+    "width": 400,
+    "height": 500
   },
   {
     "id": 43,
@@ -341,7 +425,9 @@
     "year": 2021,
     "date_watched": "25-09-2026",
     "rating_text": "4/10",
-    "cover_url": "assets/covers/movies/sweet-and-sour.webp"
+    "cover_url": "assets/covers/movies/sweet-and-sour.webp",
+    "width": 400,
+    "height": 561
   },
   {
     "id": 44,
@@ -349,7 +435,9 @@
     "year": 2025,
     "date_watched": "25-09-2026",
     "rating_text": "5/10",
-    "cover_url": "assets/covers/movies/a-big-bold-beautiful-journey.webp"
+    "cover_url": "assets/covers/movies/a-big-bold-beautiful-journey.webp",
+    "width": 400,
+    "height": 593
   },
   {
     "id": 45,
@@ -357,7 +445,9 @@
     "year": 2022,
     "date_watched": "25-09-2026",
     "rating_text": "7.5/10",
-    "cover_url": "assets/covers/movies/m3gan.webp"
+    "cover_url": "assets/covers/movies/m3gan.webp",
+    "width": 400,
+    "height": 633
   },
   {
     "id": 46,
@@ -365,7 +455,9 @@
     "year": 2025,
     "date_watched": "25-09-2026",
     "rating_text": "5/10",
-    "cover_url": "assets/covers/movies/m3gan-2-0.webp"
+    "cover_url": "assets/covers/movies/m3gan-2-0.webp",
+    "width": 400,
+    "height": 633
   },
   {
     "id": 47,
@@ -373,7 +465,9 @@
     "year": 2026,
     "date_watched": "28-09-2026",
     "rating_text": "8.5/10",
-    "cover_url": "assets/covers/movies/sammarth.webp"
+    "cover_url": "assets/covers/movies/sammarth.webp",
+    "width": 400,
+    "height": 711
   },
   {
     "id": 48,
@@ -381,7 +475,9 @@
     "year": 2026,
     "date_watched": "29-09-2026",
     "rating_text": "8/10",
-    "cover_url": "assets/covers/movies/irumudi.webp"
+    "cover_url": "assets/covers/movies/irumudi.webp",
+    "width": 400,
+    "height": 533
   },
   {
     "id": 49,
@@ -389,7 +485,9 @@
     "year": 2026,
     "date_watched": "30-09-2026",
     "rating_text": "6/10",
-    "cover_url": "assets/covers/movies/buddy.webp"
+    "cover_url": "assets/covers/movies/buddy.webp",
+    "width": 400,
+    "height": 592
   },
   {
     "id": 50,
@@ -397,7 +495,9 @@
     "year": 2002,
     "date_watched": "30-09-2026",
     "rating_text": "5/10",
-    "cover_url": "assets/covers/movies/25th-hour.webp"
+    "cover_url": "assets/covers/movies/25th-hour.webp",
+    "width": 400,
+    "height": 563
   },
   {
     "id": 51,
@@ -405,7 +505,9 @@
     "year": 2019,
     "date_watched": "30-09-2026",
     "rating_text": "8.3/10",
-    "cover_url": "assets/covers/movies/vivarium.webp"
+    "cover_url": "assets/covers/movies/vivarium.webp",
+    "width": 400,
+    "height": 600
   },
   {
     "id": 52,
@@ -413,7 +515,9 @@
     "year": 2025,
     "date_watched": "30-09-2026",
     "rating_text": "7.8/10",
-    "cover_url": "assets/covers/movies/wolf-man.webp"
+    "cover_url": "assets/covers/movies/wolf-man.webp",
+    "width": 400,
+    "height": 600
   },
   {
     "id": 53,
@@ -421,7 +525,9 @@
     "year": 2011,
     "date_watched": "30-09-2026",
     "rating_text": "6.5/10",
-    "cover_url": "assets/covers/movies/morya.webp"
+    "cover_url": "assets/covers/movies/morya.webp",
+    "width": 400,
+    "height": 562
   },
   {
     "id": 54,
@@ -429,7 +535,9 @@
     "year": 2026,
     "date_watched": "02-10-2026",
     "rating_text": "6.5/10",
-    "cover_url": "assets/covers/movies/bethlehem-kudumba-unit.webp"
+    "cover_url": "assets/covers/movies/bethlehem-kudumba-unit.webp",
+    "width": 400,
+    "height": 533
   },
   {
     "id": 55,
@@ -437,7 +545,9 @@
     "year": 2026,
     "date_watched": "02-10-2026",
     "rating_text": "9.2/10",
-    "cover_url": "assets/covers/movies/drishyam-the-conclusion.webp"
+    "cover_url": "assets/covers/movies/drishyam-the-conclusion.webp",
+    "width": 400,
+    "height": 593
   },
   {
     "id": 56,
@@ -445,7 +555,9 @@
     "year": 2026,
     "date_watched": "06-10-2026",
     "rating_text": "1/10",
-    "cover_url": "assets/covers/movies/hanuman-ansh.webp"
+    "cover_url": "assets/covers/movies/hanuman-ansh.webp",
+    "width": 400,
+    "height": 500
   },
   {
     "id": 57,
@@ -453,7 +565,9 @@
     "year": 2007,
     "date_watched": "06-10-2026",
     "rating_text": "6.5/10",
-    "cover_url": "assets/covers/movies/atonement.webp"
+    "cover_url": "assets/covers/movies/atonement.webp",
+    "width": 400,
+    "height": 592
   },
   {
     "id": 58,
@@ -461,7 +575,9 @@
     "year": 2020,
     "date_watched": "06-10-2026",
     "rating_text": "2/10",
-    "cover_url": "assets/covers/movies/welcome-to-sudden-death.webp"
+    "cover_url": "assets/covers/movies/welcome-to-sudden-death.webp",
+    "width": 400,
+    "height": 561
   },
   {
     "id": 59,
@@ -469,7 +585,9 @@
     "year": 2003,
     "date_watched": "06-10-2026",
     "rating_text": "4/10",
-    "cover_url": "assets/covers/movies/the-rundown.webp"
+    "cover_url": "assets/covers/movies/the-rundown.webp",
+    "width": 400,
+    "height": 593
   },
   {
     "id": 60,
@@ -477,7 +595,9 @@
     "year": 2002,
     "date_watched": "07-10-2026",
     "rating_text": "7.5/10",
-    "cover_url": "assets/covers/movies/killing-me-softly.webp"
+    "cover_url": "assets/covers/movies/killing-me-softly.webp",
+    "width": 400,
+    "height": 600
   },
   {
     "id": 61,
@@ -485,7 +605,9 @@
     "year": 2026,
     "date_watched": "10-10-2026",
     "rating_text": "8.5/10",
-    "cover_url": "assets/covers/movies/pradhama-drishtiya-kuttakkar.webp"
+    "cover_url": "assets/covers/movies/pradhama-drishtiya-kuttakkar.webp",
+    "width": 400,
+    "height": 533
   },
   {
     "id": 62,
@@ -493,7 +615,9 @@
     "year": 2026,
     "date_watched": "12-10-2026",
     "rating_text": "6/10",
-    "cover_url": "assets/covers/movies/verity.webp"
+    "cover_url": "assets/covers/movies/verity.webp",
+    "width": 400,
+    "height": 533
   },
   {
     "id": 63,
@@ -501,7 +625,9 @@
     "year": 2026,
     "date_watched": "12-10-2026",
     "rating_text": "5/10",
-    "cover_url": "assets/covers/movies/other-mommy.webp"
+    "cover_url": "assets/covers/movies/other-mommy.webp",
+    "width": 400,
+    "height": 591
   },
   {
     "id": 64,
@@ -509,7 +635,9 @@
     "year": 2023,
     "date_watched": "13-10-2026",
     "rating_text": "9.2/10",
-    "cover_url": "assets/covers/movies/aatmapamphlet.webp"
+    "cover_url": "assets/covers/movies/aatmapamphlet.webp",
+    "width": 400,
+    "height": 533
   },
   {
     "id": 65,
@@ -517,7 +645,9 @@
     "year": 2023,
     "date_watched": "13-10-2026",
     "rating_text": "6/10",
-    "cover_url": "assets/covers/movies/three-of-us.webp"
+    "cover_url": "assets/covers/movies/three-of-us.webp",
+    "width": 400,
+    "height": 577
   },
   {
     "id": 66,
@@ -525,7 +655,9 @@
     "year": 2020,
     "date_watched": "15-10-2026",
     "rating_text": "8.5/10",
-    "cover_url": "assets/covers/movies/my-clients-wife.webp"
+    "cover_url": "assets/covers/movies/my-clients-wife.webp",
+    "width": 400,
+    "height": 517
   },
   {
     "id": 67,
@@ -533,7 +665,9 @@
     "year": 2026,
     "date_watched": "16-10-2026",
     "rating_text": "5/10",
-    "cover_url": "assets/covers/movies/bandkhor.webp"
+    "cover_url": "assets/covers/movies/bandkhor.webp",
+    "width": 400,
+    "height": 533
   },
   {
     "id": 68,
@@ -541,7 +675,9 @@
     "year": 2026,
     "date_watched": "16-10-2026",
     "rating_text": "8.5/10",
-    "cover_url": "assets/covers/movies/prahaar.webp"
+    "cover_url": "assets/covers/movies/prahaar.webp",
+    "width": 400,
+    "height": 593
   },
   {
     "id": 69,
@@ -549,7 +685,9 @@
     "year": 2026,
     "date_watched": "17-10-2026",
     "rating_text": "6/10",
-    "cover_url": "assets/covers/movies/the-whalefall.webp"
+    "cover_url": "assets/covers/movies/the-whalefall.webp",
+    "width": 400,
+    "height": 593
   },
   {
     "id": 70,
@@ -557,7 +695,9 @@
     "year": 2006,
     "date_watched": "17-10-2026",
     "rating_text": "5/10",
-    "cover_url": "assets/covers/movies/stranger-than-fiction.webp"
+    "cover_url": "assets/covers/movies/stranger-than-fiction.webp",
+    "width": 400,
+    "height": 595
   },
   {
     "id": 71,
@@ -565,7 +705,9 @@
     "year": 2025,
     "date_watched": "17-10-2026",
     "rating_text": "7/10",
-    "cover_url": "assets/covers/movies/subham.webp"
+    "cover_url": "assets/covers/movies/subham.webp",
+    "width": 400,
+    "height": 570
   },
   {
     "id": 72,
@@ -573,7 +715,9 @@
     "year": 2026,
     "date_watched": "19-10-2026",
     "rating_text": "8.3/10",
-    "cover_url": "assets/covers/movies/super-duperr.webp"
+    "cover_url": "assets/covers/movies/super-duperr.webp",
+    "width": 400,
+    "height": 500
   },
   {
     "id": 73,
@@ -581,7 +725,9 @@
     "year": 2025,
     "date_watched": "23-10-2026",
     "rating_text": "3/10",
-    "cover_url": "assets/covers/movies/gondhal.webp"
+    "cover_url": "assets/covers/movies/gondhal.webp",
+    "width": 400,
+    "height": 600
   },
   {
     "id": 74,
@@ -589,7 +735,9 @@
     "year": 2026,
     "date_watched": "23-10-2026",
     "rating_text": "5/10",
-    "cover_url": "assets/covers/movies/clayface.webp"
+    "cover_url": "assets/covers/movies/clayface.webp",
+    "width": 400,
+    "height": 593
   },
   {
     "id": 75,
@@ -597,7 +745,9 @@
     "year": 2026,
     "date_watched": "23-10-2026",
     "rating_text": "7.5/10",
-    "cover_url": "assets/covers/movies/hope-na-hong-jin.webp"
+    "cover_url": "assets/covers/movies/hope-na-hong-jin.webp",
+    "width": 400,
+    "height": 593
   },
   {
     "id": 76,
@@ -605,7 +755,9 @@
     "year": 2026,
     "date_watched": "24-10-2026",
     "rating_text": "8.2/10",
-    "cover_url": "assets/covers/movies/udta-teer.webp"
+    "cover_url": "assets/covers/movies/udta-teer.webp",
+    "width": 400,
+    "height": 600
   },
   {
     "id": 77,
@@ -613,7 +765,9 @@
     "year": 2026,
     "date_watched": "29-10-2026",
     "rating_text": "8/10",
-    "cover_url": "assets/covers/movies/baththa.webp"
+    "cover_url": "assets/covers/movies/baththa.webp",
+    "width": 400,
+    "height": 600
   },
   {
     "id": 78,
@@ -621,7 +775,9 @@
     "year": 2026,
     "date_watched": "29-10-2026",
     "rating_text": "7.5/10",
-    "cover_url": "assets/covers/movies/dhoomakethu.webp"
+    "cover_url": "assets/covers/movies/dhoomakethu.webp",
+    "width": 400,
+    "height": 533
   },
   {
     "id": 79,
@@ -629,7 +785,9 @@
     "year": 2026,
     "date_watched": "30-10-2026",
     "rating_text": "7.5/10",
-    "cover_url": "assets/covers/movies/dont-trouble-the-trouble.webp"
+    "cover_url": "assets/covers/movies/dont-trouble-the-trouble.webp",
+    "width": 400,
+    "height": 586
   },
   {
     "id": 80,
@@ -637,7 +795,9 @@
     "year": 2026,
     "date_watched": "30-10-2026",
     "rating_text": "8.4/10",
-    "cover_url": "assets/covers/movies/mirzapur-the-movie.webp"
+    "cover_url": "assets/covers/movies/mirzapur-the-movie.webp",
+    "width": 400,
+    "height": 533
   },
   {
     "id": 81,
@@ -645,7 +805,9 @@
     "year": 1995,
     "date_watched": "30-10-2026",
     "rating_text": "9.7/10",
-    "cover_url": "assets/covers/movies/the-usual-suspects.webp"
+    "cover_url": "assets/covers/movies/the-usual-suspects.webp",
+    "width": 400,
+    "height": 597
   },
   {
     "id": 82,
@@ -653,7 +815,9 @@
     "year": 2026,
     "date_watched": "31-10-2026",
     "rating_text": "4/10",
-    "cover_url": "assets/covers/movies/the-birthday-gift.webp"
+    "cover_url": "assets/covers/movies/the-birthday-gift.webp",
+    "width": 400,
+    "height": 600
   },
   {
     "id": 83,
@@ -661,7 +825,9 @@
     "year": 2026,
     "date_watched": "03-11-2026",
     "rating_text": "0.1/10",
-    "cover_url": "assets/covers/movies/your-mother-your-mother-your-mother.webp"
+    "cover_url": "assets/covers/movies/your-mother-your-mother-your-mother.webp",
+    "width": 400,
+    "height": 592
   },
   {
     "id": 84,
@@ -669,7 +835,9 @@
     "year": 2024,
     "date_watched": "03-11-2026",
     "rating_text": "9.3/10",
-    "cover_url": "assets/covers/movies/meiyazhagan.webp"
+    "cover_url": "assets/covers/movies/meiyazhagan.webp",
+    "width": 400,
+    "height": 600
   },
   {
     "id": 85,
@@ -677,7 +845,9 @@
     "year": 2026,
     "date_watched": "04-11-2026",
     "rating_text": "2/10",
-    "cover_url": "assets/covers/movies/dorothy.webp"
+    "cover_url": "assets/covers/movies/dorothy.webp",
+    "width": 400,
+    "height": 533
   },
   {
     "id": 86,
@@ -685,6 +855,8 @@
     "year": 2026,
     "date_watched": "05-11-2026",
     "rating_text": "7/10",
-    "cover_url": "assets/covers/movies/ramayana-part-1.webp"
+    "cover_url": "assets/covers/movies/ramayana-part-1.webp",
+    "width": 400,
+    "height": 500
   }
 ]

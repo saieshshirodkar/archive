@@ -5,7 +5,9 @@
     "author": "Tsugumi Ohba & Takeshi Obata",
     "rating_text": "10/10",
     "cover_url": "assets/covers/anime/death-note.webp",
-    "year": 2006
+    "year": 2006,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 2,
@@ -13,7 +15,9 @@
     "author": "Naoki Urasawa",
     "rating_text": "8.7/10",
     "cover_url": "assets/covers/anime/monster.webp",
-    "year": 2004
+    "year": 2004,
+    "width": 400,
+    "height": 574
   },
   {
     "id": 3,
@@ -21,7 +25,9 @@
     "author": "Makoto Yukimura",
     "rating_text": "9/10",
     "cover_url": "assets/covers/anime/vinland-saga.webp",
-    "year": 2019
+    "year": 2019,
+    "width": 400,
+    "height": 545
   },
   {
     "id": 4,
@@ -29,7 +35,9 @@
     "author": "Hajime Isayama",
     "rating_text": "8.9/10",
     "cover_url": "assets/covers/anime/attack-on-titan.webp",
-    "year": 2013
+    "year": 2013,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 5,
@@ -37,7 +45,9 @@
     "author": "Yoshihiro Togashi",
     "rating_text": "9.4/10",
     "cover_url": "assets/covers/anime/hunter-x-hunter.webp",
-    "year": 2011
+    "year": 2011,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 6,
@@ -45,7 +55,9 @@
     "author": "Kei Sanbe",
     "rating_text": "7/10",
     "cover_url": "assets/covers/anime/erased.webp",
-    "year": 2016
+    "year": 2016,
+    "width": 400,
+    "height": 570
   },
   {
     "id": 7,
@@ -53,7 +65,9 @@
     "author": "Chugong & DUBU",
     "rating_text": "7.5/10",
     "cover_url": "assets/covers/anime/solo-leveling.webp",
-    "year": 2024
+    "year": 2024,
+    "width": 400,
+    "height": 689
   },
   {
     "id": 8,
@@ -61,7 +75,9 @@
     "author": "Yuto Suzuki",
     "rating_text": "7/10",
     "cover_url": "assets/covers/anime/sakamoto-days.webp",
-    "year": 2025
+    "year": 2025,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 9,
@@ -69,7 +85,9 @@
     "author": "Eiichiro Oda",
     "rating_text": "10/10",
     "cover_url": "assets/covers/anime/one-piece.webp",
-    "year": 1999
+    "year": 1999,
+    "width": 400,
+    "height": 622
   },
   {
     "id": 10,
@@ -77,7 +95,9 @@
     "author": "Naoya Matsumoto",
     "rating_text": "8/10",
     "cover_url": "assets/covers/anime/kaiju-no-8.webp",
-    "year": 2024
+    "year": 2024,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 11,
@@ -85,7 +105,9 @@
     "author": "Yusei Matsui",
     "rating_text": "8.5/10",
     "cover_url": "assets/covers/anime/assassination-classroom.webp",
-    "year": 2015
+    "year": 2015,
+    "width": 400,
+    "height": 519
   },
   {
     "id": 12,
@@ -93,7 +115,9 @@
     "author": "Tite Kubo",
     "rating_text": "8/10",
     "cover_url": "assets/covers/anime/bleach.webp",
-    "year": 2004
+    "year": 2004,
+    "width": 400,
+    "height": 632
   },
   {
     "id": 13,
@@ -101,7 +125,9 @@
     "author": "Gege Akutami",
     "rating_text": "8/10",
     "cover_url": "assets/covers/anime/jujutsu-kaisen.webp",
-    "year": 2020
+    "year": 2020,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 14,
@@ -109,7 +135,9 @@
     "author": "Tatsuki Fujimoto",
     "rating_text": "8.5/10",
     "cover_url": "assets/covers/anime/chainsaw-man.webp",
-    "year": 2022
+    "year": 2022,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 15,
@@ -117,7 +145,9 @@
     "author": "ONE & Yusuke Murata",
     "rating_text": "8.7/10",
     "cover_url": "assets/covers/anime/one-punch-man.webp",
-    "year": 2015
+    "year": 2015,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 16,
@@ -125,7 +155,9 @@
     "author": "Koyoharu Gotouge",
     "rating_text": "8/10",
     "cover_url": "assets/covers/anime/demon-slayer.webp",
-    "year": 2019
+    "year": 2019,
+    "width": 400,
+    "height": 601
   },
   {
     "id": 17,
@@ -133,7 +165,9 @@
     "author": "Akira Toriyama",
     "rating_text": "9.5/10",
     "cover_url": "assets/covers/anime/dragon-ball.webp",
-    "year": 1986
+    "year": 1986,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 18,
@@ -141,7 +175,9 @@
     "author": "Akira Toriyama",
     "rating_text": "9/10",
     "cover_url": "assets/covers/anime/dragon-ball-z-kai.webp",
-    "year": 2009
+    "year": 2009,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 19,
@@ -149,7 +185,9 @@
     "author": "5pb. & Nitroplus",
     "rating_text": "8/10",
     "cover_url": "assets/covers/anime/steins-gate.webp",
-    "year": 2011
+    "year": 2011,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 20,
@@ -157,7 +195,9 @@
     "author": "Kentaro Miura",
     "rating_text": "9.3/10",
     "cover_url": "assets/covers/anime/berserk.webp",
-    "year": 1997
+    "year": 1997,
+    "width": 400,
+    "height": 566
   },
   {
     "id": 21,
@@ -165,7 +205,9 @@
     "author": "Shōgo Kinugasa",
     "rating_text": "8/10",
     "cover_url": "assets/covers/anime/classroom-of-the-elite.webp",
-    "year": 2017
+    "year": 2017,
+    "width": 400,
+    "height": 554
   },
   {
     "id": 22,
@@ -173,7 +215,9 @@
     "author": "Hiromu Arakawa",
     "rating_text": "9.5/10",
     "cover_url": "assets/covers/anime/fullmetal-alchemist-brotherhood.webp",
-    "year": 2009
+    "year": 2009,
+    "width": 400,
+    "height": 560
   },
   {
     "id": 23,
@@ -181,7 +225,9 @@
     "author": "Nami Sano",
     "rating_text": "8/10",
     "cover_url": "assets/covers/anime/migi-and-dali.webp",
-    "year": 2023
+    "year": 2023,
+    "width": 400,
+    "height": 565
   },
   {
     "id": 24,
@@ -189,7 +235,9 @@
     "author": "Hiromu Arakawa",
     "rating_text": "8/10",
     "cover_url": "assets/covers/anime/daemons-of-the-shadow-realm.webp",
-    "year": 2026
+    "year": 2026,
+    "width": 400,
+    "height": 601
   },
   {
     "id": 25,
@@ -197,7 +245,9 @@
     "author": "Shinobu Kaitani",
     "rating_text": "8/10",
     "cover_url": "assets/covers/anime/liar-game.webp",
-    "year": 2026
+    "year": 2026,
+    "width": 400,
+    "height": 566
   },
   {
     "id": 26,
@@ -205,7 +255,9 @@
     "author": "Q Hayashida",
     "rating_text": "7/10",
     "cover_url": "assets/covers/anime/dorohedoro.webp",
-    "year": 2020
+    "year": 2020,
+    "width": 400,
+    "height": 558
   },
   {
     "id": 27,
@@ -213,7 +265,9 @@
     "author": "Yukinobu Tatsu",
     "rating_text": "7.5/10",
     "cover_url": "assets/covers/anime/dandadan.webp",
-    "year": 2024
+    "year": 2024,
+    "width": 400,
+    "height": 566
   },
   {
     "id": 28,
@@ -221,7 +275,9 @@
     "author": "Naoki Urasawa",
     "rating_text": "8.3/10",
     "cover_url": "assets/covers/anime/20th-century-boys.webp",
-    "year": 1999
+    "year": 1999,
+    "width": 400,
+    "height": 581
   },
   {
     "id": 29,
@@ -229,7 +285,9 @@
     "author": "Yuhiro Tsujitsugu",
     "rating_text": "8.3/10",
     "cover_url": "assets/covers/anime/snowball-earth.webp",
-    "year": 2026
+    "year": 2026,
+    "width": 400,
+    "height": 566
   },
   {
     "id": 30,
@@ -237,7 +295,9 @@
     "author": "Masashi Kishimoto",
     "rating_text": "9.6/10",
     "cover_url": "assets/covers/anime/naruto.webp",
-    "year": 2002
+    "year": 2002,
+    "width": 400,
+    "height": 588
   },
   {
     "id": 31,
@@ -245,7 +305,9 @@
     "author": "Masashi Kishimoto",
     "rating_text": "10/10",
     "cover_url": "assets/covers/anime/naruto-shippuden.webp",
-    "year": 2007
+    "year": 2007,
+    "width": 400,
+    "height": 570
   },
   {
     "id": 32,
@@ -253,7 +315,9 @@
     "author": "Tsuyoshi Takaki",
     "rating_text": "7/10",
     "cover_url": "assets/covers/anime/black-torch.webp",
-    "year": 2026
+    "year": 2026,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 33,
@@ -261,7 +325,9 @@
     "author": "NyanNyanFactory",
     "rating_text": "5/10",
     "cover_url": "assets/covers/anime/chainsmoker-cat.webp",
-    "year": 2026
+    "year": 2026,
+    "width": 400,
+    "height": 570
   },
   {
     "id": 34,
@@ -269,7 +335,9 @@
     "author": "ONE",
     "rating_text": "9.4/10",
     "cover_url": "assets/covers/anime/mob-psycho-100.webp",
-    "year": 2016
+    "year": 2016,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 35,
@@ -277,7 +345,9 @@
     "author": "Ryōsuke Tomoe",
     "rating_text": "8.8/10",
     "cover_url": "assets/covers/anime/museum.webp",
-    "year": 2013
+    "year": 2013,
+    "width": 400,
+    "height": 567
   },
   {
     "id": 36,
@@ -285,7 +355,9 @@
     "author": "Keisuke Itagaki",
     "rating_text": "8.3/10",
     "cover_url": "assets/covers/anime/baki-hanma.webp",
-    "year": 2021
+    "year": 2021,
+    "width": 400,
+    "height": 560
   },
   {
     "id": 37,
@@ -293,7 +365,9 @@
     "author": "Naoki Urasawa",
     "rating_text": "7.9/10",
     "cover_url": "assets/covers/anime/billy-bat.webp",
-    "year": 2008
+    "year": 2008,
+    "width": 400,
+    "height": 597
   },
   {
     "id": 38,
@@ -301,7 +375,9 @@
     "author": "Yoru Sumino",
     "rating_text": "5/10",
     "cover_url": "assets/covers/anime/i-had-the-same-dream-again.webp",
-    "year": 2016
+    "year": 2016,
+    "width": 400,
+    "height": 569
   },
   {
     "id": 39,
@@ -309,7 +385,9 @@
     "author": "Tatsuki Fujimoto",
     "rating_text": "8.1/10",
     "cover_url": "assets/covers/anime/fire-punch.webp",
-    "year": 2016
+    "year": 2016,
+    "width": 400,
+    "height": 574
   },
   {
     "id": 40,
@@ -317,7 +395,9 @@
     "author": "Ryōsuke Takeuchi & Takeshi Obata",
     "rating_text": "8.3/10",
     "cover_url": "assets/covers/anime/all-you-need-is-kill.webp",
-    "year": 2014
+    "year": 2014,
+    "width": 400,
+    "height": 576
   },
   {
     "id": 41,
@@ -325,7 +405,9 @@
     "author": "Naoshi Komi",
     "rating_text": "7.8/10",
     "cover_url": "assets/covers/anime/tokidoki.webp",
-    "year": 2016
+    "year": 2016,
+    "width": 400,
+    "height": 575
   },
   {
     "id": 42,
@@ -333,7 +415,9 @@
     "author": "Gen Urobuchi",
     "rating_text": "8.9/10",
     "cover_url": "assets/covers/anime/terror-in-resonance.webp",
-    "year": 2014
+    "year": 2014,
+    "width": 400,
+    "height": 589
   },
   {
     "id": 43,
@@ -341,7 +425,9 @@
     "author": "Shintaro Kago",
     "rating_text": "0.1/10",
     "cover_url": "assets/covers/anime/fetus-collection.webp",
-    "year": 2000
+    "year": 2000,
+    "width": 400,
+    "height": 568
   },
   {
     "id": 44,
@@ -349,7 +435,9 @@
     "author": "Tsutomu Takahashi",
     "rating_text": "7.1/10",
     "cover_url": "assets/covers/anime/blue-heaven.webp",
-    "year": 2002
+    "year": 2002,
+    "width": 400,
+    "height": 543
   },
   {
     "id": 45,
@@ -357,7 +445,9 @@
     "author": "Atsushi Nakayama",
     "rating_text": "8/10",
     "cover_url": "assets/covers/anime/the-zombie-maria.webp",
-    "year": 2016
+    "year": 2016,
+    "width": 400,
+    "height": 627
   },
   {
     "id": 46,
@@ -365,7 +455,9 @@
     "author": "Wada Takashi",
     "rating_text": "3.5/10",
     "cover_url": "assets/covers/anime/impossible-love-suicide.webp",
-    "year": 2000
+    "year": 2000,
+    "width": 400,
+    "height": 571
   },
   {
     "id": 47,
@@ -373,7 +465,9 @@
     "author": "Yokota Takuma",
     "rating_text": "7.7/10",
     "cover_url": "assets/covers/anime/molester-man.webp",
-    "year": 2004
+    "year": 2004,
+    "width": 400,
+    "height": 565
   },
   {
     "id": 48,
@@ -381,7 +475,9 @@
     "author": "Inio Asano",
     "rating_text": "4.5/10",
     "cover_url": "assets/covers/anime/a-girl-on-the-shore.webp",
-    "year": 2009
+    "year": 2009,
+    "width": 400,
+    "height": 539
   },
   {
     "id": 49,
@@ -389,7 +485,9 @@
     "author": "Shinichi Sakamoto & Yoshio Nabeda",
     "rating_text": "9.1/10",
     "cover_url": "assets/covers/anime/the-climber.webp",
-    "year": 2007
+    "year": 2007,
+    "width": 400,
+    "height": 563
   },
   {
     "id": 50,
@@ -397,7 +495,9 @@
     "author": "Inio Asano",
     "rating_text": "9/10",
     "cover_url": "assets/covers/anime/goodnight-punpun.webp",
-    "year": 2007
+    "year": 2007,
+    "width": 400,
+    "height": 574
   },
   {
     "id": 51,
@@ -405,7 +505,9 @@
     "author": "Flint Sugar",
     "rating_text": "6/10",
     "cover_url": "assets/covers/anime/false-memory.webp",
-    "year": 2026
+    "year": 2026,
+    "width": 400,
+    "height": 533
   },
   {
     "id": 52,
@@ -413,7 +515,9 @@
     "author": "Ezogingitune",
     "rating_text": "7.5/10",
     "cover_url": "assets/covers/anime/i-became-a-legend-after-my-10-year-long-last-stand.webp",
-    "year": 2026
+    "year": 2026,
+    "width": 400,
+    "height": 500
   },
   {
     "id": 53,
@@ -421,7 +525,9 @@
     "author": "Mosae Nohara",
     "rating_text": "3/10",
     "cover_url": "assets/covers/anime/from-the-red-fog.webp",
-    "year": 2020
+    "year": 2020,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 54,
@@ -429,7 +535,9 @@
     "author": "Sugaru Miaki & Shouichi Taguchi",
     "rating_text": "8.6/10",
     "cover_url": "assets/covers/anime/i-sold-my-life-for-ten-thousand-yen-per-year.webp",
-    "year": 2016
+    "year": 2016,
+    "width": 400,
+    "height": 606
   },
   {
     "id": 55,
@@ -437,7 +545,9 @@
     "author": "Taizan 5",
     "rating_text": "8.6/10",
     "cover_url": "assets/covers/anime/takopis-original-sin.webp",
-    "year": 2021
+    "year": 2021,
+    "width": 400,
+    "height": 533
   },
   {
     "id": 56,
@@ -445,7 +555,9 @@
     "author": "Mitei Hattori",
     "rating_text": "8.3/10",
     "cover_url": "assets/covers/anime/smiley.webp",
-    "year": 2021
+    "year": 2021,
+    "width": 400,
+    "height": 590
   },
   {
     "id": 57,
@@ -453,7 +565,9 @@
     "author": "Carnby Kim & Youngchan Hwang",
     "rating_text": "6.5/10",
     "cover_url": "assets/covers/anime/bastard.webp",
-    "year": 2014
+    "year": 2014,
+    "width": 400,
+    "height": 562
   },
   {
     "id": 58,
@@ -461,7 +575,9 @@
     "author": "Minetarō Mochizuki",
     "rating_text": "8/10",
     "cover_url": "assets/covers/anime/hauntress.webp",
-    "year": 1993
+    "year": 1993,
+    "width": 400,
+    "height": 545
   },
   {
     "id": 59,
@@ -469,7 +585,9 @@
     "author": "Nami Sano",
     "rating_text": "8.5/10",
     "cover_url": "assets/covers/anime/havent-you-heard-im-sakamoto.webp",
-    "year": 2016
+    "year": 2016,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 60,
@@ -477,7 +595,9 @@
     "author": "Kazuya Konomoto & Takeichi Abaraya",
     "rating_text": "9.0/10",
     "cover_url": "assets/covers/anime/odd-taxi.webp",
-    "year": 2021
+    "year": 2021,
+    "width": 400,
+    "height": 568
   },
   {
     "id": 61,
@@ -485,7 +605,9 @@
     "author": "Hideo Yamamoto",
     "rating_text": "8.1/10",
     "cover_url": "assets/covers/anime/homunculus.webp",
-    "year": 2003
+    "year": 2003,
+    "width": 400,
+    "height": 584
   },
   {
     "id": 62,
@@ -493,7 +615,9 @@
     "author": "Yusura Kankitsu & Yuu Sawase",
     "rating_text": "6/10",
     "cover_url": "assets/covers/anime/the-friends-eater-classroom.webp",
-    "year": 2017
+    "year": 2017,
+    "width": 400,
+    "height": 569
   },
   {
     "id": 63,
@@ -501,7 +625,9 @@
     "author": "Takeru Hokazono",
     "rating_text": "8.8/10",
     "cover_url": "assets/covers/anime/kagurabachi.webp",
-    "year": 2023
+    "year": 2023,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 64,
@@ -509,7 +635,9 @@
     "author": "Kei Koga & Ryou Izawa",
     "rating_text": "4/10",
     "cover_url": "assets/covers/anime/brutal.webp",
-    "year": 2019
+    "year": 2019,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 65,
@@ -517,7 +645,9 @@
     "author": "Kouji Seo",
     "rating_text": "7.3/10",
     "cover_url": "assets/covers/anime/half-and-half.webp",
-    "year": 2012
+    "year": 2012,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 66,
@@ -525,7 +655,9 @@
     "author": "Kouhei Horikoshi",
     "rating_text": "5/10",
     "cover_url": "assets/covers/anime/quit-laughing-shijima.webp",
-    "year": 2026
+    "year": 2026,
+    "width": 400,
+    "height": 584
   },
   {
     "id": 67,
@@ -533,7 +665,9 @@
     "author": "Gamon Sakurai",
     "rating_text": "6.3/10",
     "cover_url": "assets/covers/anime/ajin.webp",
-    "year": 2012
+    "year": 2012,
+    "width": 400,
+    "height": 560
   },
   {
     "id": 68,
@@ -541,7 +675,9 @@
     "author": "Tatsuki Fujimoto",
     "rating_text": "5/10",
     "cover_url": "assets/covers/anime/look-back.webp",
-    "year": 2021
+    "year": 2021,
+    "width": 400,
+    "height": 533
   },
   {
     "id": 69,
@@ -549,7 +685,9 @@
     "author": "Kaori Ozaki",
     "rating_text": "4/10",
     "cover_url": "assets/covers/anime/the-gods-lie.webp",
-    "year": 2013
+    "year": 2013,
+    "width": 400,
+    "height": 545
   },
   {
     "id": 70,
@@ -557,7 +695,9 @@
     "author": "Kohei Horikoshi",
     "rating_text": "5.5/10",
     "cover_url": "assets/covers/anime/my-hero-academia.webp",
-    "year": 2016
+    "year": 2016,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 71,
@@ -565,7 +705,9 @@
     "author": "Gomyang",
     "rating_text": "8.6/10",
     "cover_url": "assets/covers/anime/on-the-way-to-meet-mom.webp",
-    "year": 2024
+    "year": 2024,
+    "width": 400,
+    "height": 519
   },
   {
     "id": 72,
@@ -573,7 +715,9 @@
     "author": "Uoto",
     "rating_text": "9.1/10",
     "cover_url": "assets/covers/anime/orb-on-the-movements-of-the-earth.webp",
-    "year": 2024
+    "year": 2024,
+    "width": 400,
+    "height": 565
   },
   {
     "id": 73,
@@ -581,7 +725,9 @@
     "author": "Jinushi",
     "rating_text": "6/10",
     "cover_url": "assets/covers/anime/smoking-behind-the-supermarket-with-you.webp",
-    "year": 2026
+    "year": 2026,
+    "width": 400,
+    "height": 570
   },
   {
     "id": 74,
@@ -589,7 +735,9 @@
     "author": "Gong Ji-Young & Sumomo Yumeka",
     "rating_text": "7.5/10",
     "cover_url": "assets/covers/anime/our-happy-hours.webp",
-    "year": 2008
+    "year": 2008,
+    "width": 400,
+    "height": 561
   },
   {
     "id": 75,
@@ -597,7 +745,9 @@
     "author": "Tappei Nagatsuki",
     "rating_text": "4/10",
     "cover_url": "assets/covers/anime/re-zero.webp",
-    "year": 2016
+    "year": 2016,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 76,
@@ -605,7 +755,9 @@
     "author": "Eiichiro Oda",
     "rating_text": "7.5/10",
     "cover_url": "assets/covers/anime/lego-one-piece.webp",
-    "year": 2026
+    "year": 2026,
+    "width": 400,
+    "height": 500
   },
   {
     "id": 77,
@@ -613,7 +765,9 @@
     "author": "Rifujin na Magonote",
     "rating_text": "5/10",
     "cover_url": "assets/covers/anime/mushoku-tensei.webp",
-    "year": 2021
+    "year": 2021,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 78,
@@ -621,7 +775,9 @@
     "author": "Ikka Matsuki",
     "rating_text": "7/10",
     "cover_url": "assets/covers/anime/nippon-sangoku.webp",
-    "year": 2026
+    "year": 2026,
+    "width": 400,
+    "height": 565
   },
   {
     "id": 79,
@@ -629,7 +785,9 @@
     "author": "Michio Yazu & Keito Aida",
     "rating_text": "6.9/10",
     "cover_url": "assets/covers/anime/doku-mushi.webp",
-    "year": 2013
+    "year": 2013,
+    "width": 400,
+    "height": 569
   },
   {
     "id": 80,
@@ -637,7 +795,9 @@
     "author": "Hirohiko Araki",
     "rating_text": "9.7/10",
     "cover_url": "assets/covers/anime/jojos-bizarre-adventure.webp",
-    "year": 2012
+    "year": 2012,
+    "width": 400,
+    "height": 608
   },
   {
     "id": 81,
@@ -645,7 +805,9 @@
     "author": "Yūki Tabata",
     "rating_text": "6.1/10",
     "cover_url": "assets/covers/anime/black-clover.webp",
-    "year": 2017
+    "year": 2017,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 82,
@@ -653,7 +815,9 @@
     "author": "Shinichirō Watanabe",
     "rating_text": "9.2/10",
     "cover_url": "assets/covers/anime/cowboy-bebop.webp",
-    "year": 1998
+    "year": 1998,
+    "width": 400,
+    "height": 545
   },
   {
     "id": 83,
@@ -661,7 +825,9 @@
     "author": "Hitoshi Iwaaki",
     "rating_text": "8.2/10",
     "cover_url": "assets/covers/anime/parasyte-the-maxim.webp",
-    "year": 2014
+    "year": 2014,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 84,
@@ -669,7 +835,9 @@
     "author": "Naoki Urasawa",
     "rating_text": "8.9/10",
     "cover_url": "assets/covers/anime/pluto.webp",
-    "year": 2003
+    "year": 2003,
+    "width": 400,
+    "height": 593
   },
   {
     "id": 85,
@@ -677,7 +845,9 @@
     "author": "Yoshiyuki Sadamoto & Hideaki Anno",
     "rating_text": "8.1/10",
     "cover_url": "assets/covers/anime/neon-genesis-evangelion.webp",
-    "year": 1995
+    "year": 1995,
+    "width": 400,
+    "height": 564
   },
   {
     "id": 86,
@@ -685,7 +855,9 @@
     "author": "Vanitas & Shingo Tanaka",
     "rating_text": "6/10",
     "cover_url": "assets/covers/anime/91-days.webp",
-    "year": 2016
+    "year": 2016,
+    "width": 400,
+    "height": 588
   },
   {
     "id": 87,
@@ -693,7 +865,9 @@
     "author": "Yuzuru Tachikawa",
     "rating_text": "8/10",
     "cover_url": "assets/covers/anime/death-parade.webp",
-    "year": 2015
+    "year": 2015,
+    "width": 400,
+    "height": 566
   },
   {
     "id": 88,
@@ -701,7 +875,9 @@
     "author": "Yasuki Tanaka",
     "rating_text": "5/10",
     "cover_url": "assets/covers/anime/summers-rendering.webp",
-    "year": 2022
+    "year": 2022,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 89,
@@ -709,7 +885,9 @@
     "author": "Riichiro Inagaki & Boichi",
     "rating_text": "8.7/10",
     "cover_url": "assets/covers/anime/dr-stone.webp",
-    "year": 2019
+    "year": 2019,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 90,
@@ -717,7 +895,9 @@
     "author": "Satoshi Kon",
     "rating_text": "6.5/10",
     "cover_url": "assets/covers/anime/paranoia-agent.webp",
-    "year": 2004
+    "year": 2004,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 91,
@@ -725,7 +905,9 @@
     "author": "Uguisu Sachiko",
     "rating_text": "8/10",
     "cover_url": "assets/covers/anime/this-is-not-my-child.webp",
-    "year": 2021
+    "year": 2021,
+    "width": 400,
+    "height": 591
   },
   {
     "id": 92,
@@ -733,7 +915,9 @@
     "author": "Kusumoto Tetsu",
     "rating_text": "8.3/10",
     "cover_url": "assets/covers/anime/erika.webp",
-    "year": 2013
+    "year": 2013,
+    "width": 400,
+    "height": 567
   },
   {
     "id": 93,
@@ -741,7 +925,9 @@
     "author": "Jouyama Yui",
     "rating_text": "6/10",
     "cover_url": "assets/covers/anime/zanuff-the-butcher.webp",
-    "year": 2012
+    "year": 2012,
+    "width": 400,
+    "height": 575
   },
   {
     "id": 94,
@@ -749,7 +935,9 @@
     "author": "Hirako Waka",
     "rating_text": "5/10",
     "cover_url": "assets/covers/anime/my-broken-mariko.webp",
-    "year": 2019
+    "year": 2019,
+    "width": 400,
+    "height": 574
   },
   {
     "id": 95,
@@ -757,7 +945,9 @@
     "author": "Hakuri",
     "rating_text": "7/10",
     "cover_url": "assets/covers/anime/i-was-wrong.webp",
-    "year": 2018
+    "year": 2018,
+    "width": 400,
+    "height": 584
   },
   {
     "id": 96,
@@ -765,7 +955,9 @@
     "author": "Tatsuki Fujimoto & Oto Toda",
     "rating_text": "8.1/10",
     "cover_url": "assets/covers/anime/just-listen-to-the-song.webp",
-    "year": 2022
+    "year": 2022,
+    "width": 400,
+    "height": 599
   },
   {
     "id": 97,
@@ -773,7 +965,9 @@
     "author": "Recool Studio",
     "rating_text": "7.8/10",
     "cover_url": "assets/covers/anime/i-am-you.webp",
-    "year": 2026
+    "year": 2026,
+    "width": 400,
+    "height": 536
   },
   {
     "id": 98,
@@ -781,7 +975,9 @@
     "author": "Tatsuki Fujimoto",
     "rating_text": "7.9/10",
     "cover_url": "assets/covers/anime/goodbye-eri.webp",
-    "year": 2022
+    "year": 2022,
+    "width": 400,
+    "height": 571
   },
   {
     "id": 99,
@@ -789,7 +985,9 @@
     "author": "Kaiu Shirai & Posuka Demizu",
     "rating_text": "8.5/10",
     "cover_url": "assets/covers/anime/the-promised-neverland.webp",
-    "year": 2019
+    "year": 2019,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 100,
@@ -797,7 +995,9 @@
     "author": "Ichirō Ōkouchi & Gorō Taniguchi",
     "rating_text": "9/10",
     "cover_url": "assets/covers/anime/code-geass.webp",
-    "year": 2006
+    "year": 2006,
+    "width": 400,
+    "height": 570
   },
   {
     "id": 101,
@@ -805,7 +1005,9 @@
     "author": "Keisuke Itagaki",
     "rating_text": "4/10",
     "cover_url": "assets/covers/anime/baki-the-grappler-2001.webp",
-    "year": 2001
+    "year": 2001,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 102,
@@ -813,7 +1015,9 @@
     "author": "Keisuke Itagaki",
     "rating_text": "4/10",
     "cover_url": "assets/covers/anime/baki-2018.webp",
-    "year": 2018
+    "year": 2018,
+    "width": 400,
+    "height": 588
   },
   {
     "id": 103,
@@ -821,7 +1025,9 @@
     "author": "Keisuke Itagaki",
     "rating_text": "5/10",
     "cover_url": "assets/covers/anime/baki-dou.webp",
-    "year": 2026
+    "year": 2026,
+    "width": 400,
+    "height": 593
   },
   {
     "id": 104,
@@ -829,7 +1035,9 @@
     "author": "Rumiko Takahashi",
     "rating_text": "7.1/10",
     "cover_url": "assets/covers/anime/ranma-half.webp",
-    "year": 2024
+    "year": 2024,
+    "width": 400,
+    "height": 593
   },
   {
     "id": 105,
@@ -837,7 +1045,9 @@
     "author": "Natsu Hyuga",
     "rating_text": "4.5/10",
     "cover_url": "assets/covers/anime/the-apothecary-diaries.webp",
-    "year": 2023
+    "year": 2023,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 106,
@@ -845,7 +1055,9 @@
     "author": "Studio Trigger",
     "rating_text": "7.5/10",
     "cover_url": "assets/covers/anime/cyberpunk-edgerunners.webp",
-    "year": 2022
+    "year": 2022,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 107,
@@ -853,7 +1065,9 @@
     "author": "Akihito Tsukushi",
     "rating_text": "6.5/10",
     "cover_url": "assets/covers/anime/made-in-abyss.webp",
-    "year": 2017
+    "year": 2017,
+    "width": 400,
+    "height": 570
   },
   {
     "id": 108,
@@ -861,7 +1075,9 @@
     "author": "Hiroya Oku",
     "rating_text": "7/10",
     "cover_url": "assets/covers/anime/inuyashiki-last-hero.webp",
-    "year": 2017
+    "year": 2017,
+    "width": 400,
+    "height": 572
   },
   {
     "id": 109,
@@ -869,7 +1085,9 @@
     "author": "Tetora Hayashi",
     "rating_text": "3/10",
     "cover_url": "assets/covers/anime/herald.webp",
-    "year": 2024
+    "year": 2024,
+    "width": 400,
+    "height": 584
   },
   {
     "id": 110,
@@ -877,7 +1095,9 @@
     "author": "Asato Asato",
     "rating_text": "5.5/10",
     "cover_url": "assets/covers/anime/86.webp",
-    "year": 2021
+    "year": 2021,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 111,
@@ -885,7 +1105,9 @@
     "author": "Osamu Tezuka",
     "rating_text": "7.7/10",
     "cover_url": "assets/covers/anime/dororo.webp",
-    "year": 2019
+    "year": 2019,
+    "width": 400,
+    "height": 588
   },
   {
     "id": 112,
@@ -893,7 +1115,9 @@
     "author": "Kanehito Yamada & Tsukasa Abe",
     "rating_text": "6.6/10",
     "cover_url": "assets/covers/anime/frieren.webp",
-    "year": 2023
+    "year": 2023,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 113,
@@ -901,7 +1125,9 @@
     "author": "Gen Urobuchi",
     "rating_text": "6/10",
     "cover_url": "assets/covers/anime/psycho-pass.webp",
-    "year": 2012
+    "year": 2012,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 114,
@@ -909,7 +1135,9 @@
     "author": "Science Saru",
     "rating_text": "6.5/10",
     "cover_url": "assets/covers/anime/jaadugar-a-witch-in-mongolia.webp",
-    "year": 2026
+    "year": 2026,
+    "width": 400,
+    "height": 600
   },
   {
     "id": 115,
@@ -917,7 +1145,9 @@
     "author": "Hideaki Sorachi",
     "rating_text": "5/10",
     "cover_url": "assets/covers/anime/dandelion.webp",
-    "year": 2026
+    "year": 2026,
+    "width": 400,
+    "height": 593
   },
   {
     "id": 116,
@@ -925,7 +1155,9 @@
     "author": "Hiroyuki Kojima & Shin Togami",
     "rating_text": "7/10",
     "cover_url": "assets/covers/anime/the-manga-guide-to-calculus.webp",
-    "year": 2009
+    "year": 2009,
+    "width": 400,
+    "height": 529
   },
   {
     "id": 117,
@@ -933,7 +1165,9 @@
     "author": "Shin Takahashi & Iroha Inoue",
     "rating_text": "6/10",
     "cover_url": "assets/covers/anime/the-manga-guide-to-linear-algebra.webp",
-    "year": 2012
+    "year": 2012,
+    "width": 400,
+    "height": 528
   },
   {
     "id": 118,
@@ -941,6 +1175,8 @@
     "author": "Sui Ishida",
     "rating_text": "7.7/10",
     "cover_url": "assets/covers/anime/tokyo-ghoul.webp",
-    "year": 2014
+    "year": 2014,
+    "width": 400,
+    "height": 566
   }
 ]
