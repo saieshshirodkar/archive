@@ -6,5 +6,6 @@ __pycache__/
 *.pyc
 .venv/
 .ruff_cache/
+tui/target/
 pyproject.toml
 uv.lock
