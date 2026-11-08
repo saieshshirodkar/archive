@@ -4,3 +4,7 @@ AGENTS.md
 scripts/
 __pycache__/
 *.pyc
+.venv/
+.ruff_cache/
+pyproject.toml
+uv.lock
