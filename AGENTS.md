@@ -15,10 +15,10 @@ Personal media catalog for books, animanga, movies, and TV shows. Vanilla HTML/C
 
 ```
 /
-├── index.html              # Entry: preloads + css/app.css + js/app.js
+├── index.html              # Entry: preloads + app.css + app.js
 ├── AGENTS.md               # This file
-├── css/app.css             # All styles in one file, tokens first
-├── js/app.js               # All JS in one file, no modules
+├── app.css                 # All styles in one file, tokens first
+├── app.js                  # All JS in one file, no modules
 ├── data/                   # books.json, animanga.json, movies.json, shows.json
 ├── assets/covers/          # books/, anime/, movies/, shows/ — 400px webp q80
 ├── scripts/                # archive.py + add/check/cover/query/rate/remove/reorder
@@ -26,9 +26,9 @@ Personal media catalog for books, animanga, movies, and TV shows. Vanilla HTML/C
 └── uv.lock
 ```
 
-## Frontend (`css/app.css`, `js/app.js`)
+## Frontend (`app.css`, `app.js`)
 
-Single files, no imports. Bundle order in `js/app.js` is dependency order: config → storage → state → utils → header → cards → renderer → indicator → data → main. Imports/exports stripped at bundle time; don't reintroduce per-file modules.
+Single files, no imports. Bundle order in `app.js` is dependency order: config → storage → state → utils → header → cards → renderer → indicator → data → main. Imports/exports stripped at bundle time; don't reintroduce per-file modules.
 
 Keep these behaviors:
 
@@ -97,7 +97,7 @@ Ruff: `uv run ruff check scripts/` + `uv run ruff format --check scripts/` must 
 - Titles: user spellings often wrong, web search wins, fix silently + one line note. Collisions: `Bastard`/`Bastard!!`, `Baki` variants, `Tokyo Ghoul` vs `Tokyo Ghoul:re`, `Dragon Ball` variants. Some titles are films not manga, check category first. Adaptations separate entries (`Verity` book + film).
 - Rating `7/5` means `7.5/10`. Ratings out of 10 only.
 - Deploy = Vercel only (`vercel --prod`, never `--scope`). Confirm `▲ Aliased https://saiesh-archive.vercel.app` or `"status":"ok"` JSON and stop. Don't curl live URL, don't grep output (JSON form has no Aliased line). `Not authorized` on first try is transient, retry once. Push/commit need own words ("push", "commit"), never implied by deploy. Data edits never auto-deploy.
-- User checks UI in browser. No headless/jsdom layout checks. `node --check js/app.js` and `check.py` are enough.
+- User checks UI in browser. No headless/jsdom layout checks. `node --check app.js` and `check.py` are enough.
 - Never `pkill -f` a pattern in your own command. Capture `$!`, `kill $PID`.
 - No comments in JS/CSS code. Scripts: minimal comments only when needed, code should read clearly.
 - `.env.local` holds Vercel token, gitignored, never commit/share.
