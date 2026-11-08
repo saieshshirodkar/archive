@@ -178,11 +178,9 @@ function buildCardsHTML(items) {
 
     let cls = 'book-card'
     if (rating === '10/10') cls += ' is-legendary'
-    else if (!rating && !isMovie) cls += ' is-tbr'
 
     let badge = ''
     if (rating) badge = `<span class="rating-text">${escapeHtml(rating)}</span>`
-    else if (!isMovie) badge = '<span class="rating-text tbr">TBR</span>'
 
     const year = item.year != null ? `<span class="movie-year">(${item.year})</span>` : ''
     const meta = isMovie ? escapeHtml(item.date_watched) : item.author ? `by ${escapeHtml(item.author)}` : ''

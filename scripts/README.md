@@ -11,10 +11,10 @@ retype into every command.
 | `archive.py` | shared library — categories, key order, dates, slugs, load/save, validation. Not run directly. |
 | `add.py` | add an entry to any category, optionally fetching its cover |
 | `cover.py` | download and resize covers, or audit the ones on disk |
-| `rate.py` | rate an entry; moves TBR→rated, or in-place if already rated |
+| `rate.py` | rate an entry in place, or move it with `--position` |
 | `reorder.py` | move, rename, or bulk-sort entries |
 | `remove.py` | delete an entry and its cover, then renumber |
-| `query.py` | read-only: dates, find, top, latest, tbr, show |
+| `query.py` | read-only: dates, find, top, latest, show |
 | `check.py` | validate all four categories |
 
 ## Quick start
@@ -26,8 +26,7 @@ python3 check.py                       # validate everything
 python3 query.py date                  # today in IST, DD-MM-YYYY
 python3 query.py find neverland        # search all categories
 python3 query.py top 10                # highest rated
-python3 query.py latest 5              # newest rated by id
-python3 query.py tbr --cat books       # what's unrated
+python3 query.py latest 5              # newest by id
 
 python3 add.py --cat books --title "Dune" --author "Frank Herbert" \
     --year 1965 --rating 9.5
@@ -78,8 +77,7 @@ single watch date.
 list on every save by `normalise()`. Never trusted from the previous state.
 
 - movies sort by `date_watched`, oldest first. Missing `--date` means today IST.
-- books, animanga and shows keep rated entries first, TBR block last. A new
-  rated entry lands after the last rated one; a new unrated entry goes at the end.
+- books, animanga and shows append in insertion order.
 - shows within the rated block are insertion order only. `reorder.py --sort`
   can impose a canonical order if you want one.
 
@@ -120,17 +118,14 @@ correspond to a bug that actually happened here:
 - referenced covers vs files on disk — catches a wrong path and an orphan file
 - no duplicate `cover_url` — this caught Fearless pointing at `fearful.webp`,
   which rendered two different books as one image
-- movies sorted by date; TBR block contiguous elsewhere. The `False in flags`
-  guard matters: `list.index` raises when everything is rated, which looks
-  like corruption but isn't.
+- movies sorted by date
 - rating format and range
 
 ## Notes
 
 - Sorting is one ascending key plus `reverse=True`. Nothing negates a sort
   value, which is what silently broke `--sort title --descending` — there is
-  no `-"abc"`. The TBR block is split off before sorting, so it holds the end
-  of the list in either direction.
+  no `-"abc"`.
 - Comments are deliberate here, unlike `js/`, where AGENTS.md forbids them.
 - `add.py` refuses to add an entry whose cover file is absent, so a bad slug
   fails loudly instead of rendering a grey box. It also rejects a filename
