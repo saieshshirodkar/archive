@@ -1178,5 +1178,25 @@
     "year": 2014,
     "width": 400,
     "height": 566
+  },
+  {
+    "id": 119,
+    "title": "Samurai Champloo",
+    "author": "Shinichirō Watanabe",
+    "rating_text": "6.6/10",
+    "cover_url": "assets/covers/anime/samurai-champloo.webp",
+    "year": 2004,
+    "width": 400,
+    "height": 600
+  },
+  {
+    "id": 120,
+    "title": "The Tatami Galaxy",
+    "author": "Masaaki Yuasa",
+    "rating_text": "5.5/10",
+    "cover_url": "assets/covers/anime/the-tatami-galaxy.webp",
+    "year": 2010,
+    "width": 400,
+    "height": 569
   }
 ]
