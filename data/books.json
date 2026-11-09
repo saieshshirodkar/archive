@@ -461,36 +461,6 @@
   },
   {
     "id": 47,
-    "title": "Better Than the Prom",
-    "author": "Lynn Painter",
-    "rating_text": "3/10",
-    "cover_url": "assets/covers/books/better-than-the-prom.webp",
-    "year": 2022,
-    "width": 400,
-    "height": 611
-  },
-  {
-    "id": 48,
-    "title": "Better Than Before",
-    "author": "Lynn Painter",
-    "rating_text": "2/10",
-    "cover_url": "assets/covers/books/better-than-before.webp",
-    "year": 2023,
-    "width": 400,
-    "height": 600
-  },
-  {
-    "id": 49,
-    "title": "Nothing Better Than You",
-    "author": "Lynn Painter",
-    "rating_text": "3/10",
-    "cover_url": "assets/covers/books/nothing-better-than-you.webp",
-    "year": 2024,
-    "width": 400,
-    "height": 600
-  },
-  {
-    "id": 50,
     "title": "Nothing Like the Movies",
     "author": "Lynn Painter",
     "rating_text": "5/10",
@@ -500,7 +470,7 @@
     "height": 604
   },
   {
-    "id": 51,
+    "id": 48,
     "title": "The Vegetarian",
     "author": "Han Kang",
     "rating_text": "5/10",
@@ -510,7 +480,7 @@
     "height": 612
   },
   {
-    "id": 52,
+    "id": 49,
     "title": "Too Good to Be True",
     "author": "Prajakta Koli",
     "rating_text": "2/10",
@@ -520,7 +490,7 @@
     "height": 636
   },
   {
-    "id": 53,
+    "id": 50,
     "title": "The Metamorphosis",
     "author": "Franz Kafka",
     "rating_text": "3.5/10",
@@ -530,7 +500,7 @@
     "height": 618
   },
   {
-    "id": 54,
+    "id": 51,
     "title": "Not Quite Dead Yet",
     "author": "Holly Jackson",
     "rating_text": "6.5/10",
@@ -540,7 +510,7 @@
     "height": 616
   },
   {
-    "id": 55,
+    "id": 52,
     "title": "Recursion",
     "author": "Blake Crouch",
     "rating_text": "6/10",
@@ -548,5 +518,15 @@
     "year": 2019,
     "width": 400,
     "height": 608
+  },
+  {
+    "id": 53,
+    "title": "The House Across the Lake",
+    "author": "Riley Sager",
+    "rating_text": "6/10",
+    "cover_url": "assets/covers/books/the-house-across-the-lake.webp",
+    "year": 2022,
+    "width": 400,
+    "height": 609
   }
 ]
