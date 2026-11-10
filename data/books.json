@@ -528,5 +528,25 @@
     "year": 2022,
     "width": 400,
     "height": 609
+  },
+  {
+    "id": 54,
+    "title": "Bombay Balchao",
+    "author": "Jane Borges",
+    "rating_text": "7.3/10",
+    "cover_url": "assets/covers/books/bombay-balchao.webp",
+    "year": 2019,
+    "width": 400,
+    "height": 600
+  },
+  {
+    "id": 55,
+    "title": "My Husband's Wife",
+    "author": "Alice Feeney",
+    "rating_text": "8.1/10",
+    "cover_url": "assets/covers/books/my-husbands-wife.webp",
+    "year": 2026,
+    "width": 400,
+    "height": 608
   }
 ]
