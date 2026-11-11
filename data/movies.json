@@ -858,5 +858,25 @@
     "cover_url": "assets/covers/movies/ramayana-part-1.webp",
     "width": 400,
     "height": 500
+  },
+  {
+    "id": 87,
+    "title": "Heart of the Beast",
+    "year": 2026,
+    "date_watched": "10-11-2026",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/movies/heart-of-the-beast.webp",
+    "width": 400,
+    "height": 593
+  },
+  {
+    "id": 88,
+    "title": "The F**k-It List",
+    "year": 2020,
+    "date_watched": "10-11-2026",
+    "rating_text": "4.5/10",
+    "cover_url": "assets/covers/movies/the-fk-it-list.webp",
+    "width": 400,
+    "height": 600
   }
 ]

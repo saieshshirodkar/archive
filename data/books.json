@@ -548,5 +548,15 @@
     "year": 2026,
     "width": 400,
     "height": 608
+  },
+  {
+    "id": 56,
+    "title": "Listen for the Lie",
+    "author": "Amy Tintera",
+    "rating_text": "6.6/10",
+    "cover_url": "assets/covers/books/listen-for-the-lie.webp",
+    "year": 2024,
+    "width": 400,
+    "height": 624
   }
 ]
