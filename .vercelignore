@@ -1,11 +1,14 @@
 .env*
+.gitignore
+.vercelignore
 AGENTS.md
 .vercel
 scripts/
+tests/
 __pycache__/
 *.pyc
 .venv/
 .ruff_cache/
-tui/target/
+tui/
 pyproject.toml
 uv.lock

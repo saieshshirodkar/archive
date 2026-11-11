@@ -37,7 +37,7 @@ def build_entry(args: argparse.Namespace, rating: str, cover_url: str) -> dict:
     elif args.cat == "movies":
         if args.date:
             A.parse_watched(args.date)
-        entry["date_watched"] = args.date or A.today()
+        entry["date_watched"] = A.format_watched(args.date or A.today())
     elif args.author:
         A.notice("shows take no --author, ignoring.")
     entry["year"] = args.year
@@ -87,15 +87,22 @@ def run(args: argparse.Namespace) -> int:
         entry = build_entry(args, rating, cover_url)
     except ValueError as exc:
         return A.fail(str(exc))
+    path = A.cover_path(args.cat, filename)
+    pre_existing = path.exists()
     if not ensure_cover(args, filename):
         return 1
-    w, h = cover.dimension(A.cover_path(args.cat, filename))
+    w, h = cover.dimension(path)
     entry["width"], entry["height"] = w, h
     insert(args.cat, entries, entry)
-    A.save(args.cat, entries)
+    try:
+        A.save(args.cat, entries)
+    except Exception:
+        if not pre_existing:
+            path.unlink(missing_ok=True)
+        raise
     fresh = A.load(args.cat)
     print("added:")
-    print(A.listing([fresh[A.exact(fresh, args.title)]]))
+    print(A.listing([fresh[A.index_of(fresh, args.title)]]))
     print(f"  {args.cat} now has {len(fresh)} entries")
     return 0
 

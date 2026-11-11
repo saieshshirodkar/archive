@@ -44,24 +44,22 @@ const state = {
 
 const ESCAPES = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }
 
+let ui = null
+
 function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, (c) => ESCAPES[c])
 }
 
+const REDUCE_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)')
 
-
-
-let onSelect = null
-let ui = null
-
-function onTabChange(handler) {
-  onSelect = handler
+function reduceMotion() {
+  return REDUCE_MOTION.matches
 }
 
 function statsText() {
   const cat = CATEGORY_BY_ID[state.category]
   const data = entries.get(state.category)
-  if (!data) return state.status === 'ready' ? `0 ${cat.label}` : '\u2026'
+  if (!data) return state.status === 'error' ? '\u2014' : state.status === 'ready' ? `0 ${cat.label}` : '\u2026'
   return `${data.length} ${data.length === 1 ? cat.singular : cat.label}`
 }
 
@@ -69,7 +67,7 @@ function select(id) {
   if (id === state.category) return
   state.category = id
   saveCategory(id)
-  if (onSelect) onSelect(id)
+  loadCategory()
 }
 
 function onKeydown(e) {
@@ -121,10 +119,6 @@ function createHeader() {
   return header
 }
 
-function updateHeader() {
-  syncHeader()
-}
-
 function syncHeader() {
   if (!ui) return
   for (const btn of ui.buttons) {
@@ -140,30 +134,30 @@ function activeTab() {
   return ui?.buttons.find((b) => b.classList.contains('active'))
 }
 
-function tabTrack() {
-  return ui?.root
-}
-
-function indicatorEl() {
-  return ui?.indicator
-}
-
-
-
 function buildSkeletonHTML(count) {
   let html = '<p class="sr-only" role="status">Loading</p>'
   for (let i = 0; i < count; i++) {
     html +=
       '<div class="skeleton-card">' +
-      '<div class="entry-bar"><div class="skeleton-text" style="width:56px;height:20px"></div><div class="skeleton-text" style="width:40px;height:14px"></div></div>' +
+      '<div class="entry-bar"><div class="skeleton-text sk-index"></div><div class="skeleton-text sk-rating"></div></div>' +
       '<div class="skeleton-cover"></div>' +
       '<div class="skeleton-body">' +
-      '<div class="skeleton-text" style="width:75%;height:18px"></div>' +
-      '<div class="skeleton-text" style="width:45%;height:12px"></div>' +
+      '<div class="skeleton-text sk-title"></div>' +
+      '<div class="skeleton-text sk-meta"></div>' +
       '</div>' +
       '</div>'
   }
   return html
+}
+
+function tiltFor(entry) {
+  const key = `${entry.id}|${entry.title}`
+  let h = 2166136261
+  for (let i = 0; i < key.length; i++) {
+    h ^= key.charCodeAt(i)
+    h = Math.imul(h, 16777619)
+  }
+  return (((Math.abs(h) % 51) - 25) / 10).toFixed(1)
 }
 
 function buildCardsHTML(items) {
@@ -178,22 +172,21 @@ function buildCardsHTML(items) {
     let cls = 'book-card'
     if (rating === '10/10') cls += ' is-legendary'
 
-    const badge = rating ? `<span class="rating-text">${escapeHtml(rating)}</span>` : '<span></span>'
+    const badge = rating ? `<span class="rating-text">${escapeHtml(rating)}</span>` : ''
     const num = String(i + 1).padStart(2, '0')
-    const year = item.year != null ? `<span class="movie-year">${item.year}</span>` : ''
+    const year = item.year != null ? `<span class="movie-year">${escapeHtml(item.year)}</span>` : ''
     const meta = isMovie ? escapeHtml(item.date_watched) : item.author ? escapeHtml(item.author) : ''
     const cover = escapeHtml(item.cover_url)
     const title = escapeHtml(item.title)
 
-    const s = Number((Math.random() * 5 - 2.5).toFixed(1))
     html +=
-      `<article class="${cls}" style="--r:${s}deg">` +
+      `<article class="${cls}" style="--r:${tiltFor(item)}deg">` +
       '<div class="entry-bar">' +
       `<span class="serial"><b>${num}</b></span>` +
       badge +
       '</div>' +
       '<div class="book-cover-container">' +
-      `<img class="book-cover" src="${cover}" alt="" width="${item.width}" height="${item.height}"` +
+      `<img class="book-cover" src="${cover}" alt="" width="${escapeHtml(item.width)}" height="${escapeHtml(item.height)}"` +
       (eager ? ' decoding="sync" fetchpriority="high"' : ' loading="lazy" decoding="async"') +
       '></div>' +
       '<div class="book-content">' +
@@ -208,11 +201,6 @@ function buildCardsHTML(items) {
 
   return html
 }
-
-
-
-
-
 
 const app = document.getElementById('root')
 
@@ -255,8 +243,7 @@ function build() {
   toTop.setAttribute('aria-hidden', 'true')
   toTop.tabIndex = -1
   toTop.addEventListener('click', () => {
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' })
+    window.scrollTo({ top: 0, behavior: reduceMotion() ? 'auto' : 'smooth' })
     activeTab()?.focus({ preventScroll: true })
   })
   app.appendChild(toTop)
@@ -281,13 +268,32 @@ function build() {
   onScroll()
 }
 
+function renderError() {
+  const label = CATEGORY_BY_ID[state.category].label.toLowerCase()
+  grid.innerHTML =
+    '<div class="error-state" role="alert">' +
+    `<p class="error-text">Couldn't load ${escapeHtml(label)}. The data file may be missing.</p>` +
+    '<button type="button" class="retry-btn">Retry</button>' +
+    '</div>'
+  const btn = grid.querySelector('.retry-btn')
+  btn.addEventListener('click', () => {
+    entries.delete(state.category)
+    state.items = null
+    state.status = 'loading'
+    render()
+    loadCategory()
+  })
+  btn.focus()
+}
+
 function render() {
   if (!grid) build()
-  updateHeader()
+  syncHeader()
   grid.setAttribute('aria-labelledby', `tab-${state.category}`)
 
   if (state.status === 'error') {
-    grid.innerHTML = `<div class="loading-state">Failed to load ${escapeHtml(state.category)}.</div>`
+    grid.setAttribute('aria-busy', 'false')
+    renderError()
     return
   }
 
@@ -299,7 +305,8 @@ function render() {
 
   grid.setAttribute('aria-busy', 'false')
   if (state.items.length === 0) {
-    grid.innerHTML = '<div class="empty-state">No entries yet.</div>'
+    const label = CATEGORY_BY_ID[state.category].label.toLowerCase()
+    grid.innerHTML = `<div class="empty-state">No ${escapeHtml(label)} yet.</div>`
     return
   }
 
@@ -310,6 +317,8 @@ function render() {
     return
   }
 
+  if (reduceMotion()) return
+
   switchAnim?.cancel()
   switchAnim = grid.animate([{ opacity: SWITCH_FROM }, { opacity: 1 }], {
     duration: SWITCH_MS,
@@ -317,21 +326,19 @@ function render() {
   })
 }
 
-
 let frame = 0
 let placed = false
 let observer = null
 
 function measure() {
-  const track = tabTrack()
-  const pill = indicatorEl()
+  if (!ui) return null
   const active = activeTab()
-  if (!track || !pill || !active) return null
+  if (!active) return null
 
-  const trackBox = track.getBoundingClientRect()
+  const trackBox = ui.root.getBoundingClientRect()
   const activeBox = active.getBoundingClientRect()
   return {
-    pill,
+    pill: ui.indicator,
     width: activeBox.width,
     offset: activeBox.left - trackBox.left
   }
@@ -343,7 +350,7 @@ function updateIndicator() {
 
   if (!observer && typeof ResizeObserver !== 'undefined') {
     observer = new ResizeObserver(() => updateIndicator())
-    observer.observe(tabTrack())
+    observer.observe(ui.root)
   }
 
   if (!placed) {
@@ -374,18 +381,21 @@ document.fonts?.ready.then(() => updateIndicator())
 let token = 0
 const pending = new Map()
 
-function load(id) {
+function load(id, priority = 'high') {
   const ready = entries.get(id)
   if (ready) return Promise.resolve(ready)
 
   let p = pending.get(id)
   if (!p) {
-    p = fetch(`data/${id}.json`, { priority: 'high' })
-      .then((res) => res.json())
+    p = fetch(`data/${id}.json`, { priority })
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`)
+        return res.json()
+      })
       .then((data) => {
         entries.set(id, data)
         pending.delete(id)
-        updateHeader()
+        syncHeader()
         return data
       })
       .catch((err) => {
@@ -431,17 +441,11 @@ async function loadCategory() {
 }
 
 function preloadCategory(id) {
-  load(id).catch(() => {})
+  load(id, 'low').catch(() => {})
 }
-
-
-
-
-
 
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual'
 
-onTabChange(loadCategory)
 render()
 updateIndicator()
 loadCategory()

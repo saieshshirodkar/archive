@@ -40,6 +40,13 @@ def anchor(
     return index
 
 
+def anchor_target(index: int, found: int, mode: str) -> int:
+    """Final index for the moved entry, given the anchor's index before the move."""
+    if mode == "before":
+        return found - 1 if index < found else found
+    return found if index < found else found + 1
+
+
 def bulk_sort(args: argparse.Namespace, entries: list[dict]) -> int:
     if args.cat == "movies":
         return A.fail("movies are sorted by date_watched; no sort applies.")
@@ -52,14 +59,26 @@ def bulk_sort(args: argparse.Namespace, entries: list[dict]) -> int:
 
 
 def rename(args: argparse.Namespace, entries: list[dict], index: int) -> int:
-    prev = entries[index]["title"]
-    entries[index]["title"] = args.rename
+    entry = entries[index]
+    prev = entry["title"]
+    new = args.rename.strip()
+    if not new:
+        return A.fail("rename needs a non-empty title.")
+    clash = next(
+        (
+            i
+            for i, e in enumerate(entries)
+            if i != index and e["title"].lower() == new.lower()
+        ),
+        None,
+    )
+    if clash is not None:
+        return A.fail(f"{new!r} is already used by id {clash + 1} in {args.cat}.")
+    entry["title"] = new
     A.save(args.cat, entries)
     fresh = A.load(args.cat)
     print("renamed:")
-    print(
-        f"  {prev!r} -> {args.rename!r}  (now id {fresh[A.exact(fresh, args.rename)]['id']})"
-    )
+    print(f"  {prev!r} -> {new!r}  (now id {A.index_of(fresh, new) + 1})")
     return 0
 
 
@@ -71,17 +90,19 @@ def reposition(args: argparse.Namespace, entries: list[dict], index: int) -> int
         found = anchor(args.cat, entries, args.before, "--before", args.exact)
         if found is None:
             return 1
-        target, reason = found, f"before {entries[found]['title']!r}"
+        target = anchor_target(index, found, "before")
+        reason = f"before {entries[found]['title']!r}"
     elif args.after:
         found = anchor(args.cat, entries, args.after, "--after", args.exact)
         if found is None:
             return 1
-        target, reason = found + 1, f"after {entries[found]['title']!r}"
+        target = anchor_target(index, found, "after")
+        reason = f"after {entries[found]['title']!r}"
     else:
         return A.fail("pass --position, --before, or --after.")
     A.save(args.cat, A.move(entries, index, target))
     fresh = A.load(args.cat)
-    moved = fresh[A.exact(fresh, original)]
+    moved = fresh[A.index_of(fresh, original)]
     print(f"moved: {original!r}")
     print(f"  was id {index + 1}, now id {moved['id']}  ({reason})")
     return 0
@@ -93,6 +114,13 @@ def run(args: argparse.Namespace) -> int:
         return bulk_sort(args, entries)
     if not args.title:
         return A.fail("pass --title, or --sort for a bulk sort.")
+    if args.cat == "movies" and (
+        args.position is not None or args.before or args.after
+    ):
+        return A.fail(
+            "movies are ordered by date_watched; use "
+            "'rate.py --cat movies --date DD-MM-YYYY' to move one."
+        )
     index = A.resolve_index(entries, args.title, strict=args.exact)
     if index is None:
         A.report_no_match(entries, args.title, args.cat, "--title", args.exact)

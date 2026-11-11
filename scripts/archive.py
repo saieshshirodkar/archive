@@ -113,6 +113,11 @@ def parse_watched(value: str) -> list[int]:
     return [d.year, d.month, d.day]
 
 
+def format_watched(value: str) -> str:
+    y, m, d = parse_watched(value)
+    return f"{d:02d}-{m:02d}-{y:04d}"
+
+
 def normalise_rating(value: str) -> str:
     text = str(value).strip()
     if "/" in text:
@@ -155,14 +160,18 @@ def normalise(category: str, entries: list[dict]) -> list[dict]:
 
 def save(category: str, entries: list[dict]) -> None:
     entries = normalise(category, entries)
-    with open(data_path(category), "w", encoding="utf-8") as fh:
-        fh.write(json.dumps(entries, indent=2, ensure_ascii=False) + "\n")
-    problems = validate(category)
+    problems = validate_entries(category, entries) + validate_covers(category, entries)
     if problems:
         raise AssertionError(
-            f"{category}.json written but validation failed:\n  "
+            f"{category}.json not written, validation failed:\n  "
             + "\n  ".join(problems)
         )
+    path = data_path(category)
+    tmp = path.with_name(path.name + ".tmp")
+    tmp.write_text(
+        json.dumps(entries, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
+    tmp.replace(path)
 
 
 def find(entries: list[dict], needle: str) -> list[int]:
@@ -176,6 +185,13 @@ def exact(entries: list[dict], title: str) -> int | None:
         if e["title"].lower() == t:
             return i
     return None
+
+
+def index_of(entries: list[dict], title: str) -> int:
+    hits = [i for i, e in enumerate(entries) if e["title"].lower() == title.lower()]
+    if len(hits) != 1:
+        raise LookupError(f"expected one entry titled {title!r}, found {len(hits)}")
+    return hits[0]
 
 
 def resolve_index(entries: list[dict], needle: str, strict: bool = False) -> int | None:
@@ -212,40 +228,26 @@ def report_no_match(
 
 
 def move(entries: list[dict], index: int, to: int) -> list[dict]:
+    """Move the entry at `index` so that it ends up at final 0-based index `to`."""
     if not 0 <= index < len(entries):
         raise IndexError(f"index {index} out of range for {len(entries)} entries")
     to = max(0, min(to, len(entries) - 1))
     if to == index:
         return entries
     entry = entries.pop(index)
-    # insert index shifts after pop; adjust when moving down
-    entries.insert(to - 1 if index < to else to, entry)
+    entries.insert(to, entry)
     return entries
 
 
-def validate(category: str) -> list[str]:
+def validate_entries(category: str, entries: list[dict]) -> list[str]:
     problems: list[str] = []
     keys = CATEGORIES[category]["keys"]
-    entries = load(category)
     ids = [e["id"] for e in entries]
     if ids != list(range(1, len(entries) + 1)):
         problems.append(f"ids not sequential: {ids}")
     for e in entries:
         if list(e) != keys:
             problems.append(f"id {e.get('id')}: schema drift, got {list(e)}")
-    folder = covers_dir(category)
-    if not folder.is_dir():
-        problems.append(f"cover folder missing: {folder}")
-    else:
-        on_disk = {p.name for p in folder.iterdir() if p.is_file()}
-        referenced = {e["cover_url"].rsplit("/", 1)[-1] for e in entries}
-        for o in sorted(referenced - on_disk):
-            problems.append(f"referenced cover not on disk: {o}")
-        for u in sorted(on_disk - referenced):
-            problems.append(f"cover on disk but unused: {u}")
-        for e in entries:
-            if not (ROOT / e["cover_url"]).exists():
-                problems.append(f"id {e['id']}: missing file {e['cover_url']}")
     owners: dict[str, list[int]] = {}
     for e in entries:
         owners.setdefault(e["cover_url"], []).append(e["id"])
@@ -271,6 +273,28 @@ def validate(category: str) -> list[str]:
         if dates != sorted(dates):
             problems.append("movies not sorted by date_watched oldest-first")
     return problems
+
+
+def validate_covers(category: str, entries: list[dict]) -> list[str]:
+    problems: list[str] = []
+    folder = covers_dir(category)
+    if not folder.is_dir():
+        return [f"cover folder missing: {folder}"]
+    on_disk = {p.name for p in folder.iterdir() if p.is_file()}
+    referenced = {e["cover_url"].rsplit("/", 1)[-1] for e in entries}
+    for o in sorted(referenced - on_disk):
+        problems.append(f"referenced cover not on disk: {o}")
+    for u in sorted(on_disk - referenced):
+        problems.append(f"cover on disk but unused: {u}")
+    for e in entries:
+        if not (ROOT / e["cover_url"]).exists():
+            problems.append(f"id {e['id']}: missing file {e['cover_url']}")
+    return problems
+
+
+def validate(category: str) -> list[str]:
+    entries = load(category)
+    return validate_entries(category, entries) + validate_covers(category, entries)
 
 
 def validate_all() -> dict[str, list[str]]:

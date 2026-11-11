@@ -8,4 +8,5 @@ tui/target/
 tui/archive-tui
 .DS_Store
 *.log
+*.tmp
 node_modules/

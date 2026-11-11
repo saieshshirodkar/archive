@@ -11,7 +11,7 @@ retype into every command.
 | `archive.py` | shared library — categories, key order, dates, slugs, load/save, validation. Not run directly. |
 | `add.py` | add an entry to any category, optionally fetching its cover |
 | `cover.py` | download and resize covers, or audit the ones on disk |
-| `rate.py` | rate an entry in place, or move it with `--position` |
+| `rate.py` | rate an entry in place, move it with `--position`, or set a movie's date |
 | `reorder.py` | move, rename, or bulk-sort entries |
 | `remove.py` | delete an entry and its cover, then renumber |
 | `query.py` | read-only: dates, find, top, latest, show |
@@ -37,6 +37,7 @@ python3 cover.py --cat shows --title "Carrie" --url "https://..." --force
 python3 cover.py --audit                # wrong widths, formats, oversized files
 python3 rate.py --cat books --title "little life" --rating 8.8
 python3 rate.py --cat animanga --title "Baki" --rating 4 --exact
+python3 rate.py --cat movies --title "Atonement" --rating 9 --date 03-03-2021
 python3 reorder.py --cat shows --title "Raakh" --before "Superstore"
 python3 reorder.py --cat books --sort rating --descending
 python3 remove.py --cat animanga --title "Vagabond"
@@ -80,6 +81,15 @@ list on every save by `normalise()`. Never trusted from the previous state.
 - books, animanga and shows append in insertion order.
 - shows within the rated block are insertion order only. `reorder.py --sort`
   can impose a canonical order if you want one.
+- movies take no positional moves, because their position is derived from the
+  watch date. `rate.py --cat movies --date DD-MM-YYYY` sets that date and
+  re-sorts. `reorder.py --position/--before/--after` refuses movies outright
+  rather than writing a list that breaks the ordering invariant.
+
+**Moving** — `archive.move()` takes the index the entry sits at and the index
+it should end up at, in the array *after* the move. `reorder.py` turns a
+`--before`/`--after` anchor into that target index via `anchor_target()`, which
+accounts for the anchor shifting when the moved entry came from before it.
 
 **Dates** — everything is IST via `zoneinfo.ZoneInfo("Asia/Kolkata")`. Nothing
 here calls `datetime.now()` without an explicit zone, because the system clock
@@ -90,6 +100,12 @@ rejected instead of sorting as if they were real.
 **Ratings** — stored as `X/10` or `X.Y/10`. `normalise_rating()` accepts bare
 numbers (`8`, `8.5`) and rejects things like `7/5`, which is a different
 habit and would otherwise be silently misread.
+
+**Titles** — unique within a category. `add.py` refuses a title that is already
+there, and `reorder.py --rename` refuses to rename an entry onto a title that
+another entry already holds. Without that guard a rename could leave two
+entries that no longer resolve by name, and the reported id could point at the
+wrong one.
 
 **Covers** — `cover.py` is the one place that writes images. It downloads with
 a browser user agent (several CDNs reject anything else), auto-orients, resizes
@@ -110,7 +126,9 @@ both commands produce identical files.
 
 ## Validation
 
-`validate()` returns a list of problems; empty means valid. The checks each
+`validate()` returns a list of problems; empty means valid. It is split into
+`validate_entries()` (the list itself) and `validate_covers()` (the files on
+disk), so a list can be checked before anything is written. The checks each
 correspond to a bug that actually happened here:
 
 - ids sequential from 1 — a split insert leaves them inconsistent
@@ -120,6 +138,23 @@ correspond to a bug that actually happened here:
   which rendered two different books as one image
 - movies sorted by date
 - rating format and range
+
+`save()` runs both halves of the validation *before* it opens the data file,
+then writes through a temporary file and `os.replace()`. A command that would
+have produced invalid data therefore fails with the file untouched, instead of
+leaving a broken `data/*.json` behind and raising afterwards.
+
+## Tests
+
+```bash
+python3 -m unittest discover -s tests
+```
+
+`tests/test_archive.py` covers the parsing helpers, every validation rule,
+`move()` in both directions, the `--before`/`--after` anchor arithmetic, and
+the `add`/`rate`/`reorder` command behaviour. The command tests point
+`archive.ROOT` at a temporary directory, so they never read or write the real
+`data/`.
 
 ## Notes
 
