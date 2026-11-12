@@ -610,5 +610,14 @@
     "year": 2013,
     "width": 400,
     "height": 600
+  },
+  {
+    "id": 69,
+    "title": "Mousetrap",
+    "rating_text": "8.4/10",
+    "cover_url": "assets/covers/shows/mousetrap.webp",
+    "year": 2026,
+    "width": 400,
+    "height": 593
   }
 ]

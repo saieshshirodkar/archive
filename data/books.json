@@ -558,5 +558,35 @@
     "year": 2024,
     "width": 400,
     "height": 624
+  },
+  {
+    "id": 57,
+    "title": "Beautiful Ugly",
+    "author": "Alice Feeney",
+    "rating_text": "7.1/10",
+    "cover_url": "assets/covers/books/beautiful-ugly.webp",
+    "year": 2025,
+    "width": 400,
+    "height": 604
+  },
+  {
+    "id": 58,
+    "title": "Count My Lies",
+    "author": "Sophie Stava",
+    "rating_text": "8.2/10",
+    "cover_url": "assets/covers/books/count-my-lies.webp",
+    "year": 2025,
+    "width": 400,
+    "height": 613
+  },
+  {
+    "id": 59,
+    "title": "The Girl in the Glass Case",
+    "author": "Devashish Sardana",
+    "rating_text": "8.6/10",
+    "cover_url": "assets/covers/books/the-girl-in-the-glass-case.webp",
+    "year": 2022,
+    "width": 400,
+    "height": 615
   }
 ]
