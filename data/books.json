@@ -588,5 +588,35 @@
     "year": 2022,
     "width": 400,
     "height": 615
+  },
+  {
+    "id": 60,
+    "title": "Ward D",
+    "author": "Freida McFadden",
+    "rating_text": "8/10",
+    "cover_url": "assets/covers/books/ward-d.webp",
+    "year": 2023,
+    "width": 400,
+    "height": 640
+  },
+  {
+    "id": 61,
+    "title": "Nightwatching",
+    "author": "Tracy Sierra",
+    "rating_text": "5/10",
+    "cover_url": "assets/covers/books/nightwatching.webp",
+    "year": 2024,
+    "width": 400,
+    "height": 604
+  },
+  {
+    "id": 62,
+    "title": "The Wrong Daughter",
+    "author": "Dandy Smith",
+    "rating_text": "8.5/10",
+    "cover_url": "assets/covers/books/the-wrong-daughter.webp",
+    "year": 2024,
+    "width": 400,
+    "height": 616
   }
 ]
