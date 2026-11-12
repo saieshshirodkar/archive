@@ -878,5 +878,15 @@
     "cover_url": "assets/covers/movies/the-fk-it-list.webp",
     "width": 400,
     "height": 600
+  },
+  {
+    "id": 89,
+    "title": "Blind Game",
+    "year": 2026,
+    "date_watched": "12-11-2026",
+    "rating_text": "3/10",
+    "cover_url": "assets/covers/movies/blind-game.webp",
+    "width": 400,
+    "height": 502
   }
 ]

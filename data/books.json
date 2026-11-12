@@ -618,5 +618,25 @@
     "year": 2024,
     "width": 400,
     "height": 616
+  },
+  {
+    "id": 63,
+    "title": "Secrets of the Desert",
+    "author": "Christian Jacq",
+    "rating_text": "6/10",
+    "cover_url": "assets/covers/books/secrets-of-the-desert.webp",
+    "year": 1993,
+    "width": 400,
+    "height": 599
+  },
+  {
+    "id": 64,
+    "title": "Shadow of the Sphinx",
+    "author": "Christian Jacq",
+    "rating_text": "6/10",
+    "cover_url": "assets/covers/books/shadow-of-the-sphinx.webp",
+    "year": 1994,
+    "width": 400,
+    "height": 642
   }
 ]
