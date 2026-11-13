@@ -387,7 +387,7 @@ function load(id, priority = 'high') {
 
   let p = pending.get(id)
   if (!p) {
-    p = fetch(`data/${id}.json`, { priority })
+    p = fetch(`data/${id}.json`, { priority, cache: 'no-store' })
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`)
         return res.json()
