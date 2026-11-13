@@ -619,5 +619,14 @@
     "year": 2026,
     "width": 400,
     "height": 593
+  },
+  {
+    "id": 70,
+    "title": "Student of the Year: After Dark",
+    "rating_text": "2/10",
+    "cover_url": "assets/covers/shows/student-of-the-year-after-dark.webp",
+    "year": 2026,
+    "width": 400,
+    "height": 600
   }
 ]
