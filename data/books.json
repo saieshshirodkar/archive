@@ -658,5 +658,15 @@
     "year": 2022,
     "width": 400,
     "height": 617
+  },
+  {
+    "id": 67,
+    "title": "The Diary of a Young Girl",
+    "author": "Anne Frank",
+    "rating_text": "6/10",
+    "cover_url": "assets/covers/books/the-diary-of-a-young-girl.webp",
+    "year": 1947,
+    "width": 400,
+    "height": 664
   }
 ]
