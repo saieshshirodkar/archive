@@ -161,7 +161,7 @@ the `add`/`rate`/`reorder` command behaviour. The command tests point
 - Sorting is one ascending key plus `reverse=True`. Nothing negates a sort
   value, which is what silently broke `--sort title --descending` — there is
   no `-"abc"`.
-- Comments are deliberate here, unlike `js/`, where AGENTS.md forbids them.
+- Comments are deliberate here, unlike `app.js`, where AGENTS.md forbids them.
 - `add.py` refuses to add an entry whose cover file is absent, so a bad slug
   fails loudly instead of rendering a grey box. It also rejects a filename
   another entry already uses, and does so before the write: `validate()` would
@@ -169,5 +169,6 @@ the `add`/`rate`/`reorder` command behaviour. The command tests point
 - `remove.py` moves the cover aside before saving, then deletes it. `save()`
   rejects unreferenced files on disk, so deleting afterwards would fail its
   own validation; the stash is restored if the write raises.
-- Deploy is still manual: `vp` (or `vercel --prod` when the alias isn't
-  available in a non-interactive shell).
+- Deploy is still manual: `bun deploy.ts` (Cloudflare Workers static
+  assets). `bun run setup` relinks `cf` and `wrangler` from the global
+  bun install first.

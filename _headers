@@ -1,0 +1,20 @@
+/data/*
+  Cache-Control: no-store, max-age=0
+
+/assets/*
+  Cache-Control: public, max-age=300, must-revalidate
+
+/app.css
+  Cache-Control: no-cache
+
+/app.js
+  Cache-Control: no-cache
+
+/favicon.svg
+  Cache-Control: no-cache
+
+/
+  Cache-Control: no-cache
+
+/*.html
+  Cache-Control: no-cache

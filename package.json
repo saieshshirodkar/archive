@@ -1,0 +1,14 @@
+{
+  "name": "saiesh-archive",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "setup": "bun run setup.ts",
+    "deploy": "bun run deploy.ts",
+    "deploy:dry": "bun run deploy.ts --dry-run"
+  },
+  "devDependencies": {
+    "cf": "^1.0.0-beta.32",
+    "wrangler": "^4.162.0"
+  }
+}

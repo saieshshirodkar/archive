@@ -1,12 +1,11 @@
-.vercel/
 .env*
 __pycache__/
 *.pyc
 .venv/
-.ruff_cache/
-tui/target/
-tui/archive-tui
+node_modules/
+dist/
+.wrangler/
+.cloudflare/
 .DS_Store
 *.log
 *.tmp
-node_modules/
