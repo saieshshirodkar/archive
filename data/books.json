@@ -668,5 +668,35 @@
     "year": 1947,
     "width": 400,
     "height": 664
+  },
+  {
+    "id": 68,
+    "title": "The Hidden Hindu",
+    "author": "Akshat Gupta",
+    "rating_text": "4/10",
+    "cover_url": "assets/covers/books/the-hidden-hindu.webp",
+    "year": 2021,
+    "width": 400,
+    "height": 619
+  },
+  {
+    "id": 69,
+    "title": "The Hidden Hindu: Book 2",
+    "author": "Akshat Gupta",
+    "rating_text": "3/10",
+    "cover_url": "assets/covers/books/the-hidden-hindu-book-2.webp",
+    "year": 2022,
+    "width": 400,
+    "height": 618
+  },
+  {
+    "id": 70,
+    "title": "The Hidden Hindu: Book 3",
+    "author": "Akshat Gupta",
+    "rating_text": "6/10",
+    "cover_url": "assets/covers/books/the-hidden-hindu-book-3.webp",
+    "year": 2023,
+    "width": 400,
+    "height": 621
   }
 ]
