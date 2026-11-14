@@ -628,5 +628,23 @@
     "year": 2026,
     "width": 400,
     "height": 600
+  },
+  {
+    "id": 71,
+    "title": "MobLand",
+    "rating_text": "5/10",
+    "cover_url": "assets/covers/shows/mobland.webp",
+    "year": 2025,
+    "width": 400,
+    "height": 600
+  },
+  {
+    "id": 72,
+    "title": "Bass X Machina",
+    "rating_text": "5/10",
+    "cover_url": "assets/covers/shows/bass-x-machina.webp",
+    "year": 2026,
+    "width": 400,
+    "height": 600
   }
 ]

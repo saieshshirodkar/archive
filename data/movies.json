@@ -888,5 +888,25 @@
     "cover_url": "assets/covers/movies/blind-game.webp",
     "width": 400,
     "height": 502
+  },
+  {
+    "id": 90,
+    "title": "Cold Storage",
+    "year": 2026,
+    "date_watched": "14-11-2026",
+    "rating_text": "3.4/10",
+    "cover_url": "assets/covers/movies/cold-storage.webp",
+    "width": 400,
+    "height": 600
+  },
+  {
+    "id": 91,
+    "title": "Memories of Murder",
+    "year": 2003,
+    "date_watched": "14-11-2026",
+    "rating_text": "8.7/10",
+    "cover_url": "assets/covers/movies/memories-of-murder.webp",
+    "width": 400,
+    "height": 600
   }
 ]

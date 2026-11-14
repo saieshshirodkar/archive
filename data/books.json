@@ -698,5 +698,15 @@
     "year": 2023,
     "width": 400,
     "height": 621
+  },
+  {
+    "id": 71,
+    "title": "The 7½ Deaths of Evelyn Hardcastle",
+    "author": "Stuart Turton",
+    "rating_text": "4/10",
+    "cover_url": "assets/covers/books/the-7-deaths-of-evelyn-hardcastle.webp",
+    "year": 2018,
+    "width": 400,
+    "height": 616
   }
 ]
