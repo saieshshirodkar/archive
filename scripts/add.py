@@ -14,7 +14,7 @@ def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(description="Add an entry.")
     p.add_argument("--cat", required=True, choices=A.category_ids())
     p.add_argument("--title", required=True)
-    p.add_argument("--year", type=int, required=True)
+    p.add_argument("--year", type=int, default=None)
     p.add_argument("--rating", required=True, help='like "8" or "8.5"')
     p.add_argument("--author", default=None, help="books and animanga only")
     p.add_argument(
@@ -40,6 +40,12 @@ def build_entry(args: argparse.Namespace, rating: str, cover_url: str) -> dict:
         entry["date_watched"] = A.format_watched(args.date or A.today())
     elif args.author:
         A.notice("shows take no --author, ignoring.")
+    if args.cat == "shows":
+        if args.year is not None:
+            A.notice("shows take no --year, ignoring.")
+        return entry
+    if args.year is None:
+        raise ValueError(f"{args.cat} entries require --year.")
     entry["year"] = args.year
     return entry
 

@@ -1,11 +1,11 @@
 .env*
+.vercel/
 __pycache__/
 *.pyc
 .venv/
+.ruff_cache/
 node_modules/
-dist/
-.wrangler/
-.cloudflare/
 .DS_Store
 *.log
 *.tmp
+.vercel

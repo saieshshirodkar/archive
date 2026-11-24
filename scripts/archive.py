@@ -55,7 +55,7 @@ CATEGORIES: dict[str, dict] = {
     },
     "shows": {
         "folder": "shows",
-        "keys": ["id", "title", "rating_text", "cover_url", "year", "width", "height"],
+        "keys": ["id", "title", "rating_text", "cover_url", "width", "height"],
     },
 }
 CATEGORY_IDS = tuple(CATEGORIES)

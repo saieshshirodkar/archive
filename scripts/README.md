@@ -71,8 +71,8 @@ usually what was meant. The decision itself lives in one place,
 **Categories and key order** — `archive.py:CATEGORIES` is the single source of
 truth. `animanga` stores its covers under `assets/covers/anime/`, which is the
 one folder that doesn't match its id. `movies` carries `date_watched` and has
-no `author`; `shows` has neither, because a show has multiple creators and no
-single watch date.
+no `author`; `shows` has neither, nor a `year`, because a show has multiple
+creators and no single watch date.
 
 **Position** — `id` is always the 1-indexed array position, recomputed from the
 list on every save by `normalise()`. Never trusted from the previous state.
@@ -169,6 +169,5 @@ the `add`/`rate`/`reorder` command behaviour. The command tests point
 - `remove.py` moves the cover aside before saving, then deletes it. `save()`
   rejects unreferenced files on disk, so deleting afterwards would fail its
   own validation; the stash is restored if the write raises.
-- Deploy is still manual: `bun deploy.ts` (Cloudflare Workers static
-  assets). `bun run setup` relinks `cf` and `wrangler` from the global
-  bun install first.
+- Deploy is still manual: `vercel --prod` from the repo root. `vercel whoami`
+  checks auth; the project is linked through `.vercel/project.json`.

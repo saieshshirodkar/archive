@@ -1,6 +1,6 @@
 # Archive — saiesh-archive
 
-Personal media catalog for books, animanga, movies, and TV shows. Vanilla HTML/CSS/JS, no framework, deployed on Cloudflare Workers (static assets).
+Personal media catalog for books, animanga, movies, and TV shows. Vanilla HTML/CSS/JS, no framework, deployed on Vercel as static assets.
 
 **This file is mostly about the data workflow.** Most requests are "add this" or "rate this". Read Workflow before touching `data/`.
 
@@ -9,7 +9,7 @@ Personal media catalog for books, animanga, movies, and TV shows. Vanilla HTML/C
 - Vanilla HTML + CSS + JS, one CSS file + one JS file, no build step for the site itself
 - Google Fonts: Geist + Geist Mono
 - Python dev via `uv` (`pyproject.toml`, dev dep `ruff`), venv at `.venv/`
-- Deployed on Cloudflare Workers static assets via the `cf` CLI (beta)
+- Deployed on Vercel static assets via `vercel --prod`
 
 ## Layout
 
@@ -20,11 +20,8 @@ Personal media catalog for books, animanga, movies, and TV shows. Vanilla HTML/C
 ├── app.css                 # All styles in one file, tokens first
 ├── app.js                  # All JS in one file, no modules
 ├── favicon.svg             # plain SVG glyph for the tab
-├── deploy.ts               # bun script: stages dist/ then runs `cf deploy`
-├── _headers                # cache headers for assets/data/app files
-├── cloudflare.config.ts    # cf project config (worker name, compat date)
-├── wrangler.config.ts      # assetsDirectory: ./dist (cf delegates the build to wrangler)
-├── package.json + bun.lock # bun project, dev deps: cf + wrangler
+├── vercel.json             # static deploy + cache headers
+├── .vercelignore           # keeps scripts/, tests/, config and Python files out of the upload
 ├── data/                   # books.json, animanga.json, movies.json, shows.json
 ├── assets/covers/          # books/, anime/, movies/, shows/ — 400px webp q80
 ├── scripts/                # archive.py + add/check/cover/query/rate/remove/reorder
@@ -33,7 +30,7 @@ Personal media catalog for books, animanga, movies, and TV shows. Vanilla HTML/C
 └── uv.lock
 ```
 
-`dist/`, `.cloudflare/` and `.wrangler/` are build output and gitignored.
+`.vercel/` is CLI project state and gitignored.
 
 ## Frontend (`app.css`, `app.js`)
 
@@ -73,7 +70,7 @@ Dials: `ENERGY 2 / RHYTHM 2 / MOTION 1` (lavender cover grid, per-card tilt, hov
 - Key order fixed per category:
   - books/animanga: `id, title, author, rating_text, cover_url, year, width, height`
   - movies: `id, title, year, date_watched, rating_text, cover_url, width, height`
-  - shows: `id, title, rating_text, cover_url, year, width, height` (never `author`, never `date_watched`)
+  - shows: `id, title, rating_text, cover_url, width, height` (never `author`, `date_watched` or `year`)
 - `rating_text` always `X/10` or `X.Y/10`. **No TBR.** Empty rating is invalid now.
 - `date_watched` movies only, `DD-MM-YYYY`, decides `isMovie` in renderer. Written through `format_watched()`, so `1-2-2020` lands as `01-02-2020`.
 - Titles are unique per category. `add.py` refuses a duplicate and `reorder.py --rename` refuses a target that already exists.
@@ -85,15 +82,15 @@ Dials: `ENERGY 2 / RHYTHM 2 / MOTION 1` (lavender cover grid, per-card tilt, hov
 ```bash
 websearch "<title> release year author"   # never guess title/author/year
 
-uv run python scripts/add.py --cat <cat> --title "<title>" --year <year> \
-    --rating <8|8.5> [--author "<author>"] [--cover-url "<url>"]
+uv run python scripts/add.py --cat <cat> --title "<title>" --rating <8|8.5> \
+    [--year <year>] [--author "<author>"] [--cover-url "<url>"]
 uv run python scripts/check.py
-# deploy only when asked: bun deploy.ts
+# deploy only when asked: vercel --prod
 ```
 
-`--rating` is required. `--author` required for books/animanga. `--date` movies only, defaults to today IST. `--slug` for disambiguation. Covers always user-supplied URL, never hunt yourself.
+`--rating` is required. `--year` required for books/animanga/movies, ignored for shows. `--author` required for books/animanga. `--date` movies only, defaults to today IST. `--slug` for disambiguation. Covers always user-supplied URL, never hunt yourself.
 
-- Movies year = theatrical. Animanga = anime first broadcast if aired else serialization. Books = publication. Shows = first-season premiere, no author.
+- Movies year = theatrical. Animanga = anime first broadcast if aired else serialization. Books = publication. Shows carry no year, no author.
 - Rating an entry: `uv run python scripts/rate.py --cat <cat> --title "<title>" --rating <n> [--exact] [--position <id>]`. In place by default; `--position` moves. Find is case-insensitive substring; add `--exact` for short titles (`Baki`, `Bastard`).
 - Movies are ordered by `date_watched`, so they take no positional moves. `rate.py --cat movies --date DD-MM-YYYY` sets the watch date and re-sorts. `reorder.py --position/--before/--after` refuses movies for the same reason.
 - Read-only: `uv run python scripts/query.py find|top|latest|show`. Always search all four categories before saying missing. `latest` = highest ids, not array tail (same thing now, but keep meaning).
@@ -136,18 +133,14 @@ Covers `move()` in both directions, the `--before`/`--after` anchor math, `norma
 - Slugs kebab-cased, `'`/`!`/`:` dropped, spaces→`-`. Variants get suffix only when needed (`baki-2018`, `tokyo-ghoul-re`).
 - Titles: user spellings often wrong, web search wins, fix silently + one line note. Collisions: `Bastard`/`Bastard!!`, `Baki` variants, `Tokyo Ghoul` vs `Tokyo Ghoul:re`, `Dragon Ball` variants. Some titles are films not manga, check category first. Adaptations separate entries (`Verity` book + film).
 - Rating `7/5` is rejected; ratings are out of 10 only. `normalise_rating()` takes bare numbers (`8`, `8.5`) and stores `X/10`.
-- Deploy = Cloudflare Workers only (`bun deploy.ts`). Confirm the `https://saiesh-archive.shirodkarsrk.workers.dev` line and `◆ Deploy complete`, then stop. Push/commit need own words ("push", "commit"), never implied by deploy. Data edits never auto-deploy.
-- `cf` is a beta CLI (1.0.0-beta.x) and its flags can move. `deploy.ts` is the only thing that talks to it, so a breaking change touches one file. `wrangler deploy` still works as a fallback, the generated configs are wrangler-compatible. One CLI per project: don't add a `wrangler.jsonc`, `cf` refuses to run in a project that has one.
-- `node_modules/` is symlinks into `~/.bun/install/global/node_modules`, not a real install: `cf` and `wrangler` package dirs, plus `node_modules/.bin/{cf,wrangler}` pointing at each package's own `bin/` entry (the global `.bin/` has neither, so don't symlink from there). `cf/config` has to be resolvable from `cloudflare.config.ts` and cf has to see wrangler declared in `package.json`, but a real `bun install` pulls 197M of workerd/miniflare binaries this project never runs. Use `bun run setup` to relink after a clone. Never run a bare `bun install` here.
-- `bun add -g cf wrangler` installs both CLIs globally. `cf` delegates the actual asset upload to wrangler, so both are needed. The global tree is shared with bun's package cache, so the bytes exist once on disk.
-- `deploy.ts` stages `dist/` from an explicit file list before deploying. Never point `assets.directory` at the repo root. A `.assetsignore` in the assets dir *replaces* wrangler's built-in ignore list instead of adding to it, so a root assets dir silently publishes `.git`, `.env.local` and `scripts/`. The staging dir makes that impossible.
-- `cf auth login` uses OAuth device flow by default and stores creds in `~/.config/cloudflare/`. `cf auth whoami` shows the account and scopes. `cf` and wrangler are both installed globally with bun (cf delegates the asset upload to wrangler).
-- Cache policy lives in `_headers`: `data/*.json` is `no-store` so edits show up on the next load, and `assets/` is `max-age=300, must-revalidate` so a `cover.py --force` replacement lands within five minutes. Never add `immutable` or long `stale-while-revalidate` to either — that is what forced hard refreshes. `app.js` also fetches data with `cache: 'no-store'` as a second line of defense. Workers defaults every asset to `max-age=0, must-revalidate`, so unmatched files still revalidate.
-- Cloudflare serves HTTP/3 by default (`alt-svc: h3=":443"`), Vercel did not. Static asset requests are free and unmetered, the 100k/day Workers quota only counts requests that run Worker code, and this project has no script.
+- Deploy = Vercel only (`vercel --prod`). Confirm the production URL in CLI output before stopping. Push/commit need own words ("push", "commit"), never implied by deploy. Data edits never auto-deploy.
+- Project is linked through `.vercel/project.json` (gitignored). `vercel whoami` checks auth; if the link is missing, `vercel link --yes --project saiesh-archive` restores it. Project name owns `saiesh-archive.vercel.app`.
+- `vercel.json` carries the whole cache policy: `data/*.json` is `no-store` so edits show up on the next load, `assets/` is `max-age=300, must-revalidate` so a `cover.py --force` replacement lands within five minutes. Never add `immutable` or long `stale-while-revalidate` to either — that is what forced hard refreshes. `app.js` also fetches data with `cache: 'no-store'` as a second line of defense.
+- `.vercelignore` is a deny-list, not a replacement for Vercel's defaults. Keep `data/` and `assets/` uploadable; keep `scripts/`, `tests/`, `AGENTS.md`, Python and project config out. Without it, `.env.local` and the whole repo would ship.
 - User checks UI in browser. `node --check app.js` and `check.py` are enough for a quick pass. A headless browser run is a useful supplement for the states that are awkward to reach by hand (failed fetch, empty category, arrow-key traversal), but it is not a substitute for the user's own look at the page.
 - Never `pkill -f` a pattern in your own command. Capture `$!`, `kill $PID`.
 - No comments in JS/CSS code. Scripts: minimal comments only when needed, code should read clearly.
-- `.env.local` holds a legacy Vercel token, gitignored, never commit/share. Cloudflare creds live in `~/.config/cloudflare/`, outside the repo. `deploy.ts` stages an explicit file list, so nothing secret can reach `dist/`.
+- `.env.local` holds a legacy Vercel token, gitignored, never commit/share. `.vercelignore` excludes it from uploads. Live Vercel auth lives in `~/.local/share/com.vercel.cli/`, outside the repo.
 - Brand is plain `Archive` (`favicon.svg` glyph only, no service worker, no grain).
 - Covers are stored 400px wide webp q80, rendered at grid-column width (cropped to 2:3 via object-fit). User declined 240px resize (12-10-2026). Don't shrink again.
 - `user-select:none` is global (`*`), intentional.
@@ -155,9 +148,8 @@ Covers `move()` in both directions, the `--before`/`--after` anchor math, `norma
 ## Commands
 
 ```bash
-bun run setup                                                             # relink cf + wrangler from the global bun install
-bun deploy.ts                                                                 # deploy
-bun deploy.ts --dry-run                                                      # build + checks, no upload
+vercel --prod                                                                 # deploy
+vercel whoami                                                                 # auth check
 uv run python scripts/check.py                                             # validate data
 uv run python scripts/query.py date                                        # IST today
 uv run python -m unittest discover -s tests                                # test scripts/
@@ -166,4 +158,4 @@ node --check app.js                                                     # syntax
 python3 -m http.server 8000                                                # dev server
 ```
 
-Prod: https://saiesh-archive.shirodkarsrk.workers.dev · Legacy: https://saiesh-archive.surge.sh
+Prod: https://saiesh-archive.vercel.app
