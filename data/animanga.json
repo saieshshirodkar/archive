@@ -1198,5 +1198,15 @@
     "year": 2010,
     "width": 400,
     "height": 569
+  },
+  {
+    "id": 121,
+    "title": "Psyren",
+    "author": "Toshiaki Iwashiro",
+    "rating_text": "6.5/10",
+    "cover_url": "assets/covers/anime/psyren.webp",
+    "year": 2026,
+    "width": 400,
+    "height": 600
   }
 ]

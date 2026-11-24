@@ -908,5 +908,45 @@
     "cover_url": "assets/covers/movies/memories-of-murder.webp",
     "width": 400,
     "height": 600
+  },
+  {
+    "id": 92,
+    "title": "Aadi Anant",
+    "year": 2026,
+    "date_watched": "20-11-2026",
+    "rating_text": "7.2/10",
+    "cover_url": "assets/covers/movies/aadi-anant.webp",
+    "width": 400,
+    "height": 503
+  },
+  {
+    "id": 93,
+    "title": "418",
+    "year": 2026,
+    "date_watched": "20-11-2026",
+    "rating_text": "9.4/10",
+    "cover_url": "assets/covers/movies/418.webp",
+    "width": 400,
+    "height": 600
+  },
+  {
+    "id": 94,
+    "title": "Ice Cream Man",
+    "year": 2026,
+    "date_watched": "24-11-2026",
+    "rating_text": "8.6/10",
+    "cover_url": "assets/covers/movies/ice-cream-man.webp",
+    "width": 400,
+    "height": 600
+  },
+  {
+    "id": 95,
+    "title": "Mayookha",
+    "year": 2026,
+    "date_watched": "24-11-2026",
+    "rating_text": "6.5/10",
+    "cover_url": "assets/covers/movies/mayookha.webp",
+    "width": 400,
+    "height": 533
   }
 ]
