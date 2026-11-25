@@ -574,5 +574,21 @@
     "cover_url": "assets/covers/shows/bass-x-machina.webp",
     "width": 400,
     "height": 600
+  },
+  {
+    "id": 73,
+    "title": "The Good Doctor",
+    "rating_text": "6.3/10",
+    "cover_url": "assets/covers/shows/the-good-doctor.webp",
+    "width": 400,
+    "height": 600
+  },
+  {
+    "id": 74,
+    "title": "3 Body Problem",
+    "rating_text": "5/10",
+    "cover_url": "assets/covers/shows/3-body-problem.webp",
+    "width": 400,
+    "height": 593
   }
 ]
