@@ -590,5 +590,61 @@
     "cover_url": "assets/covers/shows/3-body-problem.webp",
     "width": 400,
     "height": 593
+  },
+  {
+    "id": 75,
+    "title": "The Body",
+    "rating_text": "4.4/10",
+    "cover_url": "assets/covers/shows/the-body.webp",
+    "width": 400,
+    "height": 561
+  },
+  {
+    "id": 76,
+    "title": "I Will Find You",
+    "rating_text": "6.2/10",
+    "cover_url": "assets/covers/shows/i-will-find-you.webp",
+    "width": 400,
+    "height": 593
+  },
+  {
+    "id": 77,
+    "title": "Bodies",
+    "rating_text": "8.4/10",
+    "cover_url": "assets/covers/shows/bodies.webp",
+    "width": 400,
+    "height": 593
+  },
+  {
+    "id": 78,
+    "title": "1899",
+    "rating_text": "6.5/10",
+    "cover_url": "assets/covers/shows/1899.webp",
+    "width": 400,
+    "height": 500
+  },
+  {
+    "id": 79,
+    "title": "Monster",
+    "rating_text": "8.3/10",
+    "cover_url": "assets/covers/shows/monster.webp",
+    "width": 400,
+    "height": 588
+  },
+  {
+    "id": 80,
+    "title": "Wednesday",
+    "rating_text": "6.1/10",
+    "cover_url": "assets/covers/shows/wednesday.webp",
+    "width": 400,
+    "height": 593
+  },
+  {
+    "id": 81,
+    "title": "The Boys",
+    "rating_text": "8.8/10",
+    "cover_url": "assets/covers/shows/the-boys.webp",
+    "width": 400,
+    "height": 600
   }
 ]

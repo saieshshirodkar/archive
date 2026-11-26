@@ -1208,5 +1208,15 @@
     "year": 2026,
     "width": 400,
     "height": 600
+  },
+  {
+    "id": 122,
+    "title": "Ranking of Kings",
+    "author": "Sōsuke Tōka",
+    "rating_text": "7/10",
+    "cover_url": "assets/covers/anime/ranking-of-kings.webp",
+    "year": 2021,
+    "width": 400,
+    "height": 570
   }
 ]
